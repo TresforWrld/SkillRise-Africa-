@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillRise Africa — Courses</title>
+  <meta name="description" content="SkillRise Africa Courses — Browse featured courses, learn new skills, and earn certificates.">
+
+  <style>
+    :root{
+      --primary: #0A2A6B;
+      --accent: #FFC232;
+      --grey: #E5E5E5;
+      --text: #3F3F3F;
+      --bg: #FAFAFA;
+      --radius: 12px;
+      --max-width: 1100px;
+      --container-padding: 24px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding)}
+
+    header{background:linear-gradient(180deg, rgba(10,42,107,0.04), transparent);backdrop-filter: blur(2px);}
+    nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;justify-content:center;flex-wrap:wrap;}
+    nav a{padding:8px 12px;font-weight:600;border-radius:8px;}
+    nav a.cta{background:var(--primary);color:white}
+
+    h1{color:var(--primary)}
+    h2{color:#6b7280}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+    .card{background:white;padding:18px;border-radius:12px;border:1px solid var(--grey);box-shadow:0 6px 18px rgba(10,42,107,0.03)}
+    .meta{display:flex;justify-content:space-between;font-size:13px;color:#717171;margin-bottom:8px}
+    .progress{height:8px;background:var(--grey);border-radius:8px;overflow:hidden;margin-top:8px}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--accent), #ffb84a)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--primary);color:white}
+    @media (max-width:980px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.grid-3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header style="padding:40px 0;">
+    <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+      <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" 
+           alt="SkillRise Africa Logo" style="width:250px;height:auto;">
+      <h1>SkillRise Africa</h1>
+      <h2>ELEVATE by ANICADE</h2>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html" class="cta">Courses</a></li>
+          <li><a href="opportunities.html">Opportunities</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="join.html">Join Free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="wrap">
+    <section>
+      <h1>Featured Courses</h1>
+      <p>Explore our featured courses and start learning skills that will help you grow.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="meta"><div>Design</div><div>Free</div></div>
+          <h3>Logo & Brand Basics</h3>
+          <p>Learn the fundamentals of logos, color theory, and typography.</p>
+          <div class="progress"><span style="width:78%"></span></div>
+          <a href="#" class="btn btn-primary" style="margin-top:8px;display:inline-block;">Start Course</a>
+        </div>
+
+        <div class="card">
+          <div class="meta"><div>Tech</div><div>Free</div></div>
+          <h3>Intro to Python</h3>
+          <p>Hands-on coding with Python to build real projects and skills.</p>
+          <div class="progress"><span style="width:20%"></span></div>
+          <a href="#" class="btn btn-primary" style="margin-top:8px;display:inline-block;">Start Course</a>
+        </div>
+
+        <div class="card">
+          <div class="meta"><div>Business</div><div>Premium</div></div>
+          <h3>Start Your Small Business</h3>
+          <p>Learn how to plan, launch, and grow a small business with low budget.</p>
+          <div class="progress"><span style="width:4%"></span></div>
+          <a href="#" class="btn btn-primary" style="margin-top:8px;display:inline-block;">Start Course</a>
+        </div>
+
+        <div class="card">
+          <div class="meta"><div>Marketing</div><div>Free</div></div>
+          <h3>Social Media Marketing</h3>
+          <p>Learn strategies to grow your brand and engage audiences online.</p>
+          <div class="progress"><span style="width:50%"></span></div>
+          <a href="#" class="btn btn-primary" style="margin-top:8px;display:inline-block;">Start Course</a>
+        </div>
+
+        <div class="card">
+          <div class="meta"><div>Tech</div><div>Premium</div></div>
+          <h3>Web Development Bootcamp</h3>
+          <p>From HTML to advanced JavaScript — build websites from scratch.</p>
+          <div class="progress"><span style="width:30%"></span></div>
+          <a href="#" class="btn btn-primary" style="margin-top:8px;display:inline-block;">Start Course</a>
+        </div>
+
+        <div class="card">
+          <div class="meta"><div>Design</div><div>Free</div></div>
+          <h3>UI/UX Basics</h3>
+          <p>Design interfaces that are both beautiful and user-friendly.</p>
+          <div class="progress"><span style="width:65%"></span></div>
+          <a href="#" class="btn btn-primary" style="margin-top:8px;display:inline-block;">Start Course</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:transparent;padding:36px 0;border-top:1px solid #E5E5E5;margin-top:48px;">
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+      <div>
+        <div style="font-weight:800;color:var(--primary)">SkillRise Africa</div>
+        <div style="font-size:13px;color:#6b7280;margin-top:6px">ELEVATE by ANICADE — Learn. Grow. Rise.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
