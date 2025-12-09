@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkillRise Africa — ELEVATE by ANICADE</title>
+  <meta name="description" content="SkillRise Africa — Learn. Grow. Rise. Free + Premium skills, opportunities and community." />
+
+  <!-- Colors: primary #0A2A6B, accent #FFC232, grey #E5E5E5, text #3F3F3F, bg #FAFAFA -->
+  <style>
+    :root{
+      --primary: #0A2A6B;
+      --accent: #FFC232;
+      --grey: #E5E5E5;
+      --text: #3F3F3F;
+      --bg: #FAFAFA;
+      --radius: 12px;
+      --max-width: 1100px;
+      --glass: rgba(255,255,255,0.6);
+      --container-padding: 24px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+
+    /* Layout */
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding)}
+    header{background:linear-gradient(180deg, rgba(10,42,107,0.04), transparent);backdrop-filter: blur(2px);}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+    .logo{display:flex;align-items:center;gap:14px}
+    .logo img{height:56px;width:auto}
+    .brand{font-weight:700;color:var(--primary);font-size:18px;letter-spacing:0.2px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
+    nav a{padding:8px 12px;border-radius:8px;font-weight:600}
+    nav a.cta{background:var(--primary);color:white}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:46px 0}
+    .hero h1{font-size:40px;line-height:1.02;margin:0;color:var(--primary)}
+    .hero p{color:#4b5563;margin-top:12px;max-width:52ch}
+    .search-card{background:white;border-radius:14px;padding:18px;box-shadow:0 8px 28px rgba(10,42,107,0.06);border:1px solid var(--grey)}
+    .search-row{display:flex;gap:10px}
+    .search-row input{flex:1;padding:12px;border:1px solid var(--grey);border-radius:8px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--primary);color:white}
+    .btn-accent{background:var(--accent);color:var(--primary)}
+
+    /* Feature cards */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .card{background:white;padding:18px;border-radius:12px;border:1px solid var(--grey);box-shadow:0 6px 18px rgba(10,42,107,0.03)}
+    .card h4{margin:0 0 8px 0;color:var(--primary)}
+    .card p{margin:0;color:#616161;font-size:14px}
+
+    /* Sections */
+    section{padding:48px 0}
+    .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+    /* Course preview */
+    .course{background:white;padding:14px;border-radius:12px;border:1px solid var(--grey)}
+    .course .meta{display:flex;justify-content:space-between;font-size:13px;color:#717171;margin-bottom:8px}
+    .progress{height:8px;background:var(--grey);border-radius:8px;overflow:hidden}
+    .progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--accent), #ffb84a)}
+
+    /* Opportunity list */
+    .list{display:flex;flex-direction:column;gap:12px}
+    .list-item{background:white;padding:12px;border-radius:10px;border:1px solid var(--grey);display:flex;justify-content:space-between;align-items:center}
+
+    footer{background:transparent;padding:36px 0;border-top:1px solid var(--grey);margin-top:48px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .grid-3{grid-template-columns:1fr}
+      nav ul{display:none}
+      .logo img{height:46px}
+      .hero h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="logo">
+        <img src="assets/logo.png" alt="SkillRise Africa logo" />
+        <div>
+          <div class="brand">SkillRise Africa</div>
+          <div style="font-size:11px;color:#6b7280">ELEVATE by ANICADE</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#opportunities">Opportunities</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a class="cta" href="#join">Join Free</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Rise higher with skills that change lives.</h1>
+        <p>Free courses, real opportunities, and tools to help you learn, grow and get work — backed by ANICADE's ELEVATE program.</p>
+
+        <div style="display:flex;gap:12px;margin-top:18px;align-items:center">
+          <button class="btn btn-primary">Start Learning — It's Free</button>
+          <button class="btn btn-accent">Explore Elevate+</button>
+        </div>
+
+        <div class="search-card" style="margin-top:20px">
+          <div style="font-weight:700;margin-bottom:8px">Find a course or opportunity</div>
+          <div class="search-row">
+            <input placeholder="Search skills, jobs, scholarships..." aria-label="search" />
+            <button class="btn btn-primary">Search</button>
+          </div>
+        </div>
+
+        <div class="features" style="margin-top:18px">
+          <div class="card">
+            <h4>Free Certificates</h4>
+            <p>Earn certificates for free courses — pay only if you want a verified certificate.</p>
+          </div>
+          <div class="card">
+            <h4>Opportunities Hub</h4>
+            <p>Jobs, scholarships and internships curated for African learners.</p>
+          </div>
+          <div class="card">
+            <h4>AI Tools</h4>
+            <p>Smart tools to help you write CVs, plan businesses and study efficiently.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div style="background:linear-gradient(180deg,white, #f7fbff);padding:22px;border-radius:14px;border:1px solid var(--grey);">
+          <h3 style="margin:0 0 8px 0;color:var(--primary)">Popular Right Now</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+            <div class="course">
+              <div class="meta"><div>UI/UX Basics</div><div>Free</div></div>
+              <div style="font-weight:700">Design interfaces people love</div>
+              <div style="margin-top:8px" class="progress"><span style="width:56%"></span></div>
+            </div>
+
+            <div class="course">
+              <div class="meta"><div>Intro to Web Dev</div><div>Free</div></div>
+              <div style="font-weight:700">Build websites with HTML, CSS & JS</div>
+              <div style="margin-top:8px" class="progress"><span style="width:24%"></span></div>
+            </div>
+
+            <div class="course">
+              <div class="meta"><div>Freelance Starter</div><div>Premium</div></div>
+              <div style="font-weight:700">How to get your first clients</div>
+              <div style="margin-top:8px" class="progress"><span style="width:6%"></span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Courses preview -->
+    <section id="courses">
+      <div class="section-head">
+        <h2>Featured courses</h2>
+        <a href="#" class="btn" style="border:1px solid var(--primary);color:var(--primary);">View all courses</a>
+      </div>
+      <div class="grid-3">
+        <div class="course card">
+          <div class="meta"><div>Design</div><div>Free</div></div>
+          <h3 style="margin:10px 0">Logo & Brand Basics</h3>
+          <p style="margin:0 0 12px 0;color:#5b5b5b;font-size:14px">Learn the fundamentals of logos, color and typography.</p>
+          <div class="progress"><span style="width:78%"></span></div>
+        </div>
+        <div class="course card">
+          <div class="meta"><div>Tech</div><div>Free</div></div>
+          <h3 style="margin:10px 0">Intro to Python</h3>
+          <p style="margin:0 0 12px 0;color:#5b5b5b;font-size:14px">Start coding with hands-on examples and exercises.</p>
+          <div class="progress"><span style="width:20%"></span></div>
+        </div>
+        <div class="course card">
+          <div class="meta"><div>Business</div><div>Premium</div></div>
+          <h3 style="margin:10px 0">Start Your Small Business</h3>
+          <p style="margin:0 0 12px 0;color:#5b5b5b;font-size:14px">Plan, launch and grow a small business with low budget.</p>
+          <div class="progress"><span style="width:4%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opportunities -->
+    <section id="opportunities">
+      <div class="section-head">
+        <h2>Latest opportunities</h2>
+        <a href="#" class="btn" style="border:1px solid var(--primary);color:var(--primary);">See all</a>
+      </div>
+      <div class="list">
+        <div class="list-item"><div><strong>Scholarship:</strong> Tech Leaders Program — Deadline: 10 Jan</div><a class="btn" href="#">Apply</a></div>
+        <div class="list-item"><div><strong>Remote Job:</strong> Junior Frontend Dev — Deadline: 3 Jan</div><a class="btn" href="#">Apply</a></div>
+        <div class="list-item"><div><strong>Internship:</strong> Media & Content — Deadline: 20 Jan</div><a class="btn" href="#">Apply</a></div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools">
+      <div class="section-head">
+        <h2>Free tools</h2>
+        <a href="#" class="btn" style="border:1px solid var(--primary);color:var(--primary);">Open tool library</a>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h4>Resume Builder</h4><p>Create a professional CV in minutes.</p></div>
+        <div class="card"><h4>Budget Planner</h4><p>Track income, expenses and savings goals.</p></div>
+        <div class="card"><h4>Study Planner</h4><p>Plan study time and track progress.</p></div>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section id="community">
+      <div class="section-head">
+        <h2>Community Q&A</h2>
+        <a href="#" class="btn" style="border:1px solid var(--primary);color:var(--primary);">Join the conversation</a>
+      </div>
+      <div class="card">
+        <p><strong>Q:</strong> How do I start freelancing with no experience? <span style="color:#6b7280">— answered by Mentor L.</span></p>
+        <p style="margin-top:8px">Answer: Start by building a simple portfolio, offer low-cost gigs and ask for testimonials. Use SkillRise Africa resources to learn job-ready skills.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:800;color:var(--primary)">SkillRise Africa</div>
+          <div style="font-size:13px;color:#6b7280;margin-top:6px">ELEVATE by ANICADE — Learn. Grow. Rise.</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Small interactive bits (search mock, nav toggle for mobile)
+    document.querySelectorAll('.btn').forEach(b=>{
+      b.addEventListener('click', e=>{
+        if(b.getAttribute('href') === '#') e.preventDefault();
+      })
+    })
+  </script>
+</body>
+</html>
