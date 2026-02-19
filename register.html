@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillRise Africa — Register</title>
+  <meta name="description" content="Register with SkillRise Africa and start your journey to professional success.">
+
+  <style>
+    :root{
+      --primary: #0A2A6B;
+      --primary-dark: #071f4d;
+      --accent: #FFC232;
+      --accent-hover: #e5ae2d;
+      --grey: #E5E5E5;
+      --grey-light: #f8f9fa;
+      --text: #3F3F3F;
+      --text-light: #6b7280;
+      --bg: #FAFAFA;
+      --white: #ffffff;
+      --radius: 12px;
+      --radius-lg: 16px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --max-width: 1000px;
+      --container-padding: 24px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+    a{color:inherit;text-decoration:none;transition:all 0.2s ease}
+
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding);width:100%}
+
+    /* Header */
+    header{background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);padding:20px 0;box-shadow:var(--shadow)}
+    .header-content{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
+    .logo-link{display:flex;align-items:center;gap:12px;color:var(--white);text-decoration:none}
+    .logo-link img{height:50px;width:auto}
+    .logo-text{font-weight:700;font-size:18px}
+    .back-link{color:var(--white);text-decoration:underline;font-size:14px}
+    .back-link:hover{color:var(--accent)}
+
+    /* Form Container */
+    .form-container{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 24px}
+    .form-card{background:var(--white);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-lg);max-width:600px;width:100%;border:1px solid var(--grey)}
+    
+    .form-header{text-align:center;margin-bottom:32px}
+    .form-header h1{font-size:32px;color:var(--primary);margin-bottom:8px;font-weight:800}
+    .form-header p{color:var(--text-light);font-size:16px}
+
+    .form-group{margin-bottom:24px}
+    .form-group label{display:block;margin-bottom:8px;font-weight:600;color:var(--text);font-size:14px}
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+      width:100%;padding:14px;border:2px solid var(--grey);border-radius:8px;font-size:15px;font-family:inherit;transition:all 0.2s ease;background:var(--white)}
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+      outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(10,42,107,0.1)}
+    .form-group textarea{resize:vertical;min-height:100px}
+    
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:560px){.form-row{grid-template-columns:1fr}}
+
+    .btn-submit{width:100%;padding:16px;background:linear-gradient(135deg, var(--primary), var(--primary-dark));color:var(--white);border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-top:16px}
+    .btn-submit:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+    .btn-submit:active{transform:translateY(0)}
+
+    .form-footer{text-align:center;margin-top:24px;color:var(--text-light);font-size:14px}
+    .form-footer a{color:var(--primary);font-weight:600;text-decoration:underline}
+
+    .benefits{margin-top:32px;padding-top:24px;border-top:1px solid var(--grey)}
+    .benefits h3{color:var(--primary);font-size:18px;margin-bottom:16px;font-weight:700}
+    .benefits-list{list-style:none}
+    .benefits-list li{display:flex;align-items:center;gap:10px;margin-bottom:10px;color:var(--text-light);font-size:14px}
+    .benefits-list li::before{content:'✓';color:var(--accent);font-weight:700;font-size:18px}
+
+    /* Success Message */
+    .success-message{display:none;text-align:center;padding:40px;background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)}
+    .success-icon{font-size:64px;margin-bottom:16px}
+    .success-message h2{color:var(--primary);margin-bottom:16px;font-weight:700}
+    .success-message p{color:var(--text-light);margin-bottom:24px}
+
+    /* Footer */
+    footer{background:var(--white);padding:20px 0;border-top:1px solid var(--grey);text-align:center;color:var(--text-light);font-size:14px}
+
+    @media (max-width:560px){
+      .form-card{padding:24px}
+      .form-header h1{font-size:24px}
+    }
+  </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo-link">
+        <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa Logo">
+        <span class="logo-text">SkillRise Africa</span>
+      </a>
+      <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+  </header>
+
+  <div class="form-container">
+    <div class="form-card">
+      <div class="form-header">
+        <h1>Join SkillRise Africa</h1>
+        <p>Start your journey to professional success today</p>
+      </div>
+
+      <form id="registrationForm" action="https://formsubmit.co/skillriseafrica44@gmail.com" method="POST">
+        <!-- FormSubmit configurations -->
+        <input type="hidden" name="_subject" value="New Registration - SkillRise Africa">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1234567890">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="country">Country *</label>
+            <input type="text" id="country" name="country" required placeholder="Your country">
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Your city">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interest">Area of Interest *</label>
+          <select id="interest" name="interest" required>
+            <option value="">Select your area of interest</option>
+            <option value="Business">Business & Entrepreneurship</option>
+            <option value="Technology">Technology & Programming</option>
+            <option value="Design">Design & Creative</option>
+            <option value="Marketing">Digital Marketing</option>
+            <option value="Data Science">Data Science & Analytics</option>
+            <option value="Freelancing">Freelancing</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Interested Course</label>
+          <select id="course" name="course">
+            <option value="">Not sure yet</option>
+            <option value="Small Business">Start Your Small Business ($299)</option>
+            <option value="Web Development">Full-Stack Web Development ($499)</option>
+            <option value="Digital Marketing">Digital Marketing Mastery ($249)</option>
+            <option value="UI UX Design">UI/UX Design Professional ($349)</option>
+            <option value="Data Science">Data Science & ML ($599)</option>
+            <option value="Freelancing">Freelance Career Launchpad ($199)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="experience">Experience Level</label>
+          <select id="experience" name="experience">
+            <option value="">Select your experience level</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="goals">What are your goals? *</label>
+          <textarea id="goals" name="goals" required placeholder="Tell us about your career goals and what you hope to achieve..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Register Now</button>
+
+        <div class="form-footer">
+          By registering, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+        </div>
+      </form>
+
+      <div class="benefits">
+        <h3>Why Join SkillRise Africa?</h3>
+        <ul class="benefits-list">
+          <li>Access to premium courses and certifications</li>
+          <li>Expert mentorship and career guidance</li>
+          <li>Job opportunities and internships</li>
+          <li>Supportive community of learners</li>
+          <li>Free tools and resources</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <p>SkillRise Africa — ELEVATE by ANICADE © 2024</p>
+    </div>
+  </footer>
+
+  <script>
+    // Form submission handling
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      const submitBtn = this.querySelector('.btn-submit');
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+    });
+
+    // Form validation
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', function(e) {
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        alert('Please fill in all required fields marked with *');
+      }
+    });
+  </script>
+
+</body>
+</html>
