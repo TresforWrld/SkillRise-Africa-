@@ -35,6 +35,39 @@
     .list-item{background:white;padding:16px;border-radius:12px;border:1px solid var(--grey);box-shadow:0 4px 12px rgba(10,42,107,0.03)}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
     .btn-primary{background:var(--primary);color:white}
+
+    /* MODALS */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      overflow-y: auto;
+    }
+    .modal-content {
+      background: white;
+      margin: 5% auto;
+      padding: 40px;
+      border-radius: 24px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #6b7280;
+      cursor: pointer;
+    }
+    .close:hover { color: var(--primary); }
+    .modal h2 { font-size: 28px; color: var(--primary); margin-bottom: 24px; }
+    .modal p, .modal li { line-height: 1.7; margin-bottom: 12px; }
+    .modal ul { padding-left: 20px; }
   </style>
 </head>
 <body>
@@ -102,12 +135,173 @@
         <div style="font-size:13px;color:#6b7280;margin-top:6px">ELEVATE by ANICADE — Learn. Grow. Rise.</div>
       </div>
       <div style="display:flex;gap:12px;align-items:center">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Contact</a>
+        <a onclick="showModal('privacyModal')" style="cursor:pointer;">Privacy</a>
+        <a onclick="showModal('termsModal')" style="cursor:pointer;">Terms</a>
+        <a href="mailto:skillriseafrica44@gmail.com">Contact</a>
       </div>
     </div>
   </footer>
 
+  <!-- PRIVACY POLICY MODAL -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+      <h2>PRIVACY POLICY</h2>
+      <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
+      <p>SkillRise Africa is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website, enroll in our courses, or interact with our services.</p>
+      <h3>1. Information We Collect</h3>
+      <p>We may collect the following information:</p>
+      <ul>
+        <li>Full name</li>
+        <li>Email address</li>
+        <li>Phone number</li>
+        <li>Country and city</li>
+        <li>Payment details (processed securely via third-party providers)</li>
+        <li>Course enrollment information</li>
+        <li>Any information you voluntarily submit through forms</li>
+      </ul>
+      <h3>2. How We Use Your Information</h3>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Process course registrations</li>
+        <li>Provide access to learning materials</li>
+        <li>Communicate important updates</li>
+        <li>Issue certificates</li>
+        <li>Improve our programs and platform</li>
+        <li>Send learning opportunities and offers</li>
+      </ul>
+      <p>We do not sell or rent your personal data.</p>
+      <h3>3. Data Protection</h3>
+      <p>We implement appropriate technical and organizational measures to protect your personal information from:</p>
+      <ul>
+        <li>Unauthorized access</li>
+        <li>Loss</li>
+        <li>Misuse</li>
+        <li>Alteration</li>
+      </ul>
+      <h3>4. Third-Party Services</h3>
+      <p>We may use trusted third-party services for:</p>
+      <ul>
+        <li>Payment processing</li>
+        <li>Email communication</li>
+        <li>Website hosting</li>
+        <li>Analytics</li>
+      </ul>
+      <p>These providers only access data necessary to perform their services.</p>
+      <h3>5. Cookies</h3>
+      <p>Our website may use cookies to improve user experience and track performance. You can disable cookies in your browser settings.</p>
+      <h3>6. Your Rights</h3>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Request access to your personal data</li>
+        <li>Request correction of incorrect data</li>
+        <li>Request deletion of your data</li>
+        <li>Opt out of marketing communications</li>
+      </ul>
+      <h3>7. Data Retention</h3>
+      <p>We keep your information only as long as necessary for:</p>
+      <ul>
+        <li>Course delivery</li>
+        <li>Legal obligations</li>
+        <li>Certification verification</li>
+      </ul>
+      <h3>8. Updates to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
+      <h3>9. Contact Us</h3>
+      <p>For any privacy-related questions:</p>
+      <p>SkillRise Africa<br>Email: skillriseafrica44@gmail.com<br>Phone/WhatsApp: +260777083995</p>
+    </div>
+  </div>
+
+  <!-- TERMS OF USE MODAL -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('termsModal')">&times;</span>
+      <h2>TERMS OF USE</h2>
+      <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
+      <p>By accessing or enrolling in SkillRise Africa programs, you agree to the following terms:</p>
+      <h3>1. Acceptance of Terms</h3>
+      <p>By using our website or services, you confirm that you:</p>
+      <ul>
+        <li>Are at least 16 years old</li>
+        <li>Provide accurate registration information</li>
+        <li>Will use our platform for lawful purposes only</li>
+      </ul>
+      <h3>2. Course Enrollment & Access</h3>
+      <ul>
+        <li>Access to courses is granted after successful registration/payment.</li>
+        <li>Course materials are for personal use only.</li>
+        <li>You may not copy, resell, or redistribute our content.</li>
+      </ul>
+      <h3>3. Payments</h3>
+      <ul>
+        <li>All fees must be paid in full before access is granted (unless stated otherwise).</li>
+        <li>Payments are non-refundable once course access has been provided.</li>
+      </ul>
+      <h3>4. Certification</h3>
+      <p>Certificates are issued only to students who:</p>
+      <ul>
+        <li>Complete the course requirements</li>
+        <li>Meet assessment criteria</li>
+      </ul>
+      <h3>5. User Conduct</h3>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Share login details</li>
+        <li>Distribute course materials without permission</li>
+        <li>Upload harmful or illegal content</li>
+        <li>Harass other members in the community</li>
+      </ul>
+      <p>Violation may result in suspension without refund.</p>
+      <h3>6. Intellectual Property</h3>
+      <p>All content on this platform, including:</p>
+      <ul>
+        <li>Course materials</li>
+        <li>Videos</li>
+        <li>Graphics</li>
+        <li>Branding</li>
+      </ul>
+      <p>belongs to SkillRise Africa and may not be used without written permission.</p>
+      <h3>7. Limitation of Liability</h3>
+      <p>SkillRise Africa is not liable for:</p>
+      <ul>
+        <li>Personal career outcomes</li>
+        <li>Internet/data access issues</li>
+        <li>Third-party platform interruptions</li>
+      </ul>
+      <p>We provide educational content for skill development purposes.</p>
+      <h3>8. Changes to Courses or Services</h3>
+      <p>We reserve the right to:</p>
+      <ul>
+        <li>Update course content</li>
+        <li>Modify pricing</li>
+        <li>Improve platform features</li>
+      </ul>
+      <p>at any time.</p>
+      <h3>9. Termination</h3>
+      <p>We may suspend or terminate access if these terms are violated.</p>
+      <h3>10. Contact Information</h3>
+      <p>SkillRise Africa<br>Email: skillriseafrica44@gmail.com<br>Phone/WhatsApp: +260777083995</p>
+    </div>
+  </div>
+
+  <script>
+    // Modal functions
+    function showModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+      document.body.style.overflow = "visible";
+    }
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const privacy = document.getElementById('privacyModal');
+      const terms = document.getElementById('termsModal');
+      if (event.target === privacy) closeModal('privacyModal');
+      if (event.target === terms) closeModal('termsModal');
+    };
+  </script>
 </body>
                 </html>
