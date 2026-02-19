@@ -1,33 +1,130 @@
-<section class="coming-soon">
-  <div class="coming-soon-container">
-    <h2>🚀 Powerful Tools Are On The Way</h2>
-    <p>
-      We’re building something amazing for you. SkillRise Africa tools will help you
-      learn faster, work smarter, and scale your opportunities across Africa.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillRise Africa – Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0f2c, #121a4a);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 40px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .icon {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .launch {
+      font-weight: bold;
+      color: #00ffd5;
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .brand {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🚀 Tools Coming Soon</h1>
+
+    <p class="subtitle">
+      We are building powerful tools to help you learn faster, grow your career,
+      and unlock opportunities across Africa.
     </p>
 
-    <div class="coming-soon-features">
-      <div class="feature">
-        <span>📚</span>
-        <h4>Smart Learning Dashboard</h4>
+    <div class="features">
+
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>Smart Learning Dashboard</h3>
       </div>
 
-      <div class="feature">
-        <span>🧠</span>
-        <h4>AI Learning Assistant</h4>
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h3>AI Learning Assistant</h3>
       </div>
 
-      <div class="feature">
-        <span>💼</span>
-        <h4>Career Growth Tracker</h4>
+      <div class="card">
+        <div class="icon">💼</div>
+        <h3>Career Growth Tracker</h3>
       </div>
 
-      <div class="feature">
-        <span>🌍</span>
-        <h4>Pan-African Opportunity Hub</h4>
+      <div class="card">
+        <div class="icon">🌍</div>
+        <h3>Opportunity Hub</h3>
       </div>
+
     </div>
 
-    <p class="launch-text">✨ Launching Soon — Stay Connected</p>
+    <p class="launch">✨ Launching Soon — Stay Connected</p>
+
+    <div class="brand">
+      SkillRise Africa
+    </div>
   </div>
-</section>
+
+</body>
+</html>
