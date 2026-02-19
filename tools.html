@@ -16,12 +16,12 @@
     body {
       background: linear-gradient(135deg, #0a0f2c, #121a4a);
       color: #ffffff;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
-      padding: 20px;
+      padding: 30px 15px;
     }
 
     .container {
@@ -55,7 +55,7 @@
     }
 
     .card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       background: rgba(255, 255, 255, 0.1);
     }
 
@@ -68,7 +68,23 @@
       font-weight: bold;
       color: #00ffd5;
       font-size: 1.2rem;
-      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .home-btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #00ffd5;
+      color: #0a0f2c;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .home-btn:hover {
+      background: #ffffff;
+      transform: scale(1.05);
     }
 
     .brand {
@@ -88,6 +104,7 @@
 <body>
 
   <div class="container">
+
     <h1>🚀 Tools Coming Soon</h1>
 
     <p class="subtitle">
@@ -121,9 +138,13 @@
 
     <p class="launch">✨ Launching Soon — Stay Connected</p>
 
+    <!-- BACK TO HOME BUTTON -->
+    <a href="index.html" class="home-btn">⬅ Back to Home</a>
+
     <div class="brand">
       SkillRise Africa
     </div>
+
   </div>
 
 </body>
