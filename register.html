@@ -33,6 +33,44 @@
 
     .wrap{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding);width:100%}
 
+    /* Mobile Menu Button */
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--white); padding: 8px; }
+
+    /* Mobile Menu */
+    .mobile-nav { 
+      display: none; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100vh; 
+      background: var(--white); 
+      z-index: 1000; 
+      flex-direction: column; 
+      padding: 80px 24px 40px; 
+      overflow-y: auto;
+    }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav-close { 
+      position: absolute; 
+      top: 20px; 
+      right: 24px; 
+      font-size: 32px; 
+      cursor: pointer; 
+      color: var(--text-light); 
+      background: none; 
+      border: none; 
+    }
+    .mobile-nav a { 
+      display: block; 
+      padding: 20px 0; 
+      border-bottom: 1px solid var(--grey); 
+      font-size: 18px; 
+      font-weight: 600; 
+      color: var(--text); 
+    }
+    .mobile-nav a:hover { color: var(--primary); }
+
     /* Header */
     header{background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);padding:20px 0;box-shadow:var(--shadow)}
     .header-content{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
@@ -44,18 +82,18 @@
 
     /* Form Container */
     .form-container{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 24px}
-    .form-card{background:var(--white);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-lg);max-width:600px;width:100%;border:1px solid var(--grey)}
+    .form-card{background:var(--white);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-lg);max-width:600px;width:100%;border:1px solid var(--grey)}
     
-    .form-header{text-align:center;margin-bottom:32px}
-    .form-header h1{font-size:32px;color:var(--primary);margin-bottom:8px;font-weight:800}
-    .form-header p{color:var(--text-light);font-size:16px}
+    .form-header{text-align:center;margin-bottom:28px}
+    .form-header h1{font-size:28px;color:var(--primary);margin-bottom:8px;font-weight:800}
+    .form-header p{color:var(--text-light);font-size:15px}
 
-    .form-group{margin-bottom:24px}
+    .form-group{margin-bottom:20px}
     .form-group label{display:block;margin-bottom:8px;font-weight:600;color:var(--text);font-size:14px}
     .form-group input,
     .form-group select,
     .form-group textarea{
-      width:100%;padding:14px;border:2px solid var(--grey);border-radius:8px;font-size:15px;font-family:inherit;transition:all 0.2s ease;background:var(--white)}
+      width:100%;padding:12px;border:2px solid var(--grey);border-radius:8px;font-size:14px;font-family:inherit;transition:all 0.2s ease;background:var(--white)}
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus{
@@ -65,18 +103,18 @@
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     @media (max-width:560px){.form-row{grid-template-columns:1fr}}
 
-    .btn-submit{width:100%;padding:16px;background:linear-gradient(135deg, var(--primary), var(--primary-dark));color:var(--white);border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-top:16px}
+    .btn-submit{width:100%;padding:14px;background:linear-gradient(135deg, var(--primary), var(--primary-dark));color:var(--white);border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s ease;margin-top:16px}
     .btn-submit:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
     .btn-submit:active{transform:translateY(0)}
 
-    .form-footer{text-align:center;margin-top:24px;color:var(--text-light);font-size:14px}
+    .form-footer{text-align:center;margin-top:20px;color:var(--text-light);font-size:13px}
     .form-footer a{color:var(--primary);font-weight:600;text-decoration:underline}
 
-    .benefits{margin-top:32px;padding-top:24px;border-top:1px solid var(--grey)}
-    .benefits h3{color:var(--primary);font-size:18px;margin-bottom:16px;font-weight:700}
+    .benefits{margin-top:28px;padding-top:20px;border-top:1px solid var(--grey)}
+    .benefits h3{color:var(--primary);font-size:16px;margin-bottom:14px;font-weight:700}
     .benefits-list{list-style:none}
-    .benefits-list li{display:flex;align-items:center;gap:10px;margin-bottom:10px;color:var(--text-light);font-size:14px}
-    .benefits-list li::before{content:'✓';color:var(--accent);font-weight:700;font-size:18px}
+    .benefits-list li{display:flex;align-items:center;gap:10px;margin-bottom:8px;color:var(--text-light);font-size:13px}
+    .benefits-list li::before{content:'✓';color:var(--accent);font-weight:700;font-size:16px}
 
     /* Success Message */
     .success-message{display:none;text-align:center;padding:40px;background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)}
@@ -87,14 +125,49 @@
     /* Footer */
     footer{background:var(--white);padding:20px 0;border-top:1px solid var(--grey);text-align:center;color:var(--text-light);font-size:14px}
 
-    @media (max-width:560px){
-      .form-card{padding:24px}
-      .form-header h1{font-size:24px}
+    /* Desktop - Hide mobile menu */
+    @media (min-width: 1025px) {
+      .mobile-menu-btn { display: none; }
+      .mobile-nav { display: none !important; }
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .mobile-menu-btn { display: none; }
+      .mobile-nav { display: none !important; }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: block; }
+      .header-content { padding: 0 20px; }
+      .form-container { padding: 30px 20px; }
+      .form-card { padding: 24px; }
+      .form-header h1 { font-size: 24px; }
+      .form-group input, .form-group select, .form-group textarea { font-size: 16px; }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      .form-card { padding: 20px; }
+      .form-header h1 { font-size: 22px; }
+      .form-group { margin-bottom: 16px; }
     }
   </style>
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+  <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="toggleMobileMenu()">&times;</button>
+    <a href="index.html" onclick="toggleMobileMenu()">Home</a>
+    <a href="courses.html" onclick="toggleMobileMenu()">Courses</a>
+    <a href="index.html#opportunities" onclick="toggleMobileMenu()">Opportunities</a>
+    <a href="tools.html" onclick="toggleMobileMenu()">Tools</a>
+    <a href="community.html" onclick="toggleMobileMenu()">Community</a>
+    <a href="join.html" onclick="toggleMobileMenu()">Join Free</a>
+  </div>
 
   <header>
     <div class="header-content">
@@ -102,7 +175,10 @@
         <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa Logo">
         <span class="logo-text">SkillRise Africa</span>
       </a>
-      <a href="index.html" class="back-link">← Back to Home</a>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+      </div>
     </div>
   </header>
 
@@ -221,6 +297,13 @@
   </footer>
 
   <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+    }
+
     // Form submission handling
     document.getElementById('registrationForm').addEventListener('submit', function(e) {
       const submitBtn = this.querySelector('.btn-submit');
