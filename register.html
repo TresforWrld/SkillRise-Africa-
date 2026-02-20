@@ -29,7 +29,7 @@
 
     *{box-sizing:border-box;margin:0;padding:0}
     body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
-    a{color:inherit;text-decoration:none;transition:all 0.2s ease}
+    a{color:inherit;text-decoration:none;transition:all 0.2s ease;cursor:pointer}
 
     .wrap{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding);width:100%}
 
@@ -125,6 +125,36 @@
     /* Footer */
     footer{background:var(--white);padding:20px 0;border-top:1px solid var(--grey);text-align:center;color:var(--text-light);font-size:14px}
 
+    /* MODALS */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      overflow-y: auto;
+    }
+    .modal-content {
+      background: var(--white);
+      margin: 5% auto;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      width: 90%;
+      max-width: 800px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--text-light);
+      cursor: pointer;
+    }
+    .close:hover { color: var(--primary); }
+
     /* Desktop - Hide mobile menu */
     @media (min-width: 1025px) {
       .mobile-menu-btn { display: none; }
@@ -165,7 +195,7 @@
     <a href="courses.html" onclick="toggleMobileMenu()">Courses</a>
     <a href="tools.html" onclick="toggleMobileMenu()">Tools</a>
     <a href="community.html" onclick="toggleMobileMenu()">Community</a>
-    <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn-primary" onclick="toggleMobileMenu()">Enroll Now</a>
+    <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" onclick="toggleMobileMenu()">Enroll Now</a>
   </div>
 
   <header>
@@ -272,7 +302,7 @@
         <button type="submit" class="btn-submit">Register Now</button>
 
         <div class="form-footer">
-          By registering, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+          By registering, you agree to our <a onclick="showModal('termsModal')">Terms of Service</a> and <a onclick="showModal('privacyModal')">Privacy Policy</a>
         </div>
       </form>
 
@@ -295,13 +325,116 @@
     </div>
   </footer>
 
+  <!-- PRIVACY POLICY MODAL -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('privacyModal')">×</span>
+      <h2>PRIVACY POLICY</h2>
+      <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
+      <p>SkillRise Africa (“we”, “our”, “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website, enroll in our courses, or interact with our services.</p>
+      <h3>1. Information We Collect</h3>
+      <p>We may collect the following information:</p>
+      <ul>
+        <li>Full name</li>
+        <li>Email address</li>
+        <li>Phone number</li>
+        <li>Country and city</li>
+        <li>Payment details (processed securely via third-party providers)</li>
+        <li>Course enrollment information</li>
+        <li>Any information you voluntarily submit through forms</li>
+      </ul>
+      <h3>2. How We Use Your Information</h3>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Process course registrations</li>
+        <li>Provide access to learning materials</li>
+        <li>Communicate important updates</li>
+        <li>Issue certificates</li>
+        <li>Improve our programs and platform</li>
+        <li>Send learning opportunities and offers</li>
+      </ul>
+      <p>We do not sell or rent your personal data.</p>
+      <h3>3. Data Protection</h3>
+      <p>We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, loss, misuse, or alteration.</p>
+      <h3>4. Third-Party Services</h3>
+      <p>We may use trusted third-party services for payment processing, email communication, website hosting, and analytics. These providers only access data necessary to perform their services.</p>
+      <h3>5. Cookies</h3>
+      <p>Our website may use cookies to improve user experience and track performance. You can disable cookies in your browser settings.</p>
+      <h3>6. Your Rights</h3>
+      <p>You have the right to request access to your personal data, correction of incorrect data, deletion of your data, and opt out of marketing communications.</p>
+      <h3>7. Data Retention</h3>
+      <p>We keep your information only as long as necessary for course delivery, legal obligations, or certification verification.</p>
+      <h3>8. Updates to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
+      <h3>9. Contact Us</h3>
+      <p>For any privacy-related questions:<br>SkillRise Africa<br>Email: skillriseafrica44@gmail.com<br>Phone/WhatsApp: +260777083995</p>
+    </div>
+  </div>
+
+  <!-- TERMS OF USE MODAL -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('termsModal')">×</span>
+      <h2>TERMS OF USE</h2>
+      <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
+      <p>By accessing or enrolling in SkillRise Africa programs, you agree to the following terms:</p>
+      <h3>1. Acceptance of Terms</h3>
+      <p>By using our website or services, you confirm that you:</p>
+      <ul>
+        <li>Are at least 16 years old</li>
+        <li>Provide accurate registration information</li>
+        <li>Will use our platform for lawful purposes only</li>
+      </ul>
+      <h3>2. Course Enrollment & Access</h3>
+      <p>Access to courses is granted after successful registration/payment. Course materials are for personal use only. You may not copy, resell, or redistribute our content.</p>
+      <h3>3. Payments</h3>
+      <p>All fees must be paid in full before access is granted (unless stated otherwise). Payments are non-refundable once course access has been provided.</p>
+      <h3>4. Certification</h3>
+      <p>Certificates are issued only to students who complete the course requirements and meet assessment criteria.</p>
+      <h3>5. User Conduct</h3>
+      <p>You agree not to share login details, distribute course materials without permission, upload harmful or illegal content, or harass other members. Violation may result in suspension without refund.</p>
+      <h3>6. Intellectual Property</h3>
+      <p>All content on this platform, including course materials, videos, graphics, and branding belongs to SkillRise Africa and may not be used without written permission.</p>
+      <h3>7. Limitation of Liability</h3>
+      <p>SkillRise Africa is not liable for personal career outcomes, internet/data access issues, or third-party platform interruptions. We provide educational content for skill development purposes.</p>
+      <h3>8. Changes to Courses or Services</h3>
+      <p>We reserve the right to update course content, modify pricing, or improve platform features at any time.</p>
+      <h3>9. Termination</h3>
+      <p>We may suspend or terminate access if these terms are violated.</p>
+      <h3>10. Contact Information</h3>
+      <p>SkillRise Africa<br>Email: skillriseafrica44@gmail.com<br>Phone/WhatsApp: +260777083995</p>
+    </div>
+  </div>
+
   <script>
-    // Mobile Menu Toggle - FIXED
+    // Mobile Menu Toggle
     function toggleMobileMenu() {
       const mobileNav = document.getElementById('mobileNav');
       mobileNav.classList.toggle('active');
       document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
     }
+
+    // Modal functions - FIXED so links work
+    function showModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const privacy = document.getElementById('privacyModal');
+      const terms = document.getElementById('termsModal');
+      const mobileNav = document.getElementById('mobileNav');
+      if (event.target === privacy) closeModal('privacyModal');
+      if (event.target === terms) closeModal('termsModal');
+      if (event.target === mobileNav && mobileNav.classList.contains('active')) {
+        toggleMobileMenu();
+      }
+    };
 
     // Form submission handling
     document.getElementById('registrationForm').addEventListener('submit', function(e) {
@@ -321,4 +454,3 @@
   </script>
 
 </body>
-</html>
