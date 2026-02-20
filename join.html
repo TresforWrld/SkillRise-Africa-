@@ -24,14 +24,60 @@
     a{text-decoration:none;color:inherit}
     .wrap{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding)}
 
+    /* Mobile Menu Button */
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--primary); padding: 8px; }
+
+    /* Mobile Menu */
+    .mobile-nav { 
+      display: none; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100vh; 
+      background: var(--white); 
+      z-index: 1000; 
+      flex-direction: column; 
+      padding: 80px 24px 40px; 
+      overflow-y: auto;
+    }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav-close { 
+      position: absolute; 
+      top: 20px; 
+      right: 24px; 
+      font-size: 32px; 
+      cursor: pointer; 
+      color: var(--text-light); 
+      background: none; 
+      border: none; 
+    }
+    .mobile-nav a { 
+      display: block; 
+      padding: 20px 0; 
+      border-bottom: 1px solid var(--grey); 
+      font-size: 18px; 
+      font-weight: 600; 
+      color: var(--text); 
+    }
+    .mobile-nav a:hover { color: var(--primary); }
+    .mobile-nav a.cta { 
+      background: var(--primary); 
+      color: white; 
+      text-align: center; 
+      border-radius: 12px; 
+      margin-top: 20px; 
+      border: none; 
+    }
+
     header{background:linear-gradient(180deg, rgba(10,42,107,0.04), transparent);backdrop-filter: blur(2px);}
-    nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;justify-content:center;flex-wrap:wrap;}
-    nav a{padding:8px 12px;font-weight:600;border-radius:8px;}
+    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;justify-content:center;flex-wrap:wrap;}
+    nav a{padding:8px 12px;font-weight:600;border-radius:8px;font-size:14px;}
     nav a.cta{background:var(--primary);color:white}
 
-    h1{color:var(--primary);text-align:center}
-    h2{color:#6b7280;text-align:center;margin-bottom:24px}
-    iframe{width:100%;min-height:900px;border:none;border-radius:12px;box-shadow:0 6px 18px rgba(10,42,107,0.06);}
+    h1{color:var(--primary);font-size:28px;text-align:center}
+    h2{color:#6b7280;font-size:16px;text-align:center;margin-bottom:24px}
+    iframe{width:100%;min-height:800px;border:none;border-radius:12px;box-shadow:0 6px 18px rgba(10,42,107,0.06);}
 
     /* MODALS */
     .modal {
@@ -62,18 +108,64 @@
       cursor: pointer;
     }
     .close:hover { color: var(--primary); }
-    .modal h2 { font-size: 28px; color: var(--primary); margin-bottom: 24px; text-align: left; }
-    .modal p, .modal li { line-height: 1.7; margin-bottom: 12px; text-align: left; }
+    .modal h2 { font-size: 24px; color: var(--primary); margin-bottom: 20px; text-align: left; }
+    .modal h3 { font-size: 18px; color: var(--primary); margin: 20px 0 10px; }
+    .modal p, .modal li { line-height: 1.6; margin-bottom: 10px; font-size: 15px; text-align: left; }
     .modal ul { padding-left: 20px; }
+
+    .footer{background:transparent;padding:36px 0;border-top:1px solid var(--grey);margin-top:48px;}
+
+    /* Desktop - Hide mobile menu */
+    @media (min-width: 1025px) {
+      .mobile-menu-btn { display: none; }
+      .mobile-nav { display: none !important; }
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      nav ul { gap: 16px; }
+      .mobile-menu-btn { display: none; }
+      .mobile-nav { display: none !important; }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: block; }
+      nav ul { display: none; }
+      h1 { font-size: 24px; }
+      .wrap { padding: 0 20px; }
+      iframe { min-height: 700px; }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      .wrap { padding: 0 16px; }
+      h1 { font-size: 22px; }
+      iframe { min-height: 600px; }
+    }
   </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
 
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="toggleMobileMenu()">&times;</button>
+    <a href="index.html" onclick="toggleMobileMenu()">Home</a>
+    <a href="courses.html" onclick="toggleMobileMenu()">Courses</a>
+    <a href="index.html#opportunities" onclick="toggleMobileMenu()">Opportunities</a>
+    <a href="tools.html" onclick="toggleMobileMenu()">Tools</a>
+    <a href="community.html" onclick="toggleMobileMenu()">Community</a>
+    <a href="join.html" class="cta" onclick="toggleMobileMenu()">Join Free</a>
+  </div>
+
   <!-- Header -->
   <header style="padding:40px 0;">
-    <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:16px;">
-      <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" 
-           alt="SkillRise Africa Logo" style="width:250px;height:auto;">
+    <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:16px;position:relative;">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+        <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" 
+             alt="SkillRise Africa Logo" style="width:200px;height:auto;">
+      </a>
       <h1>SkillRise Africa</h1>
       <h2>ELEVATE by ANICADE</h2>
 
@@ -81,12 +173,13 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="courses.html">Courses</a></li>
-          <li><a href="opportunities.html">Opportunities</a></li>
+          <li><a href="index.html#opportunities">Opportunities</a></li>
           <li><a href="tools.html">Tools</a></li>
           <li><a href="community.html">Community</a></li>
           <li><a href="join.html" class="cta">Join Free</a></li>
         </ul>
       </nav>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
     </div>
   </header>
 
@@ -100,13 +193,13 @@
   </main>
 
   <!-- Footer -->
-  <footer style="background:transparent;padding:36px 0;border-top:1px solid var(--grey);margin-top:48px;">
+  <footer class="footer">
     <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
       <div>
-        <div style="font-weight:800;color:var(--primary)">SkillRise Africa</div>
+        <div style="font-weight:800;color:var(--primary);font-size:18px;">SkillRise Africa</div>
         <div style="font-size:13px;color:#6b7280;margin-top:6px">ELEVATE by ANICADE — Learn. Grow. Rise.</div>
       </div>
-      <div style="display:flex;gap:12px;align-items:center">
+      <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:14px;">
         <a onclick="showModal('privacyModal')" style="cursor:pointer;">Privacy</a>
         <a onclick="showModal('termsModal')" style="cursor:pointer;">Terms</a>
         <a href="mailto:skillriseafrica44@gmail.com">Contact</a>
@@ -258,6 +351,13 @@
   </div>
 
   <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+    }
+
     // Modal functions
     function showModal(modalId) {
       document.getElementById(modalId).style.display = "block";
@@ -265,15 +365,19 @@
     }
     function closeModal(modalId) {
       document.getElementById(modalId).style.display = "none";
-      document.body.style.overflow = "visible";
+      document.body.style.overflow = "auto";
     }
     // Close modal when clicking outside
     window.onclick = function(event) {
       const privacy = document.getElementById('privacyModal');
       const terms = document.getElementById('termsModal');
+      const mobileNav = document.getElementById('mobileNav');
       if (event.target === privacy) closeModal('privacyModal');
       if (event.target === terms) closeModal('termsModal');
+      if (event.target === mobileNav && mobileNav.classList.contains('active')) {
+        toggleMobileMenu();
+      }
     };
   </script>
 </body>
-  </html>
+</html>

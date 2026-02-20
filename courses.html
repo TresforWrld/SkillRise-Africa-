@@ -35,21 +35,68 @@
     .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
     .logo { display: flex; align-items: center; gap: 16px; }
     .logo img { height: 64px; }
-    .logo-text h1 { font-size: 26px; font-weight: 800; color: var(--primary); }
-    .logo-text span { font-size: 14px; color: var(--text-light); }
+    .logo-text h1 { font-size: 24px; font-weight: 800; color: var(--primary); }
+    .logo-text span { font-size: 13px; color: var(--text-light); }
     .nav { display: flex; align-items: center; gap: 12px; }
-    .nav a { padding: 12px 20px; border-radius: 12px; font-weight: 600; font-size: 15px; }
+    .nav a { padding: 12px 18px; border-radius: 12px; font-weight: 600; font-size: 14px; }
     .nav a:hover { background: var(--grey-light); color: var(--primary); }
     .nav a.btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); font-weight: 700; }
 
-    .hero { padding: 100px 0; background: linear-gradient(135deg, rgba(10,42,107,0.06) 0%, rgba(255,194,50,0.06) 100%); text-align: center; }
-    .hero h1 { font-size: 52px; font-weight: 800; color: var(--primary); margin-bottom: 20px; }
-    .hero p { font-size: 19px; color: var(--text-light); max-width: 700px; margin: 0 auto; }
+    /* Mobile Menu Button */
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--primary); padding: 8px; }
 
-    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
+    /* Mobile Menu */
+    .mobile-nav { 
+      display: none; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100vh; 
+      background: var(--white); 
+      z-index: 1000; 
+      flex-direction: column; 
+      padding: 80px 24px 40px; 
+      overflow-y: auto;
+    }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav-close { 
+      position: absolute; 
+      top: 20px; 
+      right: 24px; 
+      font-size: 32px; 
+      cursor: pointer; 
+      color: var(--text-light); 
+      background: none; 
+      border: none; 
+    }
+    .mobile-nav a { 
+      display: block; 
+      padding: 20px 0; 
+      border-bottom: 1px solid var(--grey); 
+      font-size: 18px; 
+      font-weight: 600; 
+      color: var(--text); 
+    }
+    .mobile-nav a:hover { color: var(--primary); }
+    .mobile-nav a.btn-primary { 
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)); 
+      color: var(--white); 
+      text-align: center; 
+      border-radius: 12px; 
+      margin-top: 20px; 
+      border: none; 
+    }
+
+    .section { padding: 80px 0; }
+    .hero { padding: 80px 0 60px; background: linear-gradient(135deg, rgba(10,42,107,0.06) 0%, rgba(255,194,50,0.06) 100%); text-align: center; }
+    .hero h1 { font-size: 42px; font-weight: 800; color: var(--primary); margin-bottom: 16px; }
+    .hero p { font-size: 18px; color: var(--text-light); max-width: 700px; margin: 0 auto; }
+
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
     .course-card {
       background: var(--white);
-      padding: 28px;
+      padding: 24px;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
       transition: all 0.4s ease;
@@ -60,16 +107,16 @@
     .course-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
     .course-meta { display: flex; justify-content: space-between; margin-bottom: 16px; }
     .course-category { background: var(--grey-light); padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-light); }
-    .course-price { color: var(--accent); font-weight: 700; font-size: 20px; }
+    .course-price { color: var(--accent); font-weight: 700; font-size: 18px; }
 
-    .enroll-section { background: #f9fafb; padding: 100px 0; }
+    .enroll-section { background: #f9fafb; padding: 80px 0; }
     .enroll-container { max-width: 1000px; margin: 0 auto; }
     .enroll-header { text-align: center; margin-bottom: 40px; }
-    .enroll-header h2 { font-size: 38px; font-weight: 800; color: var(--primary); }
+    .enroll-header h2 { font-size: 32px; font-weight: 800; color: var(--primary); }
 
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 16px 32px; border-radius: 12px; font-weight: 700; font-size: 16px;
+      padding: 14px 28px; border-radius: 12px; font-weight: 700; font-size: 15px;
       transition: all 0.3s ease; text-decoration: none; border: none; cursor: pointer;
     }
     .btn:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
@@ -99,23 +146,75 @@
     }
     .close {
       position: absolute;
-      top: 20px;
-      right: 30px;
+      top: 20px; right: 30px;
       font-size: 32px;
       font-weight: bold;
       color: var(--text-light);
       cursor: pointer;
     }
     .close:hover { color: var(--primary); }
-    .modal h2 { font-size: 28px; color: var(--primary); margin-bottom: 24px; }
-    .modal p, .modal li { line-height: 1.7; margin-bottom: 12px; }
+    .modal h2 { font-size: 24px; color: var(--primary); margin-bottom: 20px; }
+    .modal p, .modal li { line-height: 1.6; margin-bottom: 10px; font-size: 15px; }
     .modal ul { padding-left: 20px; }
 
     .footer { background: var(--white); padding: 60px 0 40px; border-top: 1px solid var(--grey); }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+
+    /* Desktop - Hide mobile menu */
+    @media (min-width: 1025px) {
+      .mobile-menu-btn { display: none; }
+      .mobile-nav { display: none !important; }
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .courses-grid { grid-template-columns: repeat(2, 1fr); }
+      .mobile-menu-btn { display: none; }
+      .mobile-nav { display: none !important; }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .header-inner { padding: 16px 0; }
+      .nav { display: none; }
+      .mobile-menu-btn { display: block; }
+      .logo img { height: 50px; }
+      .logo-text h1 { font-size: 18px; }
+      
+      .hero { padding: 60px 0 40px; }
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 16px; }
+      
+      .section { padding: 60px 0; }
+      
+      .courses-grid { grid-template-columns: 1fr; }
+      
+      .enroll-section { padding: 60px 0; }
+      .enroll-header h2 { font-size: 26px; }
+      
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 28px; }
+      .courses-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 16px; }
+    }
   </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="toggleMobileMenu()">&times;</button>
+    <a href="index.html" onclick="toggleMobileMenu()">Home</a>
+    <a href="courses.html" onclick="toggleMobileMenu()">Courses</a>
+    <a href="tools.html" onclick="toggleMobileMenu()">Tools</a>
+    <a href="community.html" onclick="toggleMobileMenu()">Community</a>
+    <a href="#enroll" class="btn-primary" onclick="toggleMobileMenu()">Enroll Now</a>
+  </div>
 
   <!-- Header -->
   <header class="header">
@@ -134,6 +233,7 @@
         <a href="community.html">Community</a>
         <a href="#enroll" class="btn btn-primary">Enroll Now</a>
       </nav>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
     </div>
   </header>
 
@@ -149,9 +249,9 @@
     <!-- Featured Courses -->
     <section class="section">
       <div class="container">
-        <div style="text-align:center; margin-bottom:48px;">
-          <h2 style="font-size:36px; font-weight:800; color:var(--primary);">Featured Premium Courses</h2>
-          <p style="font-size:19px; color:var(--text-light);">Choose from our most popular programs</p>
+        <div style="text-align:center; margin-bottom:40px;">
+          <h2 style="font-size:32px; font-weight:800; color:var(--primary);">Featured Premium Courses</h2>
+          <p style="font-size:18px; color:var(--text-light);">Choose from our most popular programs</p>
         </div>
 
         <div class="courses-grid">
@@ -240,7 +340,7 @@
           <p>Choose any course below. Your application (with CV if uploaded) goes instantly to skillriseafrica44@gmail.com</p>
         </div>
         <div style="background: var(--white); border-radius: 24px; box-shadow: var(--shadow-lg); overflow: hidden; padding: 20px;">
-          <iframe src="https://tally.so/embed/MebdLA?transparentBackground=1&dynamicHeight=1" width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0" title="SkillRise Africa Enrollment"></iframe>
+          <iframe src="https://tally.so/embed/MebdLA?transparentBackground=1&dynamicHeight=1" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" title="SkillRise Africa Enrollment"></iframe>
         </div>
       </div>
     </section>
@@ -250,12 +350,12 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>
-        <h4 style="font-size:20px; font-weight:800; color:var(--primary);">SkillRise Africa</h4>
-        <p style="color:var(--text-light);">ELEVATE by ANICADE — Learn. Grow. Rise.</p>
+        <h4 style="font-size:18px; font-weight:800; color:var(--primary);">SkillRise Africa</h4>
+        <p style="color:var(--text-light); font-size:14px;">ELEVATE by ANICADE — Learn. Grow. Rise.</p>
       </div>
-      <div style="display:flex; gap:32px; flex-wrap:wrap;">
-        <a onclick="showModal('privacyModal')">Privacy Policy</a>
-        <a onclick="showModal('termsModal')">Terms of Use</a>
+      <div style="display:flex; gap:24px; flex-wrap:wrap;">
+        <a onclick="showModal('privacyModal')" style="cursor:pointer;">Privacy Policy</a>
+        <a onclick="showModal('termsModal')" style="cursor:pointer;">Terms of Use</a>
         <a href="mailto:skillriseafrica44@gmail.com">Contact Us</a>
       </div>
     </div>
@@ -264,10 +364,10 @@
   <!-- PRIVACY POLICY MODAL -->
   <div id="privacyModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('privacyModal')">×</span>
+      <span class="close" onclick="closeModal('privacyModal')">&times;</span>
       <h2>PRIVACY POLICY</h2>
       <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
-      <p>SkillRise Africa (“we”, “our”, “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website, enroll in our courses, or interact with our services.</p>
+      <p>SkillRise Africa is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website, enroll in our courses, or interact with our services.</p>
       <h3>1. Information We Collect</h3>
       <p>We may collect: Full name, Email address, Phone number, Country and city, Payment details (processed securely), Course enrollment information, Any information you voluntarily submit.</p>
       <h3>2. How We Use Your Information</h3>
@@ -292,7 +392,7 @@
   <!-- TERMS OF USE MODAL -->
   <div id="termsModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('termsModal')">×</span>
+      <span class="close" onclick="closeModal('termsModal')">&times;</span>
       <h2>TERMS OF USE</h2>
       <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
       <p>By accessing or enrolling in SkillRise Africa programs, you agree to the following terms:</p>
@@ -320,6 +420,13 @@
   </div>
 
   <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+    }
+
     // Modal functions
     function showModal(modalId) {
       document.getElementById(modalId).style.display = "block";
@@ -327,14 +434,18 @@
     }
     function closeModal(modalId) {
       document.getElementById(modalId).style.display = "none";
-      document.body.style.overflow = "visible";
+      document.body.style.overflow = "auto";
     }
     // Close modal when clicking outside
     window.onclick = function(event) {
       const privacy = document.getElementById('privacyModal');
       const terms = document.getElementById('termsModal');
+      const mobileNav = document.getElementById('mobileNav');
       if (event.target === privacy) closeModal('privacyModal');
       if (event.target === terms) closeModal('termsModal');
+      if (event.target === mobileNav && mobileNav.classList.contains('active')) {
+        toggleMobileMenu();
+      }
     };
 
     // Smooth scroll
@@ -342,7 +453,15 @@
       anchor.addEventListener('click', function(e) {
         if (this.getAttribute('href') !== '#') {
           e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            // Close mobile menu if open
+            const mobileNav = document.getElementById('mobileNav');
+            if (mobileNav.classList.contains('active')) {
+              toggleMobileMenu();
+            }
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       });
     });

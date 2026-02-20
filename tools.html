@@ -2,26 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SkillRise Africa – Coming Soon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillRise Africa — Tools</title>
+  <meta name="description" content="SkillRise Africa Tools — Coming Soon. Powerful tools to help you learn faster and grow your career.">
 
   <style>
+    :root {
+      --primary: #0A2A6B;
+      --primary-dark: #071f4d;
+      --accent: #FFC232;
+      --grey: #E5E5E5;
+      --text: #ffffff;
+      --text-light: rgba(255,255,255,0.8);
+      --bg: linear-gradient(135deg, #0a0f2c, #121a4a);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     }
 
     body {
-      background: linear-gradient(135deg, #0a0f2c, #121a4a);
-      color: #ffffff;
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 30px 15px;
+      padding: 40px 20px;
+      line-height: 1.6;
     }
 
     .container {
@@ -31,74 +44,141 @@
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 15px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
     }
 
     .subtitle {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       opacity: 0.9;
       margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+      gap: 24px;
       margin-bottom: 40px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 25px;
-      border-radius: 15px;
-      transition: 0.3s;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 28px 24px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
     .card:hover {
       transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
 
     .icon {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
 
     .launch {
-      font-weight: bold;
-      color: #00ffd5;
-      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.1rem;
       margin-bottom: 30px;
     }
 
     .home-btn {
-      display: inline-block;
-      padding: 14px 30px;
-      background: #00ffd5;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 36px;
+      background: var(--accent);
       color: #0a0f2c;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 1rem;
       border-radius: 30px;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
 
     .home-btn:hover {
       background: #ffffff;
-      transform: scale(1.05);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(255,194,50,0.3);
     }
 
     .brand {
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 0.9rem;
       opacity: 0.7;
+      font-weight: 500;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       h1 {
         font-size: 2.2rem;
       }
+
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
+
+      .features {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        padding: 20px 16px;
+      }
+
+      .icon {
+        font-size: 2rem;
+      }
+
+      .card h3 {
+        font-size: 1rem;
+      }
+
+      .home-btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      body {
+        padding: 30px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .card {
+        padding: 24px;
+      }
     }
   </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 
 <body>
@@ -117,21 +197,25 @@
       <div class="card">
         <div class="icon">📚</div>
         <h3>Smart Learning Dashboard</h3>
+        <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 8px;">Track your progress and achievements</p>
       </div>
 
       <div class="card">
-        <div class="icon">🧠</div>
+        <div class="icon">🤖</div>
         <h3>AI Learning Assistant</h3>
+        <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 8px;">Get personalized recommendations</p>
       </div>
 
       <div class="card">
-        <div class="icon">💼</div>
+        <div class="icon">📊</div>
         <h3>Career Growth Tracker</h3>
+        <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 8px;">Monitor your professional development</p>
       </div>
 
       <div class="card">
         <div class="icon">🌍</div>
         <h3>Opportunity Hub</h3>
+        <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 8px;">Discover jobs and internships</p>
       </div>
 
     </div>
@@ -139,7 +223,7 @@
     <p class="launch">✨ Launching Soon — Stay Connected</p>
 
     <!-- BACK TO HOME BUTTON -->
-    <a href="index.html" class="home-btn">⬅ Back to Home</a>
+    <a href="index.html" class="home-btn">← Back to Home</a>
 
     <div class="brand">
       SkillRise Africa
