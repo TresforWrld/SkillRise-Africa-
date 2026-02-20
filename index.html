@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillRise Africa — ELEVATE by ANICADE</title>
+  <meta name="description" content="SkillRise Africa — Premium skills, opportunities and community. Transform your career with expert-led courses.">
+
+  <style>
+    :root {
+      --primary: #0A2A6B;
+      --primary-dark: #071f4d;
+      --accent: #FFC232;
+      --accent-hover: #e5ae2d;
+      --grey: #E5E5E5;
+      --grey-light: #f8f9fa;
+      --text: #1F2937;
+      --text-light: #6B7280;
+      --bg: #FFFFFF;
+      --white: #ffffff;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --max-width: 1280px;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; transition: all 0.3s ease; cursor: pointer; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; width: 100%; }
+
+    .header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+    .logo { display: flex; align-items: center; gap: 16px; }
+    .logo img { height: 80px; width: auto; }
+    .logo-text h1 { font-size: 26px; font-weight: 800; color: var(--primary); line-height: 1; }
+    .logo-text span { font-size: 14px; color: var(--text-light); font-weight: 500; }
+    .nav { display: flex; align-items: center; gap: 12px; }
+    .nav a { padding: 12px 20px; border-radius: 12px; font-weight: 600; font-size: 15px; }
+    .nav a:hover { background: var(--grey-light); color: var(--primary); }
+    .nav a.btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); font-weight: 700; }
+    .nav a.btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    .hero { padding: 100px 0 80px; background: linear-gradient(135deg, rgba(10,42,107,0.06) 0%, rgba(255,194,50,0.06) 100%); }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .hero-content h1 { font-size: 52px; font-weight: 800; line-height: 1.1; color: var(--primary); margin-bottom: 24px; letter-spacing: -0.03em; }
+    .hero-content p { font-size: 19px; color: var(--text-light); max-width: 520px; margin-bottom: 40px; }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 16px 32px; border-radius: 12px; font-weight: 700; font-size: 16px;
+      transition: all 0.3s ease; text-decoration: none; border: none; cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); }
+    .btn-accent { background: var(--accent); color: var(--primary); }
+    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+    .btn-outline:hover { background: var(--primary); color: var(--white); }
+
+    .section { padding: 100px 0; }
+    .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; }
+    .section-header h2 { font-size: 36px; font-weight: 800; color: var(--primary); }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+    .course-card {
+      background: var(--white);
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .course-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, var(--accent), #ffb84a);
+    }
+    .course-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .course-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .course-category { background: var(--grey-light); padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-light); }
+    .course-price { color: var(--accent); font-weight: 700; font-size: 20px; }
+
+    .list { display: flex; flex-direction: column; gap: 16px; }
+    .list-item {
+      background: var(--white); padding: 20px 24px; border-radius: 16px; box-shadow: var(--shadow);
+      display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;
+    }
+    .list-item:hover { transform: translateX(6px); }
+
+    .enroll-section { background: #f9fafb; padding: 100px 0; }
+    .enroll-container { max-width: 1000px; margin: 0 auto; }
+    .enroll-header { text-align: center; margin-bottom: 40px; }
+    .enroll-header h2 { font-size: 38px; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
+    .enroll-header p { font-size: 19px; color: var(--text-light); }
+
+    /* MODALS */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      overflow-y: auto;
+    }
+    .modal-content {
+      background: var(--white);
+      margin: 5% auto;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      width: 90%;
+      max-width: 800px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--text-light);
+      cursor: pointer;
+    }
+    .close:hover { color: var(--primary); }
+    .modal h2 { font-size: 28px; color: var(--primary); margin-bottom: 24px; }
+    .modal h3 { font-size: 20px; color: var(--primary); margin: 24px 0 12px; }
+    .modal p, .modal li { line-height: 1.7; margin-bottom: 12px; }
+    .modal ul { padding-left: 20px; }
+
+    .footer { background: var(--white); padding: 60px 0 40px; border-top: 1px solid var(--grey); margin-top: 80px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .courses-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; gap: 20px; }
+      .courses-grid { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 40px; }
+    }
+  </style>
+  <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa Logo">
+        <div class="logo-text">
+          <h1>SkillRise Africa</h1>
+          <span>ELEVATE by ANICADE</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="courses.html">Courses</a>
+        <a href="#opportunities">Opportunities</a>
+        <a href="#tools">Tools</a>
+        <a href="#community">Community</a>
+        <a href="#enroll" class="btn btn-primary">Enroll Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Elevate Your Career with Premium Skills</h1>
+          <p>Expert-led programs, exclusive opportunities, and powerful tools designed for ambitious African professionals.</p>
+          <div class="hero-buttons">
+            <a href="#enroll" class="btn btn-primary">Enroll Now</a>
+            <a href="#enroll" class="btn btn-accent">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Trending Sidebar -->
+        <aside style="background: linear-gradient(180deg, var(--white), #f9fafb); padding: 32px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--grey);">
+          <h3 style="color: var(--primary); margin-bottom: 24px;">Trending Now</h3>
+          <div style="background: var(--white); padding: 20px; border-radius: 16px; margin-bottom: 20px; box-shadow: var(--shadow);">
+            <div class="course-meta"><span class="course-category">Design</span><span class="course-price">K750</span></div>
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:8px;">Graphic Design Mastery</h4>
+            <p style="font-size:14px; color:var(--text-light);">Professional designs that stand out</p>
+          </div>
+          <div style="background: var(--white); padding: 20px; border-radius: 16px; margin-bottom: 20px; box-shadow: var(--shadow);">
+            <div class="course-meta"><span class="course-category">Marketing</span><span class="course-price">K900</span></div>
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:8px;">Digital Marketing</h4>
+            <p style="font-size:14px; color:var(--text-light);">SEO, social media & ads</p>
+          </div>
+          <div style="background: var(--white); padding: 20px; border-radius: 16px; box-shadow: var(--shadow);">
+            <div class="course-meta"><span class="course-category">Business</span><span class="course-price">K900</span></div>
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:8px;">Entrepreneurship</h4>
+            <p style="font-size:14px; color:var(--text-light);">Launch & scale your business</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="section" id="courses">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Featured Premium Courses</h2>
+            <p>Choose from 150+ expert-led programs at unbeatable prices</p>
+          </div>
+          <a href="courses.html" class="btn btn-outline">View All Courses</a>
+        </div>
+
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-meta"><span class="course-category">Design</span><span class="course-price">K750</span></div>
+            <h3>Graphic Design Mastery</h3>
+            <p>Professional logos, posters & branding</p>
+            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+          </div>
+          <div class="course-card">
+            <div class="course-meta"><span class="course-category">Marketing</span><span class="course-price">K900</span></div>
+            <h3>Digital Marketing</h3>
+            <p>SEO, social media, PPC & content strategy</p>
+            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+          </div>
+          <div class="course-card">
+            <div class="course-meta"><span class="course-category">Design</span><span class="course-price">K950</span></div>
+            <h3>UI/UX Design</h3>
+            <p>Master Figma & user-centered design</p>
+            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+          </div>
+          <div class="course-card">
+            <div class="course-meta"><span class="course-category">Business</span><span class="course-price">K900</span></div>
+            <h3>Entrepreneurship</h3>
+            <p>Start & scale your own business</p>
+            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+          </div>
+          <div class="course-card">
+            <div class="course-meta"><span class="course-category">Technology</span><span class="course-price">K950</span></div>
+            <h3>Coding & Web Development</h3>
+            <p>From HTML to full-stack apps</p>
+            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+          </div>
+          <div class="course-card">
+            <div class="course-meta"><span class="course-category">Content</span><span class="course-price">K800</span></div>
+            <h3>Video Editing</h3>
+            <p>Pro-level editing with Premiere & CapCut</p>
+            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+          </div>
+          <div class="course-card">
+            <div class="course-meta"><span class="course-category">Business</span><span class="course-price">K800</span></div>
+            <h3>Freelancing Mastery</h3>
+            <p>Get clients & earn in 90 days</p>
+            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+          </div>
+          <div class="course-card">
+            <div class="course-meta"><span class="course-category">Marketing</span><span class="course-price">K900</span></div>
+            <h3>Social Media Management</h3>
+            <p>Build & grow brands on all platforms</p>
+            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+          </div>
+          <div class="course-card">
+            <div class="course-meta"><span class="course-category">Data</span><span class="course-price">K900</span></div>
+            <h3>Data Analysis</h3>
+            <p>Excel, Python & real business insights</p>
+            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opportunities -->
+    <section class="section" id="opportunities">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Latest Opportunities</h2>
+            <p>Handpicked jobs, scholarships & internships</p>
+          </div>
+          <a href="#" class="btn btn-outline">See All</a>
+        </div>
+
+        <div class="list">
+          <div class="list-item">
+            <div><strong>Scholarship:</strong> Tech Leaders Program — Deadline: 10 Jan</div>
+            <a href="#enroll" class="btn btn-primary">Apply Now</a>
+          </div>
+          <div class="list-item">
+            <div><strong>Remote Job:</strong> Junior Frontend Developer — Deadline: 3 Jan</div>
+            <a href="#enroll" class="btn btn-primary">Apply Now</a>
+          </div>
+          <div class="list-item">
+            <div><strong>Internship:</strong> Media & Content Creation — Deadline: 20 Jan</div>
+            <a href="#enroll" class="btn btn-primary">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="section" id="tools">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Essential Tools</h2>
+            <p>Powerful resources to accelerate your success</p>
+          </div>
+          <a href="tools.html" class="btn btn-outline">Open Tool Library</a>
+        </div>
+
+        <div class="courses-grid">
+          <div class="feature-card">
+            <h4>📄 Professional Resume Builder</h4>
+            <p>AI-powered templates used by top professionals.</p>
+          </div>
+          <div class="feature-card">
+            <h4>💰 Budget & Finance Planner</h4>
+            <p>Track income, expenses and savings goals.</p>
+          </div>
+          <div class="feature-card">
+            <h4>📅 Smart Study Planner</h4>
+            <p>Organize your learning and stay on track.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section class="section" id="community">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Community Spotlight</h2>
+            <p>Real questions. Real answers. Real growth.</p>
+          </div>
+          <a href="community.html" class="btn btn-outline">Join the Community</a>
+        </div>
+
+        <div class="course-card">
+          <p><strong>Q:</strong> How do I start freelancing with zero experience?</p>
+          <p style="margin-top:20px; color:var(--text-light); font-size:15px;">Answer from Mentor L.: Build a small portfolio project, offer low-cost services to gain testimonials, and use our resources to get job-ready fast.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW TALLY ENROLLMENT FORM -->
+    <section id="enroll" class="enroll-section">
+      <div class="container enroll-container">
+        <div class="enroll-header">
+          <h2>Ready to Transform Your Future?</h2>
+          <p>Complete the form below. Your CV, portfolio, and details will be sent instantly to skillriseafrica44@gmail.com</p>
+        </div>
+        <div style="background: var(--white); border-radius: 24px; box-shadow: var(--shadow-lg); overflow: hidden; padding: 20px;">
+          <iframe 
+            src="https://tally.so/embed/MebdLA?transparentBackground=1&dynamicHeight=1" 
+            width="100%" 
+            height="950" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0" 
+            title="SkillRise Africa — Course Enrollment">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <h4 style="font-size:20px; font-weight:800; color:var(--primary);">SkillRise Africa</h4>
+        <p style="color:var(--text-light);">ELEVATE by ANICADE — Learn. Grow. Rise.</p>
+      </div>
+      <div style="display:flex; gap:32px;">
+        <a onclick="showModal('privacyModal')">Privacy Policy</a>
+        <a onclick="showModal('termsModal')">Terms of Use</a>
+        <a href="mailto:skillriseafrica44@gmail.com" style="color:var(--text-light); font-weight:500;">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PRIVACY POLICY MODAL -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('privacyModal')">×</span>
+      <h2>PRIVACY POLICY</h2>
+      <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
+      <p>SkillRise Africa (“we”, “our”, “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website, enroll in our courses, or interact with our services.</p>
+      <h3>1. Information We Collect</h3>
+      <p>We may collect the following information:</p>
+      <ul>
+        <li>Full name</li>
+        <li>Email address</li>
+        <li>Phone number</li>
+        <li>Country and city</li>
+        <li>Payment details (processed securely via third-party providers)</li>
+        <li>Course enrollment information</li>
+        <li>Any information you voluntarily submit through forms</li>
+      </ul>
+      <h3>2. How We Use Your Information</h3>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Process course registrations</li>
+        <li>Provide access to learning materials</li>
+        <li>Communicate important updates</li>
+        <li>Issue certificates</li>
+        <li>Improve our programs and platform</li>
+        <li>Send learning opportunities and offers</li>
+      </ul>
+      <p>We do not sell or rent your personal data.</p>
+      <h3>3. Data Protection</h3>
+      <p>We implement appropriate technical and organizational measures to protect your personal information from:</p>
+ <ul>
+        <li>Unauthorized access</li>
+        <li>Loss</li>
+        <li>Misuse</li>
+        <li>Alteration</li>
+      </ul>
+      <h3>4. Third-Party Services</h3>
+      <p>We may use trusted third-party services for:</p>
+      <ul>
+        <li>Payment processing</li>
+        <li>Email communication</li>
+        <li>Website hosting</li>
+        <li>Analytics</li>
+      </ul>
+      <p>These providers only access data necessary to perform their services.</p>
+      <h3>5. Cookies</h3>
+      <p>Our website may use cookies to improve user experience and track performance. You can disable cookies in your browser settings.</p>
+      <h3>6. Your Rights</h3>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Request access to your personal data</li>
+        <li>Request correction of incorrect data</li>
+        <li>Request deletion of your data</li>
+        <li>Opt out of marketing communications</li>
+      </ul>
+      <h3>7. Data Retention</h3>
+      <p>We keep your information only as long as necessary for:</p>
+      <ul>
+        <li>Course delivery</li>
+        <li>Legal obligations</li>
+        <li>Certification verification</li>
+      </ul>
+      <h3>8. Updates to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
+      <h3>9. Contact Us</h3>
+      <p>For any privacy-related questions:<br>SkillRise Africa<br>Email: skillriseafrica44@gmail.com<br>Phone/WhatsApp: +260777083995</p>
+    </div>
+  </div>
+
+  <!-- TERMS OF USE MODAL -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('termsModal')">×</span>
+      <h2>TERMS OF USE</h2>
+      <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
+      <p>By accessing or enrolling in SkillRise Africa programs, you agree to the following terms:</p>
+      <h3>1. Acceptance of Terms</h3>
+      <p>By using our website or services, you confirm that you:</p>
+      <ul>
+        <li>Are at least 16 years old</li>
+        <li>Provide accurate registration information</li>
+        <li>Will use our platform for lawful purposes only</li>
+      </ul>
+      <h3>2. Course Enrollment & Access</h3>
+      <p>Access to courses is granted after successful registration/payment. Course materials are for personal use only. You may not copy, resell, or redistribute our content.</p>
+      <h3>3. Payments</h3>
+      <p>All fees must be paid in full before access is granted (unless stated otherwise). Payments are non-refundable once course access has been provided.</p>
+      <h3>4. Certification</h3>
+      <p>Certificates are issued only to students who:</p>
+      <ul>
+        <li>Complete the course requirements</li>
+        <li>Meet assessment criteria</li>
+      </ul>
+      <h3>5. User Conduct</h3>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Share login details</li>
+        <li>Distribute course materials without permission</li>
+        <li>Upload harmful or illegal content</li>
+        <li>Harass other members in the community</li>
+      </ul>
+      <p>Violation may result in suspension without refund.</p>
+      <h3>6. Intellectual Property</h3>
+      <p>All content on this platform, including:</p>
+      <ul>
+        <li>Course materials</li>
+        <li>Videos</li>
+        <li>Graphics</li>
+        <li>Branding</li>
+      </ul>
+      <p>belongs to SkillRise Africa and may not be used without written permission.</p>
+      <h3>7. Limitation of Liability</h3>
+      <p>SkillRise Africa is not liable for:</p>
+      <ul>
+        <li>Personal career outcomes</li>
+        <li>Internet/data access issues</li>
+        <li>Third-party platform interruptions</li>
+      </ul>
+      <p>We provide educational content for skill development purposes.</p>
+      <h3>8. Changes to Courses or Services</h3>
+      <p>We reserve the right to:</p>
+      <ul>
+        <li>Update course content</li>
+        <li>Modify pricing</li>
+        <li>Improve platform features</li>
+      </ul>
+      <p>at any time.</p>
+      <h3>9. Termination</h3>
+      <p>We may suspend or terminate access if these terms are violated.</p>
+      <h3>10. Contact Information</h3>
+      <p>SkillRise Africa<br>Email: skillriseafrica44@gmail.com<br>Phone/WhatsApp: +260777083995</p>
+    </div>
+  </div>
+
+  <script>
+    // Modal functions
+    function showModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+      document.body.style.overflow = "visible";
+    }
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const privacy = document.getElementById('privacyModal');
+      const terms = document.getElementById('termsModal');
+      if (event.target === privacy) closeModal('privacyModal');
+      if (event.target === terms) closeModal('termsModal');
+    };
+
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
