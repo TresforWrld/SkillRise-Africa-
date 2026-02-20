@@ -35,39 +35,62 @@
       left: 0; 
       width: 100%; 
       height: 100vh; 
-      background: var(--white); 
+      background: rgba(0,0,0,0.5); 
       z-index: 1000; 
       flex-direction: column; 
-      padding: 80px 24px 40px; 
+      justify-content: flex-start;
       overflow-y: auto;
     }
     .mobile-nav.active { display: flex; }
+    .mobile-nav-content {
+      background: var(--white);
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      padding: 80px 24px 40px;
+      overflow-y: auto;
+    }
     .mobile-nav-close { 
       position: absolute; 
       top: 20px; 
       right: 24px; 
-      font-size: 32px; 
+      font-size: 40px; 
       cursor: pointer; 
       color: var(--text-light); 
       background: none; 
       border: none; 
+      z-index: 1001;
+      padding: 10px;
+      line-height: 1;
     }
     .mobile-nav a { 
       display: block; 
-      padding: 20px 0; 
+      padding: 18px 0; 
       border-bottom: 1px solid var(--grey); 
       font-size: 18px; 
       font-weight: 600; 
       color: var(--text); 
+      text-decoration: none;
     }
-    .mobile-nav a:hover { color: var(--primary); }
+    .mobile-nav a:hover { 
+      color: var(--primary); 
+      background: var(--grey-light);
+      padding-left: 10px;
+      transition: all 0.2s ease;
+    }
     .mobile-nav a.cta { 
       background: var(--primary); 
       color: white; 
       text-align: center; 
       border-radius: 12px; 
       margin-top: 20px; 
-      border: none; 
+      border: none;
+      padding: 18px 24px;
+    }
+    .mobile-nav a.cta:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      padding-left: 18px;
     }
 
     header{background:linear-gradient(180deg, rgba(10,42,107,0.04), transparent);backdrop-filter: blur(2px);}
@@ -152,13 +175,15 @@
 
   <!-- Mobile Menu Overlay -->
   <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav-close" onclick="toggleMobileMenu()">&times;</button>
-    <a href="index.html" onclick="toggleMobileMenu()">Home</a>
-    <a href="courses.html" onclick="toggleMobileMenu()">Courses</a>
-    <a href="index.html#opportunities" onclick="toggleMobileMenu()">Opportunities</a>
-    <a href="tools.html" onclick="toggleMobileMenu()">Tools</a>
-    <a href="community.html" class="cta" onclick="toggleMobileMenu()">Community</a>
-    <a href="join.html" onclick="toggleMobileMenu()">Join Free</a>
+    <div class="mobile-nav-content">
+      <button class="mobile-nav-close" onclick="toggleMobileMenu()">&times;</button>
+      <a href="index.html" onclick="toggleMobileMenu()">Home</a>
+      <a href="courses.html" onclick="toggleMobileMenu()">Courses</a>
+      <a href="index.html#opportunities" onclick="toggleMobileMenu()">Opportunities</a>
+      <a href="tools.html" onclick="toggleMobileMenu()">Tools</a>
+      <a href="community.html" class="cta" onclick="toggleMobileMenu()">Community</a>
+      <a href="join.html" onclick="toggleMobileMenu()">Join Free</a>
+    </div>
   </div>
 
   <!-- Header -->
@@ -394,16 +419,25 @@
       document.getElementById(modalId).style.display = "none";
       document.body.style.overflow = "auto";
     }
+
+    // Close mobile menu when clicking on the overlay (outside content)
+    document.addEventListener('click', function(event) {
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileNavContent = mobileNav.querySelector('.mobile-nav-content');
+      
+      if (mobileNav.classList.contains('active')) {
+        if (event.target === mobileNav && !mobileNavContent.contains(event.target)) {
+          toggleMobileMenu();
+        }
+      }
+    });
+
     // Close modal when clicking outside
     window.onclick = function(event) {
       const privacy = document.getElementById('privacyModal');
       const terms = document.getElementById('termsModal');
-      const mobileNav = document.getElementById('mobileNav');
       if (event.target === privacy) closeModal('privacyModal');
       if (event.target === terms) closeModal('termsModal');
-      if (event.target === mobileNav && mobileNav.classList.contains('active')) {
-        toggleMobileMenu();
-      }
     };
   </script>
 </body>
