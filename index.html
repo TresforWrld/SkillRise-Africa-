@@ -5,259 +5,993 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkillRise Africa — ELEVATE by ANICADE</title>
   <meta name="description" content="SkillRise Africa — Premium skills, opportunities and community. Transform your career with expert-led courses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #0A2A6B;
-      --primary-dark: #071f4d;
-      --accent: #FFC232;
-      --accent-hover: #e5ae2d;
-      --grey: #E5E5E5;
-      --grey-light: #f8f9fa;
-      --text: #1F2937;
-      --text-light: #6B7280;
-      --bg: #FFFFFF;
-      --white: #ffffff;
-      --radius: 16px;
-      --radius-lg: 24px;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      --max-width: 1280px;
-      font-family: 'Inter', system-ui, sans-serif;
+      --navy: #0A1628;
+      --navy-mid: #112240;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale: #F5E9C8;
+      --cream: #FAF7F2;
+      --white: #FFFFFF;
+      --text: #1C2B3A;
+      --text-mid: #4A5568;
+      --text-light: #8A9BB0;
+      --border: rgba(201,168,76,0.2);
+      --border-light: rgba(201,168,76,0.1);
+      --max: 1300px;
+      font-family: 'DM Sans', sans-serif;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-decoration: none; transition: all 0.3s ease; cursor: pointer; }
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; width: 100%; }
 
-    .header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
-    .logo { display: flex; align-items: center; gap: 16px; }
-    .logo img { height: 80px; width: auto; }
-    .logo-text h1 { font-size: 26px; font-weight: 800; color: var(--primary); line-height: 1; }
-    .logo-text span { font-size: 14px; color: var(--text-light); font-weight: 500; }
-    .nav { display: flex; align-items: center; gap: 12px; }
-    .nav a { padding: 12px 20px; border-radius: 12px; font-weight: 600; font-size: 15px; }
-    .nav a:hover { background: var(--grey-light); color: var(--primary); }
-    .nav a.btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); font-weight: 700; }
-    .nav a.btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Mobile Menu Button */
-    .mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--primary); padding: 8px; }
+    html { scroll-behavior: smooth; }
 
-    /* Mobile Menu */
-    .mobile-nav { 
-      display: none; 
-      position: fixed; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
-      height: 100vh; 
-      background: var(--white); 
-      z-index: 1000; 
-      flex-direction: column; 
-      padding: 80px 24px 40px; 
-      overflow-y: auto;
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .announcement {
+      background: var(--navy);
+      color: var(--gold-light);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .announcement span { color: var(--white); margin: 0 6px; }
+
+    /* ─── HEADER ─── */
+    .header {
+      background: rgba(250,247,242,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 500;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      gap: 32px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .logo img { height: 64px; width: auto; }
+    .logo-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .logo-text span {
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav a {
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-mid);
+      letter-spacing: 0.01em;
+    }
+    .nav a:hover { color: var(--navy); background: rgba(10,22,40,0.05); }
+
+    .btn-enroll {
+      background: var(--navy);
+      color: var(--gold-light) !important;
+      padding: 11px 28px !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+      letter-spacing: 0.06em !important;
+      text-transform: uppercase !important;
+      border: 1px solid transparent;
+      transition: all 0.3s ease !important;
+    }
+    .btn-enroll:hover {
+      background: transparent !important;
+      border-color: var(--navy) !important;
+      color: var(--navy) !important;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: var(--navy);
+    }
+
+    /* ─── MOBILE NAV ─── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--navy);
+      z-index: 1000;
+      flex-direction: column;
+      padding: 100px 40px 40px;
     }
     .mobile-nav.active { display: flex; }
-    .mobile-nav-close { 
-      position: absolute; 
-      top: 20px; 
-      right: 24px; 
-      font-size: 32px; 
-      cursor: pointer; 
-      color: var(--text-light); 
-      background: none; 
-      border: none; 
+    .mobile-nav-close {
+      position: absolute;
+      top: 24px; right: 32px;
+      font-size: 34px;
+      cursor: pointer;
+      color: var(--gold);
+      background: none;
+      border: none;
     }
-    .mobile-nav a { 
-      display: block; 
-      padding: 20px 0; 
-      border-bottom: 1px solid var(--grey); 
-      font-size: 18px; 
-      font-weight: 600; 
-      color: var(--text); 
+    .mobile-nav a {
+      display: block;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--cream);
     }
-    .mobile-nav a:hover { color: var(--primary); }
-    .mobile-nav a.btn-primary { 
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark)); 
-      color: var(--white); 
-      text-align: center; 
-      border-radius: 12px; 
-      margin-top: 20px; 
-      border: none; 
+    .mobile-nav a:hover { color: var(--gold-light); }
+    .mobile-nav a.btn-enroll-mobile {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      text-align: center;
+      border-radius: 8px;
+      padding: 18px;
+      margin-top: 20px;
+      border: none;
+      font-weight: 700;
     }
 
-    .hero { padding: 80px 0 60px; background: linear-gradient(135deg, rgba(10,42,107,0.06) 0%, rgba(255,194,50,0.06) 100%); }
-    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .hero-content h1 { font-size: 48px; font-weight: 800; line-height: 1.1; color: var(--primary); margin-bottom: 24px; letter-spacing: -0.03em; }
-    .hero-content p { font-size: 18px; color: var(--text-light); max-width: 520px; margin-bottom: 32px; }
-    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+    }
+
+    /* geometric background elements */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 80px;
+      align-items: center;
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow-line {
+      width: 40px; height: 1px;
+      background: var(--gold);
+    }
+    .hero-eyebrow span {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 68px;
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-content p {
+      font-size: 17px;
+      color: rgba(250,247,242,0.65);
+      max-width: 480px;
+      margin-bottom: 44px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 14px 28px; border-radius: 12px; font-weight: 700; font-size: 15px;
-      transition: all 0.3s ease; text-decoration: none; border: none; cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 34px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
     }
-    .btn:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); }
-    .btn-accent { background: var(--accent); color: var(--primary); }
-    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
-    .btn-outline:hover { background: var(--primary); color: var(--white); }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(201,168,76,0.3);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(201,168,76,0.35);
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+      background: rgba(201,168,76,0.07);
+    }
+    .btn-navy {
+      background: var(--navy);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+    }
+    .btn-navy:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(201,168,76,0.25);
+    }
+    .btn-outline-navy {
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid var(--navy);
+    }
+    .btn-outline-navy:hover {
+      background: var(--navy);
+      color: var(--cream);
+    }
 
-    .section { padding: 80px 0; }
-    .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 20px; }
-    .section-header h2 { font-size: 32px; font-weight: 800; color: var(--primary); }
+    /* Stats row */
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      color: rgba(250,247,242,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 6px;
+    }
 
+    /* Trending Sidebar */
+    .hero-sidebar {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-sidebar-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .hero-sidebar-header span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .hero-sidebar-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .trending-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 14px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .trending-card:last-child { margin-bottom: 0; }
+    .trending-card:hover {
+      background: rgba(201,168,76,0.08);
+      border-color: rgba(201,168,76,0.3);
+      transform: translateX(4px);
+    }
+    .trending-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(201,168,76,0.12);
+      color: var(--gold);
+    }
+    .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .trending-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+    .trending-card p {
+      font-size: 13px;
+      color: rgba(250,247,242,0.45);
+      line-height: 1.5;
+    }
+
+    /* ─── DIVIDER ─── */
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 20px 0;
+    }
+    .ornament-divider-line { flex: 1; height: 1px; background: var(--border); }
+    .ornament-divider-icon {
+      font-size: 18px;
+      color: var(--gold);
+      opacity: 0.5;
+    }
+
+    /* ─── SECTION ─── */
+    .section { padding: 100px 0; }
+    .section-alt { background: var(--white); }
+    .section-dark { background: var(--navy); }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .section-label span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .section-label-line { width: 32px; height: 1px; background: var(--gold); }
+
+    .section-header { margin-bottom: 56px; }
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 46px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .section-dark .section-header h2 { color: var(--cream); }
+    .section-header p {
+      font-size: 16px;
+      color: var(--text-mid);
+      max-width: 520px;
+      font-weight: 300;
+    }
+    .section-dark .section-header p { color: rgba(250,247,242,0.55); }
+    .section-header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── COURSES GRID ─── */
     .courses-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .course-card {
       background: var(--white);
-      padding: 24px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .course-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
-      background: linear-gradient(90deg, var(--accent), #ffb84a);
-    }
-    .course-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-    .course-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-    .course-category { background: var(--grey-light); padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-light); }
-    .course-price { color: var(--accent); font-weight: 700; font-size: 18px; }
-
-    .feature-card {
-      background: var(--white);
+      border: 1px solid rgba(10,22,40,0.08);
+      border-radius: 16px;
       padding: 28px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .course-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(10,22,40,0.12);
+      border-color: var(--border);
+    }
+    .course-card:hover::after { transform: scaleX(1); }
+
+    .course-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .course-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-pale);
+      padding: 5px 12px;
+      border-radius: 4px;
+    }
+    .course-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .course-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .course-card p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 24px;
+    }
+    .course-card .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 13px 24px;
+      font-size: 12px;
+    }
+
+    /* ─── OPPORTUNITIES ─── */
+    .opp-list { display: flex; flex-direction: column; gap: 16px; }
+    .opp-item {
+      background: var(--white);
+      border: 1px solid rgba(10,22,40,0.07);
+      border-radius: 12px;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      transition: all 0.3s ease;
+      flex-wrap: wrap;
+    }
+    .opp-item:hover {
+      border-color: var(--border);
+      transform: translateX(6px);
+      box-shadow: 0 8px 30px rgba(10,22,40,0.07);
+    }
+    .opp-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 4px;
+      background: var(--navy);
+      color: var(--gold-light);
+      white-space: nowrap;
+      margin-right: 14px;
+    }
+    .opp-badge.scholarship { background: #0f4c35; color: #6ee7b7; }
+    .opp-badge.job { background: #1a2f5a; color: #93c5fd; }
+    .opp-badge.internship { background: #3d1a1a; color: #fca5a5; }
+    .opp-info { flex: 1; }
+    .opp-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .opp-deadline {
+      font-size: 13px;
+      color: var(--text-light);
+      letter-spacing: 0.02em;
+    }
+    .opp-item .btn { white-space: nowrap; padding: 11px 24px; font-size: 12px; }
+
+    /* ─── TOOLS SECTION ─── */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .tool-card {
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px;
+      padding: 36px 28px;
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
     }
-    .feature-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
-      background: linear-gradient(90deg, var(--accent), #ffb84a);
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
-    .feature-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-    .feature-card h4 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
-    .feature-card p { font-size: 15px; color: var(--text-light); }
+    .tool-card:hover {
+      border-color: rgba(201,168,76,0.5);
+      transform: translateY(-6px);
+    }
+    .tool-card:hover::before { opacity: 1; }
+    .tool-icon {
+      font-size: 36px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .tool-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .tool-card p {
+      font-size: 14px;
+      color: rgba(250,247,242,0.5);
+      line-height: 1.7;
+    }
 
-    .list { display: flex; flex-direction: column; gap: 16px; }
-    .list-item {
-      background: var(--white); padding: 20px 24px; border-radius: 16px; box-shadow: var(--shadow);
-      display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;
+    /* ─── COMMUNITY ─── */
+    .community-card {
+      background: var(--white);
+      border: 1px solid rgba(10,22,40,0.07);
+      border-radius: 16px;
+      padding: 36px;
+      position: relative;
+    }
+    .community-card::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px;
+      font-weight: 700;
+      color: var(--gold-pale);
+      position: absolute;
+      top: -10px; left: 24px;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .community-q {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 16px;
+      line-height: 1.4;
+      padding-top: 40px;
+    }
+    .community-a {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      font-weight: 300;
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
+    }
+    .community-author {
+      margin-top: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ─── ENROLL SECTION ─── */
+    .enroll-section {
+      background: var(--navy);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .enroll-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .enroll-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .enroll-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .enroll-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .enroll-header p {
+      font-size: 16px;
+      color: rgba(250,247,242,0.55);
+      font-weight: 300;
+    }
+
+    .enroll-form {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.18);
+      border-radius: 20px;
+      padding: 48px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 15px;
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.3s ease;
+      outline: none;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(250,247,242,0.3); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(201,168,76,0.5);
+      background: rgba(201,168,76,0.06);
+    }
+    .form-group select option { background: var(--navy); color: var(--cream); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      margin-top: 28px;
+      text-align: center;
+    }
+    .form-submit .btn {
+      padding: 16px 52px;
+      font-size: 13px;
+    }
+    .form-note {
+      font-size: 12px;
+      color: rgba(250,247,242,0.3);
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      padding: 60px 0 36px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo-text h1 { color: var(--cream); }
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(250,247,242,0.45);
+      margin-top: 16px;
+      line-height: 1.7;
+      max-width: 260px;
+    }
+    .footer-col h5 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(250,247,242,0.5);
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: 16px;
     }
-    .list-item:hover { transform: translateX(6px); }
+    .footer-bottom p {
+      font-size: 13px;
+      color: rgba(250,247,242,0.3);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(250,247,242,0.35);
+    }
+    .footer-links a:hover { color: var(--gold); }
 
-    .enroll-section { background: #f9fafb; padding: 80px 0; }
-    .enroll-container { max-width: 1000px; margin: 0 auto; }
-    .enroll-header { text-align: center; margin-bottom: 40px; }
-    .enroll-header h2 { font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
-    .enroll-header p { font-size: 17px; color: var(--text-light); }
-
-    /* MODALS */
+    /* MODAL */
     .modal {
       display: none;
       position: fixed;
       z-index: 2000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.7);
+      inset: 0;
+      background-color: rgba(10,22,40,0.85);
       overflow-y: auto;
+      backdrop-filter: blur(6px);
     }
     .modal-content {
-      background: var(--white);
+      background: var(--cream);
       margin: 5% auto;
-      padding: 40px;
-      border-radius: var(--radius-lg);
+      padding: 52px;
+      border-radius: 20px;
       width: 90%;
-      max-width: 800px;
-      box-shadow: var(--shadow-lg);
+      max-width: 760px;
       position: relative;
     }
     .close {
       position: absolute;
-      top: 20px; right: 30px;
-      font-size: 32px;
-      font-weight: bold;
+      top: 24px; right: 32px;
+      font-size: 28px;
       color: var(--text-light);
       cursor: pointer;
+      line-height: 1;
     }
-    .close:hover { color: var(--primary); }
-    .modal h2 { font-size: 24px; color: var(--primary); margin-bottom: 20px; }
-    .modal h3 { font-size: 18px; color: var(--primary); margin: 20px 0 10px; }
-    .modal p, .modal li { line-height: 1.6; margin-bottom: 10px; font-size: 15px; }
+    .close:hover { color: var(--navy); }
+    .modal h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+    .modal h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: var(--navy);
+      margin: 24px 0 10px;
+    }
+    .modal p, .modal li { font-size: 15px; line-height: 1.7; color: var(--text-mid); margin-bottom: 8px; }
     .modal ul { padding-left: 20px; }
 
-    .footer { background: var(--white); padding: 60px 0 40px; border-top: 1px solid var(--grey); margin-top: 60px; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
-
-    /* Desktop - Hide mobile menu */
-    @media (min-width: 1025px) {
-      .mobile-menu-btn { display: none; }
-      .mobile-nav { display: none !important; }
-    }
-
-    /* Tablet - FIXED: removed the line that was hiding the menu */
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-sidebar { max-width: 500px; }
+      .hero-content h1 { font-size: 54px; }
       .courses-grid { grid-template-columns: repeat(2, 1fr); }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
     }
 
-    /* Mobile */
     @media (max-width: 768px) {
-      .header-inner { padding: 16px 0; }
+      .container { padding: 0 20px; }
       .nav { display: none; }
       .mobile-menu-btn { display: block; }
-      .logo img { height: 60px; }
-      .logo-text h1 { font-size: 20px; }
-      .logo-text span { font-size: 12px; }
-      
-      .hero { padding: 60px 0 40px; }
-      .hero-content h1 { font-size: 36px; }
-      .hero-content p { font-size: 16px; }
-      .hero-buttons { flex-direction: column; width: 100%; }
-      .hero-buttons .btn { width: 100%; justify-content: center; }
-      
-      .section { padding: 60px 0; }
-      .section-header { flex-direction: column; align-items: flex-start; }
-      .section-header h2 { font-size: 28px; }
-      
+      .logo img { height: 50px; }
+      .hero { min-height: auto; }
+      .hero-inner { padding: 60px 0; gap: 40px; }
+      .hero-content h1 { font-size: 40px; }
+      .hero-stats { gap: 24px; }
+      .hero-stat-num { font-size: 30px; }
+      .section { padding: 70px 0; }
+      .section-header h2 { font-size: 36px; }
       .courses-grid { grid-template-columns: 1fr; }
-      
-      .list-item { flex-direction: column; align-items: flex-start; }
-      .list-item .btn { width: 100%; justify-content: center; margin-top: 12px; }
-      
-      .enroll-section { padding: 60px 0; }
-      .enroll-header h2 { font-size: 26px; }
-      .enroll-header p { font-size: 15px; }
-      
-      .footer-inner { flex-direction: column; text-align: center; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+      .enroll-form { padding: 28px 20px; }
+      .enroll-header h2 { font-size: 36px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .opp-item { flex-direction: column; align-items: flex-start; }
+      .opp-item .btn { width: 100%; justify-content: center; }
     }
 
-    /* Small Mobile */
     @media (max-width: 480px) {
-      .hero-content h1 { font-size: 30px; }
-      .section-header h2 { font-size: 24px; }
-      .courses-grid { grid-template-columns: 1fr; }
-      .container { padding: 0 16px; }
+      .hero-content h1 { font-size: 32px; }
+      .hero-stats { flex-wrap: wrap; gap: 20px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+    }
+
+    /* Fade-in animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
-  <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
 
-  <!-- Mobile Menu Overlay -->
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement">
+    🎓 New cohort enrolling now — <span>150+ premium courses</span> for African professionals &nbsp;·&nbsp; WhatsApp: +260777083995
+  </div>
+
+  <!-- MOBILE NAV -->
   <div class="mobile-nav" id="mobileNav">
     <button class="mobile-nav-close" onclick="toggleMobileMenu()">×</button>
     <a href="index.html" onclick="toggleMobileMenu()">Home</a>
@@ -265,10 +999,10 @@
     <a href="#opportunities" onclick="toggleMobileMenu()">Opportunities</a>
     <a href="#tools" onclick="toggleMobileMenu()">Tools</a>
     <a href="#community" onclick="toggleMobileMenu()">Community</a>
-    <a href="#enroll" class="btn-primary" onclick="toggleMobileMenu()">Enroll Now</a>
+    <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn-enroll-mobile" onclick="toggleMobileMenu()">Enroll Now</a>
   </div>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
@@ -283,409 +1017,453 @@
         <a href="#opportunities">Opportunities</a>
         <a href="#tools">Tools</a>
         <a href="#community">Community</a>
-        <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary">Enroll Now</a>
+        <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn-enroll">Enroll Now</a>
       </nav>
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
+
+    <!-- ─── HERO ─── -->
     <section class="hero">
+      <div class="hero-grid-lines"></div>
       <div class="container hero-inner">
         <div class="hero-content">
-          <h1>Elevate Your Career with Premium Skills</h1>
-          <p>Expert-led programs, exclusive opportunities, and powerful tools designed for ambitious African professionals.</p>
-          <div class="hero-buttons">
-            <a href="#enroll" class="btn btn-primary">Enroll Now</a>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-accent">Get Started</a>
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-line"></div>
+            <span>ELEVATE by ANICADE</span>
+          </div>
+          <h1>Elevate Your Career with <em>Premium Skills</em></h1>
+          <p>Expert-led programs, exclusive opportunities, and powerful tools designed for ambitious African professionals ready to lead.</p>
+          <div class="hero-actions">
+            <a href="#enroll" class="btn btn-gold">Enroll Now</a>
+            <a href="courses.html" class="btn btn-ghost">Browse Courses</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">150+</div>
+              <div class="hero-stat-label">Premium Courses</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">5,000+</div>
+              <div class="hero-stat-label">Enrolled Learners</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">98%</div>
+              <div class="hero-stat-label">Satisfaction Rate</div>
+            </div>
           </div>
         </div>
 
         <!-- Trending Sidebar -->
-        <aside style="background: linear-gradient(180deg, var(--white), #f9fafb); padding: 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--grey);">
-          <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 20px;">Trending Now</h3>
-          <div style="background: var(--white); padding: 16px; border-radius: 16px; margin-bottom: 16px; box-shadow: var(--shadow);">
-            <div class="course-meta"><span class="course-category">Design</span><span class="course-price">K750</span></div>
-            <h4 style="font-size:16px; font-weight:700; margin-bottom:6px;">Graphic Design Mastery</h4>
-            <p style="font-size:14px; color:var(--text-light);">Professional designs that stand out</p>
+        <aside class="hero-sidebar">
+          <div class="hero-sidebar-header">
+            <div class="hero-sidebar-dot"></div>
+            <span>Trending Now</span>
           </div>
-          <div style="background: var(--white); padding: 16px; border-radius: 16px; margin-bottom: 16px; box-shadow: var(--shadow);">
-            <div class="course-meta"><span class="course-category">Marketing</span><span class="course-price">K900</span></div>
-            <h4 style="font-size:16px; font-weight:700; margin-bottom:6px;">Digital Marketing</h4>
-            <p style="font-size:14px; color:var(--text-light);">SEO, social media & ads</p>
+          <div class="trending-card">
+            <div class="trending-card-top">
+              <span class="tag">Design</span>
+              <span class="price">K750</span>
+            </div>
+            <h4>Graphic Design Mastery</h4>
+            <p>Professional designs that stand out globally</p>
           </div>
-          <div style="background: var(--white); padding: 16px; border-radius: 16px; box-shadow: var(--shadow);">
-            <div class="course-meta"><span class="course-category">Business</span><span class="course-price">K900</span></div>
-            <h4 style="font-size:16px; font-weight:700; margin-bottom:6px;">Entrepreneurship</h4>
-            <p style="font-size:14px; color:var(--text-light);">Launch & scale your business</p>
+          <div class="trending-card">
+            <div class="trending-card-top">
+              <span class="tag">Marketing</span>
+              <span class="price">K900</span>
+            </div>
+            <h4>Digital Marketing</h4>
+            <p>SEO, social media & high-ROI ad strategies</p>
+          </div>
+          <div class="trending-card">
+            <div class="trending-card-top">
+              <span class="tag">Business</span>
+              <span class="price">K900</span>
+            </div>
+            <h4>Entrepreneurship</h4>
+            <p>Launch, fund & scale your own venture</p>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- Featured Courses -->
+    <!-- ─── FEATURED COURSES ─── -->
     <section class="section" id="courses">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header section-header-row">
           <div>
+            <div class="section-label">
+              <div class="section-label-line"></div>
+              <span>Programs</span>
+            </div>
             <h2>Featured Premium Courses</h2>
             <p>Choose from 150+ expert-led programs at unbeatable prices</p>
           </div>
-          <a href="courses.html" class="btn btn-outline">View All Courses</a>
+          <a href="courses.html" class="btn btn-outline-navy">View All Courses</a>
         </div>
 
         <div class="courses-grid">
-          <div class="course-card">
-            <div class="course-meta"><span class="course-category">Design</span><span class="course-price">K750</span></div>
+          <div class="course-card fade-up">
+            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K750</span></div>
             <h3>Graphic Design Mastery</h3>
-            <p>Professional logos, posters & branding</p>
-            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+            <p>Professional logos, posters & branding that command attention</p>
+            <a href="#enroll" class="btn btn-navy">Enroll Now</a>
           </div>
-          <div class="course-card">
-            <div class="course-meta"><span class="course-category">Marketing</span><span class="course-price">K900</span></div>
+          <div class="course-card fade-up">
+            <div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K900</span></div>
             <h3>Digital Marketing</h3>
-            <p>SEO, social media, PPC & content strategy</p>
-            <a href="#enroll" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+            <p>SEO, social media, PPC & content strategy that converts</p>
+            <a href="#enroll" class="btn btn-navy">Enroll Now</a>
           </div>
-          <div class="course-card">
-            <div class="course-meta"><span class="course-category">Design</span><span class="course-price">K950</span></div>
+          <div class="course-card fade-up">
+            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K950</span></div>
             <h3>UI/UX Design</h3>
-            <p>Master Figma & user-centered design</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+            <p>Master Figma & user-centered design principles</p>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
           </div>
-          <div class="course-card">
-            <div class="course-meta"><span class="course-category">Business</span><span class="course-price">K900</span></div>
+          <div class="course-card fade-up">
+            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div>
             <h3>Entrepreneurship</h3>
-            <p>Start & scale your own business</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+            <p>Start, fund & scale your own business from day one</p>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
           </div>
-          <div class="course-card">
-            <div class="course-meta"><span class="course-category">Technology</span><span class="course-price">K950</span></div>
+          <div class="course-card fade-up">
+            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K950</span></div>
             <h3>Coding & Web Development</h3>
-            <p>From HTML to full-stack apps</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+            <p>From HTML basics to full-stack applications</p>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
           </div>
-          <div class="course-card">
-            <div class="course-meta"><span class="course-category">Content</span><span class="course-price">K800</span></div>
+          <div class="course-card fade-up">
+            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div>
             <h3>Video Editing</h3>
-            <p>Pro-level editing with Premiere & CapCut</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+            <p>Pro-level editing with Premiere Pro & CapCut</p>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
           </div>
-          <div class="course-card">
-            <div class="course-meta"><span class="course-category">Business</span><span class="course-price">K800</span></div>
+          <div class="course-card fade-up">
+            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K800</span></div>
             <h3>Freelancing Mastery</h3>
-            <p>Get clients & earn in 90 days</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+            <p>Land clients & build sustainable income in 90 days</p>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
           </div>
-          <div class="course-card">
-            <div class="course-meta"><span class="course-category">Marketing</span><span class="course-price">K900</span></div>
+          <div class="course-card fade-up">
+            <div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K900</span></div>
             <h3>Social Media Management</h3>
-            <p>Build & grow brands on all platforms</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+            <p>Build & grow influential brands across all platforms</p>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
           </div>
-          <div class="course-card">
-            <div class="course-meta"><span class="course-category">Data</span><span class="course-price">K900</span></div>
+          <div class="course-card fade-up">
+            <div class="course-top"><span class="course-tag">Data</span><span class="course-price">K900</span></div>
             <h3>Data Analysis</h3>
-            <p>Excel, Python & real business insights</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary" style="width:100%; margin-top:16px;">Enroll Now</a>
+            <p>Excel, Python & real business insights that drive decisions</p>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Opportunities -->
-    <section class="section" id="opportunities">
+    <!-- ─── OPPORTUNITIES ─── -->
+    <section class="section section-alt" id="opportunities">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header section-header-row">
           <div>
+            <div class="section-label">
+              <div class="section-label-line"></div>
+              <span>Opportunities</span>
+            </div>
             <h2>Latest Opportunities</h2>
-            <p>Handpicked jobs, scholarships & internships</p>
+            <p>Handpicked jobs, scholarships & internships for our community</p>
           </div>
-          <a href="#" class="btn btn-outline">See All</a>
+          <a href="#" class="btn btn-outline-navy">See All</a>
         </div>
 
-        <div class="list">
-          <div class="list-item">
-            <div><strong>Scholarship:</strong> Tech Leaders Program — Deadline: 10 Jan</div>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary">Apply Now</a>
+        <div class="opp-list">
+          <div class="opp-item fade-up">
+            <div style="display:flex;align-items:center;flex:1;flex-wrap:wrap;gap:8px;">
+              <span class="opp-badge scholarship">Scholarship</span>
+              <div class="opp-info">
+                <div class="opp-title">Tech Leaders Program — Fully Funded</div>
+                <div class="opp-deadline">⏳ Deadline: January 10, 2026</div>
+              </div>
+            </div>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Apply Now</a>
           </div>
-          <div class="list-item">
-            <div><strong>Remote Job:</strong> Junior Frontend Developer — Deadline: 3 Jan</div>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary">Apply Now</a>
+          <div class="opp-item fade-up">
+            <div style="display:flex;align-items:center;flex:1;flex-wrap:wrap;gap:8px;">
+              <span class="opp-badge job">Remote Job</span>
+              <div class="opp-info">
+                <div class="opp-title">Junior Frontend Developer — Global Company</div>
+                <div class="opp-deadline">⏳ Deadline: January 3, 2026</div>
+              </div>
+            </div>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Apply Now</a>
           </div>
-          <div class="list-item">
-            <div><strong>Internship:</strong> Media & Content Creation — Deadline: 20 Jan</div>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-primary">Apply Now</a>
+          <div class="opp-item fade-up">
+            <div style="display:flex;align-items:center;flex:1;flex-wrap:wrap;gap:8px;">
+              <span class="opp-badge internship">Internship</span>
+              <div class="opp-info">
+                <div class="opp-title">Media & Content Creation — Paid Internship</div>
+                <div class="opp-deadline">⏳ Deadline: January 20, 2026</div>
+              </div>
+            </div>
+            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Apply Now</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Tools -->
-    <section class="section" id="tools">
+    <!-- ─── TOOLS ─── -->
+    <section class="section section-dark" id="tools">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header section-header-row">
           <div>
+            <div class="section-label">
+              <div class="section-label-line"></div>
+              <span>Resources</span>
+            </div>
             <h2>Essential Tools</h2>
-            <p>Powerful resources to accelerate your success</p>
+            <p>Powerful resources to accelerate your professional journey</p>
           </div>
-          <a href="tools.html" class="btn btn-outline">Open Tool Library</a>
+          <a href="tools.html" class="btn btn-ghost">Open Tool Library</a>
         </div>
 
-        <div class="courses-grid">
-          <div class="feature-card">
-            <h4>📄 Professional Resume Builder</h4>
-            <p>AI-powered templates used by top professionals.</p>
+        <div class="tools-grid">
+          <div class="tool-card fade-up">
+            <span class="tool-icon">📄</span>
+            <h4>Professional Resume Builder</h4>
+            <p>AI-powered templates used by top professionals. Create a CV that opens doors.</p>
           </div>
-          <div class="feature-card">
-            <h4>💰 Budget & Finance Planner</h4>
-            <p>Track income, expenses and savings goals.</p>
- </div>
-          <div class="feature-card">
-            <h4>📅 Smart Study Planner</h4>
-            <p>Organize your learning and stay on track.</p>
+          <div class="tool-card fade-up">
+            <span class="tool-icon">💰</span>
+            <h4>Budget & Finance Planner</h4>
+            <p>Track income, expenses and savings goals with clarity and precision.</p>
+          </div>
+          <div class="tool-card fade-up">
+            <span class="tool-icon">📅</span>
+            <h4>Smart Study Planner</h4>
+            <p>Organize your learning schedule and stay consistently on track to completion.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Community -->
+    <!-- ─── COMMUNITY ─── -->
     <section class="section" id="community">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header section-header-row">
           <div>
+            <div class="section-label">
+              <div class="section-label-line"></div>
+              <span>Community</span>
+            </div>
             <h2>Community Spotlight</h2>
-            <p>Real questions. Real answers. Real growth.</p>
+            <p>Real questions. Real answers. Real growth from our mentors.</p>
           </div>
-          <a href="community.html" class="btn btn-outline">Join the Community</a>
+          <a href="community.html" class="btn btn-outline-navy">Join Community</a>
         </div>
 
-        <div class="course-card">
-          <p><strong>Q:</strong> How do I start freelancing with zero experience?</p>
-          <p style="margin-top:20px; color:var(--text-light); font-size:15px;">Answer from Mentor L.: Build a small portfolio project, offer low-cost services to gain testimonials, and use our resources to get job-ready fast.</p>
+        <div class="community-card fade-up">
+          <div class="community-q">How do I start freelancing with zero experience?</div>
+          <div class="community-a">
+            Build a small portfolio project, offer low-cost services to gain testimonials, and use our resources to get job-ready fast. Start with what you know, document your process, and let your work speak for itself. Our mentors are here every step of the way.
+          </div>
+          <div class="community-author">— Mentor L., SkillRise Africa Faculty</div>
         </div>
       </div>
     </section>
 
-    <!-- NEW TALLY ENROLLMENT FORM -->
-    <section id="enroll" class="enroll-section">
-      <div class="container enroll-container">
-        <div class="enroll-header">
-          <h2>Ready to Transform Your Future?</h2>
-          <p>Complete the form below. Your CV, portfolio, and details will be sent instantly to skillriseafrica44@gmail.com</p>
-        </div>
-        <div style="background: var(--white); border-radius: 24px; box-shadow: var(--shadow-lg); overflow: hidden; padding: 20px;">
-          <iframe 
-            src="https://tally.so/embed/MebdLA?transparentBackground=1&dynamicHeight=1" 
-            width="100%" 
-            height="800" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0" 
-            title="SkillRise Africa — Course Enrollment">
-          </iframe>
+    <!-- ─── ENROLL ─── -->
+    <section class="enroll-section" id="enroll">
+      <div class="container">
+        <div class="enroll-inner">
+          <div class="enroll-header">
+            <div class="section-label" style="justify-content:center;">
+              <div class="section-label-line"></div>
+              <span>Begin Your Journey</span>
+              <div class="section-label-line"></div>
+            </div>
+            <h2>Ready to Transform Your Future?</h2>
+            <p>Complete the form below and our team will be in touch within 24 hours.</p>
+          </div>
+
+          <div class="enroll-form">
+            <form id="enrollForm">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                  <label>Phone / WhatsApp</label>
+                  <input type="tel" placeholder="+260 ···">
+                </div>
+                <div class="form-group">
+                  <label>Country</label>
+                  <input type="text" placeholder="Your country">
+                </div>
+                <div class="form-group full">
+                  <label>Course of Interest</label>
+                  <select>
+                    <option value="" disabled selected>Select a course</option>
+                    <option>Graphic Design Mastery — K750</option>
+                    <option>Digital Marketing — K900</option>
+                    <option>UI/UX Design — K950</option>
+                    <option>Entrepreneurship — K900</option>
+                    <option>Coding & Web Development — K950</option>
+                    <option>Video Editing — K800</option>
+                    <option>Freelancing Mastery — K800</option>
+                    <option>Social Media Management — K900</option>
+                    <option>Data Analysis — K900</option>
+                  </select>
+                </div>
+                <div class="form-group full">
+                  <label>Message (Optional)</label>
+                  <textarea placeholder="Tell us a bit about your goals..."></textarea>
+                </div>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn btn-gold">Submit Enrollment →</button>
+                <p class="form-note">Your details are sent securely to skillriseafrica44@gmail.com</p>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
+  <!-- ─── FOOTER ─── -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <h4 style="font-size:18px; font-weight:800; color:var(--primary);">SkillRise Africa</h4>
-        <p style="color:var(--text-light); font-size:14px;">ELEVATE by ANICADE — Learn. Grow. Rise.</p>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa" style="height:50px;">
+            <div class="logo-text">
+              <h1>SkillRise Africa</h1>
+              <span>ELEVATE by ANICADE</span>
+            </div>
+          </div>
+          <p>Learn. Grow. Rise. Empowering African professionals with world-class skills and opportunities.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Programs</h5>
+          <a href="courses.html">All Courses</a>
+          <a href="courses.html">Design</a>
+          <a href="courses.html">Marketing</a>
+          <a href="courses.html">Technology</a>
+          <a href="courses.html">Business</a>
+        </div>
+        <div class="footer-col">
+          <h5>Resources</h5>
+          <a href="#opportunities">Opportunities</a>
+          <a href="tools.html">Tool Library</a>
+          <a href="community.html">Community</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:skillriseafrica44@gmail.com">skillriseafrica44@gmail.com</a>
+          <a href="tel:+260777083995">+260 777 083 995</a>
+          <a href="#">WhatsApp Us</a>
+        </div>
       </div>
-      <div style="display:flex; gap:24px; flex-wrap:wrap;">
-        <a onclick="showModal('privacyModal')" style="cursor:pointer;">Privacy Policy</a>
-        <a onclick="showModal('termsModal')" style="cursor:pointer;">Terms of Use</a>
-        <a href="mailto:skillriseafrica44@gmail.com" style="color:var(--text-light); font-weight:500;">Contact Us</a>
+      <div class="footer-bottom">
+        <p>© 2026 SkillRise Africa — ELEVATE by ANICADE. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#" onclick="document.getElementById('privacyModal').style.display='block'">Privacy Policy</a>
+          <a href="#" onclick="document.getElementById('termsModal').style.display='block'">Terms of Use</a>
+          <a href="mailto:skillriseafrica44@gmail.com">Contact</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- PRIVACY POLICY MODAL -->
+  <!-- PRIVACY MODAL -->
   <div id="privacyModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('privacyModal')">&times;</span>
-      <h2>PRIVACY POLICY</h2>
-      <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
-      <p>SkillRise Africa ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website, enroll in our courses, or interact with our services.</p>
+      <span class="close" onclick="document.getElementById('privacyModal').style.display='none'">&times;</span>
+      <h2>Privacy Policy</h2>
+      <p><strong>Effective Date:</strong> February 19, 2026</p>
       <h3>1. Information We Collect</h3>
-      <p>We may collect the following information:</p>
-      <ul>
-        <li>Full name</li>
-        <li>Email address</li>
-        <li>Phone number</li>
-        <li>Country and city</li>
-        <li>Payment details (processed securely via third-party providers)</li>
-        <li>Course enrollment information</li>
-        <li>Any information you voluntarily submit through forms</li>
-      </ul>
+      <p>We collect full name, email, phone, country, payment details, and course enrollment information you voluntarily submit.</p>
       <h3>2. How We Use Your Information</h3>
-      <p>We use your information to:</p>
-      <ul>
-        <li>Process course registrations</li>
-        <li>Provide access to learning materials</li>
-        <li>Communicate important updates</li>
-        <li>Issue certificates</li>
-        <li>Improve our programs and platform</li>
-        <li>Send learning opportunities and offers</li>
-      </ul>
-      <p>We do not sell or rent your personal data.</p>
+      <p>To process registrations, provide learning materials, issue certificates, and send relevant opportunities. We do not sell your data.</p>
       <h3>3. Data Protection</h3>
-      <p>We implement appropriate technical and organizational measures to protect your personal information from:</p>
-      <ul>
-        <li>Unauthorized access</li>
-        <li>Loss</li>
-        <li>Misuse</li>
-        <li>Alteration</li>
-      </ul>
-      <h3>4. Third-Party Services</h3>
-      <p>We may use trusted third-party services for:</p>
-      <ul>
-        <li>Payment processing</li>
-        <li>Email communication</li>
-        <li>Website hosting</li>
-        <li>Analytics</li>
-      </ul>
-      <p>These providers only access data necessary to perform their services.</p>
-      <h3>5. Cookies</h3>
-      <p>Our website may use cookies to improve user experience and track performance. You can disable cookies in your browser settings.</p>
-      <h3>6. Your Rights</h3>
-      <p>You have the right to:</p>
-      <ul>
-        <li>Request access to your personal data</li>
-        <li>Request correction of incorrect data</li>
-        <li>Request deletion of your data</li>
-        <li>Opt out of marketing communications</li>
-      </ul>
-      <h3>7. Data Retention</h3>
-      <p>We keep your information only as long as necessary for:</p>
-      <ul>
-        <li>Course delivery</li>
-        <li>Legal obligations</li>
-        <li>Certification verification</li>
-      </ul>
-      <h3>8. Updates to This Policy</h3>
-      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page.</p>
-      <h3>9. Contact Us</h3>
-      <p>For any privacy-related questions:<br>SkillRise Africa<br>Email: skillriseafrica44@gmail.com<br>Phone/WhatsApp: +260777083995</p>
+      <p>We implement appropriate technical and organizational measures to protect your personal information from unauthorized access or misuse.</p>
+      <h3>4. Contact</h3>
+      <p>Email: skillriseafrica44@gmail.com &nbsp;|&nbsp; WhatsApp: +260777083995</p>
     </div>
   </div>
 
-  <!-- TERMS OF USE MODAL -->
+  <!-- TERMS MODAL -->
   <div id="termsModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('termsModal')">&times;</span>
-      <h2>TERMS OF USE</h2>
-      <p><strong>SkillRise Africa</strong><br>Effective Date: February 19, 2026</p>
-      <p>By accessing or enrolling in SkillRise Africa programs, you agree to the following terms:</p>
-      <h3>1. Acceptance of Terms</h3>
-      <p>By using our website or services, you confirm that you:</p>
-      <ul>
-        <li>Are at least 16 years old</li>
-        <li>Provide accurate registration information</li>
-        <li>Will use our platform for lawful purposes only</li>
-      </ul>
-      <h3>2. Course Enrollment & Access</h3>
-      <p>Access to courses is granted after successful registration/payment. Course materials are for personal use only. You may not copy, resell, or redistribute our content.</p>
-      <h3>3. Payments</h3>
-      <p>All fees must be paid in full before access is granted (unless stated otherwise). Payments are non-refundable once course access has been provided.</p>
-      <h3>4. Certification</h3>
-      <p>Certificates are issued only to students who:</p>
-      <ul>
-        <li>Complete the course requirements</li>
-        <li>Meet assessment criteria</li>
-      </ul>
-      <h3>5. User Conduct</h3>
-      <p>You agree not to:</p>
-      <ul>
-        <li>Share login details</li>
-        <li>Distribute course materials without permission</li>
-        <li>Upload harmful or illegal content</li>
-        <li>Harass other members in the community</li>
-      </ul>
-      <p>Violation may result in suspension without refund.</p>
-      <h3>6. Intellectual Property</h3>
-      <p>All content on this platform, including:</p>
-      <ul>
-        <li>Course materials</li>
-        <li>Videos</li>
-        <li>Graphics</li>
-        <li>Branding</li>
-      </ul>
-      <p>belongs to SkillRise Africa and may not be used without written permission.</p>
-      <h3>7. Limitation of Liability</h3>
-      <p>SkillRise Africa is not liable for:</p>
-      <ul>
-        <li>Personal career outcomes</li>
-        <li>Internet/data access issues</li>
-        <li>Third-party platform interruptions</li>
-      </ul>
-      <p>We provide educational content for skill development purposes.</p>
-      <h3>8. Changes to Courses or Services</h3>
-      <p>We reserve the right to:</p>
-      <ul>
-        <li>Update course content</li>
-        <li>Modify pricing</li>
-        <li>Improve platform features</li>
-      </ul>
-      <p>at any time.</p>
-      <h3>9. Termination</h3>
-      <p>We may suspend or terminate access if these terms are violated.</p>
-      <h3>10. Contact Information</h3>
-      <p>SkillRise Africa<br>Email: skillriseafrica44@gmail.com<br>Phone/WhatsApp: +260777083995</p>
+      <span class="close" onclick="document.getElementById('termsModal').style.display='none'">&times;</span>
+      <h2>Terms of Use</h2>
+      <p><strong>Effective Date:</strong> February 19, 2026</p>
+      <h3>1. Acceptance</h3>
+      <p>By using our platform you confirm you are at least 16 years old, provide accurate information, and will use our services for lawful purposes only.</p>
+      <h3>2. Course Access</h3>
+      <p>Course materials are for personal use only. You may not copy, resell, or redistribute our content. Payments are non-refundable once access is granted.</p>
+      <h3>3. Certification</h3>
+      <p>Certificates are issued only to students who complete all course requirements and meet assessment criteria.</p>
+      <h3>4. Intellectual Property</h3>
+      <p>All content belongs to SkillRise Africa and may not be used without written permission.</p>
+      <h3>5. Contact</h3>
+      <p>Email: skillriseafrica44@gmail.com &nbsp;|&nbsp; WhatsApp: +260777083995</p>
     </div>
   </div>
 
   <script>
-    // Mobile Menu Toggle - FIXED
+    // Mobile menu
     function toggleMobileMenu() {
-      const mobileNav = document.getElementById('mobileNav');
-      mobileNav.classList.toggle('active');
-      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+      document.getElementById('mobileNav').classList.toggle('active');
+      document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
     }
 
-    // Modal functions
-    function showModal(modalId) {
-      document.getElementById(modalId).style.display = "block";
-      document.body.style.overflow = "hidden";
-    }
-    function closeModal(modalId) {
-      document.getElementById(modalId).style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-    // Close modal when clicking outside
-    window.onclick = function(event) {
-      const privacy = document.getElementById('privacyModal');
-      const terms = document.getElementById('termsModal');
-      const mobileNav = document.getElementById('mobileNav');
-      if (event.target === privacy) closeModal('privacyModal');
-      if (event.target === terms) closeModal('termsModal');
-      if (event.target === mobileNav && mobileNav.classList.contains('active')) {
-        toggleMobileMenu();
-      }
+    // Close modals on outside click
+    window.onclick = function(e) {
+      ['privacyModal','termsModal'].forEach(id => {
+        const m = document.getElementById(id);
+        if (e.target === m) m.style.display = 'none';
+      });
     };
 
-    // Smooth scroll for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        if (this.getAttribute('href') !== '#') {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            // Close mobile menu if open
-            const mobileNav = document.getElementById('mobileNav');
-            if (mobileNav.classList.contains('active')) {
-              toggleMobileMenu();
-            }
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
+    // Scroll-triggered fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, entry.target.dataset.delay || 0);
+          observer.unobserve(entry.target);
         }
       });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach((el, i) => {
+      el.dataset.delay = (i % 3) * 120;
+      observer.observe(el);
+    });
+
+    // Form submission
+    document.getElementById('enrollForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      btn.textContent = '✓ Sent — We\'ll be in touch!';
+      btn.style.background = '#2d6a4f';
+      btn.style.color = '#fff';
+      btn.disabled = true;
     });
   </script>
+
 </body>
 </html>
