@@ -4,14 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkillRise Africa — ELEVATE by ANICADE</title>
-  <meta name="description" content="SkillRise Africa — Premium skills, opportunities and community. Transform your career with expert-led courses.">
+  <meta name="description" content="Expert-led programs, exclusive opportunities, and powerful tools designed for ambitious African professionals. 62+ premium courses starting from K750.">
+
+  <!-- ─── OPEN GRAPH / LINK PREVIEW ─── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tresforwrld.github.io/SkillRise-Africa-/index.html">
+  <meta property="og:title" content="SkillRise Africa — ELEVATE by ANICADE">
+  <meta property="og:description" content="Expert-led programs, exclusive opportunities, and powerful tools designed for ambitious African professionals. 62+ premium courses starting from K750.">
+  <meta property="og:image" content="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="SkillRise Africa">
+  <meta property="og:locale" content="en_US">
+
+  <!-- ─── TWITTER / X CARD ─── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SkillRise Africa — ELEVATE by ANICADE">
+  <meta name="twitter:description" content="Expert-led programs, exclusive opportunities, and powerful tools designed for ambitious African professionals. 62+ premium courses starting from K750.">
+  <meta name="twitter:image" content="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+
+  <!-- ─── FAVICON ─── -->
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --navy: #0A1628;
-      --navy-mid: #112240;
       --gold: #C9A84C;
       --gold-light: #E8C97A;
       --gold-pale: #F5E9C8;
@@ -23,149 +43,51 @@
       --border: rgba(201,168,76,0.2);
       --max: 1300px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
     .container { max-width: var(--max); margin: 0 auto; padding: 0 56px; }
 
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999; opacity: 0.4;
-    }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; opacity: 0.4; }
 
     /* HEADER */
-    .header {
-      background: rgba(250,247,242,0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      position: sticky; top: 0; z-index: 500;
-    }
-    .header-inner {
-      display: flex; align-items: center;
-      justify-content: space-between; padding: 20px 0; gap: 32px;
-    }
+    .header { background: rgba(250,247,242,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 500; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 32px; }
     .logo { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
     .logo img { height: 64px; width: auto; }
-    .logo-text h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; font-weight: 700; color: var(--navy); line-height: 1.1;
-    }
-    .logo-text span {
-      font-size: 11px; color: var(--gold);
-      font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
-    }
+    .logo-text h1 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+    .logo-text span { font-size: 11px; color: var(--gold); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; }
     .nav { display: flex; align-items: center; gap: 4px; }
-    .nav a {
-      padding: 9px 18px; border-radius: 8px;
-      font-size: 14px; font-weight: 500; color: var(--text-mid);
-    }
+    .nav a { padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-mid); }
     .nav a:hover { color: var(--navy); background: rgba(10,22,40,0.05); }
-    .btn-enroll {
-      background: var(--navy); color: var(--gold-light) !important;
-      padding: 11px 28px !important; border-radius: 8px !important;
-      font-weight: 600 !important; font-size: 13px !important;
-      letter-spacing: 0.06em !important; text-transform: uppercase !important;
-      border: 1px solid transparent; transition: all 0.3s ease !important;
-    }
-    .btn-enroll:hover {
-      background: transparent !important;
-      border-color: var(--navy) !important; color: var(--navy) !important;
-    }
-    .mobile-menu-btn {
-      display: none; background: none; border: none;
-      font-size: 26px; cursor: pointer; color: var(--navy);
-    }
+    .btn-enroll { background: var(--navy); color: var(--gold-light) !important; padding: 11px 28px !important; border-radius: 8px !important; font-weight: 600 !important; font-size: 13px !important; letter-spacing: 0.06em !important; text-transform: uppercase !important; border: 1px solid transparent; transition: all 0.3s ease !important; }
+    .btn-enroll:hover { background: transparent !important; border-color: var(--navy) !important; color: var(--navy) !important; }
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 26px; cursor: pointer; color: var(--navy); }
 
     /* MOBILE NAV */
-    .mobile-nav {
-      display: none; position: fixed; inset: 0;
-      background: var(--navy); z-index: 1000;
-      flex-direction: column; padding: 100px 40px 40px;
-    }
+    .mobile-nav { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 1000; flex-direction: column; padding: 100px 40px 40px; }
     .mobile-nav.active { display: flex; }
-    .mobile-nav-close {
-      position: absolute; top: 24px; right: 32px;
-      font-size: 34px; cursor: pointer; color: var(--gold); background: none; border: none;
-    }
-    .mobile-nav a {
-      display: block; padding: 18px 0;
-      border-bottom: 1px solid rgba(201,168,76,0.15);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px; font-weight: 600; color: var(--cream);
-    }
+    .mobile-nav-close { position: absolute; top: 24px; right: 32px; font-size: 34px; cursor: pointer; color: var(--gold); background: none; border: none; }
+    .mobile-nav a { display: block; padding: 18px 0; border-bottom: 1px solid rgba(201,168,76,0.15); font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--cream); }
     .mobile-nav a:hover { color: var(--gold-light); }
-    .mobile-nav a.btn-enroll-mobile {
-      font-family: 'DM Sans', sans-serif; font-size: 14px;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--navy); background: var(--gold);
-      text-align: center; border-radius: 8px;
-      padding: 18px; margin-top: 20px; border: none; font-weight: 700;
-    }
+    .mobile-nav a.btn-enroll-mobile { font-family: 'DM Sans', sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: var(--gold); text-align: center; border-radius: 8px; padding: 18px; margin-top: 20px; border: none; font-weight: 700; }
 
     /* HERO */
-    .hero {
-      background: var(--navy); position: relative;
-      overflow: hidden; min-height: 88vh; display: flex; align-items: center;
-    }
-    .hero::before {
-      content: ''; position: absolute; top: -200px; right: -200px;
-      width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: ''; position: absolute; bottom: -100px; left: -100px;
-      width: 400px; height: 400px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-grid-lines {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-      background-size: 60px 60px; pointer-events: none;
-    }
-    .hero-inner {
-      display: grid; grid-template-columns: 1fr 420px;
-      gap: 80px; align-items: center;
-      padding: 100px 0; position: relative; z-index: 1;
-    }
+    .hero { background: var(--navy); position: relative; overflow: hidden; min-height: 88vh; display: flex; align-items: center; }
+    .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%); pointer-events: none; }
+    .hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%); pointer-events: none; }
+    .hero-grid-lines { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center; padding: 100px 0; position: relative; z-index: 1; }
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px; }
     .hero-eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
-    .hero-eyebrow span {
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
-    }
-    .hero-content h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 68px; font-weight: 700; line-height: 1.05;
-      color: var(--white); margin-bottom: 28px; letter-spacing: -0.02em;
-    }
+    .hero-eyebrow span { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 68px; font-weight: 700; line-height: 1.05; color: var(--white); margin-bottom: 28px; letter-spacing: -0.02em; }
     .hero-content h1 em { font-style: italic; color: var(--gold-light); }
-    .hero-content p {
-      font-size: 17px; color: rgba(250,247,242,0.65);
-      max-width: 480px; margin-bottom: 44px; line-height: 1.8; font-weight: 300;
-    }
+    .hero-content p { font-size: 17px; color: rgba(250,247,242,0.65); max-width: 480px; margin-bottom: 44px; line-height: 1.8; font-weight: 300; }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 15px 34px; border-radius: 8px; font-size: 14px; font-weight: 600;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      transition: all 0.3s ease; cursor: pointer; border: none;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 34px; border-radius: 8px; font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.3s ease; cursor: pointer; border: none; }
     .btn-gold { background: var(--gold); color: var(--navy); }
     .btn-gold:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,168,76,0.3); }
     .btn-ghost { background: transparent; color: var(--cream); border: 1px solid rgba(201,168,76,0.35); }
@@ -175,28 +97,16 @@
     .btn-outline-navy { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
     .btn-outline-navy:hover { background: var(--navy); color: var(--cream); }
 
-    .hero-stats {
-      display: flex; gap: 40px; margin-top: 56px; padding-top: 40px;
-      border-top: 1px solid rgba(201,168,76,0.15);
-    }
-    .hero-stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px; font-weight: 700; color: var(--gold-light); line-height: 1;
-    }
+    .hero-stats { display: flex; gap: 40px; margin-top: 56px; padding-top: 40px; border-top: 1px solid rgba(201,168,76,0.15); }
+    .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: var(--gold-light); line-height: 1; }
     .hero-stat-label { font-size: 12px; color: rgba(250,247,242,0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 6px; }
 
-    .hero-sidebar {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 16px; padding: 32px; backdrop-filter: blur(10px);
-    }
+    .hero-sidebar { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: 16px; padding: 32px; backdrop-filter: blur(10px); }
     .hero-sidebar-header { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
     .hero-sidebar-header span { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
     .hero-sidebar-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-    .trending-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.12);
-      border-radius: 12px; padding: 18px; margin-bottom: 14px; transition: all 0.3s ease;
-    }
+    .trending-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.12); border-radius: 12px; padding: 18px; margin-bottom: 14px; transition: all 0.3s ease; }
     .trending-card:last-child { margin-bottom: 0; }
     .trending-card:hover { background: rgba(201,168,76,0.08); border-color: rgba(201,168,76,0.3); transform: translateX(4px); }
     .trending-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
@@ -209,11 +119,9 @@
     .section { padding: 100px 0; }
     .section-alt { background: var(--white); }
     .section-dark { background: var(--navy); }
-
     .section-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px; }
     .section-label span { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
     .section-label-line { width: 32px; height: 1px; background: var(--gold); }
-
     .section-header { margin-bottom: 56px; }
     .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 700; color: var(--navy); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px; }
     .section-dark .section-header h2 { color: var(--cream); }
@@ -223,16 +131,8 @@
 
     /* COURSES */
     .courses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .course-card {
-      background: var(--white); border: 1px solid rgba(10,22,40,0.08);
-      border-radius: 16px; padding: 28px; transition: all 0.4s ease;
-      position: relative; overflow: hidden; display: flex; flex-direction: column;
-    }
-    .course-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
-    }
+    .course-card { background: var(--white); border: 1px solid rgba(10,22,40,0.08); border-radius: 16px; padding: 28px; transition: all 0.4s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .course-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
     .course-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(10,22,40,0.12); border-color: var(--border); }
     .course-card:hover::after { transform: scaleX(1); }
     .course-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -244,19 +144,10 @@
 
     /* OPPORTUNITIES */
     .opp-list { display: flex; flex-direction: column; gap: 16px; }
-    .opp-item {
-      background: var(--white); border: 1px solid rgba(10,22,40,0.07);
-      border-radius: 12px; padding: 24px 32px;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 24px; transition: all 0.3s ease; flex-wrap: wrap;
-    }
+    .opp-item { background: var(--white); border: 1px solid rgba(10,22,40,0.07); border-radius: 12px; padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; gap: 24px; transition: all 0.3s ease; flex-wrap: wrap; }
     .opp-item:hover { border-color: var(--border); transform: translateX(6px); box-shadow: 0 8px 30px rgba(10,22,40,0.07); }
-    .opp-badge {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 5px 12px; border-radius: 4px; white-space: nowrap; margin-right: 14px;
-    }
+    .opp-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 4px; white-space: nowrap; margin-right: 14px; }
     .opp-badge.job { background: #1a2f5a; color: #93c5fd; }
-    .opp-badge.internship { background: #3d1a1a; color: #fca5a5; }
     .opp-info { flex: 1; }
     .opp-title { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
     .opp-deadline { font-size: 13px; color: var(--text-light); }
@@ -295,19 +186,15 @@
     .form-group input,
     .form-group select,
     .form-group textarea {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(201,168,76,0.15);
-      border-radius: 10px; padding: 14px 18px;
-      font-size: 15px; color: var(--cream);
-      font-family: 'DM Sans', sans-serif;
-      transition: all 0.3s ease; outline: none; width: 100%;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 10px; padding: 14px 18px; font-size: 15px; color: var(--cream);
+      font-family: 'DM Sans', sans-serif; transition: all 0.3s ease; outline: none; width: 100%;
       -webkit-appearance: none; appearance: none;
     }
     .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(250,247,242,0.3); }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.06); }
     .form-group select option, .form-group select optgroup { background: #0A1628; color: var(--cream); }
     .form-group textarea { resize: vertical; min-height: 100px; }
-
     .form-submit { margin-top: 28px; text-align: center; }
     .form-submit .btn { padding: 16px 52px; font-size: 13px; }
     .form-note { font-size: 12px; color: rgba(250,247,242,0.3); margin-top: 14px; }
@@ -372,7 +259,6 @@
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; justify-content: center; }
     }
-
     .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
   </style>
@@ -485,56 +371,56 @@
             <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K950</span></div>
             <h3>UI/UX Design</h3>
             <p>Master Figma & user-centered design principles</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
+            <a href="#enroll" class="btn btn-navy">Enroll Now</a>
           </div>
           <div class="course-card fade-up">
             <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div>
             <h3>Entrepreneurship</h3>
             <p>Start, fund & scale your own business from day one</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
+            <a href="#enroll" class="btn btn-navy">Enroll Now</a>
           </div>
           <div class="course-card fade-up">
             <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K950</span></div>
             <h3>Coding & Web Development</h3>
             <p>From HTML basics to full-stack applications</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
+            <a href="#enroll" class="btn btn-navy">Enroll Now</a>
           </div>
           <div class="course-card fade-up">
             <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div>
             <h3>Video Editing</h3>
             <p>Pro-level editing with Premiere Pro & CapCut</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
+            <a href="#enroll" class="btn btn-navy">Enroll Now</a>
           </div>
           <div class="course-card fade-up">
             <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K800</span></div>
             <h3>Freelancing Mastery</h3>
             <p>Land clients & build sustainable income in 90 days</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
+            <a href="#enroll" class="btn btn-navy">Enroll Now</a>
           </div>
           <div class="course-card fade-up">
             <div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K900</span></div>
             <h3>Social Media Management</h3>
             <p>Build & grow influential brands across all platforms</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
+            <a href="#enroll" class="btn btn-navy">Enroll Now</a>
           </div>
           <div class="course-card fade-up">
             <div class="course-top"><span class="course-tag">Data</span><span class="course-price">K900</span></div>
             <h3>Data Analysis</h3>
             <p>Excel, Python & real business insights that drive decisions</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
+            <a href="#enroll" class="btn btn-navy">Enroll Now</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- OPPORTUNITIES -->
+    <!-- OPPORTUNITIES — internship removed -->
     <section class="section section-alt" id="opportunities">
       <div class="container">
         <div class="section-header section-header-row">
           <div>
             <div class="section-label"><div class="section-label-line"></div><span>Opportunities</span></div>
             <h2>Latest Opportunities</h2>
-            <p>Handpicked jobs & internships for our community</p>
+            <p>Handpicked jobs for our community</p>
           </div>
           <a href="#" class="btn btn-outline-navy">See All</a>
         </div>
@@ -545,16 +431,6 @@
               <div class="opp-info">
                 <div class="opp-title">Junior Frontend Developer — Global Company</div>
                 <div class="opp-deadline">🟢 Ongoing — Applications Open</div>
-              </div>
-            </div>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Apply Now</a>
-          </div>
-          <div class="opp-item fade-up">
-            <div style="display:flex;align-items:center;flex:1;flex-wrap:wrap;gap:8px;">
-              <span class="opp-badge internship">Internship</span>
-              <div class="opp-info">
-                <div class="opp-title">Media & Content Creation — Paid Internship</div>
-                <div class="opp-deadline">⏳ Deadline: January 20, 2026</div>
               </div>
             </div>
             <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Apply Now</a>
@@ -615,7 +491,7 @@
       </div>
     </section>
 
-    <!-- ENROLL -->
+    <!-- ENROLL — mailto form -->
     <section class="enroll-section" id="enroll">
       <div class="container">
         <div class="enroll-inner">
@@ -626,128 +502,121 @@
               <div class="section-label-line"></div>
             </div>
             <h2>Ready to Transform Your Future?</h2>
-            <p>Complete the form below and our team will be in touch within 24 hours.</p>
+            <p>Fill in your details below — your email app will open with everything pre-filled. Just hit Send.</p>
           </div>
 
           <div class="enroll-form">
-            <form action="https://formsubmit.co/skillriseafrica44@gmail.com" method="POST">
-              <input type="hidden" name="_subject" value="New SkillRise Africa Enrollment">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
-              <input type="text" name="_honey" style="display:none">
-
-              <div class="form-grid">
-                <div class="form-group">
-                  <label>Full Name</label>
-                  <input type="text" name="Full Name" placeholder="Your full name" required>
-                </div>
-                <div class="form-group">
-                  <label>Email Address</label>
-                  <input type="email" name="Email" placeholder="your@email.com" required>
-                </div>
-                <div class="form-group">
-                  <label>Phone / WhatsApp</label>
-                  <input type="tel" name="Phone" placeholder="+260 ···">
-                </div>
-                <div class="form-group">
-                  <label>Country</label>
-                  <input type="text" name="Country" placeholder="Your country">
-                </div>
-                <div class="form-group full">
-                  <label>Course of Interest</label>
-                  <select name="Course of Interest" required>
-                    <option value="" disabled selected>Select a course</option>
-                    <optgroup label="🎨 Design">
-                      <option>Graphic Design Mastery — K750</option>
-                      <option>UI/UX Design Professional — K950</option>
-                      <option>Animation (2D/3D) — K1000</option>
-                      <option>Canva Mastery — K750</option>
-                      <option>Logo Design — K750</option>
-                      <option>Branding & Identity Design — K850</option>
-                      <option>Motion Graphics — K900</option>
-                      <option>Web Design Basics — K900</option>
-                    </optgroup>
-                    <optgroup label="💻 Technology">
-                      <option>Coding & Web Development — K950</option>
-                      <option>App Development — K1000</option>
-                      <option>Game Development — K1000</option>
-                      <option>Data Analysis — K900</option>
-                      <option>Data Science Basics — K950</option>
-                      <option>Ethical Hacking — K1000</option>
-                      <option>Cybersecurity Fundamentals — K1000</option>
-                      <option>Computer Basics — K750</option>
-                      <option>Microsoft Word, Excel & PowerPoint — K800</option>
-                    </optgroup>
-                    <optgroup label="📈 Marketing">
-                      <option>Digital Marketing — K900</option>
-                      <option>Social Media Management — K800</option>
-                      <option>AI Content Creation — K900</option>
-                      <option>Copywriting — K800</option>
-                      <option>Sales & Marketing — K850</option>
-                      <option>Personal Branding — K800</option>
-                    </optgroup>
-                    <optgroup label="🎬 Content & Media">
-                      <option>Video Editing — K800</option>
-                      <option>Photography & Editing — K800</option>
-                      <option>YouTube Content Creation — K800</option>
-                      <option>TikTok Content Creation — K750</option>
-                      <option>Podcasting — K800</option>
-                      <option>Blogging — K750</option>
-                      <option>Script Writing — K800</option>
-                      <option>Story Writing — K750</option>
-                      <option>Book Writing — K850</option>
-                      <option>E-book Publishing — K800</option>
-                      <option>Voice-over Training — K750</option>
-                    </optgroup>
-                    <optgroup label="💼 Business">
-                      <option>Entrepreneurship — K900</option>
-                      <option>Business Administration — K1000</option>
-                      <option>Freelancing Mastery — K800</option>
-                      <option>Online Business Setup — K900</option>
-                      <option>Dropshipping — K900</option>
-                      <option>Startup Training — K900</option>
-                      <option>Project Management Basics — K900</option>
-                      <option>Remote Work Skills — K750</option>
-                      <option>Virtual Assistant Training — K800</option>
-                      <option>Customer Service — K750</option>
-                      <option>Call Center Training — K750</option>
-                      <option>Financial Literacy — K800</option>
-                      <option>Business Management — K900</option>
-                    </optgroup>
-                    <optgroup label="🎵 Music & Audio">
-                      <option>Sound Editing & Mixing — K800</option>
-                      <option>Music Production — K900</option>
-                      <option>Beat Making — K800</option>
-                    </optgroup>
-                    <optgroup label="👑 Personal Development">
-                      <option>Public Speaking — K800</option>
-                      <option>Communication Skills — K750</option>
-                      <option>Leadership Skills — K850</option>
-                      <option>Time Management — K750</option>
-                      <option>CV & Cover Letter Writing — K750</option>
-                      <option>Interview Preparation — K750</option>
-                      <option>Online Teaching Skills — K800</option>
-                      <option>Course Creation — K900</option>
-                      <option>Coaching & Mentorship — K850</option>
-                    </optgroup>
-                    <optgroup label="🏥 Health & Wellness">
-                      <option>Mental Health Awareness — K800</option>
-                      <option>Nutrition & Healthy Living — K800</option>
-                      <option>First Aid Basics — K850</option>
-                      <option>Community Health — K850</option>
-                    </optgroup>
-                  </select>
-                </div>
-                <div class="form-group full">
-                  <label>Message (Optional)</label>
-                  <textarea name="Message" placeholder="Tell us a bit about your goals..."></textarea>
-                </div>
+            <div class="form-grid" id="enrollFields">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="f_name" placeholder="Your full name" required>
               </div>
-              <div class="form-submit">
-                <button type="submit" class="btn btn-gold">Submit Enrollment →</button>
-                <p class="form-note">Your details are sent securely to skillriseafrica44@gmail.com</p>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="f_email" placeholder="your@email.com" required>
               </div>
-            </form>
+              <div class="form-group">
+                <label>Phone / WhatsApp</label>
+                <input type="tel" id="f_phone" placeholder="+260 ···">
+              </div>
+              <div class="form-group">
+                <label>Country</label>
+                <input type="text" id="f_country" placeholder="Your country">
+              </div>
+              <div class="form-group full">
+                <label>Course of Interest</label>
+                <select id="f_course" required>
+                  <option value="" disabled selected>Select a course</option>
+                  <optgroup label="🎨 Design">
+                    <option>Graphic Design Mastery — K750</option>
+                    <option>UI/UX Design Professional — K950</option>
+                    <option>Animation (2D/3D) — K1000</option>
+                    <option>Canva Mastery — K750</option>
+                    <option>Logo Design — K750</option>
+                    <option>Branding & Identity Design — K850</option>
+                    <option>Motion Graphics — K900</option>
+                    <option>Web Design Basics — K900</option>
+                  </optgroup>
+                  <optgroup label="💻 Technology">
+                    <option>Coding & Web Development — K950</option>
+                    <option>App Development — K1000</option>
+                    <option>Game Development — K1000</option>
+                    <option>Data Analysis — K900</option>
+                    <option>Data Science Basics — K950</option>
+                    <option>Ethical Hacking — K1000</option>
+                    <option>Cybersecurity Fundamentals — K1000</option>
+                    <option>Computer Basics — K750</option>
+                    <option>Microsoft Word, Excel & PowerPoint — K800</option>
+                  </optgroup>
+                  <optgroup label="📈 Marketing">
+                    <option>Digital Marketing — K900</option>
+                    <option>Social Media Management — K800</option>
+                    <option>AI Content Creation — K900</option>
+                    <option>Copywriting — K800</option>
+                    <option>Sales & Marketing — K850</option>
+                    <option>Personal Branding — K800</option>
+                  </optgroup>
+                  <optgroup label="🎬 Content & Media">
+                    <option>Video Editing — K800</option>
+                    <option>Photography & Editing — K800</option>
+                    <option>YouTube Content Creation — K800</option>
+                    <option>TikTok Content Creation — K750</option>
+                    <option>Podcasting — K800</option>
+                    <option>Blogging — K750</option>
+                    <option>Script Writing — K800</option>
+                    <option>Story Writing — K750</option>
+                    <option>Book Writing — K850</option>
+                    <option>E-book Publishing — K800</option>
+                    <option>Voice-over Training — K750</option>
+                  </optgroup>
+                  <optgroup label="💼 Business">
+                    <option>Entrepreneurship — K900</option>
+                    <option>Business Administration — K1000</option>
+                    <option>Freelancing Mastery — K800</option>
+                    <option>Online Business Setup — K900</option>
+                    <option>Dropshipping — K900</option>
+                    <option>Startup Training — K900</option>
+                    <option>Project Management Basics — K900</option>
+                    <option>Remote Work Skills — K750</option>
+                    <option>Virtual Assistant Training — K800</option>
+                    <option>Customer Service — K750</option>
+                    <option>Call Center Training — K750</option>
+                    <option>Financial Literacy — K800</option>
+                    <option>Business Management — K900</option>
+                  </optgroup>
+                  <optgroup label="🎵 Music & Audio">
+                    <option>Sound Editing & Mixing — K800</option>
+                    <option>Music Production — K900</option>
+                    <option>Beat Making — K800</option>
+                  </optgroup>
+                  <optgroup label="👑 Personal Development">
+                    <option>Public Speaking — K800</option>
+                    <option>Communication Skills — K750</option>
+                    <option>Leadership Skills — K850</option>
+                    <option>Time Management — K750</option>
+                    <option>CV & Cover Letter Writing — K750</option>
+                    <option>Interview Preparation — K750</option>
+                    <option>Online Teaching Skills — K800</option>
+                    <option>Course Creation — K900</option>
+                    <option>Coaching & Mentorship — K850</option>
+                  </optgroup>
+                  <optgroup label="🏥 Health & Wellness">
+                    <option>Mental Health Awareness — K800</option>
+                    <option>Nutrition & Healthy Living — K800</option>
+                    <option>First Aid Basics — K850</option>
+                    <option>Community Health — K850</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label>Message (Optional)</label>
+                <textarea id="f_message" placeholder="Tell us a bit about your goals..."></textarea>
+              </div>
+            </div>
+            <div class="form-submit">
+              <button type="button" class="btn btn-gold" onclick="openMailto()">Open Email to Send Enrollment →</button>
+              <p class="form-note">Your email app will open pre-filled — just click Send to reach skillriseafrica44@gmail.com</p>
+            </div>
           </div>
         </div>
       </div>
@@ -807,12 +676,10 @@
       <h2>Privacy Policy</h2>
       <p><strong>Effective Date:</strong> February 19, 2026</p>
       <h3>1. Information We Collect</h3>
-      <p>We collect full name, email, phone, country, payment details, and course enrollment information you voluntarily submit.</p>
+      <p>We collect full name, email, phone, country, and course enrollment information you voluntarily submit.</p>
       <h3>2. How We Use Your Information</h3>
       <p>To process registrations, provide learning materials, issue certificates, and send relevant opportunities. We do not sell your data.</p>
-      <h3>3. Data Protection</h3>
-      <p>We implement appropriate technical and organizational measures to protect your personal information from unauthorized access or misuse.</p>
-      <h3>4. Contact</h3>
+      <h3>3. Contact</h3>
       <p>Email: skillriseafrica44@gmail.com &nbsp;|&nbsp; WhatsApp: +260777083995</p>
     </div>
   </div>
@@ -824,11 +691,11 @@
       <h2>Terms of Use</h2>
       <p><strong>Effective Date:</strong> February 19, 2026</p>
       <h3>1. Acceptance</h3>
-      <p>By using our platform you confirm you are at least 16 years old, provide accurate information, and will use our services for lawful purposes only.</p>
+      <p>By using our platform you confirm you are at least 16 years old, provide accurate information, and use our services lawfully.</p>
       <h3>2. Course Access</h3>
-      <p>Course materials are for personal use only. You may not copy, resell, or redistribute our content. Payments are non-refundable once access is granted.</p>
+      <p>Course materials are for personal use only. Payments are non-refundable once access is granted.</p>
       <h3>3. Certification</h3>
-      <p>Certificates are issued only to students who complete all course requirements and meet assessment criteria.</p>
+      <p>Certificates are issued only to students who complete all requirements and meet assessment criteria.</p>
       <h3>4. Intellectual Property</h3>
       <p>All content belongs to SkillRise Africa and may not be used without written permission.</p>
       <h3>5. Contact</h3>
@@ -841,12 +708,44 @@
       document.getElementById('mobileNav').classList.toggle('active');
       document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
     }
+
     window.onclick = function(e) {
       ['privacyModal','termsModal'].forEach(id => {
         const m = document.getElementById(id);
         if (e.target === m) m.style.display = 'none';
       });
     };
+
+    function openMailto() {
+      const name    = document.getElementById('f_name').value.trim();
+      const email   = document.getElementById('f_email').value.trim();
+      const phone   = document.getElementById('f_phone').value.trim();
+      const country = document.getElementById('f_country').value.trim();
+      const course  = document.getElementById('f_course').value;
+      const message = document.getElementById('f_message').value.trim();
+
+      if (!name || !email || !course) {
+        alert('Please fill in your Full Name, Email, and Course of Interest before continuing.');
+        return;
+      }
+
+      const subject = encodeURIComponent('New Enrollment — SkillRise Africa');
+      const body = encodeURIComponent(
+        'SKILLRISE AFRICA — NEW ENROLLMENT\n' +
+        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n' +
+        'Full Name:       ' + name + '\n' +
+        'Email:           ' + email + '\n' +
+        'Phone/WhatsApp:  ' + (phone || 'Not provided') + '\n' +
+        'Country:         ' + (country || 'Not provided') + '\n' +
+        'Course:          ' + course + '\n\n' +
+        'Message:\n' + (message || 'No message provided.') + '\n\n' +
+        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n' +
+        'Sent via SkillRise Africa website'
+      );
+
+      window.location.href = 'mailto:skillriseafrica44@gmail.com?subject=' + subject + '&body=' + body;
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -855,6 +754,7 @@
         }
       });
     }, { threshold: 0.1 });
+
     document.querySelectorAll('.fade-up').forEach((el, i) => {
       el.dataset.delay = (i % 3) * 120;
       observer.observe(el);
