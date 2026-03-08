@@ -1,14 +1,393 @@
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>SkillRise Africa — Course Enrollment</title>
-    <script async src="https://tally.so/widgets/embed.js"></script>
-    <style type="text/css">
-      html { margin: 0; height: 100%; overflow: hidden; }
-      iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0; }
-    </style>
-  </head>
-  <body>
-    <iframe data-tally-src="https://tally.so/r/MebdLA?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="SkillRise Africa — Course Enrollment"></iframe>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enroll — SkillRise Africa | ELEVATE by ANICADE</title>
+  <meta name="description" content="Enroll in a premium SkillRise Africa course. Fill in your details and send your application directly.">
+
+  <!-- OG / Link Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tresforwrld.github.io/SkillRise-Africa-/register.html">
+  <meta property="og:title" content="Enroll — SkillRise Africa">
+  <meta property="og:description" content="Register for a premium SkillRise Africa course. Fill in your details and send your application in seconds.">
+  <meta property="og:image" content="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0A1628;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale: #F5E9C8;
+      --cream: #FAF7F2;
+      --white: #fff;
+      --text: #1C2B3A;
+      --text-mid: #4A5568;
+      --text-light: #8A9BB0;
+      --border: rgba(201,168,76,0.2);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      min-height: 100vh;
+      color: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+
+    /* noise */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999; opacity: 0.5;
+    }
+
+    /* ambient glow */
+    body::after {
+      content: '';
+      position: fixed; top: -200px; right: -200px;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    /* HEADER */
+    .header {
+      background: rgba(10,22,40,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner {
+      max-width: 1300px; margin: 0 auto; padding: 0 56px;
+      display: flex; align-items: center;
+      justify-content: space-between; height: 80px; gap: 24px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; }
+    .logo img { height: 52px; width: auto; }
+    .logo-text h1 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--cream); line-height: 1.1; }
+    .logo-text span { font-size: 10px; color: var(--gold); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; }
+    .header-back {
+      font-size: 13px; color: rgba(250,247,242,0.5);
+      display: flex; align-items: center; gap: 6px;
+      font-weight: 500; letter-spacing: 0.04em;
+      padding: 8px 16px; border-radius: 8px;
+      border: 1px solid rgba(201,168,76,0.15);
+      transition: all 0.3s ease;
+    }
+    .header-back:hover { color: var(--gold-light); border-color: rgba(201,168,76,0.4); }
+
+    /* PAGE WRAPPER */
+    .page {
+      position: relative; z-index: 1;
+      min-height: calc(100vh - 80px);
+      display: flex; align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    /* CARD */
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.18);
+      border-radius: 24px;
+      padding: 52px 48px;
+      width: 100%; max-width: 680px;
+      backdrop-filter: blur(12px);
+      position: relative;
+    }
+    .card::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 60%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .card-eyebrow {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; margin-bottom: 14px;
+    }
+    .card-eyebrow-line { width: 32px; height: 1px; background: var(--gold); }
+    .card-eyebrow span { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+
+    .card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px; font-weight: 700; color: var(--cream);
+      text-align: center; line-height: 1.1; margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .card h2 em { font-style: italic; color: var(--gold-light); }
+    .card-subtitle {
+      text-align: center; font-size: 15px; font-weight: 300;
+      color: rgba(250,247,242,0.5); margin-bottom: 40px; line-height: 1.6;
+    }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 10px; padding: 13px 16px;
+      font-size: 15px; color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      outline: none; width: 100%;
+      transition: border-color 0.3s, background 0.3s;
+      -webkit-appearance: none; appearance: none;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(250,247,242,0.25); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.06);
+    }
+    .form-group select option, .form-group select optgroup { background: #0A1628; color: var(--cream); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    .form-submit { margin-top: 28px; }
+    .btn-send {
+      width: 100%; padding: 16px 24px;
+      background: var(--gold); color: var(--navy);
+      border: none; border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.3s ease;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .btn-send:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,168,76,0.3); }
+    .form-note {
+      text-align: center; font-size: 12px;
+      color: rgba(250,247,242,0.25); margin-top: 14px; line-height: 1.6;
+    }
+
+    /* divider */
+    .divider {
+      display: flex; align-items: center; gap: 12px;
+      margin: 28px 0 22px;
+    }
+    .divider-line { flex: 1; height: 1px; background: rgba(201,168,76,0.12); }
+    .divider span { font-size: 11px; color: rgba(250,247,242,0.3); letter-spacing: 0.08em; white-space: nowrap; }
+
+    .alt-links {
+      display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+    }
+    .alt-links a {
+      font-size: 13px; color: rgba(250,247,242,0.4);
+      display: flex; align-items: center; gap: 5px;
+    }
+    .alt-links a:hover { color: var(--gold-light); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .header-inner { padding: 0 20px; }
+      .card { padding: 36px 24px; }
+      .card h2 { font-size: 32px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa Logo">
+        <div class="logo-text">
+          <h1>SkillRise Africa</h1>
+          <span>ELEVATE by ANICADE</span>
+        </div>
+      </a>
+      <a href="index.html" class="header-back">← Back to Home</a>
+    </div>
+  </header>
+
+  <div class="page">
+    <div class="card">
+      <div class="card-eyebrow">
+        <div class="card-eyebrow-line"></div>
+        <span>Course Enrollment</span>
+        <div class="card-eyebrow-line"></div>
+      </div>
+      <h2>Begin Your <em>Journey</em></h2>
+      <p class="card-subtitle">Fill in your details below. Your email app will open pre-filled — just click Send to enroll.</p>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="r_name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="r_email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" id="r_phone" placeholder="+260 ···">
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" id="r_country" placeholder="Your country">
+        </div>
+        <div class="form-group full">
+          <label>Course of Interest *</label>
+          <select id="r_course" required>
+            <option value="" disabled selected>Select a course</option>
+            <optgroup label="🎨 Design">
+              <option>Graphic Design Mastery — K750</option>
+              <option>UI/UX Design Professional — K950</option>
+              <option>Animation (2D/3D) — K1000</option>
+              <option>Canva Mastery — K750</option>
+              <option>Logo Design — K750</option>
+              <option>Branding & Identity Design — K850</option>
+              <option>Motion Graphics — K900</option>
+              <option>Web Design Basics — K900</option>
+            </optgroup>
+            <optgroup label="💻 Technology">
+              <option>Coding & Web Development — K950</option>
+              <option>App Development — K1000</option>
+              <option>Game Development — K1000</option>
+              <option>Data Analysis — K900</option>
+              <option>Data Science Basics — K950</option>
+              <option>Ethical Hacking — K1000</option>
+              <option>Cybersecurity Fundamentals — K1000</option>
+              <option>Computer Basics — K750</option>
+              <option>Microsoft Word, Excel & PowerPoint — K800</option>
+            </optgroup>
+            <optgroup label="📈 Marketing">
+              <option>Digital Marketing — K900</option>
+              <option>Social Media Management — K800</option>
+              <option>AI Content Creation — K900</option>
+              <option>Copywriting — K800</option>
+              <option>Sales & Marketing — K850</option>
+              <option>Personal Branding — K800</option>
+            </optgroup>
+            <optgroup label="🎬 Content & Media">
+              <option>Video Editing — K800</option>
+              <option>Photography & Editing — K800</option>
+              <option>YouTube Content Creation — K800</option>
+              <option>TikTok Content Creation — K750</option>
+              <option>Podcasting — K800</option>
+              <option>Blogging — K750</option>
+              <option>Script Writing — K800</option>
+              <option>Story Writing — K750</option>
+              <option>Book Writing — K850</option>
+              <option>E-book Publishing — K800</option>
+              <option>Voice-over Training — K750</option>
+            </optgroup>
+            <optgroup label="💼 Business">
+              <option>Entrepreneurship — K900</option>
+              <option>Business Administration — K1000</option>
+              <option>Freelancing Mastery — K800</option>
+              <option>Online Business Setup — K900</option>
+              <option>Dropshipping — K900</option>
+              <option>Startup Training — K900</option>
+              <option>Project Management Basics — K900</option>
+              <option>Remote Work Skills — K750</option>
+              <option>Virtual Assistant Training — K800</option>
+              <option>Customer Service — K750</option>
+              <option>Call Center Training — K750</option>
+              <option>Financial Literacy — K800</option>
+              <option>Business Management — K900</option>
+            </optgroup>
+            <optgroup label="🎵 Music & Audio">
+              <option>Sound Editing & Mixing — K800</option>
+              <option>Music Production — K900</option>
+              <option>Beat Making — K800</option>
+            </optgroup>
+            <optgroup label="👑 Personal Development">
+              <option>Public Speaking — K800</option>
+              <option>Communication Skills — K750</option>
+              <option>Leadership Skills — K850</option>
+              <option>Time Management — K750</option>
+              <option>CV & Cover Letter Writing — K750</option>
+              <option>Interview Preparation — K750</option>
+              <option>Online Teaching Skills — K800</option>
+              <option>Course Creation — K900</option>
+              <option>Coaching & Mentorship — K850</option>
+            </optgroup>
+            <optgroup label="🏥 Health & Wellness">
+              <option>Mental Health Awareness — K800</option>
+              <option>Nutrition & Healthy Living — K800</option>
+              <option>First Aid Basics — K850</option>
+              <option>Community Health — K850</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Message (Optional)</label>
+          <textarea id="r_message" placeholder="Tell us about your goals or any questions..."></textarea>
+        </div>
+      </div>
+
+      <div class="form-submit">
+        <button class="btn-send" onclick="openRegisterMailto()">
+          ✉ Open Email & Send Enrollment
+        </button>
+        <p class="form-note">
+          Your email app will open with everything pre-filled.<br>
+          Just press <strong style="color:rgba(250,247,242,0.5)">Send</strong> — your enrollment goes straight to skillriseafrica44@gmail.com
+        </p>
+      </div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span>or reach us directly</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="alt-links">
+        <a href="https://wa.me/260777083995">💬 WhatsApp +260 777 083 995</a>
+        <a href="mailto:skillriseafrica44@gmail.com">✉ skillriseafrica44@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openRegisterMailto() {
+      const name    = document.getElementById('r_name').value.trim();
+      const email   = document.getElementById('r_email').value.trim();
+      const phone   = document.getElementById('r_phone').value.trim();
+      const country = document.getElementById('r_country').value.trim();
+      const course  = document.getElementById('r_course').value;
+      const message = document.getElementById('r_message').value.trim();
+
+      if (!name || !email || !course) {
+        alert('Please fill in your Full Name, Email, and Course of Interest before continuing.');
+        return;
+      }
+
+      const subject = encodeURIComponent('New Enrollment — SkillRise Africa');
+      const body = encodeURIComponent(
+        'SKILLRISE AFRICA — NEW ENROLLMENT\n' +
+        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n' +
+        'Full Name:       ' + name + '\n' +
+        'Email:           ' + email + '\n' +
+        'Phone/WhatsApp:  ' + (phone || 'Not provided') + '\n' +
+        'Country:         ' + (country || 'Not provided') + '\n' +
+        'Course:          ' + course + '\n\n' +
+        'Message:\n' + (message || 'No message provided.') + '\n\n' +
+        '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n' +
+        'Sent via SkillRise Africa — register.html'
+      );
+
+      window.location.href = 'mailto:skillriseafrica44@gmail.com?subject=' + subject + '&body=' + body;
+    }
+  </script>
+
+</body>
 </html>
