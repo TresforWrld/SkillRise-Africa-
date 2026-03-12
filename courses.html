@@ -4,526 +4,197 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Courses — SkillRise Africa | ELEVATE by ANICADE</title>
-  <meta name="description" content="Premium professional courses in Zambia. Graphic Design, Digital Marketing, Web Development, Entrepreneurship & 60+ more.">
+  <meta name="description" content="62+ premium professional courses — Graphic Design, Digital Marketing, Web Development, Entrepreneurship and more. Starting from K750.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tresforwrld.github.io/SkillRise-Africa-/courses.html">
+  <meta property="og:title" content="Courses — SkillRise Africa | ELEVATE by ANICADE">
+  <meta property="og:description" content="62+ premium professional courses for African professionals. Starting from K750.">
+  <meta property="og:image" content="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --navy: #0A1628;
-      --navy-mid: #112240;
-      --gold: #C9A84C;
-      --gold-light: #E8C97A;
-      --gold-pale: #F5E9C8;
-      --cream: #FAF7F2;
-      --white: #FFFFFF;
-      --text: #1C2B3A;
-      --text-mid: #4A5568;
-      --text-light: #8A9BB0;
-      --border: rgba(201,168,76,0.2);
-      --max: 1300px;
-    }
+    :root{--navy:#0A1628;--gold:#C9A84C;--gold-light:#E8C97A;--gold-pale:#F5E9C8;--cream:#FAF7F2;--white:#FFF;--text:#1C2B3A;--text-mid:#4A5568;--text-light:#8A9BB0;--border:rgba(201,168,76,.2);--max:1300px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none;transition:all .3s ease}
+    .container{max-width:var(--max);margin:0 auto;padding:0 56px}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.45}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    /* HEADER */
+    .header{background:rgba(250,247,242,.94);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:32px}
+    .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}
+    .logo img{height:60px;width:auto}
+    .logo-text h1{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--navy);line-height:1.1}
+    .logo-text span{font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+    .nav{display:flex;align-items:center;gap:2px}
+    .nav a{padding:8px 16px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text-mid)}
+    .nav a:hover{color:var(--navy);background:rgba(10,22,40,.05)}
+    .nav a.active{color:var(--navy);font-weight:600}
+    .btn-enroll{background:var(--navy)!important;color:var(--gold-light)!important;padding:10px 24px!important;border-radius:8px!important;font-weight:700!important;font-size:12px!important;letter-spacing:.08em!important;text-transform:uppercase!important;transition:all .3s ease!important;box-shadow:0 4px 20px rgba(10,22,40,.15)}
+    .btn-enroll:hover{background:var(--gold)!important;color:var(--navy)!important;box-shadow:0 8px 30px rgba(201,168,76,.35)!important;transform:translateY(-2px)}
+    .mobile-menu-btn{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:var(--navy);padding:4px}
 
-    /* Noise overlay */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999; opacity: 0.4;
-    }
+    /* MOBILE NAV */
+    .mobile-nav{display:none;position:fixed;inset:0;background:var(--navy);z-index:1000;flex-direction:column;overflow-y:auto}
+    .mobile-nav.active{display:flex}
+    .mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid rgba(201,168,76,.12);flex-shrink:0}
+    .mobile-nav-logo{display:flex;align-items:center;gap:10px}
+    .mobile-nav-logo img{height:38px}
+    .mobile-nav-logo span{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--cream)}
+    .mobile-nav-close{font-size:26px;cursor:pointer;color:var(--gold);background:none;border:none;line-height:1;padding:4px}
+    .mobile-nav-links{padding:8px 24px 20px;flex:1}
+    .mobile-nav-links a{display:flex;align-items:center;padding:14px 0;border-bottom:1px solid rgba(201,168,76,.07);font-size:15px;font-weight:500;color:rgba(250,247,242,.7)}
+    .mobile-nav-links a:hover{color:var(--gold-light)}
+    .mobile-nav-links a .arr{margin-left:auto;font-size:13px;opacity:.35}
+    .mobile-nav-footer{padding:0 24px 36px;flex-shrink:0}
+    .mobile-nav-footer a{display:block;width:100%;text-align:center;background:var(--gold);color:var(--navy)!important;padding:15px;border-radius:10px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .mobile-nav-footer a:hover{background:var(--gold-light)}
 
-    /* ─── ANNOUNCEMENT ─── */
-    .announcement {
-      background: var(--navy);
-      color: var(--gold-light);
-      text-align: center;
-      padding: 10px 20px;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .announcement span { color: var(--white); margin: 0 6px; }
+    /* HERO */
+    .hero{background:var(--navy);padding:80px 0 68px;position:relative;overflow:hidden}
+    .hero-glow{position:absolute;top:-180px;right:-160px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.16) 0%,transparent 70%);pointer-events:none;animation:breathe 7s ease-in-out infinite}
+    .hero-glow2{position:absolute;bottom:-150px;left:-120px;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%);pointer-events:none;animation:breathe 9s ease-in-out infinite reverse}
+    @keyframes breathe{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.1);opacity:.7}}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:70px 70px;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%)}
+    .hero-content{position:relative;z-index:1;text-align:center}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;justify-content:center}
+    .hero-eyebrow-line{width:36px;height:1px;background:var(--gold)}
+    .hero-eyebrow span{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:700;color:var(--white);line-height:1.05;letter-spacing:-.025em;margin-bottom:18px}
+    .hero h1 em{font-style:italic;color:var(--gold-light);text-shadow:0 0 40px rgba(201,168,76,.4)}
+    .hero p{font-size:17px;color:rgba(250,247,242,.58);max-width:540px;margin:0 auto 36px;font-weight:300;line-height:1.85}
+    .hero-stats{display:flex;justify-content:center;gap:48px;padding-top:36px;border-top:1px solid rgba(201,168,76,.14);margin-top:36px;flex-wrap:wrap}
+    .hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--gold-light);line-height:1}
+    .hero-stat-label{font-size:11px;color:rgba(250,247,242,.4);text-transform:uppercase;letter-spacing:.12em;margin-top:5px}
 
-    /* ─── HEADER ─── */
-    .header {
-      background: rgba(250,247,242,0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      position: sticky; top: 0; z-index: 500;
-    }
-    .header-inner {
-      display: flex; align-items: center;
-      justify-content: space-between;
-      padding: 20px 0; gap: 32px;
-    }
-    .logo { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
-    .logo img { height: 64px; width: auto; }
-    .logo-text h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; font-weight: 700;
-      color: var(--navy); line-height: 1.1;
-    }
-    .logo-text span {
-      font-size: 11px; color: var(--gold);
-      font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
-    }
-    .nav { display: flex; align-items: center; gap: 4px; }
-    .nav a {
-      padding: 9px 18px; border-radius: 8px;
-      font-size: 14px; font-weight: 500;
-      color: var(--text-mid); letter-spacing: 0.01em;
-    }
-    .nav a:hover { color: var(--navy); background: rgba(10,22,40,0.05); }
-    .nav a.active { color: var(--navy); font-weight: 600; }
-    .btn-enroll {
-      background: var(--navy); color: var(--gold-light) !important;
-      padding: 11px 28px !important; border-radius: 8px !important;
-      font-weight: 600 !important; font-size: 13px !important;
-      letter-spacing: 0.06em !important; text-transform: uppercase !important;
-      border: 1px solid transparent;
-    }
-    .btn-enroll:hover {
-      background: transparent !important;
-      border-color: var(--navy) !important;
-      color: var(--navy) !important;
-    }
-    .mobile-menu-btn {
-      display: none; background: none; border: none;
-      font-size: 26px; cursor: pointer; color: var(--navy);
-    }
+    /* FILTER BAR */
+    .filter-bar{background:var(--white);border-bottom:1px solid rgba(10,22,40,.07);position:sticky;top:92px;z-index:400}
+    .filter-inner{display:flex;align-items:center;overflow-x:auto;scrollbar-width:none}
+    .filter-inner::-webkit-scrollbar{display:none}
+    .filter-btn{flex-shrink:0;padding:18px 20px;font-size:13px;font-weight:600;color:var(--text-light);background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;transition:all .25s ease;white-space:nowrap;letter-spacing:.02em}
+    .filter-btn:hover{color:var(--navy)}
+    .filter-btn.active{color:var(--navy);border-bottom-color:var(--gold)}
+    .filter-count{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:var(--gold-pale);color:var(--gold);border-radius:50%;font-size:10px;font-weight:700;margin-left:5px}
+    .filter-btn.active .filter-count{background:var(--navy);color:var(--gold-light)}
 
-    /* ─── MOBILE NAV ─── */
-    .mobile-nav {
-      display: none; position: fixed; inset: 0;
-      background: var(--navy); z-index: 1000;
-      flex-direction: column; padding: 100px 40px 40px;
-    }
-    .mobile-nav.active { display: flex; }
-    .mobile-nav-close {
-      position: absolute; top: 24px; right: 32px;
-      font-size: 34px; cursor: pointer;
-      color: var(--gold); background: none; border: none;
-    }
-    .mobile-nav a {
-      display: block; padding: 18px 0;
-      border-bottom: 1px solid rgba(201,168,76,0.15);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px; font-weight: 600; color: var(--cream);
-    }
-    .mobile-nav a:hover { color: var(--gold-light); }
-    .mobile-nav a.btn-enroll-mobile {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--navy); background: var(--gold);
-      text-align: center; border-radius: 8px;
-      padding: 18px; margin-top: 20px; border: none; font-weight: 700;
-    }
+    /* COURSES SECTION */
+    .courses-section{padding:48px 0 100px}
+    .results-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px}
+    .results-bar h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:var(--navy);letter-spacing:-.02em}
+    .results-count{font-size:14px;color:var(--text-light);font-weight:500}
+    .courses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .course-card{background:var(--white);border:1px solid rgba(10,22,40,.07);border-radius:18px;padding:24px;transition:all .4s ease;position:relative;overflow:hidden;display:flex;flex-direction:column}
+    .course-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));background-size:200% 100%;transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+    .course-card:hover{transform:translateY(-8px);box-shadow:0 24px 56px rgba(10,22,40,.12),0 0 0 1px rgba(201,168,76,.18)}
+    .course-card:hover::after{transform:scaleX(1);animation:bar-shine 1.5s linear infinite}
+    @keyframes bar-shine{0%{background-position:0% 0%}100%{background-position:200% 0%}}
+    .course-card.hidden{display:none}
+    .course-emoji{font-size:28px;margin-bottom:12px;display:block}
+    .course-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .course-tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);padding:4px 10px;border-radius:4px}
+    .course-price{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--navy)}
+    .course-card h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:8px}
+    .course-card p{font-size:13px;color:var(--text-mid);line-height:1.6;flex:1;margin-bottom:18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:all .3s ease;cursor:pointer;border:none}
+    .btn-navy{background:var(--navy);color:var(--gold-light);border:1px solid rgba(201,168,76,.5)}
+    .btn-navy:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.3)}
+    .btn-gold{background:var(--gold);color:var(--navy)}
+    .btn-gold:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 12px 36px rgba(201,168,76,.4)}
+    .btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(201,168,76,.35)}
+    .btn-ghost:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(201,168,76,.08)}
+    .course-card .btn{width:100%}
 
-    /* ─── HERO ─── */
-    .hero {
-      background: var(--navy);
-      padding: 80px 0 70px;
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; top: -200px; right: -200px;
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-grid-lines {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-      background-size: 60px 60px; pointer-events: none;
-    }
-    .hero-content { position: relative; z-index: 1; text-align: center; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center;
-      gap: 10px; margin-bottom: 20px; justify-content: center;
-    }
-    .hero-eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
-    .hero-eyebrow span {
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
-    }
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 58px; font-weight: 700;
-      color: var(--white); line-height: 1.08;
-      letter-spacing: -0.02em; margin-bottom: 18px;
-    }
-    .hero h1 em { font-style: italic; color: var(--gold-light); }
-    .hero p {
-      font-size: 17px; color: rgba(250,247,242,0.6);
-      max-width: 560px; margin: 0 auto 36px;
-      font-weight: 300; line-height: 1.8;
-    }
-    .hero-stats {
-      display: flex; justify-content: center; gap: 48px;
-      padding-top: 36px;
-      border-top: 1px solid rgba(201,168,76,0.15);
-      margin-top: 36px;
-    }
-    .hero-stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 36px; font-weight: 700;
-      color: var(--gold-light); line-height: 1;
-    }
-    .hero-stat-label {
-      font-size: 12px; color: rgba(250,247,242,0.45);
-      text-transform: uppercase; letter-spacing: 0.1em; margin-top: 5px;
-    }
+    /* CTA BANNER */
+    .cta-banner{background:var(--navy);border-radius:20px;padding:56px 56px;margin:0 0 100px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;overflow:hidden}
+    .cta-banner::before{content:'';position:absolute;top:-120px;right:-120px;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.12) 0%,transparent 70%);pointer-events:none}
+    .cta-banner::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(201,168,76,.04),transparent);animation:cta-sweep 5s ease-in-out infinite}
+    @keyframes cta-sweep{0%{left:-100%}100%{left:200%}}
+    .cta-content{position:relative;z-index:1}
+    .cta-content h2{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:var(--cream);line-height:1.1;margin-bottom:10px}
+    .cta-content h2 em{font-style:italic;color:var(--gold-light);text-shadow:0 0 30px rgba(201,168,76,.3)}
+    .cta-content p{font-size:15px;color:rgba(250,247,242,.5);font-weight:300}
+    .cta-actions{display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
 
-    /* ─── FILTER BAR ─── */
-    .filter-section {
-      background: var(--white);
-      border-bottom: 1px solid rgba(10,22,40,0.07);
-      position: sticky; top: 105px; z-index: 400;
-      padding: 0;
-    }
-    .filter-inner {
-      display: flex; align-items: center;
-      gap: 0; overflow-x: auto;
-      scrollbar-width: none;
-      padding: 0;
-    }
-    .filter-inner::-webkit-scrollbar { display: none; }
-    .filter-btn {
-      flex-shrink: 0;
-      padding: 18px 22px;
-      font-size: 13px; font-weight: 600;
-      color: var(--text-light);
-      background: none; border: none;
-      border-bottom: 3px solid transparent;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-    }
-    .filter-btn:hover { color: var(--navy); }
-    .filter-btn.active {
-      color: var(--navy);
-      border-bottom-color: var(--gold);
-    }
-    .filter-count {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 20px; height: 20px;
-      background: var(--gold-pale); color: var(--gold);
-      border-radius: 50%; font-size: 11px; font-weight: 700;
-      margin-left: 6px;
-    }
-    .filter-btn.active .filter-count {
-      background: var(--navy); color: var(--gold-light);
-    }
+    /* FOOTER */
+    .footer{background:#060e1a;border-top:1px solid rgba(201,168,76,.1);padding:64px 0 36px}
+    .footer-inner{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer-brand .logo-text h1{color:var(--cream)}
+    .footer-brand p{font-size:14px;color:rgba(250,247,242,.38);margin-top:14px;line-height:1.75;max-width:250px}
+    .footer-col h5{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .footer-col a{display:block;font-size:14px;color:rgba(250,247,242,.45);margin-bottom:10px}
+    .footer-col a:hover{color:var(--gold-light)}
+    .footer-bottom{border-top:1px solid rgba(201,168,76,.08);padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+    .footer-bottom p{font-size:12px;color:rgba(250,247,242,.25)}
+    .footer-links{display:flex;gap:22px;flex-wrap:wrap}
+    .footer-links a{font-size:12px;color:rgba(250,247,242,.3)}
+    .footer-links a:hover{color:var(--gold)}
 
-    /* ─── RESULTS BAR ─── */
-    .results-bar {
-      display: flex; align-items: center;
-      justify-content: space-between;
-      padding: 28px 0 24px; flex-wrap: wrap; gap: 16px;
-    }
-    .results-bar h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 32px; font-weight: 700;
-      color: var(--navy); letter-spacing: -0.02em;
-    }
-    .results-count {
-      font-size: 14px; color: var(--text-light);
-      font-weight: 500;
-    }
+    /* MODALS */
+    .modal{display:none;position:fixed;z-index:2000;inset:0;background:rgba(10,22,40,.88);overflow-y:auto;backdrop-filter:blur(8px)}
+    .modal-content{background:var(--cream);margin:5% auto;padding:52px;border-radius:20px;width:90%;max-width:720px;position:relative;color:var(--text)}
+    .modal-close{position:absolute;top:22px;right:28px;font-size:28px;color:var(--text-light);cursor:pointer;line-height:1;background:none;border:none}
+    .modal-close:hover{color:var(--navy)}
+    .modal-content h2{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--navy);margin-bottom:22px}
+    .modal-content h3{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--navy);margin:22px 0 8px}
+    .modal-content p{font-size:15px;line-height:1.7;color:var(--text-mid);margin-bottom:8px}
 
-    /* ─── COURSES GRID ─── */
-    .courses-section { padding: 0 0 100px; }
-    .courses-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
+    /* FADE */
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
 
-    .course-card {
-      background: var(--white);
-      border: 1px solid rgba(10,22,40,0.07);
-      border-radius: 16px;
-      padding: 24px;
-      transition: all 0.4s ease;
-      position: relative; overflow: hidden;
-      display: flex; flex-direction: column;
-      cursor: default;
+    /* RESPONSIVE */
+    @media(max-width:1100px){.courses-grid{grid-template-columns:repeat(3,1fr)}.footer-inner{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){
+      .container{padding:0 20px}.nav{display:none}.mobile-menu-btn{display:block}
+      .logo img{height:48px}.logo-text h1{font-size:18px}
+      .hero{padding:56px 0 50px}.hero h1{font-size:38px}.hero p{font-size:15px}
+      .hero-stats{gap:20px}.hero-stat-num{font-size:28px}
+      .filter-bar{top:82px}.courses-grid{grid-template-columns:repeat(2,1fr)}
+      .courses-section{padding:32px 0 70px}
+      .cta-banner{padding:36px 28px;flex-direction:column;align-items:flex-start}
+      .cta-content h2{font-size:30px}.cta-actions{flex-direction:column;width:100%}
+      .cta-actions .btn{width:100%;justify-content:center}
+      .footer-inner{grid-template-columns:1fr;gap:28px}
+      .footer-bottom{flex-direction:column;align-items:flex-start}
+      .modal-content{padding:32px 20px;margin:10% auto}
     }
-    .course-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .course-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 20px 50px rgba(10,22,40,0.11);
-      border-color: var(--border);
-    }
-    .course-card:hover::after { transform: scaleX(1); }
-    .course-card.hidden { display: none; }
-
-    .course-emoji {
-      font-size: 30px; margin-bottom: 14px; display: block;
-    }
-    .course-top {
-      display: flex; justify-content: space-between;
-      align-items: center; margin-bottom: 12px;
-    }
-    .course-tag {
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--gold); background: var(--gold-pale);
-      padding: 4px 10px; border-radius: 4px;
-    }
-    .course-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px; font-weight: 700; color: var(--navy);
-    }
-    .course-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px; font-weight: 700;
-      color: var(--navy); line-height: 1.25;
-      margin-bottom: 8px;
-    }
-    .course-card p {
-      font-size: 13px; color: var(--text-mid);
-      line-height: 1.6; flex: 1; margin-bottom: 20px;
-    }
-    .btn {
-      display: inline-flex; align-items: center;
-      justify-content: center; gap: 8px;
-      padding: 11px 20px; border-radius: 8px;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      transition: all 0.3s ease; cursor: pointer; border: none;
-    }
-    .btn-navy {
-      background: var(--navy); color: var(--gold-light);
-      border: 1px solid var(--gold);
-    }
-    .btn-navy:hover {
-      background: var(--gold); color: var(--navy);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(201,168,76,0.25);
-    }
-    .course-card .btn { width: 100%; }
-
-    /* ─── EMPTY STATE ─── */
-    .empty-state {
-      display: none; text-align: center;
-      padding: 80px 20px; grid-column: 1/-1;
-    }
-    .empty-state.visible { display: block; }
-    .empty-state p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px; color: var(--text-light);
-    }
-
-    /* ─── CTA BANNER ─── */
-    .cta-banner {
-      background: var(--navy);
-      border-radius: 20px;
-      padding: 56px 60px;
-      margin: 0 0 100px;
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 40px;
-      flex-wrap: wrap; position: relative; overflow: hidden;
-    }
-    .cta-banner::before {
-      content: '';
-      position: absolute; top: -100px; right: -100px;
-      width: 400px; height: 400px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta-content { position: relative; z-index: 1; }
-    .cta-content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px; font-weight: 700;
-      color: var(--cream); line-height: 1.15;
-      margin-bottom: 10px;
-    }
-    .cta-content p {
-      font-size: 15px; color: rgba(250,247,242,0.55);
-      font-weight: 300;
-    }
-    .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
-    .btn-gold {
-      background: var(--gold); color: var(--navy);
-      padding: 15px 36px; border-radius: 8px;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      transition: all 0.3s ease;
-    }
-    .btn-gold:hover {
-      background: var(--gold-light);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 36px rgba(201,168,76,0.3);
-    }
-    .btn-ghost {
-      background: transparent; color: var(--cream);
-      border: 1px solid rgba(201,168,76,0.35);
-      padding: 15px 36px; border-radius: 8px;
-      font-size: 13px; font-weight: 600;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      transition: all 0.3s ease;
-    }
-    .btn-ghost:hover {
-      border-color: var(--gold); color: var(--gold-light);
-      background: rgba(201,168,76,0.07);
-    }
-
-    /* ─── FOOTER ─── */
-    .footer {
-      background: var(--navy);
-      border-top: 1px solid rgba(201,168,76,0.12);
-      padding: 60px 0 36px;
-    }
-    .footer-inner {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 48px; margin-bottom: 48px;
-    }
-    .footer-brand .logo-text h1 { color: var(--cream); }
-    .footer-brand p {
-      font-size: 14px; color: rgba(250,247,242,0.45);
-      margin-top: 16px; line-height: 1.7; max-width: 260px;
-    }
-    .footer-col h5 {
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 18px;
-    }
-    .footer-col a {
-      display: block; font-size: 14px;
-      color: rgba(250,247,242,0.5); margin-bottom: 10px;
-    }
-    .footer-col a:hover { color: var(--gold-light); }
-    .footer-bottom {
-      border-top: 1px solid rgba(201,168,76,0.1);
-      padding-top: 28px;
-      display: flex; justify-content: space-between;
-      align-items: center; flex-wrap: wrap; gap: 16px;
-    }
-    .footer-bottom p { font-size: 13px; color: rgba(250,247,242,0.3); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: rgba(250,247,242,0.35); }
-    .footer-links a:hover { color: var(--gold); }
-
-    /* ─── MODAL ─── */
-    .modal {
-      display: none; position: fixed;
-      z-index: 2000; inset: 0;
-      background-color: rgba(10,22,40,0.85);
-      overflow-y: auto; backdrop-filter: blur(6px);
-    }
-    .modal-content {
-      background: var(--cream); margin: 5% auto;
-      padding: 52px; border-radius: 20px;
-      width: 90%; max-width: 760px; position: relative;
-    }
-    .close {
-      position: absolute; top: 24px; right: 32px;
-      font-size: 28px; color: var(--text-light); cursor: pointer;
-    }
-    .close:hover { color: var(--navy); }
-    .modal h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 32px; color: var(--navy); margin-bottom: 24px;
-    }
-    .modal h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px; color: var(--navy); margin: 24px 0 10px;
-    }
-    .modal p, .modal li { font-size: 15px; line-height: 1.7; color: var(--text-mid); margin-bottom: 8px; }
-    .modal ul { padding-left: 20px; }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1200px) {
-      .courses-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 1024px) {
-      .courses-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-      .hero h1 { font-size: 46px; }
-      .filter-section { top: 98px; }
-    }
-    @media (max-width: 768px) {
-      .container { padding: 0 20px; }
-      .nav { display: none; }
-      .mobile-menu-btn { display: block; }
-      .logo img { height: 50px; }
-      .hero { padding: 60px 0 50px; }
-      .hero h1 { font-size: 36px; }
-      .hero-stats { gap: 24px; flex-wrap: wrap; justify-content: center; }
-      .courses-grid { grid-template-columns: repeat(2, 1fr); }
-      .filter-section { top: 88px; }
-      .cta-banner { padding: 40px 28px; }
-      .cta-content h2 { font-size: 28px; }
-      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
-    }
-    @media (max-width: 480px) {
-      .courses-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 30px; }
-      .cta-actions { flex-direction: column; }
-      .cta-actions .btn-gold, .cta-actions .btn-ghost { width: 100%; text-align: center; justify-content: center; display: flex; }
-    }
-
-    /* Fade-up */
-    .fade-up {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    @media(max-width:480px){.courses-grid{grid-template-columns:1fr}.hero h1{font-size:30px}.hero-stats{gap:16px}}
   </style>
 </head>
 <body>
 
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announcement">
-    🎓 New cohort enrolling now —<span>62 premium courses</span>for African professionals &nbsp;·&nbsp; WhatsApp: +260777083995
-  </div>
-
   <!-- MOBILE NAV -->
   <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav-close" onclick="toggleMobileMenu()">×</button>
-    <a href="index.html" onclick="toggleMobileMenu()">Home</a>
-    <a href="courses.html" onclick="toggleMobileMenu()">Courses</a>
-    <a href="index.html#opportunities" onclick="toggleMobileMenu()">Opportunities</a>
-    <a href="tools.html" onclick="toggleMobileMenu()">Tools</a>
-    <a href="community.html" onclick="toggleMobileMenu()">Community</a>
-    <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn-enroll-mobile" onclick="toggleMobileMenu()">Enroll Now</a>
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">
+        <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="Logo">
+        <span>SkillRise Africa</span>
+      </div>
+      <button class="mobile-nav-close" onclick="toggleMobileMenu()">×</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" onclick="toggleMobileMenu()">Home <span class="arr">›</span></a>
+      <a href="courses.html" onclick="toggleMobileMenu()">Courses <span class="arr">›</span></a>
+      <a href="index.html#opportunities" onclick="toggleMobileMenu()">Opportunities <span class="arr">›</span></a>
+      <a href="tools.html" onclick="toggleMobileMenu()">Tools <span class="arr">›</span></a>
+      <a href="community.html" onclick="toggleMobileMenu()">Community <span class="arr">›</span></a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" onclick="toggleMobileMenu()">Enroll Now →</a>
+    </div>
   </div>
 
   <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
-        <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa Logo">
-        <div class="logo-text">
-          <h1>SkillRise Africa</h1>
-          <span>ELEVATE by ANICADE</span>
-        </div>
+        <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa">
+        <div class="logo-text"><h1>SkillRise Africa</h1><span>ELEVATE by ANICADE</span></div>
       </a>
       <nav class="nav">
         <a href="index.html">Home</a>
@@ -539,599 +210,150 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-grid-lines"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-grid"></div>
     <div class="container hero-content">
       <div class="hero-eyebrow">
         <div class="hero-eyebrow-line"></div>
-        <span>62 Premium Programs</span>
+        <span>Course Catalogue</span>
         <div class="hero-eyebrow-line"></div>
       </div>
-      <h1>Courses That <em>Change Lives</em></h1>
-      <p>Expert-led programs with real skills, industry certificates, and career support — built for ambitious African professionals.</p>
+      <h1>62 Courses.<br><em>Infinite Potential.</em></h1>
+      <p>Expert-led programs across Design, Tech, Business, Marketing & more — all at prices built for African professionals.</p>
       <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">62</div>
-          <div class="hero-stat-label">Total Courses</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">10</div>
-          <div class="hero-stat-label">Categories</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">K750</div>
-          <div class="hero-stat-label">Starting From</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">98%</div>
-          <div class="hero-stat-label">Satisfaction Rate</div>
-        </div>
+        <div><div class="hero-stat-num">62</div><div class="hero-stat-label">Premium Courses</div></div>
+        <div><div class="hero-stat-num">8</div><div class="hero-stat-label">Categories</div></div>
+        <div><div class="hero-stat-num">K750</div><div class="hero-stat-label">Starting Price</div></div>
+        <div><div class="hero-stat-num">98%</div><div class="hero-stat-label">Satisfaction Rate</div></div>
       </div>
     </div>
   </section>
 
   <!-- FILTER BAR -->
-  <div class="filter-section">
+  <div class="filter-bar">
     <div class="container">
       <div class="filter-inner">
-        <button class="filter-btn active" data-filter="all">All Courses <span class="filter-count" id="count-all">62</span></button>
-        <button class="filter-btn" data-filter="design">Design <span class="filter-count" id="count-design"></span></button>
-        <button class="filter-btn" data-filter="technology">Technology <span class="filter-count" id="count-technology"></span></button>
-        <button class="filter-btn" data-filter="marketing">Marketing <span class="filter-count" id="count-marketing"></span></button>
-        <button class="filter-btn" data-filter="content">Content & Media <span class="filter-count" id="count-content"></span></button>
-        <button class="filter-btn" data-filter="business">Business <span class="filter-count" id="count-business"></span></button>
-        <button class="filter-btn" data-filter="music">Music & Audio <span class="filter-count" id="count-music"></span></button>
-        <button class="filter-btn" data-filter="personal">Personal Dev <span class="filter-count" id="count-personal"></span></button>
-        <button class="filter-btn" data-filter="health">Health & Wellness <span class="filter-count" id="count-health"></span></button>
+        <button class="filter-btn active" data-cat="all">All <span class="filter-count">62</span></button>
+        <button class="filter-btn" data-cat="Design">Design <span class="filter-count">8</span></button>
+        <button class="filter-btn" data-cat="Technology">Technology <span class="filter-count">9</span></button>
+        <button class="filter-btn" data-cat="Marketing">Marketing <span class="filter-count">6</span></button>
+        <button class="filter-btn" data-cat="Content">Content &amp; Media <span class="filter-count">11</span></button>
+        <button class="filter-btn" data-cat="Business">Business <span class="filter-count">13</span></button>
+        <button class="filter-btn" data-cat="Music">Music &amp; Audio <span class="filter-count">3</span></button>
+        <button class="filter-btn" data-cat="Personal">Personal Dev <span class="filter-count">9</span></button>
+        <button class="filter-btn" data-cat="Health">Health &amp; Wellness <span class="filter-count">4</span></button>
       </div>
     </div>
   </div>
 
-  <main>
+  <!-- COURSES -->
+  <section class="courses-section">
     <div class="container">
-      <!-- Results bar -->
       <div class="results-bar">
-        <h2 id="categoryTitle">All Courses</h2>
-        <span class="results-count" id="resultsCount">Showing 62 courses</span>
+        <h2 id="results-title">All Courses</h2>
+        <span class="results-count" id="results-count">Showing 62 courses</span>
       </div>
-
-      <!-- Courses Grid -->
-      <section class="courses-section">
-        <div class="courses-grid" id="coursesGrid">
-
-          <!-- DESIGN -->
-          <div class="course-card fade-up" data-category="design">
-            <span class="course-emoji">🎨</span>
-            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K750</span></div>
-            <h3>Graphic Design Mastery</h3>
-            <p>Professional logos, posters & branding that commands attention.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="design">
-            <span class="course-emoji">🧩</span>
-            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K950</span></div>
-            <h3>UI/UX Design Professional</h3>
-            <p>Master Figma and user-centered design thinking principles.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="design">
-            <span class="course-emoji">🌀</span>
-            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K1000</span></div>
-            <h3>Animation (2D/3D)</h3>
-            <p>Create stunning motion graphics and animated visual content.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="design">
-            <span class="course-emoji">🖌</span>
-            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K750</span></div>
-            <h3>Canva Mastery</h3>
-            <p>Design professional graphics and social content quickly with Canva.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="design">
-            <span class="course-emoji">🔖</span>
-            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K750</span></div>
-            <h3>Logo Design</h3>
-            <p>Create timeless, memorable logos for businesses and personal brands.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="design">
-            <span class="course-emoji">🏷</span>
-            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K850</span></div>
-            <h3>Branding & Identity Design</h3>
-            <p>Build cohesive visual identities that stand out in any market.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="design">
-            <span class="course-emoji">🎞</span>
-            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K900</span></div>
-            <h3>Motion Graphics</h3>
-            <p>Design animated intros, ads, and visual effects for video content.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="design">
-            <span class="course-emoji">🌐</span>
-            <div class="course-top"><span class="course-tag">Design</span><span class="course-price">K900</span></div>
-            <h3>Web Design Basics</h3>
-            <p>Design beautiful, responsive websites without complex coding.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <!-- TECHNOLOGY -->
-          <div class="course-card fade-up" data-category="technology">
-            <span class="course-emoji">💻</span>
-            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K950</span></div>
-            <h3>Coding & Web Development</h3>
-            <p>From HTML basics to building full-stack web applications.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="technology">
-            <span class="course-emoji">📲</span>
-            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K1000</span></div>
-            <h3>App Development</h3>
-            <p>Build and publish mobile apps for Android and iOS platforms.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="technology">
-            <span class="course-emoji">🎮</span>
-            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K1000</span></div>
-            <h3>Game Development</h3>
-            <p>Design and build interactive games using modern game engines.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="technology">
-            <span class="course-emoji">📊</span>
-            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K900</span></div>
-            <h3>Data Analysis</h3>
-            <p>Excel, Python & real-world business insights that drive decisions.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="technology">
-            <span class="course-emoji">🧠</span>
-            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K950</span></div>
-            <h3>Data Science Basics</h3>
-            <p>Introduction to machine learning, statistics, and data pipelines.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="technology">
-            <span class="course-emoji">🔐</span>
-            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K1000</span></div>
-            <h3>Ethical Hacking</h3>
-            <p>Penetration testing, vulnerability assessment, and cybersecurity tools.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="technology">
-            <span class="course-emoji">🛡</span>
-            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K1000</span></div>
-            <h3>Cybersecurity Fundamentals</h3>
-            <p>Protect systems, networks, and data from digital threats.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="technology">
-            <span class="course-emoji">🖥</span>
-            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K750</span></div>
-            <h3>Computer Basics</h3>
-            <p>Essential computer skills for professional environments.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="technology">
-            <span class="course-emoji">📂</span>
-            <div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K800</span></div>
-            <h3>Microsoft Word, Excel & PowerPoint</h3>
-            <p>Master the core Microsoft Office suite for any professional role.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <!-- MARKETING -->
-          <div class="course-card fade-up" data-category="marketing">
-            <span class="course-emoji">📈</span>
-            <div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K900</span></div>
-            <h3>Digital Marketing</h3>
-            <p>SEO, social media, PPC & content strategy that converts at scale.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="marketing">
-            <span class="course-emoji">📱</span>
-            <div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K800</span></div>
-            <h3>Social Media Management</h3>
-            <p>Build and grow influential brands across all social platforms.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="marketing">
-            <span class="course-emoji">🤖</span>
-            <div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K900</span></div>
-            <h3>AI Content Creation</h3>
-            <p>Leverage AI tools to create content faster and at higher quality.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="marketing">
-            <span class="course-emoji">✍🏽</span>
-            <div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K800</span></div>
-            <h3>Copywriting</h3>
-            <p>Write persuasive words that sell — for ads, emails, and websites.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="marketing">
-            <span class="course-emoji">💰</span>
-            <div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K850</span></div>
-            <h3>Sales & Marketing</h3>
-            <p>Close more deals, grow pipelines, and build lasting customer relationships.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="marketing">
-            <span class="course-emoji">🌟</span>
-            <div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K800</span></div>
-            <h3>Personal Branding</h3>
-            <p>Position yourself as an authority and build a powerful online presence.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <!-- CONTENT & MEDIA -->
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">🎬</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div>
-            <h3>Video Editing</h3>
-            <p>Pro-level editing with Premiere Pro & CapCut for any audience.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">📷</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div>
-            <h3>Photography & Editing</h3>
-            <p>Capture stunning images and master professional photo retouching.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">▶</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div>
-            <h3>YouTube Content Creation</h3>
-            <p>Grow a profitable YouTube channel from zero to monetization.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">🎵</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K750</span></div>
-            <h3>TikTok Content Creation</h3>
-            <p>Master short-form video content that goes viral and builds audiences.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">🎤</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div>
-            <h3>Podcasting</h3>
-            <p>Launch and grow your own podcast from recording to distribution.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">🌍</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K750</span></div>
-            <h3>Blogging</h3>
-            <p>Build a blog that earns — SEO writing, monetization & growth tactics.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">📝</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div>
-            <h3>Script Writing</h3>
-            <p>Write compelling scripts for YouTube, films, ads, and social media.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">📖</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K750</span></div>
-            <h3>Story Writing</h3>
-            <p>Craft engaging narratives that captivate readers and build followings.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">📚</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K850</span></div>
-            <h3>Book Writing</h3>
-            <p>Plan, write, and complete your book from concept to final manuscript.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">📕</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div>
-            <h3>E-book Publishing</h3>
-            <p>Publish and sell your e-book on global platforms like Amazon KDP.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="content">
-            <span class="course-emoji">🎙</span>
-            <div class="course-top"><span class="course-tag">Content</span><span class="course-price">K750</span></div>
-            <h3>Voice-over Training</h3>
-            <p>Professional voice-over for ads, audiobooks, animation, and media.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <!-- BUSINESS -->
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">🚀</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div>
-            <h3>Entrepreneurship</h3>
-            <p>Start, fund & scale your own business from day one with confidence.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">🏢</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K1000</span></div>
-            <h3>Business Administration</h3>
-            <p>Master running a successful company from operations to strategy.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">🌐</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K800</span></div>
-            <h3>Freelancing Mastery</h3>
-            <p>Land clients and build a sustainable freelance income within 90 days.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">💼</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div>
-            <h3>Online Business Setup</h3>
-            <p>Set up a profitable online business from scratch with the right foundation.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">🛒</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div>
-            <h3>Dropshipping</h3>
-            <p>Build an e-commerce store and sell products without holding inventory.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">📊</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div>
-            <h3>Startup Training</h3>
-            <p>Validate ideas, build MVPs, and attract your first investors.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">📋</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div>
-            <h3>Project Management Basics</h3>
-            <p>Deliver projects on time, within budget, and to a high standard.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">🏠</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K750</span></div>
-            <h3>Remote Work Skills</h3>
-            <p>Thrive in remote and hybrid environments with global employers.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">🧑🏽‍💻</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K800</span></div>
-            <h3>Virtual Assistant Training</h3>
-            <p>Provide high-value remote admin and business support services.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">🤝</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K750</span></div>
-            <h3>Customer Service</h3>
-            <p>Deliver exceptional service that builds loyalty and drives retention.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">📞</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K750</span></div>
-            <h3>Call Center Training</h3>
-            <p>Handle customer calls professionally with confidence and clarity.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">💵</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K800</span></div>
-            <h3>Financial Literacy</h3>
-            <p>Understand money, budgeting, investing, and building long-term wealth.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="business">
-            <span class="course-emoji">🏢</span>
-            <div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div>
-            <h3>Business Management</h3>
-            <p>Strategies and frameworks for managing growing organizations effectively.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <!-- MUSIC & AUDIO -->
-          <div class="course-card fade-up" data-category="music">
-            <span class="course-emoji">🎧</span>
-            <div class="course-top"><span class="course-tag">Music & Audio</span><span class="course-price">K800</span></div>
-            <h3>Sound Editing & Mixing</h3>
-            <p>Professional audio post-production for podcasts, films, and music.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="music">
-            <span class="course-emoji">🎼</span>
-            <div class="course-top"><span class="course-tag">Music & Audio</span><span class="course-price">K900</span></div>
-            <h3>Music Production</h3>
-            <p>Produce, arrange and mix professional tracks from your home studio.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="music">
-            <span class="course-emoji">🥁</span>
-            <div class="course-top"><span class="course-tag">Music & Audio</span><span class="course-price">K800</span></div>
-            <h3>Beat Making</h3>
-            <p>Create chart-worthy beats using industry-standard software and techniques.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <!-- PERSONAL DEVELOPMENT -->
-          <div class="course-card fade-up" data-category="personal">
-            <span class="course-emoji">🎤</span>
-            <div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K800</span></div>
-            <h3>Public Speaking</h3>
-            <p>Command any room with confidence, clarity, and executive presence.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="personal">
-            <span class="course-emoji">💬</span>
-            <div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K750</span></div>
-            <h3>Communication Skills</h3>
-            <p>Communicate clearly and persuasively in any professional context.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="personal">
-            <span class="course-emoji">👑</span>
-            <div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K850</span></div>
-            <h3>Leadership Skills</h3>
-            <p>Inspire teams, make decisions under pressure, and lead with vision.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="personal">
-            <span class="course-emoji">⏳</span>
-            <div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K750</span></div>
-            <h3>Time Management</h3>
-            <p>Master productivity systems to achieve more in less time, every day.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="personal">
-            <span class="course-emoji">📄</span>
-            <div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K750</span></div>
-            <h3>CV & Cover Letter Writing</h3>
-            <p>Create a standout CV and cover letter that gets you interviews.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="personal">
-            <span class="course-emoji">🎯</span>
-            <div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K750</span></div>
-            <h3>Interview Preparation</h3>
-            <p>Walk into any interview with prepared answers and quiet confidence.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="personal">
-            <span class="course-emoji">👩🏽‍🏫</span>
-            <div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K800</span></div>
-            <h3>Online Teaching Skills</h3>
-            <p>Teach effectively online and engage learners across digital platforms.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="personal">
-            <span class="course-emoji">🧑🏽‍🏫</span>
-            <div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K900</span></div>
-            <h3>Course Creation</h3>
-            <p>Design and sell your own online course and build passive income.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="personal">
-            <span class="course-emoji">🤲</span>
-            <div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K850</span></div>
-            <h3>Coaching & Mentorship</h3>
-            <p>Become a certified coach and guide others to achieve their goals.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <!-- HEALTH & WELLNESS -->
-          <div class="course-card fade-up" data-category="health">
-            <span class="course-emoji">🧠</span>
-            <div class="course-top"><span class="course-tag">Health</span><span class="course-price">K800</span></div>
-            <h3>Mental Health Awareness</h3>
-            <p>Understand mental health, build resilience, and support others effectively.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="health">
-            <span class="course-emoji">🥗</span>
-            <div class="course-top"><span class="course-tag">Health</span><span class="course-price">K800</span></div>
-            <h3>Nutrition & Healthy Living</h3>
-            <p>Evidence-based nutrition principles for energy, longevity, and wellness.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="health">
-            <span class="course-emoji">⛑</span>
-            <div class="course-top"><span class="course-tag">Health</span><span class="course-price">K850</span></div>
-            <h3>First Aid Basics</h3>
-            <p>Life-saving skills for emergencies at home, work, and in the community.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <div class="course-card fade-up" data-category="health">
-            <span class="course-emoji">🏥</span>
-            <div class="course-top"><span class="course-tag">Health</span><span class="course-price">K850</span></div>
-            <h3>Community Health</h3>
-            <p>Public health fundamentals for community workers, NGOs, and changemakers.</p>
-            <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a>
-          </div>
-
-          <!-- Empty state -->
-          <div class="empty-state" id="emptyState">
-            <p>No courses found in this category.</p>
-          </div>
-
-        </div><!-- end courses-grid -->
-      </section>
-
-      <!-- CTA BANNER -->
+      <div class="courses-grid" id="coursesGrid">
+
+        <!-- DESIGN (8) -->
+        <div class="course-card fade-up" data-cat="Design"><span class="course-emoji">🎨</span><div class="course-top"><span class="course-tag">Design</span><span class="course-price">K750</span></div><h3>Graphic Design Mastery</h3><p>Professional logos, posters &amp; branding that command attention globally.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Design"><span class="course-emoji">📱</span><div class="course-top"><span class="course-tag">Design</span><span class="course-price">K950</span></div><h3>UI/UX Design Professional</h3><p>Master Figma &amp; user-centred design that delights and converts.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Design"><span class="course-emoji">🎬</span><div class="course-top"><span class="course-tag">Design</span><span class="course-price">K1000</span></div><h3>Animation 2D/3D</h3><p>Bring characters and stories to life with industry-standard animation tools.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Design"><span class="course-emoji">🖼️</span><div class="course-top"><span class="course-tag">Design</span><span class="course-price">K750</span></div><h3>Canva Mastery</h3><p>Design stunning graphics, social posts and presentations with Canva.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Design"><span class="course-emoji">✏️</span><div class="course-top"><span class="course-tag">Design</span><span class="course-price">K750</span></div><h3>Logo Design</h3><p>Craft memorable brand marks and logo systems from concept to file.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Design"><span class="course-emoji">🏷️</span><div class="course-top"><span class="course-tag">Design</span><span class="course-price">K850</span></div><h3>Branding &amp; Identity Design</h3><p>Build complete brand systems that resonate and stand out in any market.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Design"><span class="course-emoji">🎞️</span><div class="course-top"><span class="course-tag">Design</span><span class="course-price">K900</span></div><h3>Motion Graphics</h3><p>Create eye-catching animated visuals for social, broadcast and digital ads.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Design"><span class="course-emoji">🌐</span><div class="course-top"><span class="course-tag">Design</span><span class="course-price">K900</span></div><h3>Web Design Basics</h3><p>Design beautiful, responsive websites without writing a single line of code.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+
+        <!-- TECHNOLOGY (9) -->
+        <div class="course-card fade-up" data-cat="Technology"><span class="course-emoji">💻</span><div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K950</span></div><h3>Coding &amp; Web Development</h3><p>From HTML basics to full-stack web applications — become a developer.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Technology"><span class="course-emoji">📲</span><div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K1000</span></div><h3>App Development</h3><p>Build Android and iOS apps that solve real problems and reach millions.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Technology"><span class="course-emoji">🎮</span><div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K1000</span></div><h3>Game Development</h3><p>Design and build games from scratch using Unity and Godot engines.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Technology"><span class="course-emoji">📊</span><div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K900</span></div><h3>Data Analysis</h3><p>Excel, Python &amp; Power BI — turn raw data into insights that drive decisions.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Technology"><span class="course-emoji">🤖</span><div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K950</span></div><h3>Data Science Basics</h3><p>Machine learning, Python &amp; statistics for the modern data-driven world.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Technology"><span class="course-emoji">🔐</span><div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K1000</span></div><h3>Ethical Hacking</h3><p>Learn penetration testing and cybersecurity skills the right way.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Technology"><span class="course-emoji">🛡️</span><div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K1000</span></div><h3>Cybersecurity Fundamentals</h3><p>Protect systems, networks and data from modern digital threats.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Technology"><span class="course-emoji">🖥️</span><div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K750</span></div><h3>Computer Basics</h3><p>Master your computer from zero — typing, files, internet and beyond.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Technology"><span class="course-emoji">📋</span><div class="course-top"><span class="course-tag">Technology</span><span class="course-price">K800</span></div><h3>Microsoft Word, Excel &amp; PowerPoint</h3><p>Office productivity tools used by every professional in every industry.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+
+        <!-- MARKETING (6) -->
+        <div class="course-card fade-up" data-cat="Marketing"><span class="course-emoji">📈</span><div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K900</span></div><h3>Digital Marketing</h3><p>SEO, social media, PPC &amp; content strategy that consistently converts.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Marketing"><span class="course-emoji">📱</span><div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K800</span></div><h3>Social Media Management</h3><p>Build and grow influential brands across all major social platforms.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Marketing"><span class="course-emoji">✨</span><div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K900</span></div><h3>AI Content Creation</h3><p>Use AI tools to produce high-quality content at scale and speed.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Marketing"><span class="course-emoji">✍️</span><div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K800</span></div><h3>Copywriting</h3><p>Write words that sell, persuade and connect with any audience.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Marketing"><span class="course-emoji">💼</span><div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K850</span></div><h3>Sales &amp; Marketing</h3><p>Master the full sales funnel and close deals with confidence.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Marketing"><span class="course-emoji">⭐</span><div class="course-top"><span class="course-tag">Marketing</span><span class="course-price">K800</span></div><h3>Personal Branding</h3><p>Build a powerful online presence that attracts clients and opportunities.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+
+        <!-- CONTENT & MEDIA (11) -->
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">🎬</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div><h3>Video Editing</h3><p>Pro-level editing with Premiere Pro &amp; CapCut for any screen or platform.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">📷</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div><h3>Photography &amp; Editing</h3><p>Capture stunning images and retouch them to a professional standard.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">▶️</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div><h3>YouTube Content Creation</h3><p>Grow a profitable YouTube channel from zero to monetised.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">🎵</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K750</span></div><h3>TikTok Content Creation</h3><p>Create viral short-form videos and grow your following fast.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">🎙️</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div><h3>Podcasting</h3><p>Launch, record and grow a podcast that builds an engaged audience.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">📝</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K750</span></div><h3>Blogging</h3><p>Write content that ranks on Google and builds a loyal readership.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">🎭</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div><h3>Script Writing</h3><p>Write compelling scripts for film, YouTube, ads and corporate video.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">📖</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K750</span></div><h3>Story Writing</h3><p>Craft engaging narratives, short stories and creative fiction.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">📚</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K850</span></div><h3>Book Writing</h3><p>Plan, write and finish your book — from first idea to final draft.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">📄</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K800</span></div><h3>E-book Publishing</h3><p>Write, design and sell an e-book that generates passive income.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Content"><span class="course-emoji">🎤</span><div class="course-top"><span class="course-tag">Content</span><span class="course-price">K750</span></div><h3>Voice-over Training</h3><p>Record professional voice-overs for ads, films, e-learning and more.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+
+        <!-- BUSINESS (13) -->
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">🚀</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div><h3>Entrepreneurship</h3><p>Start, fund and scale your own business from the very first idea.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">🏢</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K1000</span></div><h3>Business Administration</h3><p>Run any organisation efficiently — operations, HR, finance and strategy.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">💸</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K800</span></div><h3>Freelancing Mastery</h3><p>Land clients and build sustainable freelance income within 90 days.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">🛒</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div><h3>Online Business Setup</h3><p>Build a profitable online business with the right tools and strategy.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">📦</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div><h3>Dropshipping</h3><p>Sell products online without inventory — the ultimate low-risk business.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">💡</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div><h3>Startup Training</h3><p>Validate your idea, build your MVP and attract your first investors.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">📋</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div><h3>Project Management Basics</h3><p>Deliver projects on time and on budget using proven PM frameworks.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">🌍</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K750</span></div><h3>Remote Work Skills</h3><p>Thrive in any remote role with the tools, habits and discipline that matter.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">🤝</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K800</span></div><h3>Virtual Assistant Training</h3><p>Become a sought-after VA and serve international clients from anywhere.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">☎️</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K750</span></div><h3>Customer Service</h3><p>Deliver exceptional customer experiences that build loyalty and referrals.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">📞</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K750</span></div><h3>Call Center Training</h3><p>Professional communication skills for inbound and outbound call roles.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">💰</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K800</span></div><h3>Financial Literacy</h3><p>Take control of your money — budgeting, investing and building wealth.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Business"><span class="course-emoji">📊</span><div class="course-top"><span class="course-tag">Business</span><span class="course-price">K900</span></div><h3>Business Management</h3><p>Lead teams, manage operations and grow sustainable businesses.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+
+        <!-- MUSIC & AUDIO (3) -->
+        <div class="course-card fade-up" data-cat="Music"><span class="course-emoji">🎛️</span><div class="course-top"><span class="course-tag">Music</span><span class="course-price">K800</span></div><h3>Sound Editing &amp; Mixing</h3><p>Edit, mix and master audio for music, podcasts, video and broadcast.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Music"><span class="course-emoji">🎹</span><div class="course-top"><span class="course-tag">Music</span><span class="course-price">K900</span></div><h3>Music Production</h3><p>Produce radio-ready tracks in your bedroom studio from day one.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Music"><span class="course-emoji">🥁</span><div class="course-top"><span class="course-tag">Music</span><span class="course-price">K800</span></div><h3>Beat Making</h3><p>Create professional beats using FL Studio, Logic and Ableton.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+
+        <!-- PERSONAL DEVELOPMENT (9) -->
+        <div class="course-card fade-up" data-cat="Personal"><span class="course-emoji">🎤</span><div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K800</span></div><h3>Public Speaking</h3><p>Speak with confidence, authority and charisma in any room or stage.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Personal"><span class="course-emoji">💬</span><div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K750</span></div><h3>Communication Skills</h3><p>Express yourself clearly and persuasively in writing and conversation.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Personal"><span class="course-emoji">👑</span><div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K850</span></div><h3>Leadership Skills</h3><p>Inspire, motivate and lead high-performing teams with impact.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Personal"><span class="course-emoji">⏰</span><div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K750</span></div><h3>Time Management</h3><p>Work smarter, prioritise ruthlessly and reclaim your most valuable asset.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Personal"><span class="course-emoji">📄</span><div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K750</span></div><h3>CV &amp; Cover Letter Writing</h3><p>Create job-winning applications that get you interviews consistently.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Personal"><span class="course-emoji">🤝</span><div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K750</span></div><h3>Interview Preparation</h3><p>Answer any interview question with clarity, confidence and impact.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Personal"><span class="course-emoji">🎓</span><div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K800</span></div><h3>Online Teaching Skills</h3><p>Teach effectively in virtual classrooms and engage students anywhere.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Personal"><span class="course-emoji">📦</span><div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K900</span></div><h3>Course Creation</h3><p>Package your expertise into a sellable online course that earns passively.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Personal"><span class="course-emoji">🌟</span><div class="course-top"><span class="course-tag">Personal Dev</span><span class="course-price">K850</span></div><h3>Coaching &amp; Mentorship</h3><p>Become a professional coach and help others reach their full potential.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+
+        <!-- HEALTH & WELLNESS (4) -->
+        <div class="course-card fade-up" data-cat="Health"><span class="course-emoji">🧠</span><div class="course-top"><span class="course-tag">Health</span><span class="course-price">K800</span></div><h3>Mental Health Awareness</h3><p>Understand mental health, reduce stigma and support wellbeing at work.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Health"><span class="course-emoji">🥗</span><div class="course-top"><span class="course-tag">Health</span><span class="course-price">K800</span></div><h3>Nutrition &amp; Healthy Living</h3><p>Build sustainable healthy habits through balanced nutrition and lifestyle.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Health"><span class="course-emoji">🚑</span><div class="course-top"><span class="course-tag">Health</span><span class="course-price">K850</span></div><h3>First Aid Basics</h3><p>Life-saving skills everyone should know — CPR, wounds and emergency care.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+        <div class="course-card fade-up" data-cat="Health"><span class="course-emoji">🌍</span><div class="course-top"><span class="course-tag">Health</span><span class="course-price">K850</span></div><h3>Community Health</h3><p>Promote health and wellbeing within communities across Africa.</p><a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-navy">Enroll Now</a></div>
+
+      </div><!-- /courses-grid -->
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="courses-section" style="padding-top:0">
+    <div class="container">
       <div class="cta-banner fade-up">
         <div class="cta-content">
-          <h2>Not sure which course to start with?</h2>
-          <p>Our team will guide you to the perfect program for your goals.</p>
+          <h2>Ready to <em>Rise?</em></h2>
+          <p>Pick your course and enroll today — your future self will thank you.</p>
         </div>
         <div class="cta-actions">
-          <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn-gold">Enroll Now</a>
-          <a href="mailto:skillriseafrica44@gmail.com" class="btn-ghost">Contact Us</a>
+          <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-gold">Enroll Now →</a>
+          <a href="https://wa.me/260777083995" class="btn btn-ghost">WhatsApp Us</a>
         </div>
       </div>
-
-    </div><!-- end container -->
-  </main>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -1139,21 +361,17 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="logo">
-            <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa" style="height:50px;">
-            <div class="logo-text">
-              <h1>SkillRise Africa</h1>
-              <span>ELEVATE by ANICADE</span>
-            </div>
+            <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa" style="height:48px">
+            <div class="logo-text"><h1>SkillRise Africa</h1><span>ELEVATE by ANICADE</span></div>
           </div>
-          <p>Learn. Grow. Rise. Empowering African professionals with world-class skills and opportunities.</p>
+          <p>Learn. Grow. Rise. Empowering African professionals with world-class skills.</p>
         </div>
         <div class="footer-col">
           <h5>Programs</h5>
-          <a href="#" onclick="filterCourses('design')">Design</a>
-          <a href="#" onclick="filterCourses('technology')">Technology</a>
-          <a href="#" onclick="filterCourses('marketing')">Marketing</a>
-          <a href="#" onclick="filterCourses('business')">Business</a>
-          <a href="#" onclick="filterCourses('all')">All Courses</a>
+          <a href="courses.html">All 62 Courses</a>
+          <a href="courses.html">Design</a>
+          <a href="courses.html">Technology</a>
+          <a href="courses.html">Business</a>
         </div>
         <div class="footer-col">
           <h5>Resources</h5>
@@ -1165,144 +383,75 @@
           <h5>Contact</h5>
           <a href="mailto:skillriseafrica44@gmail.com">skillriseafrica44@gmail.com</a>
           <a href="tel:+260777083995">+260 777 083 995</a>
-          <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html">Enroll Now</a>
+          <a href="https://wa.me/260777083995">WhatsApp Us</a>
         </div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 SkillRise Africa — ELEVATE by ANICADE. All rights reserved.</p>
         <div class="footer-links">
-          <a href="#" onclick="document.getElementById('privacyModal').style.display='block'">Privacy Policy</a>
-          <a href="#" onclick="document.getElementById('termsModal').style.display='block'">Terms of Use</a>
-          <a href="index.html">Home</a>
+          <a href="#" onclick="document.getElementById('privacyModal').style.display='block';return false">Privacy Policy</a>
+          <a href="#" onclick="document.getElementById('termsModal').style.display='block';return false">Terms of Use</a>
+          <a href="mailto:skillriseafrica44@gmail.com">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- PRIVACY MODAL -->
-  <div id="privacyModal" class="modal">
+  <div id="privacyModal" class="modal" onclick="if(event.target===this)this.style.display='none'">
     <div class="modal-content">
-      <span class="close" onclick="document.getElementById('privacyModal').style.display='none'">&times;</span>
+      <button class="modal-close" onclick="document.getElementById('privacyModal').style.display='none'">&times;</button>
       <h2>Privacy Policy</h2>
       <p><strong>Effective Date:</strong> February 19, 2026</p>
-      <h3>1. Information We Collect</h3>
-      <p>We collect full name, email, phone, country, payment details, and course enrollment information you voluntarily submit.</p>
-      <h3>2. How We Use Your Information</h3>
-      <p>To process registrations, provide learning materials, issue certificates, and send relevant opportunities. We do not sell your data.</p>
-      <h3>3. Data Protection</h3>
-      <p>We implement appropriate technical and organizational measures to protect your personal information.</p>
-      <h3>4. Contact</h3>
-      <p>Email: skillriseafrica44@gmail.com &nbsp;|&nbsp; WhatsApp: +260777083995</p>
+      <h3>1. Information We Collect</h3><p>We collect full name, email, phone, country and course enrollment information you voluntarily submit.</p>
+      <h3>2. How We Use Your Information</h3><p>To process registrations, provide learning materials, issue certificates and send relevant opportunities. We do not sell your data.</p>
+      <h3>3. Data Protection</h3><p>We implement appropriate technical measures to protect your personal information from unauthorised access.</p>
+      <h3>4. Contact</h3><p>Email: skillriseafrica44@gmail.com &nbsp;|&nbsp; WhatsApp: +260 777 083 995</p>
     </div>
   </div>
 
   <!-- TERMS MODAL -->
-  <div id="termsModal" class="modal">
+  <div id="termsModal" class="modal" onclick="if(event.target===this)this.style.display='none'">
     <div class="modal-content">
-      <span class="close" onclick="document.getElementById('termsModal').style.display='none'">&times;</span>
+      <button class="modal-close" onclick="document.getElementById('termsModal').style.display='none'">&times;</button>
       <h2>Terms of Use</h2>
       <p><strong>Effective Date:</strong> February 19, 2026</p>
-      <h3>1. Acceptance</h3>
-      <p>By using our platform you confirm you are at least 16 years old, provide accurate information, and will use our services lawfully.</p>
-      <h3>2. Course Access</h3>
-      <p>Materials are for personal use only. Payments are non-refundable once access is granted.</p>
-      <h3>3. Certification</h3>
-      <p>Certificates issued only to students who complete all requirements and meet assessment criteria.</p>
-      <h3>4. Contact</h3>
-      <p>Email: skillriseafrica44@gmail.com &nbsp;|&nbsp; WhatsApp: +260777083995</p>
+      <h3>1. Acceptance</h3><p>By using our platform you confirm you are at least 16 years old, provide accurate information, and use our services lawfully.</p>
+      <h3>2. Course Access</h3><p>Course materials are for personal use only. Payments are non-refundable once access is granted.</p>
+      <h3>3. Certification</h3><p>Certificates are issued only to students who complete all requirements and meet assessment criteria.</p>
+      <h3>4. Intellectual Property</h3><p>All content belongs to SkillRise Africa and may not be used without written permission.</p>
+      <h3>5. Contact</h3><p>Email: skillriseafrica44@gmail.com &nbsp;|&nbsp; WhatsApp: +260 777 083 995</p>
     </div>
   </div>
 
   <script>
-    // ─── MOBILE MENU ───
-    function toggleMobileMenu() {
-      const nav = document.getElementById('mobileNav');
-      nav.classList.toggle('active');
-      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    }
+    function toggleMobileMenu(){const n=document.getElementById('mobileNav');n.classList.toggle('active');document.body.style.overflow=n.classList.contains('active')?'hidden':''}
+    window.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('privacyModal').style.display='none';document.getElementById('termsModal').style.display='none'}})
 
-    // ─── FILTER LOGIC ───
-    const categoryCounts = {};
-    const cards = document.querySelectorAll('.course-card[data-category]');
+    /* Filter */
+    const filterBtns=document.querySelectorAll('.filter-btn')
+    const cards=document.querySelectorAll('.course-card')
+    const title=document.getElementById('results-title')
+    const count=document.getElementById('results-count')
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'))
+        btn.classList.add('active')
+        const cat=btn.dataset.cat
+        let vis=0
+        cards.forEach(c=>{
+          const show=cat==='all'||c.dataset.cat===cat
+          c.classList.toggle('hidden',!show)
+          if(show)vis++
+        })
+        title.textContent=cat==='all'?'All Courses':btn.textContent.replace(/\d+/,'').trim()
+        count.textContent='Showing '+vis+' course'+(vis!==1?'s':'')
+      })
+    })
 
-    // Count categories
-    cards.forEach(card => {
-      const cat = card.dataset.category;
-      categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
-    });
-
-    // Set count badges
-    Object.entries(categoryCounts).forEach(([cat, count]) => {
-      const el = document.getElementById('count-' + cat);
-      if (el) el.textContent = count;
-    });
-    document.getElementById('count-all').textContent = cards.length;
-
-    function filterCourses(category) {
-      const grid = document.getElementById('coursesGrid');
-      const emptyState = document.getElementById('emptyState');
-      const title = document.getElementById('categoryTitle');
-      const count = document.getElementById('resultsCount');
-      const filterBtns = document.querySelectorAll('.filter-btn');
-
-      // Update active button
-      filterBtns.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.filter === category);
-      });
-
-      let visible = 0;
-      cards.forEach(card => {
-        const show = category === 'all' || card.dataset.category === category;
-        card.classList.toggle('hidden', !show);
-        if (show) visible++;
-      });
-
-      // Update title
-      const labels = {
-        all: 'All Courses', design: 'Design', technology: 'Technology',
-        marketing: 'Marketing', content: 'Content & Media',
-        business: 'Business', music: 'Music & Audio',
-        personal: 'Personal Development', health: 'Health & Wellness'
-      };
-      title.textContent = labels[category] || 'Courses';
-      count.textContent = `Showing ${visible} course${visible !== 1 ? 's' : ''}`;
-      emptyState.classList.toggle('visible', visible === 0);
-
-      // Scroll to grid
-      document.querySelector('.courses-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    // Bind filter buttons
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => filterCourses(btn.dataset.filter));
-    });
-
-    // Footer filter links
-    window.filterCourses = filterCourses;
-
-    // ─── CLOSE MODALS ───
-    window.onclick = function(e) {
-      ['privacyModal', 'termsModal'].forEach(id => {
-        const m = document.getElementById(id);
-        if (e.target === m) m.style.display = 'none';
-      });
-    };
-
-    // ─── SCROLL ANIMATIONS ───
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), entry.target.dataset.delay || 0);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('.fade-up').forEach((el, i) => {
-      el.dataset.delay = (i % 4) * 80;
-      observer.observe(el);
-    });
+    /* Fade-up */
+    const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),Number(e.target.dataset.delay)||0);obs.unobserve(e.target)}})},{threshold:.08})
+    document.querySelectorAll('.fade-up').forEach((el,i)=>{el.dataset.delay=(i%4)*80;obs.observe(el)})
   </script>
-
 </body>
 </html>
