@@ -1,637 +1,968 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tools — SkillRise Africa | ELEVATE by ANICADE</title>
-  <meta name="description" content="Career-boosting tools for African professionals — CV Builder, AI Assistant, Finance Planner and more. Launching soon.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tresforwrld.github.io/SkillRise-Africa-/tools.html">
-  <meta property="og:title" content="Tools — SkillRise Africa | ELEVATE by ANICADE">
-  <meta property="og:image" content="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" href="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy:       #0A1628;
-      --navy-dark:  #060e1a;
-      --gold:       #C9A84C;
-      --gold-light: #E8C97A;
-      --gold-pale:  #F5E9C8;
-      --cream:      #FAF7F2;
-      --white:      #fff;
-      --text:       #1C2B3A;
-      --text-mid:   #4A5568;
-      --text-light: #8A9BB0;
-      --border:     rgba(201,168,76,.2);
-      --max:        1300px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream); color: var(--text);
-      line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; transition: all .3s ease; }
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 56px; }
-    body::before {
-      content: ''; position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9998; opacity: .45;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — SkillRise Africa | ELEVATE by ANICADE</title>
+<link rel="icon" type="image/png" href="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════ */
+:root{
+  --navy:#0A1628; --navy2:#0f1f38; --navy3:#162544;
+  --gold:#C9A84C; --gold2:#E8C97A; --gold3:#F5E9C8;
+  --cream:#FAF7F2; --white:#fff;
+  --text:#1C2B3A; --mid:#4A5568; --muted:#8A9BB0;
+  --red:#f87171; --green:#4ade80;
+  /* char colours */
+  --skin:#FDBCB4; --skin2:#e8948a; --skin3:#c97b70;
+  --hair:#1e0f06; --shirt:#1d4ed8; --shirt2:#1e40af;
+  --pants:#1f2937; --shoe:#111827;
+  --book1:#C9A84C; --book2:#FAF7F2;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{height:100%}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--navy); color:var(--cream);
+  min-height:100vh; display:flex; flex-direction:column;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
 
-    /* ── HEADER ── */
-    .header { background: rgba(250,247,242,.94); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 500; }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 32px; }
-    .logo { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
-    .logo img { height: 60px; width: auto; }
-    .logo-text h1 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 700; color: var(--navy); line-height: 1.1; }
-    .logo-text span { font-size: 10px; color: var(--gold); font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
-    .nav { display: flex; align-items: center; gap: 2px; }
-    .nav a { padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-mid); }
-    .nav a:hover { color: var(--navy); background: rgba(10,22,40,.05); }
-    .nav a.active { color: var(--navy); font-weight: 600; }
-    .btn-enroll { background: var(--navy) !important; color: var(--gold-light) !important; padding: 10px 24px !important; border-radius: 8px !important; font-weight: 700 !important; font-size: 12px !important; letter-spacing: .08em !important; text-transform: uppercase !important; transition: all .3s ease !important; box-shadow: 0 4px 20px rgba(10,22,40,.15); }
-    .btn-enroll:hover { background: var(--gold) !important; color: var(--navy) !important; box-shadow: 0 8px 30px rgba(201,168,76,.35) !important; transform: translateY(-2px); }
-    .mobile-menu-btn { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--navy); padding: 4px; }
+/* ══════════════════════════════════════════
+   ANIMATED BACKGROUND
+══════════════════════════════════════════ */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+/* grid */
+.bg::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,#000 30%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,#000 30%,transparent 100%);
+}
+/* noise */
+.bg::after{
+  content:'';position:absolute;inset:0;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+}
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.orb1{width:700px;height:700px;top:-200px;right:-180px;
+  background:radial-gradient(circle,rgba(201,168,76,.14) 0%,transparent 68%);
+  animation:orb-pulse 9s ease-in-out infinite}
+.orb2{width:550px;height:550px;bottom:-160px;left:-160px;
+  background:radial-gradient(circle,rgba(37,99,235,.13) 0%,transparent 68%);
+  animation:orb-pulse 12s ease-in-out infinite reverse}
+.orb3{width:300px;height:300px;top:40%;left:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 70%);
+  animation:orb-pulse 6s ease-in-out infinite}
+@keyframes orb-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:.65}}
 
-    /* ── MOBILE NAV ── */
-    .mobile-nav { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 1000; flex-direction: column; overflow-y: auto; }
-    .mobile-nav.active { display: flex; }
-    .mobile-nav-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid rgba(201,168,76,.12); flex-shrink: 0; }
-    .mobile-nav-logo { display: flex; align-items: center; gap: 10px; }
-    .mobile-nav-logo img { height: 38px; }
-    .mobile-nav-logo span { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 700; color: var(--cream); }
-    .mobile-nav-close { font-size: 26px; cursor: pointer; color: var(--gold); background: none; border: none; line-height: 1; padding: 4px; }
-    .mobile-nav-links { padding: 8px 24px 20px; flex: 1; }
-    .mobile-nav-links a { display: flex; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,.07); font-size: 15px; font-weight: 500; color: rgba(250,247,242,.7); }
-    .mobile-nav-links a:hover { color: var(--gold-light); }
-    .mobile-nav-links .arr { margin-left: auto; font-size: 13px; opacity: .35; }
-    .mobile-nav-footer { padding: 0 24px 36px; flex-shrink: 0; }
-    .mobile-nav-footer a { display: block; width: 100%; text-align: center; background: var(--gold); color: var(--navy) !important; padding: 15px; border-radius: 10px; font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-    .mobile-nav-footer a:hover { background: var(--gold-light); }
+/* ══════════════════════════════════════════
+   PAGE SHELL
+══════════════════════════════════════════ */
+.page{
+  position:relative;z-index:1;
+  flex:1;display:flex;
+  flex-direction:column;align-items:center;
+  padding:40px 16px 0;
+}
 
-    /* ── HERO ── */
-    .hero { background: var(--navy); padding: 88px 0 80px; position: relative; overflow: hidden; }
-    .hero-glow  { position: absolute; top: -180px; right: -160px; width: 650px; height: 650px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,.16) 0%, transparent 70%); pointer-events: none; animation: breathe 7s ease-in-out infinite; }
-    .hero-glow2 { position: absolute; bottom: -150px; left: -100px; width: 450px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,.08) 0%, transparent 70%); pointer-events: none; animation: breathe 9s ease-in-out infinite reverse; }
-    @keyframes breathe { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: .7; } }
-    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px); background-size: 70px 70px; pointer-events: none; -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%); mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%); }
-    .hero-beam { position: absolute; top: 50%; left: -10%; width: 120%; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,.2) 40%, rgba(201,168,76,.4) 50%, rgba(201,168,76,.2) 60%, transparent); transform: translateY(-50%); pointer-events: none; animation: beam-move 5s ease-in-out infinite alternate; }
-    @keyframes beam-move { 0% { top: 25%; opacity: .4; } 100% { top: 72%; opacity: 1; } }
+/* brand */
+.brand{display:flex;align-items:center;gap:14px;margin-bottom:36px;text-decoration:none}
+.brand img{height:50px}
+.brand h1{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--cream);line-height:1.1}
+.brand small{font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.2em;text-transform:uppercase;display:block}
 
-    .hero-content { position: relative; z-index: 1; text-align: center; max-width: 720px; margin: 0 auto; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; justify-content: center; }
-    .hero-eyebrow-line { width: 36px; height: 1px; background: var(--gold); }
-    .hero-eyebrow span { font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 62px; font-weight: 700; color: var(--white); line-height: 1.05; letter-spacing: -.025em; margin-bottom: 18px; }
-    .hero h1 em { font-style: italic; color: var(--gold-light); text-shadow: 0 0 40px rgba(201,168,76,.4); }
-    .hero p { font-size: 17px; color: rgba(250,247,242,.55); max-width: 540px; margin: 0 auto 50px; font-weight: 300; line-height: 1.85; }
+/* ══════════════════════════════════════════
+   CARD  (split: stage LEFT / form RIGHT on desktop)
+══════════════════════════════════════════ */
+.card{
+  width:100%;max-width:900px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(201,168,76,.22);
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 40px 100px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.1);
+}
+/* gold top stripe */
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),var(--gold),transparent);
+  z-index:10;
+}
+/* sweep shimmer */
+.card::after{
+  content:'';position:absolute;top:0;left:-70%;width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.04),transparent);
+  animation:card-sweep 7s ease-in-out infinite;pointer-events:none;z-index:1;
+}
+@keyframes card-sweep{0%{left:-70%}100%{left:140%}}
 
-    /* ── COUNTDOWN ── */
-    .countdown { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .cd-block {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(201,168,76,.22);
-      border-radius: 16px; padding: 22px 26px; text-align: center;
-      min-width: 100px; position: relative; overflow: hidden;
-      backdrop-filter: blur(8px);
-      transition: border-color .3s ease, box-shadow .3s ease;
-    }
-    .cd-block:hover {
-      border-color: rgba(201,168,76,.45);
-      box-shadow: 0 0 30px rgba(201,168,76,.12);
-    }
-    /* Inner shimmer on each block */
-    .cd-block::after {
-      content: ''; position: absolute; top: 0; left: -100%;
-      width: 60%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(201,168,76,.06), transparent);
-      animation: cd-shine 3s ease-in-out infinite;
-    }
-    @keyframes cd-shine { 0% { left: -60%; } 100% { left: 120%; } }
-    .cd-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 48px; font-weight: 700;
-      color: var(--gold-light); line-height: 1;
-      text-shadow: 0 0 24px rgba(201,168,76,.35);
-      position: relative; z-index: 1;
-    }
-    .cd-label {
-      font-size: 10px; font-weight: 700; letter-spacing: .2em;
-      text-transform: uppercase; color: rgba(250,247,242,.35);
-      margin-top: 8px; position: relative; z-index: 1;
-    }
-    .cd-separator {
-      display: flex; align-items: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 40px; font-weight: 700; color: var(--gold);
-      opacity: .4; padding-bottom: 10px;
-      animation: blink 1s step-end infinite;
-    }
-    @keyframes blink { 0%,100% { opacity: .4; } 50% { opacity: .1; } }
+/* ══════════════════════════════════════════
+   LEFT PANEL — CHARACTER STAGE
+══════════════════════════════════════════ */
+.stage{
+  position:relative;
+  background:linear-gradient(145deg,#0d1d3a 0%,#0a1628 60%,#060e1a 100%);
+  border-right:1px solid rgba(201,168,76,.1);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
+  padding:0 0 0 0;
+  min-height:520px;
+  overflow:hidden;
+}
 
-    /* Launch date text */
-    .launch-note {
-      margin-top: 28px; font-size: 13px;
-      color: rgba(250,247,242,.28); letter-spacing: .06em;
-    }
-    .launch-note strong { color: var(--gold); font-weight: 600; }
+/* Stage background glow */
+.stage-bg-glow{
+  position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);
+  width:320px;height:200px;
+  background:radial-gradient(ellipse at 50% 100%,rgba(201,168,76,.22) 0%,transparent 65%);
+  pointer-events:none;
+}
+/* Stage grid */
+.stage-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(201,168,76,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(201,168,76,.05) 1px,transparent 1px);
+  background-size:40px 40px;
+  mask-image:radial-gradient(ellipse 60% 60% at 50% 80%,#000 20%,transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 80%,#000 20%,transparent 80%);
+}
 
-    /* ── TOOLS SECTION ── */
-    .tools-section { padding: 100px 0; }
-    .section-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-    .section-label span { font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
-    .section-label-line { width: 30px; height: 1px; background: var(--gold); }
-    .section-header { margin-bottom: 60px; text-align: center; }
-    .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 700; color: var(--navy); line-height: 1.08; letter-spacing: -.02em; margin-bottom: 14px; }
-    .section-header h2 em { font-style: italic; color: var(--gold); }
-    .section-header p { font-size: 16px; color: var(--text-mid); font-weight: 300; max-width: 500px; margin: 0 auto; }
+/* Stage text */
+.stage-label{
+  position:absolute;top:28px;left:0;right:0;text-align:center;z-index:5;
+}
+.stage-label p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:700;font-style:italic;
+  color:var(--gold2);text-shadow:0 0 30px rgba(201,168,76,.4);
+  animation:fade-in 1s ease 0.2s both;
+}
+.stage-label small{
+  font-size:11px;color:rgba(250,247,242,.3);letter-spacing:.14em;text-transform:uppercase;
+  display:block;margin-top:4px;
+  animation:fade-in 1s ease 0.5s both;
+}
+@keyframes fade-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-    .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+/* Floor */
+.floor{
+  position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,transparent 0%,rgba(201,168,76,.4) 30%,rgba(201,168,76,.6) 50%,rgba(201,168,76,.4) 70%,transparent 100%);
+  box-shadow:0 -2px 20px rgba(201,168,76,.15);
+}
+.floor-shadow{
+  position:absolute;bottom:4px;left:50%;transform:translateX(-50%);
+  width:120px;height:12px;
+  background:radial-gradient(ellipse,rgba(0,0,0,.4) 0%,transparent 70%);
+}
 
-    .tool-card {
-      background: var(--white); border: 1px solid rgba(10,22,40,.07);
-      border-radius: 20px; padding: 36px 30px;
-      position: relative; overflow: hidden;
-      transition: all .4s ease; display: flex; flex-direction: column;
-    }
-    /* animated gold bottom bar on hover */
-    .tool-card::before {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
-      background-size: 200% 100%;
-      transform: scaleX(0); transform-origin: left;
-      transition: transform .5s ease;
-    }
-    .tool-card:hover { transform: translateY(-8px); box-shadow: 0 28px 60px rgba(10,22,40,.12), 0 0 0 1px rgba(201,168,76,.18); }
-    .tool-card:hover::before { transform: scaleX(1); animation: bar-shine 1.5s linear infinite; }
-    @keyframes bar-shine { 0% { background-position: 0%; } 100% { background-position: 200%; } }
+/* ──────────────────
+   CHARACTER SVG  (full scene in one SVG canvas)
+────────────────── */
+.scene{
+  position:relative;
+  width:260px;height:360px;
+  flex-shrink:0;
+  margin-bottom:4px;
+  z-index:4;
+}
 
-    /* Featured card */
-    .tool-card.featured {
-      grid-column: span 2;
-      background: var(--navy);
-      border-color: rgba(201,168,76,.2);
-    }
-    .tool-card.featured::after {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 55% 55% at 85% 50%, rgba(201,168,76,.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .tool-card.featured:hover { box-shadow: 0 28px 60px rgba(0,0,0,.3), 0 0 0 1px rgba(201,168,76,.3); }
+/* BOOK — starts high, drops */
+#book{
+  position:absolute;
+  width:56px;height:44px;
+  left:50%;transform:translateX(-50%) rotate(-15deg);
+  top:-80px;
+  animation:book-fall 0.6s cubic-bezier(.4,0,.2,1) 1.2s both;
+  z-index:20;
+}
+@keyframes book-fall{
+  0%{top:-80px;transform:translateX(-50%) rotate(-20deg)}
+  55%{top:96px;transform:translateX(-50%) rotate(10deg)}
+  70%{top:84px;transform:translateX(-50%) rotate(-5deg)}
+  85%{top:92px;transform:translateX(-50%) rotate(3deg)}
+  100%{top:88px;transform:translateX(-50%) rotate(0deg)}
+}
+/* book moves to reading hand */
+#book.reading{
+  animation:book-to-hand 0.55s cubic-bezier(.22,1,.36,1) both;
+  z-index:20;
+}
+@keyframes book-to-hand{
+  from{top:88px;left:50%;transform:translateX(-50%)}
+  to{top:200px;left:62%;transform:translateX(-50%) rotate(-20deg)}
+}
 
-    .tool-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 10px; font-weight: 700; letter-spacing: .14em;
-      text-transform: uppercase; padding: 5px 12px; border-radius: 4px;
-      margin-bottom: 18px; width: fit-content;
-    }
-    .badge-flagship { background: rgba(201,168,76,.15); color: var(--gold); border: 1px solid rgba(201,168,76,.3); }
-    .badge-soon     { background: rgba(10,22,40,.07); color: var(--text-light); border: 1px solid rgba(10,22,40,.1); }
+/* OPEN BOOK */
+#book-open{
+  position:absolute;top:198px;left:62%;transform:translateX(-50%) rotate(-20deg);
+  width:64px;height:46px;opacity:0;z-index:20;
+  transition:opacity .3s ease .1s;
+}
+#book-open.show{opacity:1}
 
-    .tool-icon { font-size: 40px; margin-bottom: 16px; display: block; }
-    .tool-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.2; }
-    .tool-card.featured h3 { color: var(--cream); }
-    .tool-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; flex: 1; margin-bottom: 20px; }
-    .tool-card.featured p { color: rgba(250,247,242,.5); }
-    .tool-features { list-style: none; }
-    .tool-features li { font-size: 13px; color: var(--text-mid); padding: 5px 0; display: flex; align-items: center; gap: 8px; }
-    .tool-card.featured .tool-features li { color: rgba(250,247,242,.55); }
-    .tool-features li::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: 12px; flex-shrink: 0; }
+/* CHARACTER — enters sliding from right */
+#char{
+  position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
+  width:140px;
+  animation:char-enter 0.8s cubic-bezier(.22,1,.36,1) 0.2s both;
+  transform-origin:bottom center;
+}
+@keyframes char-enter{
+  from{transform:translateX(180px) translateX(-50%) rotate(5deg);opacity:0}
+  to{transform:translateX(-50%) rotate(0deg);opacity:1}
+}
+#char.sit{animation:char-sit 0.45s cubic-bezier(.22,1,.36,1) both}
+@keyframes char-sit{
+  from{transform:translateX(-50%) scaleY(1)}
+  to{transform:translateX(-50%) scaleY(.97) translateY(4px)}
+}
 
-    /* ── CTA ── */
-    .cta-section { background: var(--navy); padding: 100px 0; position: relative; overflow: hidden; text-align: center; }
-    .cta-section .glow-c { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 700px; height: 500px; background: radial-gradient(ellipse, rgba(201,168,76,.1) 0%, transparent 65%); pointer-events: none; }
-    .cta-section .sweep { position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(201,168,76,.04), transparent); animation: sweep 5s ease-in-out infinite; }
-    @keyframes sweep { 0% { left: -100%; } 100% { left: 200%; } }
-    .cta-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
-    .cta-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: 50px; font-weight: 700; color: var(--cream); line-height: 1.08; margin-bottom: 16px; letter-spacing: -.02em; }
-    .cta-inner h2 em { font-style: italic; color: var(--gold-light); text-shadow: 0 0 40px rgba(201,168,76,.35); }
-    .cta-inner p { font-size: 16px; color: rgba(250,247,242,.48); font-weight: 300; margin-bottom: 40px; line-height: 1.8; }
-    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+/* Head hit reaction */
+#char-head.bump{animation:head-bonk 0.45s ease 1.22s both}
+@keyframes head-bonk{
+  0%{transform:none}
+  30%{transform:translateY(7px) rotate(7deg)}
+  55%{transform:translateY(-4px) rotate(-4deg)}
+  80%{transform:translateY(2px) rotate(2deg)}
+  100%{transform:none}
+}
 
-    /* BTNs */
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 32px; border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; transition: all .3s ease; cursor: pointer; border: none; }
-    .btn-gold  { background: var(--gold); color: var(--navy); }
-    .btn-gold:hover  { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,168,76,.4); }
-    .btn-ghost { background: transparent; color: var(--cream); border: 1px solid rgba(201,168,76,.35); }
-    .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); background: rgba(201,168,76,.08); }
+/* Stars */
+.bump-stars{
+  position:absolute;top:20px;left:50%;transform:translateX(-50%);
+  display:flex;gap:3px;font-size:13px;
+  opacity:0;z-index:30;
+  animation:stars-pop 0.6s ease 1.22s both;
+}
+@keyframes stars-pop{
+  0%{opacity:0;transform:translateX(-50%) translateY(0) scale(.4)}
+  35%{opacity:1;transform:translateX(-50%) translateY(-10px) scale(1.1)}
+  65%{opacity:1}
+  100%{opacity:0;transform:translateX(-50%) translateY(-18px) scale(.9)}
+}
 
-    /* ── FOOTER ── */
-    .footer { background: var(--navy-dark); border-top: 1px solid rgba(201,168,76,.1); padding: 64px 0 36px; }
-    .footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand .logo-text h1 { color: var(--cream); }
-    .footer-brand p { font-size: 14px; color: rgba(250,247,242,.38); margin-top: 14px; line-height: 1.75; max-width: 250px; }
-    .footer-col h5 { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    .footer-col a { display: block; font-size: 14px; color: rgba(250,247,242,.45); margin-bottom: 10px; }
-    .footer-col a:hover { color: var(--gold-light); }
-    .footer-bottom { border-top: 1px solid rgba(201,168,76,.08); padding-top: 26px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-    .footer-bottom p { font-size: 12px; color: rgba(250,247,242,.25); }
-    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
-    .footer-links a { font-size: 12px; color: rgba(250,247,242,.3); }
-    .footer-links a:hover { color: var(--gold); }
+/* Eye blink */
+.eye{animation:eye-blink 3.8s ease-in-out infinite}
+@keyframes eye-blink{0%,88%,100%{transform:scaleY(1)}94%{transform:scaleY(.06)}}
 
-    /* MODALS */
-    .modal { display: none; position: fixed; z-index: 2000; inset: 0; background: rgba(10,22,40,.88); overflow-y: auto; backdrop-filter: blur(8px); }
-    .modal-box { background: var(--cream); margin: 5% auto; padding: 52px; border-radius: 20px; width: 90%; max-width: 720px; position: relative; color: var(--text); }
-    .modal-close { position: absolute; top: 22px; right: 28px; font-size: 28px; color: var(--text-light); cursor: pointer; background: none; border: none; line-height: 1; }
-    .modal-close:hover { color: var(--navy); }
-    .modal-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--navy); margin-bottom: 22px; }
-    .modal-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--navy); margin: 22px 0 8px; }
-    .modal-box p { font-size: 15px; line-height: 1.7; color: var(--text-mid); margin-bottom: 8px; }
+/* Reading sway */
+#char.sway{animation:read-sway 3.2s ease-in-out 2.8s infinite}
+@keyframes read-sway{
+  0%,100%{transform:translateX(-50%) rotate(0deg)}
+  30%{transform:translateX(-50%) rotate(1.8deg)}
+  70%{transform:translateX(-50%) rotate(-1.8deg)}
+}
 
-    /* FADE */
-    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+/* Right arm lifts for reading */
+#arm-r{transform-origin:top center}
+#arm-r.lift{animation:arm-up 0.5s ease 2.3s both}
+@keyframes arm-up{from{transform:rotate(0deg)}to{transform:rotate(-35deg)}}
 
-    /* RESPONSIVE */
-    @media (max-width: 1100px) { .tools-grid { grid-template-columns: repeat(2,1fr); } .tool-card.featured { grid-column: span 2; } .footer-inner { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 768px) {
-      .container { padding: 0 20px; }
-      .nav { display: none; } .mobile-menu-btn { display: block; }
-      .logo img { height: 48px; } .logo-text h1 { font-size: 18px; }
-      .hero { padding: 60px 0 56px; } .hero h1 { font-size: 38px; } .hero p { font-size: 15px; }
-      .cd-num { font-size: 34px; } .cd-block { min-width: 74px; padding: 16px 18px; } .cd-separator { font-size: 28px; }
-      .tools-section { padding: 64px 0; } .section-header h2 { font-size: 34px; }
-      .tools-grid { grid-template-columns: 1fr; } .tool-card.featured { grid-column: span 1; }
-      .cta-inner h2 { font-size: 36px; } .cta-actions { flex-direction: column; align-items: center; }
-      .cta-actions .btn { width: 100%; max-width: 320px; }
-      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .modal-box { padding: 32px 20px; margin: 10% auto; }
-    }
-    @media (max-width: 480px) { .hero h1 { font-size: 30px; } .countdown { gap: 8px; } .cd-separator { display: none; } }
-  </style>
+/* ══════════════════════════════════════════
+   RIGHT PANEL — FORM
+══════════════════════════════════════════ */
+.form-panel{
+  padding:44px 40px 36px;
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;
+}
+
+.form-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.eline{width:28px;height:1px;background:var(--gold)}
+.form-eyebrow span{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+
+.form-panel h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;font-weight:700;color:var(--cream);
+  line-height:1.05;margin-bottom:6px;letter-spacing:-.02em;
+}
+.form-panel h2 em{font-style:italic;color:var(--gold2)}
+.form-sub{font-size:13px;color:rgba(250,247,242,.36);font-weight:300;margin-bottom:26px;line-height:1.65}
+
+/* fields */
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.fg{margin-bottom:12px}
+.fg label{
+  display:block;font-size:10px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(250,247,242,.38);margin-bottom:7px;
+}
+.fg input,.fg select{
+  width:100%;background:rgba(255,255,255,.055);
+  border:1px solid rgba(201,168,76,.17);border-radius:10px;
+  padding:11px 14px;font-family:'DM Sans',sans-serif;
+  font-size:14px;color:var(--cream);
+  outline:none;-webkit-appearance:none;appearance:none;
+  transition:border .25s,background .25s,box-shadow .25s;
+}
+.fg select{
+  cursor:pointer;padding-right:36px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;
+}
+.fg select option{background:#0d1f3c;color:var(--cream)}
+.fg input::placeholder{color:rgba(250,247,242,.17)}
+.fg input:focus,.fg select:focus{
+  border-color:var(--gold);background:rgba(201,168,76,.07);
+  box-shadow:0 0 0 3px rgba(201,168,76,.14);
+}
+.fg input.err,.fg select.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(248,113,113,.13)}
+
+/* password */
+.pw{position:relative}
+.pw input{padding-right:42px}
+.pw-eye{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;padding:4px;
+  color:rgba(250,247,242,.3);font-size:15px;line-height:1;transition:color .2s;
+}
+.pw-eye:hover{color:var(--gold)}
+
+/* terms checkbox */
+.terms-check{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:14px 16px;
+  background:rgba(201,168,76,.04);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:12px;margin-bottom:18px;
+}
+.terms-check.err{border-color:var(--red);background:rgba(248,113,113,.05)}
+.terms-check input[type=checkbox]{
+  width:17px;height:17px;min-width:17px;
+  margin-top:2px;cursor:pointer;
+  accent-color:var(--gold);
+}
+.tc-text{font-size:12px;color:rgba(250,247,242,.42);line-height:1.65}
+.tc-text a{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.28)}
+.tc-text a:hover{color:var(--gold2)}
+
+/* submit */
+.btn-go{
+  width:100%;padding:14px;
+  background:var(--gold);color:var(--navy);
+  border:none;border-radius:10px;
+  font-family:'DM Sans',sans-serif;font-size:14px;
+  font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  cursor:pointer;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .3s,transform .3s,box-shadow .3s;
+}
+.btn-go::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+  transform:translateX(-100%);transition:transform .4s;
+}
+.btn-go:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 14px 40px rgba(201,168,76,.42)}
+.btn-go:hover::after{transform:translateX(100%)}
+.btn-go:active{transform:translateY(0)}
+.btn-go:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.spin{
+  width:16px;height:16px;border:2px solid rgba(10,22,40,.3);
+  border-top-color:var(--navy);border-radius:50%;
+  animation:spin .65s linear infinite;display:none;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn-go.loading .spin{display:block}
+
+.signup-hint{
+  font-size:12px;color:rgba(250,247,242,.26);text-align:center;
+  margin-top:14px;line-height:1.6;
+}
+.signup-hint a{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.25)}
+
+/* ══════════════════════════════════════════
+   TERMS ACCORDIONS  (below card)
+══════════════════════════════════════════ */
+.accords{
+  width:100%;max-width:900px;
+  margin-top:14px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.ac{
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(201,168,76,.1);
+  border-radius:12px;overflow:hidden;
+}
+.ac-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 20px;cursor:pointer;
+  font-size:13px;font-weight:600;color:rgba(250,247,242,.5);
+  user-select:none;transition:color .2s;
+}
+.ac-head:hover{color:var(--gold2)}
+.ac-head .ico{font-size:11px;color:var(--gold);transition:transform .3s}
+.ac.open .ac-head .ico{transform:rotate(180deg)}
+.ac-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .42s ease,padding .3s;
+  padding:0 20px;
+}
+.ac.open .ac-body{max-height:500px;padding:0 20px 16px}
+.ac-body p,.ac-body li{
+  font-size:12px;color:rgba(250,247,242,.33);
+  line-height:1.75;margin-bottom:5px;
+}
+.ac-body strong{color:rgba(250,247,242,.52)}
+.ac-body ul{padding-left:16px}
+
+/* ══════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════ */
+#toast{
+  position:fixed;bottom:28px;left:50%;
+  transform:translateX(-50%) translateY(20px);
+  background:#1b3060;border:1px solid rgba(201,168,76,.35);
+  color:var(--cream);padding:12px 26px;border-radius:10px;
+  font-size:13.5px;font-weight:500;z-index:9999;opacity:0;
+  transition:opacity .3s,transform .3s;pointer-events:none;
+  max-width:92vw;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.5);
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#toast.ok{border-color:rgba(74,222,128,.45);background:#0d3020}
+#toast.err{border-color:rgba(248,113,113,.5);background:#3a0f0f}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer{
+  position:relative;z-index:1;
+  text-align:center;padding:30px 20px 36px;
+  border-top:1px solid rgba(201,168,76,.07);
+  margin-top:18px;
+}
+.ft-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(201,168,76,.1);
+  border-radius:100px;padding:6px 18px;
+}
+.ft-badge img{height:22px;filter:grayscale(1) brightness(.6)}
+.ft-badge span{
+  font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;color:#4a5a6e;
+}
+.ft-line{width:36px;height:1px;background:rgba(201,168,76,.1);margin:10px auto}
+.ft-copy{font-size:11px;color:#3d4f62;line-height:1.85;letter-spacing:.03em}
+.ft-copy strong{color:#4e6070;font-weight:600}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:780px){
+  .card{grid-template-columns:1fr}
+  .stage{min-height:280px;border-right:none;border-bottom:1px solid rgba(201,168,76,.1)}
+  .scene{width:200px;height:270px}
+  #char{width:110px}
+  .form-panel{padding:28px 22px 24px}
+  .frow{grid-template-columns:1fr}
+  .accords{max-width:100%}
+}
+@media(max-width:440px){
+  .brand h1{font-size:18px}
+  .form-panel h2{font-size:28px}
+  .stage{min-height:220px}
+  .stage-label p{font-size:18px}
+}
+</style>
 </head>
 <body>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-header">
-    <div class="mobile-nav-logo">
-      <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="Logo">
-      <span>SkillRise Africa</span>
-    </div>
-    <button class="mobile-nav-close" onclick="toggleMenu()">×</button>
-  </div>
-  <div class="mobile-nav-links">
-    <a href="index.html" onclick="toggleMenu()">Home <span class="arr">›</span></a>
-    <a href="courses.html" onclick="toggleMenu()">Courses <span class="arr">›</span></a>
-    <a href="index.html#opportunities" onclick="toggleMenu()">Opportunities <span class="arr">›</span></a>
-    <a href="tools.html" onclick="toggleMenu()">Tools <span class="arr">›</span></a>
-    <a href="community.html" onclick="toggleMenu()">Community <span class="arr">›</span></a>
-  </div>
-  <div class="mobile-nav-footer">
-    <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" onclick="toggleMenu()">Enroll Now →</a>
-  </div>
+<div class="bg">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
 </div>
+<div id="toast"></div>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container header-inner">
-    <a href="index.html" class="logo">
-      <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa">
-      <div class="logo-text"><h1>SkillRise Africa</h1><span>ELEVATE by ANICADE</span></div>
-    </a>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="index.html#opportunities">Opportunities</a>
-      <a href="tools.html" class="active">Tools</a>
-      <a href="community.html">Community</a>
-      <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn-enroll">Enroll Now</a>
-    </nav>
-    <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-  </div>
-</header>
+<div class="page">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-glow"></div><div class="hero-glow2"></div>
-  <div class="hero-grid"></div><div class="hero-beam"></div>
-  <div class="container hero-content">
-    <div class="hero-eyebrow">
-      <div class="hero-eyebrow-line"></div><span>Tool Library</span><div class="hero-eyebrow-line"></div>
-    </div>
-    <h1>Powerful Tools.<br><em>Launching Soon.</em></h1>
-    <p>A full suite of career-accelerating tools built specifically for African professionals — from AI-powered CV builders to smart finance planners.</p>
+  <!-- BRAND -->
+  <a href="index.html" class="brand">
+    <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise">
+    <div><h1>SkillRise Africa</h1><small>ELEVATE by ANICADE</small></div>
+  </a>
 
-    <!-- 4-MONTH COUNTDOWN -->
-    <div class="countdown">
-      <div class="cd-block">
-        <div class="cd-num" id="cd-months">04</div>
-        <div class="cd-label">Months</div>
-      </div>
-      <div class="cd-separator">:</div>
-      <div class="cd-block">
-        <div class="cd-num" id="cd-days">--</div>
-        <div class="cd-label">Days</div>
-      </div>
-      <div class="cd-separator">:</div>
-      <div class="cd-block">
-        <div class="cd-num" id="cd-hrs">--</div>
-        <div class="cd-label">Hours</div>
-      </div>
-      <div class="cd-separator">:</div>
-      <div class="cd-block">
-        <div class="cd-num" id="cd-min">--</div>
-        <div class="cd-label">Minutes</div>
-      </div>
-      <div class="cd-separator">:</div>
-      <div class="cd-block">
-        <div class="cd-num" id="cd-sec">--</div>
-        <div class="cd-label">Seconds</div>
-      </div>
-    </div>
-    <div class="launch-note">Launching in <strong id="launch-date-text">4 months</strong> — enroll now for free early access</div>
-  </div>
-</section>
+  <!-- MAIN CARD -->
+  <div class="card">
 
-<!-- TOOLS GRID -->
-<section class="tools-section">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="section-label" style="justify-content:center">
-        <div class="section-label-line"></div><span>Coming Soon</span><div class="section-label-line"></div>
-      </div>
-      <h2>Tools Built to <em>Elevate</em> You</h2>
-      <p>Six powerful tools designed to accelerate every stage of your professional journey.</p>
-    </div>
+    <!-- ─── LEFT: CHARACTER STAGE ─── -->
+    <div class="stage">
+      <div class="stage-grid"></div>
+      <div class="stage-bg-glow"></div>
 
-    <div class="tools-grid">
-
-      <!-- FLAGSHIP -->
-      <div class="tool-card featured fade-up">
-        <div class="tool-badge badge-flagship">⭐ Flagship Tool</div>
-        <span class="tool-icon">🎯</span>
-        <h3>Smart Learning Dashboard</h3>
-        <p>Your personal command centre — track all 62 courses, set goals and get AI-powered study recommendations tailored to your career path.</p>
-        <ul class="tool-features">
-          <li>Course progress tracking across all 62 programs</li>
-          <li>Personalised AI study plans &amp; smart reminders</li>
-          <li>Achievement badges &amp; completion certificates</li>
-        </ul>
+      <div class="stage-label">
+        <p>"Every book is a new adventure."</p>
+        <small>SkillRise Africa</small>
       </div>
 
-      <!-- AI ASSISTANT -->
-      <div class="tool-card fade-up">
-        <div class="tool-badge badge-soon">Coming Soon</div>
-        <span class="tool-icon">🤖</span>
-        <h3>AI Learning Assistant</h3>
-        <p>Your personal AI tutor available 24/7. Ask anything, practice skills and get instant expert-level answers on any topic.</p>
-        <ul class="tool-features">
-          <li>Instant answers on all course topics</li>
-          <li>Practice exercises &amp; auto-marked quizzes</li>
-        </ul>
-      </div>
+      <div class="scene">
+        <!-- bump stars -->
+        <div class="bump-stars">⭐✨⭐</div>
 
-      <!-- CV BUILDER -->
-      <div class="tool-card fade-up">
-        <div class="tool-badge badge-soon">Coming Soon</div>
-        <span class="tool-icon">📄</span>
-        <h3>Professional CV Builder</h3>
-        <p>ATS-optimised templates that get interviews. Build a job-winning CV in minutes with guided prompts and one-click export.</p>
-        <ul class="tool-features">
-          <li>20+ professionally designed templates</li>
-          <li>One-click PDF &amp; Word export</li>
-        </ul>
-      </div>
+        <!-- FALLING CLOSED BOOK -->
+        <svg id="book" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="54" height="42" rx="4" fill="#C9A84C" stroke="#9a7a28" stroke-width="1.5"/>
+          <rect x="1" y="1" width="8" height="42" rx="3" fill="#a07830"/>
+          <line x1="14" y1="10" x2="48" y2="10" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity=".7"/>
+          <line x1="14" y1="17" x2="48" y2="17" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>
+          <line x1="14" y1="24" x2="40" y2="24" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity=".4"/>
+          <text x="15" y="38" font-family="serif" font-size="12" font-weight="bold" fill="#FAF7F2" opacity=".75">ELEVATE</text>
+        </svg>
 
-      <!-- CAREER TRACKER -->
-      <div class="tool-card fade-up">
-        <div class="tool-badge badge-soon">Coming Soon</div>
-        <span class="tool-icon">📈</span>
-        <h3>Career Growth Tracker</h3>
-        <p>Set career milestones, track skill development and visualise your professional growth month by month.</p>
-        <ul class="tool-features">
-          <li>Skills radar chart visualisation</li>
-          <li>Monthly growth reports &amp; insights</li>
-        </ul>
-      </div>
+        <!-- OPEN BOOK (reading) -->
+        <svg id="book-open" viewBox="0 0 64 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 5C24 3 8 4 3 7L3 41C8 38 24 38 32 42C40 38 56 38 61 41L61 7C56 4 40 3 32 5Z" fill="#FAF7F2" stroke="#C9A84C" stroke-width="1.3"/>
+          <line x1="32" y1="5" x2="32" y2="42" stroke="#C9A84C" stroke-width="1.8"/>
+          <line x1="9" y1="13" x2="27" y2="12" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".6"/>
+          <line x1="9" y1="19" x2="27" y2="18" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".5"/>
+          <line x1="9" y1="25" x2="24" y2="24" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".4"/>
+          <line x1="37" y1="13" x2="55" y2="12" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".6"/>
+          <line x1="37" y1="19" x2="55" y2="18" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".5"/>
+          <line x1="37" y1="25" x2="53" y2="24" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".4"/>
+        </svg>
 
-      <!-- FINANCE PLANNER -->
-      <div class="tool-card fade-up">
-        <div class="tool-badge badge-soon">Coming Soon</div>
-        <span class="tool-icon">💰</span>
-        <h3>Budget &amp; Finance Planner</h3>
-        <p>Take full control of your money — track income, manage expenses and hit every savings goal with clarity.</p>
-        <ul class="tool-features">
-          <li>Income &amp; expense tracking dashboard</li>
-          <li>Savings goal progress visualisation</li>
-        </ul>
-      </div>
+        <!-- ══ THE CHARACTER SVG ══ -->
+        <svg id="char" viewBox="0 0 140 230" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-      <!-- OPPORTUNITY HUB -->
-      <div class="tool-card fade-up">
-        <div class="tool-badge badge-soon">Coming Soon</div>
-        <span class="tool-icon">🌍</span>
-        <h3>Opportunity Hub</h3>
-        <p>Daily-updated remote jobs, freelance gigs and business opportunities — filtered and matched for African professionals.</p>
-        <ul class="tool-features">
-          <li>Curated daily remote opportunities</li>
-          <li>One-click apply with your built CV</li>
-        </ul>
-      </div>
+          <!-- SHADOW UNDER FEET -->
+          <ellipse cx="70" cy="226" rx="38" ry="6" fill="rgba(0,0,0,.35)"/>
 
-    </div>
-  </div>
-</section>
+          <!-- SHOES -->
+          <ellipse cx="47" cy="218" rx="18" ry="8" fill="#111827"/>
+          <ellipse cx="93" cy="218" rx="18" ry="8" fill="#111827"/>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="glow-c"></div><div class="sweep"></div>
-  <div class="container">
-    <div class="cta-inner fade-up">
-      <div class="section-label" style="justify-content:center;margin-bottom:20px">
-        <div class="section-label-line"></div><span>Get Early Access</span><div class="section-label-line"></div>
-      </div>
-      <h2>Don't Miss the <em>Launch.</em></h2>
-      <p>Enroll in any course today and get free priority access to all tools the moment they go live — reserved for active students only.</p>
-      <div class="cta-actions">
-        <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html" class="btn btn-gold">Enroll for Early Access →</a>
-        <a href="https://wa.me/260777083995" class="btn btn-ghost">WhatsApp Us</a>
-      </div>
-    </div>
-  </div>
-</section>
+          <!-- PANTS / LEGS -->
+          <rect x="38" y="158" width="24" height="58" rx="9" fill="#1f2937"/>
+          <rect x="78" y="158" width="24" height="58" rx="9" fill="#1f2937"/>
+          <!-- pants crease -->
+          <line x1="50" y1="165" x2="50" y2="210" stroke="rgba(255,255,255,.07)" stroke-width="1.5"/>
+          <line x1="90" y1="165" x2="90" y2="210" stroke="rgba(255,255,255,.07)" stroke-width="1.5"/>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">
-          <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa" style="height:48px">
-          <div class="logo-text"><h1>SkillRise Africa</h1><span>ELEVATE by ANICADE</span></div>
+          <!-- BODY / SHIRT -->
+          <rect x="28" y="98" width="84" height="68" rx="14" fill="#1d4ed8"/>
+          <!-- shirt shading -->
+          <rect x="28" y="98" width="42" height="68" rx="14" fill="rgba(0,0,0,.08)"/>
+          <!-- collar -->
+          <path d="M62 98 L70 111 L78 98" stroke="white" stroke-width="2.2" fill="none" opacity=".55"/>
+          <!-- shirt buttons -->
+          <circle cx="70" cy="122" r="2.5" fill="white" opacity=".4"/>
+          <circle cx="70" cy="132" r="2.5" fill="white" opacity=".35"/>
+          <circle cx="70" cy="142" r="2.5" fill="white" opacity=".3"/>
+          <!-- shirt pocket -->
+          <rect x="34" y="110" width="16" height="13" rx="3" stroke="rgba(255,255,255,.2)" stroke-width="1.2" fill="none"/>
+
+          <!-- LEFT ARM (relaxed) -->
+          <rect x="10" y="99" width="19" height="52" rx="9" fill="#1d4ed8"/>
+          <ellipse cx="19" cy="155" rx="12" ry="8" fill="#FDBCB4"/>
+
+          <!-- RIGHT ARM (will lift for reading) -->
+          <g id="arm-r">
+            <rect x="111" y="99" width="19" height="52" rx="9" fill="#1d4ed8"/>
+            <ellipse cx="121" cy="155" rx="12" ry="8" fill="#FDBCB4"/>
+          </g>
+
+          <!-- NECK -->
+          <rect x="60" y="84" width="20" height="18" rx="7" fill="#FDBCB4"/>
+
+          <!-- HEAD GROUP -->
+          <g id="char-head">
+            <!-- Hair back -->
+            <ellipse cx="70" cy="46" rx="33" ry="36" fill="#1e0f06"/>
+            <!-- Head / face -->
+            <ellipse cx="70" cy="50" rx="30" ry="34" fill="#FDBCB4"/>
+            <!-- Ear L -->
+            <ellipse cx="40" cy="52" rx="6" ry="8" fill="#FDBCB4"/>
+            <ellipse cx="40" cy="52" rx="3.5" ry="5.5" fill="#e8948a"/>
+            <!-- Ear R -->
+            <ellipse cx="100" cy="52" rx="6" ry="8" fill="#FDBCB4"/>
+            <ellipse cx="100" cy="52" rx="3.5" ry="5.5" fill="#e8948a"/>
+            <!-- Hair front / fringe -->
+            <path d="M40 30 Q45 10 70 8 Q95 10 100 30 Q90 18 70 18 Q50 18 40 30Z" fill="#1e0f06"/>
+            <path d="M42 28 Q50 12 70 10 Q82 10 94 18" stroke="#3d1e0c" stroke-width="2" fill="none" opacity=".6"/>
+
+            <!-- Eyes -->
+            <g class="eye" style="transform-origin:57px 52px">
+              <ellipse cx="57" cy="52" rx="6.5" ry="7" fill="white"/>
+              <ellipse cx="57" cy="53.5" rx="4" ry="4.5" fill="#1e0f06"/>
+              <circle cx="58.5" cy="51.5" r="1.3" fill="white"/>
+            </g>
+            <g class="eye" style="transform-origin:83px 52px">
+              <ellipse cx="83" cy="52" rx="6.5" ry="7" fill="white"/>
+              <ellipse cx="83" cy="53.5" rx="4" ry="4.5" fill="#1e0f06"/>
+              <circle cx="84.5" cy="51.5" r="1.3" fill="white"/>
+            </g>
+
+            <!-- Eyebrows -->
+            <path d="M50 42 Q57 38 64 42" stroke="#1e0f06" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M76 42 Q83 38 90 42" stroke="#1e0f06" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+            <!-- Nose -->
+            <ellipse cx="70" cy="62" rx="4" ry="3" fill="#e8948a" opacity=".65"/>
+
+            <!-- MOUTH — changes from surprised to smile -->
+            <ellipse id="mouth-o" cx="70" cy="72" rx="5" ry="6" fill="#c97b70" opacity="1"/>
+            <path id="mouth-smile" d="M62 70 Q70 78 78 70" stroke="#c97b70" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0"/>
+
+            <!-- Cheeks -->
+            <ellipse cx="46" cy="63" rx="8" ry="5" fill="#f9a8d4" opacity=".3"/>
+            <ellipse cx="94" cy="63" rx="8" ry="5" fill="#f9a8d4" opacity=".3"/>
+
+          </g><!-- /head -->
+        </svg><!-- /char -->
+      </div><!-- /scene -->
+
+      <div class="floor-shadow"></div>
+      <div class="floor"></div>
+    </div><!-- /stage -->
+
+
+    <!-- ─── RIGHT: FORM ─── -->
+    <div class="form-panel">
+      <div class="form-eyebrow">
+        <div class="eline"></div>
+        <span>Welcome Back</span>
+      </div>
+      <h2>Sign In to <em>Elevate.</em></h2>
+      <p class="form-sub">Enter your details to access your learning dashboard and continue your journey.</p>
+
+      <!-- Name + Age -->
+      <div class="frow">
+        <div class="fg">
+          <label for="f-name">Full Name *</label>
+          <input id="f-name" type="text" placeholder="e.g. Tresfor Banda" autocomplete="name">
         </div>
-        <p>Learn. Grow. Rise. Empowering African professionals with world-class skills.</p>
+        <div class="fg">
+          <label for="f-age">Age *</label>
+          <input id="f-age" type="number" min="13" max="120" placeholder="e.g. 24">
+        </div>
       </div>
-      <div class="footer-col">
-        <h5>Programs</h5>
-        <a href="courses.html">All 62 Courses</a>
-        <a href="courses.html">Design</a>
-        <a href="courses.html">Technology</a>
-        <a href="courses.html">Business</a>
+
+      <!-- Email + Location -->
+      <div class="frow">
+        <div class="fg">
+          <label for="f-email">Email Address *</label>
+          <input id="f-email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="fg">
+          <label for="f-loc">Location *</label>
+          <input id="f-loc" type="text" placeholder="City, Country">
+        </div>
       </div>
-      <div class="footer-col">
-        <h5>Resources</h5>
-        <a href="index.html#opportunities">Opportunities</a>
-        <a href="tools.html">Tool Library</a>
-        <a href="community.html">Community</a>
+
+      <!-- Password -->
+      <div class="fg">
+        <label for="f-pass">Password *</label>
+        <div class="pw">
+          <input id="f-pass" type="password" placeholder="Your password" autocomplete="current-password">
+          <button class="pw-eye" type="button" id="pw-btn" onclick="togglePw()">👁</button>
+        </div>
       </div>
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <a id="footer-email" href="#">skillriseafrica44&#64;gmail.com</a>
-        <a href="tel:+260777083995">+260 777 083 995</a>
-        <a href="https://wa.me/260777083995">WhatsApp Us</a>
+
+      <!-- Terms Checkbox -->
+      <div class="terms-check" id="terms-wrap">
+        <input type="checkbox" id="f-terms">
+        <div class="tc-text">
+          I am at least 13 years old and I agree to the
+          <a href="#" onclick="openAc('privacy');return false">Privacy Policy</a>,
+          <a href="#" onclick="openAc('terms');return false">Terms of Use</a>
+          and <a href="#" onclick="openAc('conduct');return false">Code of Conduct</a>
+          of SkillRise Africa — ELEVATE by ANICADE.
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button class="btn-go" id="btn-go" onclick="doLogin()">
+        <div class="spin" id="spin"></div>
+        <span id="btn-lbl">Sign In &amp; Enter →</span>
+      </button>
+
+      <p class="signup-hint">
+        First time? <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html">Enroll now →</a>
+      </p>
+    </div><!-- /form-panel -->
+
+  </div><!-- /card -->
+
+  <!-- TERMS ACCORDIONS -->
+  <div class="accords">
+
+    <div class="ac" id="ac-privacy">
+      <div class="ac-head" onclick="toggleAc('privacy')">
+        🔒&nbsp; Privacy Policy
+        <span class="ico">▾</span>
+      </div>
+      <div class="ac-body">
+        <p><strong>Effective Date:</strong> February 19, 2026</p>
+        <p>SkillRise Africa collects your name, email, age, location and course data to deliver a personalised learning experience.</p>
+        <p><strong>We collect:</strong></p>
+        <ul>
+          <li>Personal info: name, email, age, location</li>
+          <li>Learning data: courses, progress, certificates earned</li>
+          <li>Session data: login tokens stored securely</li>
+        </ul>
+        <p><strong>We never</strong> sell, share or misuse your personal data. All data is stored securely and used solely to serve you.</p>
+        <p>Questions? Contact <span id="ft-email"></span></p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 SkillRise Africa — ELEVATE by ANICADE. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#" onclick="document.getElementById('pm').style.display='block';return false">Privacy Policy</a>
-        <a href="#" onclick="document.getElementById('tm').style.display='block';return false">Terms of Use</a>
-        <a id="footer-contact" href="#">Contact</a>
+
+    <div class="ac" id="ac-terms">
+      <div class="ac-head" onclick="toggleAc('terms')">
+        📋&nbsp; Terms of Use
+        <span class="ico">▾</span>
+      </div>
+      <div class="ac-body">
+        <p><strong>Effective Date:</strong> February 19, 2026</p>
+        <p><strong>1. Eligibility:</strong> You must be at least 13 years old. By logging in you confirm this.</p>
+        <p><strong>2. Account:</strong> You are responsible for keeping your login credentials secure.</p>
+        <p><strong>3. Course Access:</strong> Enrolled courses are for personal learning only. Redistribution is prohibited.</p>
+        <p><strong>4. Payments:</strong> Course fees are non-refundable once access has been granted.</p>
+        <p><strong>5. Termination:</strong> Accounts violating these terms may be suspended without notice.</p>
+        <p><strong>6. Changes:</strong> Terms may be updated. Continued use constitutes acceptance.</p>
       </div>
     </div>
+
+    <div class="ac" id="ac-conduct">
+      <div class="ac-head" onclick="toggleAc('conduct')">
+        🤝&nbsp; Code of Conduct
+        <span class="ico">▾</span>
+      </div>
+      <div class="ac-body">
+        <p>SkillRise Africa is a professional, inclusive community. All users must:</p>
+        <ul>
+          <li>Treat all learners and staff with respect</li>
+          <li>Contribute positively to community discussions</li>
+          <li>Not share, copy, or resell paid course materials</li>
+          <li>Not use the platform for spam, fraud, or harassment</li>
+          <li>Report abuse to our team immediately</li>
+        </ul>
+        <p>Violations result in immediate account suspension.</p>
+      </div>
+    </div>
+
+  </div><!-- /accords -->
+
+</div><!-- /page -->
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-badge">
+    <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="ANICADE">
+    <span>ANICADE TECH</span>
   </div>
+  <div class="ft-line"></div>
+  <p class="ft-copy">
+    <strong>SkillRise Africa — ELEVATE</strong> is an original creation of <strong>ANICADE TECH</strong>.<br>
+    © 2026 ANICADE TECH · All rights reserved · Unauthorised use or redistribution is strictly prohibited.<br>
+    Designed &amp; built in Kabwe, Zambia 🇿🇲
+  </p>
 </footer>
 
-<!-- MODALS -->
-<div id="pm" class="modal" onclick="if(event.target===this)this.style.display='none'">
-  <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('pm').style.display='none'">&times;</button>
-    <h2>Privacy Policy</h2>
-    <p><strong>Effective Date:</strong> February 19, 2026</p>
-    <h3>1. Information We Collect</h3><p>Name, email, phone, country and course enrollment information you voluntarily submit.</p>
-    <h3>2. How We Use It</h3><p>To process registrations, provide materials, issue certificates and send opportunities. We never sell your data.</p>
-    <h3>3. Contact</h3><p id="pm-c"></p>
-  </div>
-</div>
-<div id="tm" class="modal" onclick="if(event.target===this)this.style.display='none'">
-  <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('tm').style.display='none'">&times;</button>
-    <h2>Terms of Use</h2>
-    <p><strong>Effective Date:</strong> February 19, 2026</p>
-    <h3>1. Acceptance</h3><p>By using our platform you confirm you are at least 16, provide accurate information and use services lawfully.</p>
-    <h3>2. Course Access</h3><p>Materials are for personal use only. Payments are non-refundable once access is granted.</p>
-    <h3>3. Certification</h3><p>Certificates issued only upon completing all requirements and assessments.</p>
-    <h3>4. Contact</h3><p id="tm-c"></p>
-  </div>
-</div>
-
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
 <script>
-  /* ── Build email in JS so Cloudflare can't touch it ── */
-  (function() {
-    var addr = 'skillriseafrica44' + '@' + 'gmail.com';
-    document.getElementById('footer-email').href    = 'mailto:' + addr;
-    document.getElementById('footer-contact').href  = 'mailto:' + addr;
-    document.getElementById('pm-c').textContent     = 'Email: ' + addr + ' | WhatsApp: +260 777 083 995';
-    document.getElementById('tm-c').textContent     = 'Email: ' + addr + ' | WhatsApp: +260 777 083 995';
-  })();
+/* ════════════════════════════════
+   JSONbin config
+   Replace these two values with your
+   actual JSONbin Bin ID and Master Key.
+   The bin should hold a JSON array:
+   [{"email":"...","password":"...","name":"..."},...]
+════════════════════════════════ */
+var BIN_ID  = 'YOUR_BIN_ID_HERE';
+var BIN_KEY = 'YOUR_MASTER_KEY_HERE';
+var BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
 
-  /* ── Mobile menu ── */
-  function toggleMenu() {
-    var n = document.getElementById('mobileNav');
-    n.classList.toggle('active');
-    document.body.style.overflow = n.classList.contains('active') ? 'hidden' : '';
+/* ═══ Cloudflare-safe email construction ═══ */
+(function(){
+  var addr = 'skillriseafrica44' + '@' + 'gmail.com';
+  var el = document.getElementById('ft-email');
+  if(el) el.textContent = addr;
+})();
+
+/* ═══ CHARACTER ANIMATION SEQUENCE ═══
+   t=0.2s  → char slides in (CSS)
+   t=1.2s  → book hits head → bump + stars
+   t=2.2s  → book floats to hand, arm lifts, open book appears
+   t=2.6s  → char sways (reading)
+   t=2.8s  → mouth changes to smile
+════════════════════════════════ */
+(function(){
+  /* Head bump + stars */
+  setTimeout(function(){
+    var h = document.getElementById('char-head');
+    if(h) h.classList.add('bump');
+  }, 1220);
+
+  /* Book moves to hand */
+  setTimeout(function(){
+    var bf = document.getElementById('book');
+    if(bf) bf.classList.add('reading');
+
+    /* after transition finishes, hide closed book and show open */
+    setTimeout(function(){
+      var bf2 = document.getElementById('book');
+      if(bf2) bf2.style.opacity = '0';
+      var bo = document.getElementById('book-open');
+      if(bo) bo.classList.add('show');
+    }, 500);
+
+    /* Lift arm */
+    var arm = document.getElementById('arm-r');
+    if(arm) arm.classList.add('lift');
+
+    /* Char sits slightly */
+    var ch = document.getElementById('char');
+    if(ch) ch.classList.add('sit');
+
+  }, 2200);
+
+  /* Reading sway */
+  setTimeout(function(){
+    var ch = document.getElementById('char');
+    if(ch){ ch.classList.remove('sit'); ch.classList.add('sway'); }
+  }, 2700);
+
+  /* Mouth: O → smile */
+  setTimeout(function(){
+    var mo = document.getElementById('mouth-o');
+    var ms = document.getElementById('mouth-smile');
+    if(mo) mo.setAttribute('opacity','0');
+    if(ms) ms.setAttribute('opacity','1');
+  }, 2800);
+})();
+
+/* ═══ UI HELPERS ═══ */
+function toast(msg, type){
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = (type||'') + ' show';
+  clearTimeout(el._t);
+  el._t = setTimeout(function(){ el.className=''; }, 4500);
+}
+function setLoad(on){
+  var b  = document.getElementById('btn-go');
+  var sp = document.getElementById('spin');
+  var lb = document.getElementById('btn-lbl');
+  b.disabled = on;
+  sp.style.display = on ? 'block' : 'none';
+  lb.textContent   = on ? 'Signing in…' : 'Sign In & Enter →';
+}
+function markErr(id){ document.getElementById(id).classList.add('err'); }
+function clrErr(id) { document.getElementById(id).classList.remove('err'); }
+function clearAll(){
+  ['f-name','f-age','f-email','f-loc','f-pass'].forEach(clrErr);
+  document.getElementById('terms-wrap').classList.remove('err');
+}
+function togglePw(){
+  var i = document.getElementById('f-pass');
+  var b = document.getElementById('pw-btn');
+  if(i.type==='password'){ i.type='text'; b.textContent='🙈'; }
+  else { i.type='password'; b.textContent='👁'; }
+}
+
+/* ═══ ACCORDION ═══ */
+function toggleAc(key){
+  var el = document.getElementById('ac-'+key);
+  if(!el) return;
+  el.classList.toggle('open');
+}
+function openAc(key){
+  var el = document.getElementById('ac-'+key);
+  if(el && !el.classList.contains('open')) el.classList.add('open');
+  setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'nearest'}); }, 50);
+}
+
+/* ═══ LOGIN ═══ */
+function doLogin(){
+  clearAll();
+
+  var name  = document.getElementById('f-name').value.trim();
+  var age   = parseInt(document.getElementById('f-age').value, 10);
+  var email = document.getElementById('f-email').value.trim().toLowerCase();
+  var loc   = document.getElementById('f-loc').value.trim();
+  var pass  = document.getElementById('f-pass').value;
+  var terms = document.getElementById('f-terms').checked;
+
+  /* ── validate ── */
+  var ok = true;
+  if(!name)                        { markErr('f-name');  ok=false; }
+  if(!age || age<13 || age>120)    { markErr('f-age');   ok=false; }
+  if(!email || !email.includes('@')){ markErr('f-email'); ok=false; }
+  if(!loc)                         { markErr('f-loc');   ok=false; }
+  if(!pass || pass.length<4)       { markErr('f-pass');  ok=false; }
+  if(!terms){
+    document.getElementById('terms-wrap').classList.add('err');
+    ok=false;
   }
-  window.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.getElementById('pm').style.display = 'none';
-      document.getElementById('tm').style.display = 'none';
-    }
-  });
+  if(!ok){
+    toast('⚠ Please fill all required fields and accept the terms.','err');
+    return;
+  }
 
-  /* ── 4-MONTH REALTIME COUNTDOWN ──
-     Target = today + exactly 4 months (calculated once on load,
-     stored in localStorage so it persists on refresh).
-  ── */
-  (function() {
-    var KEY = 'sra_tools_launch';
-    var stored = localStorage.getItem(KEY);
-    var target;
+  /* ── Demo mode (no bin set yet) ── */
+  if(BIN_ID==='YOUR_BIN_ID_HERE'){
+    setLoad(true);
+    sessionStorage.setItem('sra_user', JSON.stringify({name,email,age,location:loc}));
+    toast('✓ Welcome '+name+'! Entering your dashboard…','ok');
+    setTimeout(function(){ window.location.href='index.html'; }, 1900);
+    return;
+  }
 
-    if (stored) {
-      target = new Date(parseInt(stored, 10));
-    } else {
-      /* Calculate 4 months from right now */
-      target = new Date();
-      target.setMonth(target.getMonth() + 4);
-      localStorage.setItem(KEY, target.getTime().toString());
-    }
-
-    /* Show human-readable launch date */
-    var opts = { year: 'numeric', month: 'long', day: 'numeric' };
-    var dateStr = target.toLocaleDateString('en-GB', opts);
-    document.getElementById('launch-date-text').textContent = dateStr;
-
-    function pad(n) { return String(n).padStart(2, '0'); }
-
-    function tick() {
-      var now  = new Date();
-      var diff = target - now;
-
-      if (diff <= 0) {
-        ['cd-months','cd-days','cd-hrs','cd-min','cd-sec'].forEach(function(id) {
-          var el = document.getElementById(id);
-          if (el) el.textContent = '00';
-        });
-        document.getElementById('launch-date-text').textContent = 'Launched! 🚀';
-        return;
-      }
-
-      /* Total seconds */
-      var totalSec = Math.floor(diff / 1000);
-      var sec      = totalSec % 60;
-      var totalMin = Math.floor(totalSec / 60);
-      var min      = totalMin % 60;
-      var totalHrs = Math.floor(totalMin / 60);
-      var hrs      = totalHrs % 24;
-      var totalDays = Math.floor(totalHrs / 24);
-
-      /* Months: how many whole calendar months remain */
-      var n = new Date();
-      var months = 0;
-      var temp = new Date(n);
-      while (true) {
-        temp.setMonth(temp.getMonth() + 1);
-        if (temp > target) break;
-        months++;
-      }
-      /* Days remaining after subtracting full months */
-      var afterMonths = new Date(n);
-      afterMonths.setMonth(afterMonths.getMonth() + months);
-      var daysRemainder = Math.floor((target - afterMonths) / 86400000);
-
-      document.getElementById('cd-months').textContent = pad(months);
-      document.getElementById('cd-days').textContent   = pad(daysRemainder);
-      document.getElementById('cd-hrs').textContent    = pad(hrs);
-      document.getElementById('cd-min').textContent    = pad(min);
-      document.getElementById('cd-sec').textContent    = pad(sec);
-    }
-
-    tick();
-    setInterval(tick, 1000);
-  })();
-
-  /* ── Fade-up ── */
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        setTimeout(function() { e.target.classList.add('visible'); }, +e.target.dataset.delay || 0);
-        obs.unobserve(e.target);
-      }
+  /* ── Live JSONbin auth ── */
+  setLoad(true);
+  fetch(BIN_URL+'/latest',{
+    headers:{'X-Master-Key': BIN_KEY, 'X-Access-Key': BIN_KEY}
+  })
+  .then(function(r){
+    if(!r.ok) throw new Error('Bin error '+r.status);
+    return r.json();
+  })
+  .then(function(data){
+    var users = Array.isArray(data.record) ? data.record : [];
+    var user  = users.find(function(u){
+      return u.email && u.email.toLowerCase()===email && u.password===pass;
     });
-  }, { threshold: .08 });
-  document.querySelectorAll('.fade-up').forEach(function(el, i) {
-    el.dataset.delay = i * 100;
-    obs.observe(el);
+    if(!user){
+      setLoad(false);
+      markErr('f-email'); markErr('f-pass');
+      toast('✗ Email or password not recognised.','err');
+      return;
+    }
+    sessionStorage.setItem('sra_user', JSON.stringify({
+      name:     user.name||name,
+      email:    user.email,
+      age:      user.age||age,
+      location: user.location||loc
+    }));
+    toast('✓ Welcome back, '+(user.name||name)+'! Entering…','ok');
+    setTimeout(function(){ window.location.href='index.html'; }, 1900);
+  })
+  .catch(function(e){
+    setLoad(false);
+    console.error(e);
+    toast('⚠ Connection error — please try again.','err');
   });
+}
+
+/* Enter key submits */
+document.addEventListener('keydown', function(e){
+  if(e.key==='Enter') doLogin();
+});
 </script>
+
 </body>
 </html>
