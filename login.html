@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — SkillRise Africa | ELEVATE by ANICADE</title>
+<link rel="icon" type="image/png" href="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════ */
+:root{
+  --navy:#0A1628; --navy2:#0f1f38; --navy3:#162544;
+  --gold:#C9A84C; --gold2:#E8C97A; --gold3:#F5E9C8;
+  --cream:#FAF7F2; --white:#fff;
+  --text:#1C2B3A; --mid:#4A5568; --muted:#8A9BB0;
+  --red:#f87171; --green:#4ade80;
+  /* char colours */
+  --skin:#FDBCB4; --skin2:#e8948a; --skin3:#c97b70;
+  --hair:#1e0f06; --shirt:#1d4ed8; --shirt2:#1e40af;
+  --pants:#1f2937; --shoe:#111827;
+  --book1:#C9A84C; --book2:#FAF7F2;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{height:100%}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--navy); color:var(--cream);
+  min-height:100vh; display:flex; flex-direction:column;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+
+/* ══════════════════════════════════════════
+   ANIMATED BACKGROUND
+══════════════════════════════════════════ */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+/* grid */
+.bg::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,#000 30%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,#000 30%,transparent 100%);
+}
+/* noise */
+.bg::after{
+  content:'';position:absolute;inset:0;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+}
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.orb1{width:700px;height:700px;top:-200px;right:-180px;
+  background:radial-gradient(circle,rgba(201,168,76,.14) 0%,transparent 68%);
+  animation:orb-pulse 9s ease-in-out infinite}
+.orb2{width:550px;height:550px;bottom:-160px;left:-160px;
+  background:radial-gradient(circle,rgba(37,99,235,.13) 0%,transparent 68%);
+  animation:orb-pulse 12s ease-in-out infinite reverse}
+.orb3{width:300px;height:300px;top:40%;left:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 70%);
+  animation:orb-pulse 6s ease-in-out infinite}
+@keyframes orb-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:.65}}
+
+/* ══════════════════════════════════════════
+   PAGE SHELL
+══════════════════════════════════════════ */
+.page{
+  position:relative;z-index:1;
+  flex:1;display:flex;
+  flex-direction:column;align-items:center;
+  padding:40px 16px 0;
+}
+
+/* brand */
+.brand{display:flex;align-items:center;gap:14px;margin-bottom:36px;text-decoration:none}
+.brand img{height:50px}
+.brand h1{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--cream);line-height:1.1}
+.brand small{font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.2em;text-transform:uppercase;display:block}
+
+/* ══════════════════════════════════════════
+   CARD  (split: stage LEFT / form RIGHT on desktop)
+══════════════════════════════════════════ */
+.card{
+  width:100%;max-width:900px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(201,168,76,.22);
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 40px 100px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.1);
+}
+/* gold top stripe */
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),var(--gold),transparent);
+  z-index:10;
+}
+/* sweep shimmer */
+.card::after{
+  content:'';position:absolute;top:0;left:-70%;width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.04),transparent);
+  animation:card-sweep 7s ease-in-out infinite;pointer-events:none;z-index:1;
+}
+@keyframes card-sweep{0%{left:-70%}100%{left:140%}}
+
+/* ══════════════════════════════════════════
+   LEFT PANEL — CHARACTER STAGE
+══════════════════════════════════════════ */
+.stage{
+  position:relative;
+  background:linear-gradient(145deg,#0d1d3a 0%,#0a1628 60%,#060e1a 100%);
+  border-right:1px solid rgba(201,168,76,.1);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
+  padding:0 0 0 0;
+  min-height:520px;
+  overflow:hidden;
+}
+
+/* Stage background glow */
+.stage-bg-glow{
+  position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);
+  width:320px;height:200px;
+  background:radial-gradient(ellipse at 50% 100%,rgba(201,168,76,.22) 0%,transparent 65%);
+  pointer-events:none;
+}
+/* Stage grid */
+.stage-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(201,168,76,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(201,168,76,.05) 1px,transparent 1px);
+  background-size:40px 40px;
+  mask-image:radial-gradient(ellipse 60% 60% at 50% 80%,#000 20%,transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 80%,#000 20%,transparent 80%);
+}
+
+/* Stage text */
+.stage-label{
+  position:absolute;top:28px;left:0;right:0;text-align:center;z-index:5;
+}
+.stage-label p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:700;font-style:italic;
+  color:var(--gold2);text-shadow:0 0 30px rgba(201,168,76,.4);
+  animation:fade-in 1s ease 0.2s both;
+}
+.stage-label small{
+  font-size:11px;color:rgba(250,247,242,.3);letter-spacing:.14em;text-transform:uppercase;
+  display:block;margin-top:4px;
+  animation:fade-in 1s ease 0.5s both;
+}
+@keyframes fade-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Floor */
+.floor{
+  position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,transparent 0%,rgba(201,168,76,.4) 30%,rgba(201,168,76,.6) 50%,rgba(201,168,76,.4) 70%,transparent 100%);
+  box-shadow:0 -2px 20px rgba(201,168,76,.15);
+}
+.floor-shadow{
+  position:absolute;bottom:4px;left:50%;transform:translateX(-50%);
+  width:120px;height:12px;
+  background:radial-gradient(ellipse,rgba(0,0,0,.4) 0%,transparent 70%);
+}
+
+/* ──────────────────
+   CHARACTER SVG  (full scene in one SVG canvas)
+────────────────── */
+.scene{
+  position:relative;
+  width:260px;height:360px;
+  flex-shrink:0;
+  margin-bottom:4px;
+  z-index:4;
+}
+
+/* BOOK — starts high, drops */
+#book{
+  position:absolute;
+  width:56px;height:44px;
+  left:50%;transform:translateX(-50%) rotate(-15deg);
+  top:-80px;
+  animation:book-fall 0.6s cubic-bezier(.4,0,.2,1) 1.2s both;
+  z-index:20;
+}
+@keyframes book-fall{
+  0%{top:-80px;transform:translateX(-50%) rotate(-20deg)}
+  55%{top:96px;transform:translateX(-50%) rotate(10deg)}
+  70%{top:84px;transform:translateX(-50%) rotate(-5deg)}
+  85%{top:92px;transform:translateX(-50%) rotate(3deg)}
+  100%{top:88px;transform:translateX(-50%) rotate(0deg)}
+}
+/* book moves to reading hand */
+#book.reading{
+  animation:book-to-hand 0.55s cubic-bezier(.22,1,.36,1) both;
+  z-index:20;
+}
+@keyframes book-to-hand{
+  from{top:88px;left:50%;transform:translateX(-50%)}
+  to{top:200px;left:62%;transform:translateX(-50%) rotate(-20deg)}
+}
+
+/* OPEN BOOK */
+#book-open{
+  position:absolute;top:198px;left:62%;transform:translateX(-50%) rotate(-20deg);
+  width:64px;height:46px;opacity:0;z-index:20;
+  transition:opacity .3s ease .1s;
+}
+#book-open.show{opacity:1}
+
+/* CHARACTER — enters sliding from right */
+#char{
+  position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
+  width:140px;
+  animation:char-enter 0.8s cubic-bezier(.22,1,.36,1) 0.2s both;
+  transform-origin:bottom center;
+}
+@keyframes char-enter{
+  from{transform:translateX(180px) translateX(-50%) rotate(5deg);opacity:0}
+  to{transform:translateX(-50%) rotate(0deg);opacity:1}
+}
+#char.sit{animation:char-sit 0.45s cubic-bezier(.22,1,.36,1) both}
+@keyframes char-sit{
+  from{transform:translateX(-50%) scaleY(1)}
+  to{transform:translateX(-50%) scaleY(.97) translateY(4px)}
+}
+
+/* Head hit reaction */
+#char-head.bump{animation:head-bonk 0.45s ease 1.22s both}
+@keyframes head-bonk{
+  0%{transform:none}
+  30%{transform:translateY(7px) rotate(7deg)}
+  55%{transform:translateY(-4px) rotate(-4deg)}
+  80%{transform:translateY(2px) rotate(2deg)}
+  100%{transform:none}
+}
+
+/* Stars */
+.bump-stars{
+  position:absolute;top:20px;left:50%;transform:translateX(-50%);
+  display:flex;gap:3px;font-size:13px;
+  opacity:0;z-index:30;
+  animation:stars-pop 0.6s ease 1.22s both;
+}
+@keyframes stars-pop{
+  0%{opacity:0;transform:translateX(-50%) translateY(0) scale(.4)}
+  35%{opacity:1;transform:translateX(-50%) translateY(-10px) scale(1.1)}
+  65%{opacity:1}
+  100%{opacity:0;transform:translateX(-50%) translateY(-18px) scale(.9)}
+}
+
+/* Eye blink */
+.eye{animation:eye-blink 3.8s ease-in-out infinite}
+@keyframes eye-blink{0%,88%,100%{transform:scaleY(1)}94%{transform:scaleY(.06)}}
+
+/* Reading sway */
+#char.sway{animation:read-sway 3.2s ease-in-out 2.8s infinite}
+@keyframes read-sway{
+  0%,100%{transform:translateX(-50%) rotate(0deg)}
+  30%{transform:translateX(-50%) rotate(1.8deg)}
+  70%{transform:translateX(-50%) rotate(-1.8deg)}
+}
+
+/* Right arm lifts for reading */
+#arm-r{transform-origin:top center}
+#arm-r.lift{animation:arm-up 0.5s ease 2.3s both}
+@keyframes arm-up{from{transform:rotate(0deg)}to{transform:rotate(-35deg)}}
+
+/* ══════════════════════════════════════════
+   RIGHT PANEL — FORM
+══════════════════════════════════════════ */
+.form-panel{
+  padding:44px 40px 36px;
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;
+}
+
+.form-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.eline{width:28px;height:1px;background:var(--gold)}
+.form-eyebrow span{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+
+.form-panel h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;font-weight:700;color:var(--cream);
+  line-height:1.05;margin-bottom:6px;letter-spacing:-.02em;
+}
+.form-panel h2 em{font-style:italic;color:var(--gold2)}
+.form-sub{font-size:13px;color:rgba(250,247,242,.36);font-weight:300;margin-bottom:26px;line-height:1.65}
+
+/* fields */
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.fg{margin-bottom:12px}
+.fg label{
+  display:block;font-size:10px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(250,247,242,.38);margin-bottom:7px;
+}
+.fg input,.fg select{
+  width:100%;background:rgba(255,255,255,.055);
+  border:1px solid rgba(201,168,76,.17);border-radius:10px;
+  padding:11px 14px;font-family:'DM Sans',sans-serif;
+  font-size:14px;color:var(--cream);
+  outline:none;-webkit-appearance:none;appearance:none;
+  transition:border .25s,background .25s,box-shadow .25s;
+}
+.fg select{
+  cursor:pointer;padding-right:36px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;
+}
+.fg select option{background:#0d1f3c;color:var(--cream)}
+.fg input::placeholder{color:rgba(250,247,242,.17)}
+.fg input:focus,.fg select:focus{
+  border-color:var(--gold);background:rgba(201,168,76,.07);
+  box-shadow:0 0 0 3px rgba(201,168,76,.14);
+}
+.fg input.err,.fg select.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(248,113,113,.13)}
+
+/* password */
+.pw{position:relative}
+.pw input{padding-right:42px}
+.pw-eye{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;padding:4px;
+  color:rgba(250,247,242,.3);font-size:15px;line-height:1;transition:color .2s;
+}
+.pw-eye:hover{color:var(--gold)}
+
+/* terms checkbox */
+.terms-check{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:14px 16px;
+  background:rgba(201,168,76,.04);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:12px;margin-bottom:18px;
+}
+.terms-check.err{border-color:var(--red);background:rgba(248,113,113,.05)}
+.terms-check input[type=checkbox]{
+  width:17px;height:17px;min-width:17px;
+  margin-top:2px;cursor:pointer;
+  accent-color:var(--gold);
+}
+.tc-text{font-size:12px;color:rgba(250,247,242,.42);line-height:1.65}
+.tc-text a{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.28)}
+.tc-text a:hover{color:var(--gold2)}
+
+/* submit */
+.btn-go{
+  width:100%;padding:14px;
+  background:var(--gold);color:var(--navy);
+  border:none;border-radius:10px;
+  font-family:'DM Sans',sans-serif;font-size:14px;
+  font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  cursor:pointer;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .3s,transform .3s,box-shadow .3s;
+}
+.btn-go::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+  transform:translateX(-100%);transition:transform .4s;
+}
+.btn-go:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 14px 40px rgba(201,168,76,.42)}
+.btn-go:hover::after{transform:translateX(100%)}
+.btn-go:active{transform:translateY(0)}
+.btn-go:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.spin{
+  width:16px;height:16px;border:2px solid rgba(10,22,40,.3);
+  border-top-color:var(--navy);border-radius:50%;
+  animation:spin .65s linear infinite;display:none;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn-go.loading .spin{display:block}
+
+.signup-hint{
+  font-size:12px;color:rgba(250,247,242,.26);text-align:center;
+  margin-top:14px;line-height:1.6;
+}
+.signup-hint a{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.25)}
+
+/* ══════════════════════════════════════════
+   TERMS ACCORDIONS  (below card)
+══════════════════════════════════════════ */
+.accords{
+  width:100%;max-width:900px;
+  margin-top:14px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.ac{
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(201,168,76,.1);
+  border-radius:12px;overflow:hidden;
+}
+.ac-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 20px;cursor:pointer;
+  font-size:13px;font-weight:600;color:rgba(250,247,242,.5);
+  user-select:none;transition:color .2s;
+}
+.ac-head:hover{color:var(--gold2)}
+.ac-head .ico{font-size:11px;color:var(--gold);transition:transform .3s}
+.ac.open .ac-head .ico{transform:rotate(180deg)}
+.ac-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .42s ease,padding .3s;
+  padding:0 20px;
+}
+.ac.open .ac-body{max-height:500px;padding:0 20px 16px}
+.ac-body p,.ac-body li{
+  font-size:12px;color:rgba(250,247,242,.33);
+  line-height:1.75;margin-bottom:5px;
+}
+.ac-body strong{color:rgba(250,247,242,.52)}
+.ac-body ul{padding-left:16px}
+
+/* ══════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════ */
+#toast{
+  position:fixed;bottom:28px;left:50%;
+  transform:translateX(-50%) translateY(20px);
+  background:#1b3060;border:1px solid rgba(201,168,76,.35);
+  color:var(--cream);padding:12px 26px;border-radius:10px;
+  font-size:13.5px;font-weight:500;z-index:9999;opacity:0;
+  transition:opacity .3s,transform .3s;pointer-events:none;
+  max-width:92vw;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.5);
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#toast.ok{border-color:rgba(74,222,128,.45);background:#0d3020}
+#toast.err{border-color:rgba(248,113,113,.5);background:#3a0f0f}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer{
+  position:relative;z-index:1;
+  text-align:center;padding:30px 20px 36px;
+  border-top:1px solid rgba(201,168,76,.07);
+  margin-top:18px;
+}
+.ft-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(201,168,76,.1);
+  border-radius:100px;padding:6px 18px;
+}
+.ft-badge img{height:22px;filter:grayscale(1) brightness(.6)}
+.ft-badge span{
+  font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;color:#4a5a6e;
+}
+.ft-line{width:36px;height:1px;background:rgba(201,168,76,.1);margin:10px auto}
+.ft-copy{font-size:11px;color:#3d4f62;line-height:1.85;letter-spacing:.03em}
+.ft-copy strong{color:#4e6070;font-weight:600}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:780px){
+  .card{grid-template-columns:1fr}
+  .stage{min-height:280px;border-right:none;border-bottom:1px solid rgba(201,168,76,.1)}
+  .scene{width:200px;height:270px}
+  #char{width:110px}
+  .form-panel{padding:28px 22px 24px}
+  .frow{grid-template-columns:1fr}
+  .accords{max-width:100%}
+}
+@media(max-width:440px){
+  .brand h1{font-size:18px}
+  .form-panel h2{font-size:28px}
+  .stage{min-height:220px}
+  .stage-label p{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+<div id="toast"></div>
+
+<div class="page">
+
+  <!-- BRAND -->
+  <a href="index.html" class="brand">
+    <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise">
+    <div><h1>SkillRise Africa</h1><small>ELEVATE by ANICADE</small></div>
+  </a>
+
+  <!-- MAIN CARD -->
+  <div class="card">
+
+    <!-- ─── LEFT: CHARACTER STAGE ─── -->
+    <div class="stage">
+      <div class="stage-grid"></div>
+      <div class="stage-bg-glow"></div>
+
+      <div class="stage-label">
+        <p>"Every book is a new adventure."</p>
+        <small>SkillRise Africa</small>
+      </div>
+
+      <div class="scene">
+        <!-- bump stars -->
+        <div class="bump-stars">⭐✨⭐</div>
+
+        <!-- FALLING CLOSED BOOK -->
+        <svg id="book" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="54" height="42" rx="4" fill="#C9A84C" stroke="#9a7a28" stroke-width="1.5"/>
+          <rect x="1" y="1" width="8" height="42" rx="3" fill="#a07830"/>
+          <line x1="14" y1="10" x2="48" y2="10" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity=".7"/>
+          <line x1="14" y1="17" x2="48" y2="17" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity=".55"/>
+          <line x1="14" y1="24" x2="40" y2="24" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity=".4"/>
+          <text x="15" y="38" font-family="serif" font-size="12" font-weight="bold" fill="#FAF7F2" opacity=".75">ELEVATE</text>
+        </svg>
+
+        <!-- OPEN BOOK (reading) -->
+        <svg id="book-open" viewBox="0 0 64 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 5C24 3 8 4 3 7L3 41C8 38 24 38 32 42C40 38 56 38 61 41L61 7C56 4 40 3 32 5Z" fill="#FAF7F2" stroke="#C9A84C" stroke-width="1.3"/>
+          <line x1="32" y1="5" x2="32" y2="42" stroke="#C9A84C" stroke-width="1.8"/>
+          <line x1="9" y1="13" x2="27" y2="12" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".6"/>
+          <line x1="9" y1="19" x2="27" y2="18" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".5"/>
+          <line x1="9" y1="25" x2="24" y2="24" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".4"/>
+          <line x1="37" y1="13" x2="55" y2="12" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".6"/>
+          <line x1="37" y1="19" x2="55" y2="18" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".5"/>
+          <line x1="37" y1="25" x2="53" y2="24" stroke="#8A9BB0" stroke-width="1.1" stroke-linecap="round" opacity=".4"/>
+        </svg>
+
+        <!-- ══ THE CHARACTER SVG ══ -->
+        <svg id="char" viewBox="0 0 140 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- SHADOW UNDER FEET -->
+          <ellipse cx="70" cy="226" rx="38" ry="6" fill="rgba(0,0,0,.35)"/>
+
+          <!-- SHOES -->
+          <ellipse cx="47" cy="218" rx="18" ry="8" fill="#111827"/>
+          <ellipse cx="93" cy="218" rx="18" ry="8" fill="#111827"/>
+
+          <!-- PANTS / LEGS -->
+          <rect x="38" y="158" width="24" height="58" rx="9" fill="#1f2937"/>
+          <rect x="78" y="158" width="24" height="58" rx="9" fill="#1f2937"/>
+          <!-- pants crease -->
+          <line x1="50" y1="165" x2="50" y2="210" stroke="rgba(255,255,255,.07)" stroke-width="1.5"/>
+          <line x1="90" y1="165" x2="90" y2="210" stroke="rgba(255,255,255,.07)" stroke-width="1.5"/>
+
+          <!-- BODY / SHIRT -->
+          <rect x="28" y="98" width="84" height="68" rx="14" fill="#1d4ed8"/>
+          <!-- shirt shading -->
+          <rect x="28" y="98" width="42" height="68" rx="14" fill="rgba(0,0,0,.08)"/>
+          <!-- collar -->
+          <path d="M62 98 L70 111 L78 98" stroke="white" stroke-width="2.2" fill="none" opacity=".55"/>
+          <!-- shirt buttons -->
+          <circle cx="70" cy="122" r="2.5" fill="white" opacity=".4"/>
+          <circle cx="70" cy="132" r="2.5" fill="white" opacity=".35"/>
+          <circle cx="70" cy="142" r="2.5" fill="white" opacity=".3"/>
+          <!-- shirt pocket -->
+          <rect x="34" y="110" width="16" height="13" rx="3" stroke="rgba(255,255,255,.2)" stroke-width="1.2" fill="none"/>
+
+          <!-- LEFT ARM (relaxed) -->
+          <rect x="10" y="99" width="19" height="52" rx="9" fill="#1d4ed8"/>
+          <ellipse cx="19" cy="155" rx="12" ry="8" fill="#FDBCB4"/>
+
+          <!-- RIGHT ARM (will lift for reading) -->
+          <g id="arm-r">
+            <rect x="111" y="99" width="19" height="52" rx="9" fill="#1d4ed8"/>
+            <ellipse cx="121" cy="155" rx="12" ry="8" fill="#FDBCB4"/>
+          </g>
+
+          <!-- NECK -->
+          <rect x="60" y="84" width="20" height="18" rx="7" fill="#FDBCB4"/>
+
+          <!-- HEAD GROUP -->
+          <g id="char-head">
+            <!-- Hair back -->
+            <ellipse cx="70" cy="46" rx="33" ry="36" fill="#1e0f06"/>
+            <!-- Head / face -->
+            <ellipse cx="70" cy="50" rx="30" ry="34" fill="#FDBCB4"/>
+            <!-- Ear L -->
+            <ellipse cx="40" cy="52" rx="6" ry="8" fill="#FDBCB4"/>
+            <ellipse cx="40" cy="52" rx="3.5" ry="5.5" fill="#e8948a"/>
+            <!-- Ear R -->
+            <ellipse cx="100" cy="52" rx="6" ry="8" fill="#FDBCB4"/>
+            <ellipse cx="100" cy="52" rx="3.5" ry="5.5" fill="#e8948a"/>
+            <!-- Hair front / fringe -->
+            <path d="M40 30 Q45 10 70 8 Q95 10 100 30 Q90 18 70 18 Q50 18 40 30Z" fill="#1e0f06"/>
+            <path d="M42 28 Q50 12 70 10 Q82 10 94 18" stroke="#3d1e0c" stroke-width="2" fill="none" opacity=".6"/>
+
+            <!-- Eyes -->
+            <g class="eye" style="transform-origin:57px 52px">
+              <ellipse cx="57" cy="52" rx="6.5" ry="7" fill="white"/>
+              <ellipse cx="57" cy="53.5" rx="4" ry="4.5" fill="#1e0f06"/>
+              <circle cx="58.5" cy="51.5" r="1.3" fill="white"/>
+            </g>
+            <g class="eye" style="transform-origin:83px 52px">
+              <ellipse cx="83" cy="52" rx="6.5" ry="7" fill="white"/>
+              <ellipse cx="83" cy="53.5" rx="4" ry="4.5" fill="#1e0f06"/>
+              <circle cx="84.5" cy="51.5" r="1.3" fill="white"/>
+            </g>
+
+            <!-- Eyebrows -->
+            <path d="M50 42 Q57 38 64 42" stroke="#1e0f06" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M76 42 Q83 38 90 42" stroke="#1e0f06" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+            <!-- Nose -->
+            <ellipse cx="70" cy="62" rx="4" ry="3" fill="#e8948a" opacity=".65"/>
+
+            <!-- MOUTH — changes from surprised to smile -->
+            <ellipse id="mouth-o" cx="70" cy="72" rx="5" ry="6" fill="#c97b70" opacity="1"/>
+            <path id="mouth-smile" d="M62 70 Q70 78 78 70" stroke="#c97b70" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0"/>
+
+            <!-- Cheeks -->
+            <ellipse cx="46" cy="63" rx="8" ry="5" fill="#f9a8d4" opacity=".3"/>
+            <ellipse cx="94" cy="63" rx="8" ry="5" fill="#f9a8d4" opacity=".3"/>
+
+          </g><!-- /head -->
+        </svg><!-- /char -->
+      </div><!-- /scene -->
+
+      <div class="floor-shadow"></div>
+      <div class="floor"></div>
+    </div><!-- /stage -->
+
+
+    <!-- ─── RIGHT: FORM ─── -->
+    <div class="form-panel">
+      <div class="form-eyebrow">
+        <div class="eline"></div>
+        <span>Welcome Back</span>
+      </div>
+      <h2>Sign In to <em>Elevate.</em></h2>
+      <p class="form-sub">Enter your details to access your learning dashboard and continue your journey.</p>
+
+      <!-- Name + Age -->
+      <div class="frow">
+        <div class="fg">
+          <label for="f-name">Full Name *</label>
+          <input id="f-name" type="text" placeholder="e.g. Tresfor Banda" autocomplete="name">
+        </div>
+        <div class="fg">
+          <label for="f-age">Age *</label>
+          <input id="f-age" type="number" min="13" max="120" placeholder="e.g. 24">
+        </div>
+      </div>
+
+      <!-- Email + Location -->
+      <div class="frow">
+        <div class="fg">
+          <label for="f-email">Email Address *</label>
+          <input id="f-email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="fg">
+          <label for="f-loc">Location *</label>
+          <input id="f-loc" type="text" placeholder="City, Country">
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="fg">
+        <label for="f-pass">Password *</label>
+        <div class="pw">
+          <input id="f-pass" type="password" placeholder="Your password" autocomplete="current-password">
+          <button class="pw-eye" type="button" id="pw-btn" onclick="togglePw()">👁</button>
+        </div>
+      </div>
+
+      <!-- Terms Checkbox -->
+      <div class="terms-check" id="terms-wrap">
+        <input type="checkbox" id="f-terms">
+        <div class="tc-text">
+          I am at least 13 years old and I agree to the
+          <a href="#" onclick="openAc('privacy');return false">Privacy Policy</a>,
+          <a href="#" onclick="openAc('terms');return false">Terms of Use</a>
+          and <a href="#" onclick="openAc('conduct');return false">Code of Conduct</a>
+          of SkillRise Africa — ELEVATE by ANICADE.
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button class="btn-go" id="btn-go" onclick="doLogin()">
+        <div class="spin" id="spin"></div>
+        <span id="btn-lbl">Sign In &amp; Enter →</span>
+      </button>
+
+      <p class="signup-hint">
+        First time? <a href="https://tresforwrld.github.io/SkillRise-Africa-/register.html">Enroll now →</a>
+      </p>
+    </div><!-- /form-panel -->
+
+  </div><!-- /card -->
+
+  <!-- TERMS ACCORDIONS -->
+  <div class="accords">
+
+    <div class="ac" id="ac-privacy">
+      <div class="ac-head" onclick="toggleAc('privacy')">
+        🔒&nbsp; Privacy Policy
+        <span class="ico">▾</span>
+      </div>
+      <div class="ac-body">
+        <p><strong>Effective Date:</strong> February 19, 2026</p>
+        <p>SkillRise Africa collects your name, email, age, location and course data to deliver a personalised learning experience.</p>
+        <p><strong>We collect:</strong></p>
+        <ul>
+          <li>Personal info: name, email, age, location</li>
+          <li>Learning data: courses, progress, certificates earned</li>
+          <li>Session data: login tokens stored securely</li>
+        </ul>
+        <p><strong>We never</strong> sell, share or misuse your personal data. All data is stored securely and used solely to serve you.</p>
+        <p>Questions? Contact <span id="ft-email"></span></p>
+      </div>
+    </div>
+
+    <div class="ac" id="ac-terms">
+      <div class="ac-head" onclick="toggleAc('terms')">
+        📋&nbsp; Terms of Use
+        <span class="ico">▾</span>
+      </div>
+      <div class="ac-body">
+        <p><strong>Effective Date:</strong> February 19, 2026</p>
+        <p><strong>1. Eligibility:</strong> You must be at least 13 years old. By logging in you confirm this.</p>
+        <p><strong>2. Account:</strong> You are responsible for keeping your login credentials secure.</p>
+        <p><strong>3. Course Access:</strong> Enrolled courses are for personal learning only. Redistribution is prohibited.</p>
+        <p><strong>4. Payments:</strong> Course fees are non-refundable once access has been granted.</p>
+        <p><strong>5. Termination:</strong> Accounts violating these terms may be suspended without notice.</p>
+        <p><strong>6. Changes:</strong> Terms may be updated. Continued use constitutes acceptance.</p>
+      </div>
+    </div>
+
+    <div class="ac" id="ac-conduct">
+      <div class="ac-head" onclick="toggleAc('conduct')">
+        🤝&nbsp; Code of Conduct
+        <span class="ico">▾</span>
+      </div>
+      <div class="ac-body">
+        <p>SkillRise Africa is a professional, inclusive community. All users must:</p>
+        <ul>
+          <li>Treat all learners and staff with respect</li>
+          <li>Contribute positively to community discussions</li>
+          <li>Not share, copy, or resell paid course materials</li>
+          <li>Not use the platform for spam, fraud, or harassment</li>
+          <li>Report abuse to our team immediately</li>
+        </ul>
+        <p>Violations result in immediate account suspension.</p>
+      </div>
+    </div>
+
+  </div><!-- /accords -->
+
+</div><!-- /page -->
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-badge">
+    <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="ANICADE">
+    <span>ANICADE TECH</span>
+  </div>
+  <div class="ft-line"></div>
+  <p class="ft-copy">
+    <strong>SkillRise Africa — ELEVATE</strong> is an original creation of <strong>ANICADE TECH</strong>.<br>
+    © 2026 ANICADE TECH · All rights reserved · Unauthorised use or redistribution is strictly prohibited.<br>
+    Designed &amp; built in Kabwe, Zambia 🇿🇲
+  </p>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+/* ════════════════════════════════
+   JSONbin config
+   Replace these two values with your
+   actual JSONbin Bin ID and Master Key.
+   The bin should hold a JSON array:
+   [{"email":"...","password":"...","name":"..."},...]
+════════════════════════════════ */
+var BIN_ID  = 'YOUR_BIN_ID_HERE';
+var BIN_KEY = 'YOUR_MASTER_KEY_HERE';
+var BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
+
+/* ═══ Cloudflare-safe email construction ═══ */
+(function(){
+  var addr = 'skillriseafrica44' + '@' + 'gmail.com';
+  var el = document.getElementById('ft-email');
+  if(el) el.textContent = addr;
+})();
+
+/* ═══ CHARACTER ANIMATION SEQUENCE ═══
+   t=0.2s  → char slides in (CSS)
+   t=1.2s  → book hits head → bump + stars
+   t=2.2s  → book floats to hand, arm lifts, open book appears
+   t=2.6s  → char sways (reading)
+   t=2.8s  → mouth changes to smile
+════════════════════════════════ */
+(function(){
+  /* Head bump + stars */
+  setTimeout(function(){
+    var h = document.getElementById('char-head');
+    if(h) h.classList.add('bump');
+  }, 1220);
+
+  /* Book moves to hand */
+  setTimeout(function(){
+    var bf = document.getElementById('book');
+    if(bf) bf.classList.add('reading');
+
+    /* after transition finishes, hide closed book and show open */
+    setTimeout(function(){
+      var bf2 = document.getElementById('book');
+      if(bf2) bf2.style.opacity = '0';
+      var bo = document.getElementById('book-open');
+      if(bo) bo.classList.add('show');
+    }, 500);
+
+    /* Lift arm */
+    var arm = document.getElementById('arm-r');
+    if(arm) arm.classList.add('lift');
+
+    /* Char sits slightly */
+    var ch = document.getElementById('char');
+    if(ch) ch.classList.add('sit');
+
+  }, 2200);
+
+  /* Reading sway */
+  setTimeout(function(){
+    var ch = document.getElementById('char');
+    if(ch){ ch.classList.remove('sit'); ch.classList.add('sway'); }
+  }, 2700);
+
+  /* Mouth: O → smile */
+  setTimeout(function(){
+    var mo = document.getElementById('mouth-o');
+    var ms = document.getElementById('mouth-smile');
+    if(mo) mo.setAttribute('opacity','0');
+    if(ms) ms.setAttribute('opacity','1');
+  }, 2800);
+})();
+
+/* ═══ UI HELPERS ═══ */
+function toast(msg, type){
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = (type||'') + ' show';
+  clearTimeout(el._t);
+  el._t = setTimeout(function(){ el.className=''; }, 4500);
+}
+function setLoad(on){
+  var b  = document.getElementById('btn-go');
+  var sp = document.getElementById('spin');
+  var lb = document.getElementById('btn-lbl');
+  b.disabled = on;
+  sp.style.display = on ? 'block' : 'none';
+  lb.textContent   = on ? 'Signing in…' : 'Sign In & Enter →';
+}
+function markErr(id){ document.getElementById(id).classList.add('err'); }
+function clrErr(id) { document.getElementById(id).classList.remove('err'); }
+function clearAll(){
+  ['f-name','f-age','f-email','f-loc','f-pass'].forEach(clrErr);
+  document.getElementById('terms-wrap').classList.remove('err');
+}
+function togglePw(){
+  var i = document.getElementById('f-pass');
+  var b = document.getElementById('pw-btn');
+  if(i.type==='password'){ i.type='text'; b.textContent='🙈'; }
+  else { i.type='password'; b.textContent='👁'; }
+}
+
+/* ═══ ACCORDION ═══ */
+function toggleAc(key){
+  var el = document.getElementById('ac-'+key);
+  if(!el) return;
+  el.classList.toggle('open');
+}
+function openAc(key){
+  var el = document.getElementById('ac-'+key);
+  if(el && !el.classList.contains('open')) el.classList.add('open');
+  setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'nearest'}); }, 50);
+}
+
+/* ═══ LOGIN ═══ */
+function doLogin(){
+  clearAll();
+
+  var name  = document.getElementById('f-name').value.trim();
+  var age   = parseInt(document.getElementById('f-age').value, 10);
+  var email = document.getElementById('f-email').value.trim().toLowerCase();
+  var loc   = document.getElementById('f-loc').value.trim();
+  var pass  = document.getElementById('f-pass').value;
+  var terms = document.getElementById('f-terms').checked;
+
+  /* ── validate ── */
+  var ok = true;
+  if(!name)                        { markErr('f-name');  ok=false; }
+  if(!age || age<13 || age>120)    { markErr('f-age');   ok=false; }
+  if(!email || !email.includes('@')){ markErr('f-email'); ok=false; }
+  if(!loc)                         { markErr('f-loc');   ok=false; }
+  if(!pass || pass.length<4)       { markErr('f-pass');  ok=false; }
+  if(!terms){
+    document.getElementById('terms-wrap').classList.add('err');
+    ok=false;
+  }
+  if(!ok){
+    toast('⚠ Please fill all required fields and accept the terms.','err');
+    return;
+  }
+
+  /* ── Demo mode (no bin set yet) ── */
+  if(BIN_ID==='YOUR_BIN_ID_HERE'){
+    setLoad(true);
+    sessionStorage.setItem('sra_user', JSON.stringify({name,email,age,location:loc}));
+    toast('✓ Welcome '+name+'! Entering your dashboard…','ok');
+    setTimeout(function(){ window.location.href='index.html'; }, 1900);
+    return;
+  }
+
+  /* ── Live JSONbin auth ── */
+  setLoad(true);
+  fetch(BIN_URL+'/latest',{
+    headers:{'X-Master-Key': BIN_KEY, 'X-Access-Key': BIN_KEY}
+  })
+  .then(function(r){
+    if(!r.ok) throw new Error('Bin error '+r.status);
+    return r.json();
+  })
+  .then(function(data){
+    var users = Array.isArray(data.record) ? data.record : [];
+    var user  = users.find(function(u){
+      return u.email && u.email.toLowerCase()===email && u.password===pass;
+    });
+    if(!user){
+      setLoad(false);
+      markErr('f-email'); markErr('f-pass');
+      toast('✗ Email or password not recognised.','err');
+      return;
+    }
+    sessionStorage.setItem('sra_user', JSON.stringify({
+      name:     user.name||name,
+      email:    user.email,
+      age:      user.age||age,
+      location: user.location||loc
+    }));
+    toast('✓ Welcome back, '+(user.name||name)+'! Entering…','ok');
+    setTimeout(function(){ window.location.href='index.html'; }, 1900);
+  })
+  .catch(function(e){
+    setLoad(false);
+    console.error(e);
+    toast('⚠ Connection error — please try again.','err');
+  });
+}
+
+/* Enter key submits */
+document.addEventListener('keydown', function(e){
+  if(e.key==='Enter') doLogin();
+});
+</script>
+
+</body>
+</html>
