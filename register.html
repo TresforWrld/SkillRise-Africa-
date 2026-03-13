@@ -4,367 +4,662 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enroll — SkillRise Africa | ELEVATE by ANICADE</title>
-  <meta name="description" content="Enroll in one of 62+ premium courses at SkillRise Africa. Start your journey today.">
+  <meta name="description" content="Enroll in one of 62+ premium courses. Start your journey today.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tresforwrld.github.io/SkillRise-Africa-/register.html">
   <meta property="og:title" content="Enroll — SkillRise Africa | ELEVATE by ANICADE">
-  <meta property="og:description" content="Join professionals. Enroll in  expert-led courses starting from K750.">
+  <meta property="og:description" content="Join 5,000+ African professionals. 62+ courses from K750.">
   <meta property="og:image" content="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{--navy:#0A1628;--gold:#C9A84C;--gold-light:#E8C97A;--gold-pale:#F5E9C8;--cream:#FAF7F2;--white:#fff;--text:#1C2B3A;--text-mid:#4A5568;--text-light:#8A9BB0;--border:rgba(201,168,76,.2);--max:1300px}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
-    a{color:inherit;text-decoration:none;transition:all .3s ease}
-    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.45}
-
-    /* BG EFFECTS */
-    .bg-glow-tl{position:fixed;top:-200px;left:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.1) 0%,transparent 70%);pointer-events:none;z-index:0;animation:breathe 8s ease-in-out infinite}
-    .bg-glow-br{position:fixed;bottom:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%);pointer-events:none;z-index:0;animation:breathe 10s ease-in-out infinite reverse}
-    @keyframes breathe{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.12);opacity:.7}}
-    .bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:70px 70px;pointer-events:none;z-index:0;-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%);mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 100%)}
-
-    /* HEADER */
-    .header{background:rgba(10,22,40,.9);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,168,76,.12);position:sticky;top:0;z-index:500}
-    .header-inner{max-width:var(--max);margin:0 auto;padding:0 56px;display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
-    .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}
-    .logo img{height:52px;width:auto}
-    .logo-text h1{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--cream);line-height:1.1}
-    .logo-text span{font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.18em;text-transform:uppercase}
-    .back-link{font-size:13px;font-weight:500;color:rgba(250,247,242,.5);display:flex;align-items:center;gap:6px;transition:color .3s ease}
-    .back-link:hover{color:var(--gold-light)}
-
-    /* MAIN LAYOUT */
-    .page{position:relative;z-index:1;min-height:calc(100vh - 72px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px}
-
-    /* CARD */
-    .enroll-card{width:100%;max-width:900px; /* Increased width to fix the squeezed look */
-    background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.2);border-radius:24px;overflow:hidden;position:relative;backdrop-filter:blur(10px);box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);}
-    .enroll-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent)}
-
-    .card-body{padding:60px 80px} /* More spacious horizontal padding */
-    .card-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px}
-    .card-eyebrow-line{width:30px;height:1px;background:var(--gold)}
-    .card-eyebrow span{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-    .card-body h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--cream);line-height:1.1;margin-bottom:15px;letter-spacing:-.02em}
-    .card-body h2 em{font-style:italic;color:var(--gold-light);text-shadow:0 0 30px rgba(201,168,76,.35)}
-    .card-body .subtitle{font-size:15px;color:rgba(250,247,242,.6);font-weight:300;margin-bottom:40px;line-height:1.6;max-width:800px}
-    .card-body .subtitle a{color:var(--gold);text-decoration:underline}
-
-    /* FORM GRID UPDATES */
-    .form-row{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:24px;margin-bottom:24px}
-    .form-group{margin-bottom:20px}
-    .form-group label{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,247,242,.5);margin-bottom:10px}
-    .form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.18);border-radius:12px;padding:15px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--cream);transition:all .3s ease;outline:none}
-    
-    .form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;padding-right:45px;cursor:pointer;appearance:none}
-    
-    .form-group textarea{resize:vertical;min-height:120px}
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);background:rgba(201,168,76,.08);box-shadow:0 0 0 4px rgba(201,168,76,.1)}
-
-    /* BUTTONS & ACTIONS */
-    .btn-submit{width:100%;padding:20px;background:var(--gold);color:var(--navy);border:none;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .35s ease;margin-top:10px}
-    .btn-submit:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 15px 30px rgba(201,168,76,0.3)}
-
-    .or-divider{text-align:center;margin:35px 0 25px;position:relative}
-    .or-divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(201,168,76,.15)}
-    .or-divider span{position:relative;background:#0d1a2d;padding:0 20px;font-size:12px;color:rgba(250,247,242,.3);letter-spacing:.15em;text-transform:uppercase}
-
-    .alt-links{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .alt-link{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border:1px solid rgba(201,168,76,.2);border-radius:12px;font-weight:600;color:var(--cream);background:rgba(255,255,255,0.02)}
-    .alt-link:hover{border-color:var(--gold);background:rgba(201,168,76,0.1)}
-
-    /* FOOTER & TRUST */
-    .card-footer{padding:30px 80px;border-top:1px solid rgba(201,168,76,.1);display:flex;justify-content:space-between;align-items:center}
-    .trust-row{display:flex;justify-content:center;gap:40px;margin-top:40px;opacity:0.8}
-    .trust-item{display:flex;align-items:center;gap:10px;font-size:13px}
-
-    /* MOBILE ADJUSTMENTS */
-    @media(max-width:850px){
-      .card-body{padding:40px 30px}
-      .card-footer{padding:30px;flex-direction:column;text-align:center;gap:20px}
-      .alt-links{grid-template-columns:1fr}
-      .card-body h2{font-size:32px}
-      .trust-row{flex-wrap:wrap;gap:20px}
+    :root {
+      --navy:       #0A1628;
+      --navy-dark:  #060e1a;
+      --gold:       #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale:  #F5E9C8;
+      --cream:      #FAF7F2;
+      --text:       #1C2B3A;
+      --text-mid:   #4A5568;
+      --text-light: #8A9BB0;
     }
-</style>
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; transition: color .25s; }
+
+    /* noise */
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9998; opacity: .4;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+    }
+
+    /* ambient glows */
+    .glow-tl {
+      position: fixed; top: -240px; left: -240px; width: 720px; height: 720px;
+      border-radius: 50%; pointer-events: none; z-index: 0;
+      background: radial-gradient(circle, rgba(201,168,76,.13) 0%, transparent 70%);
+      animation: breathe 8s ease-in-out infinite;
+    }
+    .glow-br {
+      position: fixed; bottom: -220px; right: -220px; width: 640px; height: 640px;
+      border-radius: 50%; pointer-events: none; z-index: 0;
+      background: radial-gradient(circle, rgba(201,168,76,.08) 0%, transparent 70%);
+      animation: breathe 10s ease-in-out infinite reverse;
+    }
+    @keyframes breathe { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.1);opacity:.7} }
+
+    /* grid lines */
+    .bg-grid {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.03) 1px, transparent 1px);
+      background-size: 70px 70px;
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+      mask-image:         radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      position: sticky; top: 0; z-index: 500;
+      background: rgba(10,22,40,.92);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(201,168,76,.12);
+    }
+    .header-inner {
+      max-width: 1300px; margin: 0 auto; padding: 0 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; }
+    .logo img { height: 50px; }
+    .logo-text h1 { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:var(--cream); line-height:1.1; }
+    .logo-text span { font-size:10px; color:var(--gold); font-weight:600; letter-spacing:.18em; text-transform:uppercase; }
+    .back-link { font-size:13px; color:rgba(250,247,242,.4); display:flex; align-items:center; gap:6px; }
+    .back-link:hover { color:var(--gold-light); }
+
+    /* ── MAIN PAGE ── */
+    /* Full page, block layout — NOT vertically centered, no squeezing */
+    .page {
+      position: relative; z-index: 1;
+      padding: 64px 32px 96px;
+    }
+
+    /* ── SPLIT LAYOUT: left pitch + right form ── */
+    .split {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ── LEFT PITCH ── */
+    .pitch { padding-top: 12px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 26px;
+    }
+    .eyebrow-line { width: 32px; height: 1px; background: var(--gold); }
+    .eyebrow span { font-size:11px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+    .pitch h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 58px; font-weight: 700; color: var(--cream);
+      line-height: 1.05; letter-spacing: -.025em; margin-bottom: 22px;
+    }
+    .pitch h1 em { font-style: italic; color: var(--gold-light); text-shadow: 0 0 40px rgba(201,168,76,.4); }
+    .pitch-desc {
+      font-size: 16px; color: rgba(250,247,242,.48);
+      font-weight: 300; line-height: 1.85;
+      max-width: 440px; margin-bottom: 48px;
+    }
+
+    /* trust list */
+    .trust { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-bottom: 52px; }
+    .trust li { display: flex; align-items: flex-start; gap: 16px; }
+    .trust-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.22);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .trust-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 2px; }
+    .trust-text span { font-size: 13px; color: rgba(250,247,242,.38); line-height: 1.5; }
+
+    /* stats */
+    .stats-bar {
+      display: flex; gap: 36px; flex-wrap: wrap;
+      padding-top: 32px; border-top: 1px solid rgba(201,168,76,.12);
+    }
+    .stat-n { font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:700; color:var(--gold-light); line-height:1; }
+    .stat-l { font-size:11px; color:rgba(250,247,242,.32); text-transform:uppercase; letter-spacing:.1em; margin-top:5px; }
+
+    /* ── RIGHT: FORM CARD ── */
+    .form-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(201,168,76,.2);
+      border-radius: 24px;
+      overflow: visible; /* don't clip drop-shadows */
+      position: relative;
+    }
+    /* Gold top stripe */
+    .form-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+      border-radius: 24px 24px 0 0; z-index: 1;
+    }
+    /* Shimmer sweep */
+    .form-card::after {
+      content: ''; position: absolute; top: 0; left: -80%; width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,.05), transparent);
+      animation: shimmer 5s ease-in-out infinite; pointer-events: none; border-radius: 24px;
+    }
+    @keyframes shimmer { 0%{left:-60%} 100%{left:130%} }
+
+    .form-body { padding: 44px 44px 36px; position: relative; z-index: 2; }
+
+    .form-title { font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:700; color:var(--cream); margin-bottom:6px; line-height:1.15; }
+    .form-sub { font-size:13px; color:rgba(250,247,242,.38); font-weight:300; margin-bottom:32px; line-height:1.6; }
+    .form-sub a { color:var(--gold); border-bottom:1px solid rgba(201,168,76,.3); }
+    .form-sub a:hover { color:var(--gold-light); }
+
+    /* rows */
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .f-group { margin-bottom: 16px; }
+
+    label {
+      display: block; font-size:10px; font-weight:700;
+      letter-spacing:.16em; text-transform:uppercase;
+      color:rgba(250,247,242,.42); margin-bottom:8px;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(201,168,76,.18);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px; color: var(--cream);
+      outline: none; -webkit-appearance: none; appearance: none;
+      transition: border-color .25s, background .25s, box-shadow .25s;
+    }
+    select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
+    select option, select optgroup { background: #0d1f3c; color: var(--cream); }
+    textarea { resize: vertical; min-height: 96px; line-height: 1.6; }
+    input::placeholder, textarea::placeholder { color: rgba(250,247,242,.18); }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201,168,76,.07);
+      box-shadow: 0 0 0 3px rgba(201,168,76,.14);
+    }
+    .is-error {
+      border-color: #f87171 !important;
+      box-shadow: 0 0 0 3px rgba(248,113,113,.15) !important;
+    }
+
+    /* submit */
+    .btn-submit {
+      width: 100%; padding: 15px 20px; margin-top: 8px;
+      background: var(--gold); color: var(--navy);
+      border: none; border-radius: 10px;
+      font-family: 'DM Sans', sans-serif; font-size: 14px;
+      font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+      cursor: pointer; position: relative; overflow: hidden;
+      transition: background .3s, transform .3s, box-shadow .3s;
+    }
+    .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(201,168,76,.4); }
+    .btn-submit:active { transform: translateY(0); }
+    /* shine effect */
+    .btn-submit span { position: relative; z-index: 1; }
+    .btn-submit::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+      transform: translateX(-100%); transition: transform .4s;
+    }
+    .btn-submit:hover::after { transform: translateX(100%); }
+
+    /* divider */
+    .divider { position: relative; text-align: center; margin: 26px 0 22px; }
+    .divider::before { content:''; position:absolute; top:50%; left:0; right:0; height:1px; background:rgba(201,168,76,.1); }
+    .divider span { position:relative; background:rgba(12,22,44,.9); padding:0 14px; font-size:11px; color:rgba(250,247,242,.26); letter-spacing:.14em; text-transform:uppercase; }
+
+    /* alt contact */
+    .alt-row { display: flex; gap: 12px; }
+    .alt-btn {
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; border: 1px solid rgba(201,168,76,.18); border-radius: 10px;
+      font-size: 13px; font-weight: 600; color: rgba(250,247,242,.52);
+      transition: all .25s;
+    }
+    .alt-btn:hover { border-color: var(--gold); color: var(--gold-light); background: rgba(201,168,76,.07); }
+
+    /* card footer */
+    .form-foot {
+      padding: 18px 44px 24px;
+      border-top: 1px solid rgba(201,168,76,.08);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px;
+      position: relative; z-index: 2;
+    }
+    .foot-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .foot-links a { font-size: 12px; color: rgba(250,247,242,.22); }
+    .foot-links a:hover { color: var(--gold); }
+    .form-foot p { font-size: 11px; color: rgba(250,247,242,.15); }
+
+    /* ── TOAST ── */
+    #toast {
+      position: fixed; bottom: 32px; left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #1b3060; border: 1px solid rgba(201,168,76,.35);
+      color: var(--cream); padding: 13px 28px; border-radius: 10px;
+      font-size: 14px; font-weight: 500; z-index: 9999; opacity: 0;
+      transition: opacity .3s, transform .3s; pointer-events: none;
+      max-width: 90vw; text-align: center; box-shadow: 0 12px 40px rgba(0,0,0,.4);
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    #toast.ok { border-color: rgba(74,222,128,.45); background: #0d3020; }
+
+    /* ── MODALS ── */
+    .modal { display:none; position:fixed; z-index:2000; inset:0; background:rgba(6,14,26,.92); overflow-y:auto; backdrop-filter:blur(10px); }
+    .modal-box { background:var(--cream); color:var(--text); margin:5% auto; padding:52px; border-radius:20px; width:90%; max-width:680px; position:relative; }
+    .mclose { position:absolute; top:20px; right:24px; font-size:26px; background:none; border:none; cursor:pointer; color:var(--text-light); line-height:1; }
+    .mclose:hover { color:var(--navy); }
+    .modal-box h2 { font-family:'Cormorant Garamond',serif; font-size:30px; color:var(--navy); margin-bottom:20px; }
+    .modal-box h3 { font-family:'Cormorant Garamond',serif; font-size:19px; color:var(--navy); margin:18px 0 8px; }
+    .modal-box p  { font-size:15px; line-height:1.7; color:var(--text-mid); margin-bottom:8px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .split { grid-template-columns: 1fr; max-width: 640px; gap: 48px; }
+      .pitch { display: none; } /* form first on tablet/mobile */
+    }
+    @media (max-width: 640px) {
+      .header-inner { padding: 0 20px; }
+      .page { padding: 40px 16px 80px; }
+      .form-body { padding: 30px 22px 24px; }
+      .form-foot { padding: 16px 22px 20px; }
+      .f-row { grid-template-columns: 1fr; gap: 0; }
+      .pitch h1 { font-size: 40px; }
+      .alt-row { flex-direction: column; }
+      .modal-box { padding: 32px 20px; margin: 8% auto; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="bg-glow-tl"></div>
-<div class="bg-glow-br"></div>
+<div class="glow-tl"></div>
+<div class="glow-br"></div>
 <div class="bg-grid"></div>
-<div class="toast" id="toast"><span id="toastMsg"></span></div>
+<div id="toast"></div>
 
+<!-- HEADER -->
 <header class="header">
   <div class="header-inner">
     <a href="index.html" class="logo">
       <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa">
-      <div class="logo-text"><h1>SkillRise Africa</h1><span>ELEVATE by ANICADE</span></div>
+      <div class="logo-text">
+        <h1>SkillRise Africa</h1>
+        <span>ELEVATE by ANICADE</span>
+      </div>
     </a>
     <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 </header>
 
+<!-- PAGE BODY -->
 <div class="page">
-  <div class="enroll-card">
-    <div class="card-body">
+  <div class="split">
 
-      <div class="card-eyebrow">
-        <div class="card-eyebrow-line"></div>
+    <!-- LEFT: PITCH PANEL -->
+    <div class="pitch">
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
         <span>Enrollment Application</span>
       </div>
+      <h1>Start Your<br><em>Journey.</em></h1>
+      <p class="pitch-desc">Fill in the form and your application lands directly in our inbox. We confirm enrollment within 24 hours and guide you every step of the way.</p>
 
-      <h2>Start Your <em>Journey.</em></h2>
-      <p class="subtitle">Fill in your details below and your application will be sent directly to our team. We'll confirm your enrollment within 24 hours.</p>
+      <ul class="trust">
+        <li>
+          <div class="trust-icon">⚡</div>
+          <div class="trust-text">
+            <strong>Fast Confirmation</strong>
+            <span>Enrollment confirmed within 24 hours of applying</span>
+          </div>
+        </li>
+        <li>
+          <div class="trust-icon">🎓</div>
+          <div class="trust-text">
+            <strong>Certificate Included</strong>
+            <span>Earn a recognised certificate upon completion</span>
+          </div>
+        </li>
+        <li>
+          <div class="trust-icon">💬</div>
+          <div class="trust-text">
+            <strong>Mentor Support</strong>
+            <span>Direct access to our expert instructors</span>
+          </div>
+        </li>
+        <li>
+          <div class="trust-icon">🔒</div>
+          <div class="trust-text">
+            <strong>Your Data is Safe</strong>
+            <span>We never share or sell your information</span>
+          </div>
+        </li>
+      </ul>
 
-      <!-- NAME + EMAIL -->
-      <div class="form-row">
-        <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" id="fname" placeholder="e.g. Jane Doe" autocomplete="name">
+      <div class="stats-bar">
+        <div><div class="stat-n">62+</div><div class="stat-l">Courses</div></div>
+        <div><div class="stat-n">5K+</div><div class="stat-l">Learners</div></div>
+        <div><div class="stat-n">98%</div><div class="stat-l">Satisfaction</div></div>
+      </div>
+    </div><!-- /pitch -->
+
+    <!-- RIGHT: FORM CARD -->
+    <div class="form-card">
+      <div class="form-body">
+
+        <div class="form-title">Enrollment Form</div>
+        <div class="form-sub">
+          Fields marked * are required. Your application is sent directly to our team. Agents also available at
+          <a id="agentLink" href="#">this link</a>.
         </div>
-        <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" id="femail" placeholder="you@example.com" autocomplete="email">
+
+        <!-- ROW 1: Name + Email -->
+        <div class="f-row">
+          <div class="f-group">
+            <label for="fname">Full Name *</label>
+            <input id="fname" type="text" placeholder="e.g. Tresfor Banda" autocomplete="name">
+          </div>
+          <div class="f-group">
+            <label for="femail">Email Address *</label>
+            <input id="femail" type="email" placeholder="you@example.com" autocomplete="email">
+          </div>
         </div>
-      </div>
 
-      <!-- PHONE + COUNTRY -->
-      <div class="form-row">
-        <div class="form-group">
-          <label>Phone / WhatsApp</label>
-          <input type="tel" id="fphone" placeholder="+260 7XX XXX XXX" autocomplete="tel">
+        <!-- ROW 2: Phone + Country -->
+        <div class="f-row">
+          <div class="f-group">
+            <label for="fphone">Phone / WhatsApp</label>
+            <input id="fphone" type="tel" placeholder="+260 7XX XXX XXX" autocomplete="tel">
+          </div>
+          <div class="f-group">
+            <label for="fcountry">Country</label>
+            <input id="fcountry" type="text" placeholder="e.g. Zambia" autocomplete="country-name">
+          </div>
         </div>
-        <div class="form-group">
-          <label>Country</label>
-          <input type="text" id="fcountry" placeholder="e.g. Zambia" autocomplete="country-name">
+
+        <!-- Course dropdown -->
+        <div class="f-group">
+          <label for="fcourse">Course of Interest *</label>
+          <select id="fcourse">
+            <option value="">— Select a course —</option>
+            <optgroup label="🎨 Design">
+              <option>Graphic Design Mastery — K750</option>
+              <option>UI/UX Design Professional — K950</option>
+              <option>Animation 2D/3D — K1000</option>
+              <option>Canva Mastery — K750</option>
+              <option>Logo Design — K750</option>
+              <option>Branding &amp; Identity Design — K850</option>
+              <option>Motion Graphics — K900</option>
+              <option>Web Design Basics — K900</option>
+            </optgroup>
+            <optgroup label="💻 Technology">
+              <option>Coding &amp; Web Development — K950</option>
+              <option>App Development — K1000</option>
+              <option>Game Development — K1000</option>
+              <option>Data Analysis — K900</option>
+              <option>Data Science Basics — K950</option>
+              <option>Ethical Hacking — K1000</option>
+              <option>Cybersecurity Fundamentals — K1000</option>
+              <option>Computer Basics — K750</option>
+              <option>Microsoft Word, Excel &amp; PowerPoint — K800</option>
+            </optgroup>
+            <optgroup label="📈 Marketing">
+              <option>Digital Marketing — K900</option>
+              <option>Social Media Management — K800</option>
+              <option>AI Content Creation — K900</option>
+              <option>Copywriting — K800</option>
+              <option>Sales &amp; Marketing — K850</option>
+              <option>Personal Branding — K800</option>
+            </optgroup>
+            <optgroup label="🎬 Content &amp; Media">
+              <option>Video Editing — K800</option>
+              <option>Photography &amp; Editing — K800</option>
+              <option>YouTube Content Creation — K800</option>
+              <option>TikTok Content Creation — K750</option>
+              <option>Podcasting — K800</option>
+              <option>Blogging — K750</option>
+              <option>Script Writing — K800</option>
+              <option>Story Writing — K750</option>
+              <option>Book Writing — K850</option>
+              <option>E-book Publishing — K800</option>
+              <option>Voice-over Training — K750</option>
+            </optgroup>
+            <optgroup label="🚀 Business">
+              <option>Entrepreneurship — K900</option>
+              <option>Business Administration — K1000</option>
+              <option>Freelancing Mastery — K800</option>
+              <option>Online Business Setup — K900</option>
+              <option>Dropshipping — K900</option>
+              <option>Startup Training — K900</option>
+              <option>Project Management Basics — K900</option>
+              <option>Remote Work Skills — K750</option>
+              <option>Virtual Assistant Training — K800</option>
+              <option>Customer Service — K750</option>
+              <option>Call Center Training — K750</option>
+              <option>Financial Literacy — K800</option>
+              <option>Business Management — K900</option>
+            </optgroup>
+            <optgroup label="🎵 Music &amp; Audio">
+              <option>Sound Editing &amp; Mixing — K800</option>
+              <option>Music Production — K900</option>
+              <option>Beat Making — K800</option>
+            </optgroup>
+            <optgroup label="👑 Personal Development">
+              <option>Public Speaking — K800</option>
+              <option>Communication Skills — K750</option>
+              <option>Leadership Skills — K850</option>
+              <option>Time Management — K750</option>
+              <option>CV &amp; Cover Letter Writing — K750</option>
+              <option>Interview Preparation — K750</option>
+              <option>Online Teaching Skills — K800</option>
+              <option>Course Creation — K900</option>
+              <option>Coaching &amp; Mentorship — K850</option>
+            </optgroup>
+            <optgroup label="🌿 Health &amp; Wellness">
+              <option>Mental Health Awareness — K800</option>
+              <option>Nutrition &amp; Healthy Living — K800</option>
+              <option>First Aid Basics — K850</option>
+              <option>Community Health — K850</option>
+            </optgroup>
+          </select>
         </div>
+
+        <!-- Message -->
+        <div class="f-group">
+          <label for="fmessage">Message / Questions (optional)</label>
+          <textarea id="fmessage" placeholder="Any questions about the course, payment, schedule or start date..."></textarea>
+        </div>
+
+        <button class="btn-submit" onclick="doSubmit()">
+          <span>Send My Application →</span>
+        </button>
+
+        <div class="divider"><span>or reach us directly</span></div>
+
+        <div class="alt-row">
+          <a id="waBtn" href="#" class="alt-btn" target="_blank">💬 WhatsApp Us</a>
+          <a id="mailBtn" href="#" class="alt-btn">✉️ Email Us</a>
+        </div>
+
+      </div><!-- /form-body -->
+
+      <div class="form-foot">
+        <div class="foot-links">
+          <a href="#" onclick="openModal('pm');return false">Privacy Policy</a>
+          <a href="#" onclick="openModal('tm');return false">Terms of Use</a>
+          <a href="index.html">← Home</a>
+        </div>
+        <p>© 2026 SkillRise Africa</p>
       </div>
+    </div><!-- /form-card -->
 
-      <!-- COURSE -->
-      <div class="form-group">
-        <label>Course of Interest *</label>
-        <select id="fcourse">
-          <option value="">— Select a course —</option>
-          <optgroup label="🎨 Design">
-            <option>Graphic Design Mastery — K750</option>
-            <option>UI/UX Design Professional — K950</option>
-            <option>Animation 2D/3D — K1000</option>
-            <option>Canva Mastery — K750</option>
-            <option>Logo Design — K750</option>
-            <option>Branding &amp; Identity Design — K850</option>
-            <option>Motion Graphics — K900</option>
-            <option>Web Design Basics — K900</option>
-          </optgroup>
-          <optgroup label="💻 Technology">
-            <option>Coding &amp; Web Development — K950</option>
-            <option>App Development — K1000</option>
-            <option>Game Development — K1000</option>
-            <option>Data Analysis — K900</option>
-            <option>Data Science Basics — K950</option>
-            <option>Ethical Hacking — K1000</option>
-            <option>Cybersecurity Fundamentals — K1000</option>
-            <option>Computer Basics — K750</option>
-            <option>Microsoft Word, Excel &amp; PowerPoint — K800</option>
-          </optgroup>
-          <optgroup label="📈 Marketing">
-            <option>Digital Marketing — K900</option>
-            <option>Social Media Management — K800</option>
-            <option>AI Content Creation — K900</option>
-            <option>Copywriting — K800</option>
-            <option>Sales &amp; Marketing — K850</option>
-            <option>Personal Branding — K800</option>
-          </optgroup>
-          <optgroup label="🎬 Content &amp; Media">
-            <option>Video Editing — K800</option>
-            <option>Photography &amp; Editing — K800</option>
-            <option>YouTube Content Creation — K800</option>
-            <option>TikTok Content Creation — K750</option>
-            <option>Podcasting — K800</option>
-            <option>Blogging — K750</option>
-            <option>Script Writing — K800</option>
-            <option>Story Writing — K750</option>
-            <option>Book Writing — K850</option>
-            <option>E-book Publishing — K800</option>
-            <option>Voice-over Training — K750</option>
-          </optgroup>
-          <optgroup label="🚀 Business">
-            <option>Entrepreneurship — K900</option>
-            <option>Business Administration — K1000</option>
-            <option>Freelancing Mastery — K800</option>
-            <option>Online Business Setup — K900</option>
-            <option>Dropshipping — K900</option>
-            <option>Startup Training — K900</option>
-            <option>Project Management Basics — K900</option>
-            <option>Remote Work Skills — K750</option>
-            <option>Virtual Assistant Training — K800</option>
-            <option>Customer Service — K750</option>
-            <option>Call Center Training — K750</option>
-            <option>Financial Literacy — K800</option>
-            <option>Business Management — K900</option>
-          </optgroup>
-          <optgroup label="🎵 Music &amp; Audio">
-            <option>Sound Editing &amp; Mixing — K800</option>
-            <option>Music Production — K900</option>
-            <option>Beat Making — K800</option>
-          </optgroup>
-          <optgroup label="👑 Personal Development">
-            <option>Public Speaking — K800</option>
-            <option>Communication Skills — K750</option>
-            <option>Leadership Skills — K850</option>
-            <option>Time Management — K750</option>
-            <option>CV &amp; Cover Letter Writing — K750</option>
-            <option>Interview Preparation — K750</option>
-            <option>Online Teaching Skills — K800</option>
-            <option>Course Creation — K900</option>
-            <option>Coaching &amp; Mentorship — K850</option>
-          </optgroup>
-          <optgroup label="🌿 Health &amp; Wellness">
-            <option>Mental Health Awareness — K800</option>
-            <option>Nutrition &amp; Healthy Living — K800</option>
-            <option>First Aid Basics — K850</option>
-            <option>Community Health — K850</option>
-          </optgroup>
-        </select>
-      </div>
-
-      <!-- MESSAGE -->
-      <div class="form-group">
-        <label>Message / Questions (optional)</label>
-        <textarea id="fmessage" placeholder="Any questions about the course, payment, schedule or start date..."></textarea>
-      </div>
-
-      <button class="btn-submit" onclick="submitForm()">Send My Application →</button>
-
-      <div class="or-divider"><span>or reach us directly</span></div>
-
-      <div class="alt-links">
-        <a href="https://wa.me/260777083995" class="alt-link" target="_blank">
-          <span class="icon">💬</span> WhatsApp Us
-        </a>
-        <a href="mailto:skillriseafrica44@gmail.com" class="alt-link">
-          <span class="icon">✉️</span> Email Directly
-        </a>
-      </div>
-
-    </div><!-- /card-body -->
-
-    <div class="card-footer">
-      <div class="card-footer-links">
-        <a href="#" onclick="document.getElementById('pm').style.display='block';return false">Privacy Policy</a>
-        <a href="#" onclick="document.getElementById('tm').style.display='block';return false">Terms of Use</a>
-        <a href="index.html">← Home</a>
-      </div>
-      <p>© 2026 SkillRise Africa</p>
-    </div>
-  </div><!-- /card -->
-
-  <!-- TRUST BADGES -->
-  <div class="trust-row">
-    <div class="trust-item"><span>✅</span><span>Enrollment in 24 hrs</span></div>
-    <div class="trust-item"><span>🔒</span><span>Your data is safe</span></div>
-    <div class="trust-item"><span>🎓</span><span>Certificate included</span></div>
-    <div class="trust-item"><span>⭐</span><span>98% satisfaction rate</span></div>
-  </div>
-</div>
+  </div><!-- /split -->
+</div><!-- /page -->
 
 <!-- PRIVACY MODAL -->
-<div id="pm" class="modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;z-index:2000;inset:0;background:rgba(10,22,40,.92);overflow-y:auto;backdrop-filter:blur(8px)">
-  <div style="background:var(--cream);color:var(--text);margin:6% auto;padding:48px;border-radius:20px;width:90%;max-width:680px;position:relative">
-    <button onclick="document.getElementById('pm').style.display='none'" style="position:absolute;top:20px;right:24px;font-size:26px;background:none;border:none;cursor:pointer;color:#8A9BB0">&times;</button>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--navy);margin-bottom:20px">Privacy Policy</h2>
+<div id="pm" class="modal" onclick="if(event.target===this)closeModal(this.id)">
+  <div class="modal-box">
+    <button class="mclose" onclick="closeModal('pm')">&times;</button>
+    <h2>Privacy Policy</h2>
     <p><strong>Effective Date:</strong> February 19, 2026</p>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--navy);margin:18px 0 8px">1. Information We Collect</h3>
-    <p style="font-size:15px;line-height:1.7;color:var(--text-mid)">We collect name, email, phone, country and course enrollment information you voluntarily submit.</p>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--navy);margin:18px 0 8px">2. How We Use It</h3>
-    <p style="font-size:15px;line-height:1.7;color:var(--text-mid)">To process registrations, provide learning materials, issue certificates and communicate relevant opportunities. We never sell your data.</p>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--navy);margin:18px 0 8px">3. Contact</h3>
-    <p style="font-size:15px;line-height:1.7;color:var(--text-mid)">Email: skillriseafrica44@gmail.com | WhatsApp: +260 777 083 995</p>
+    <h3>1. Information We Collect</h3>
+    <p>We collect name, email, phone, country and course enrollment information you voluntarily provide.</p>
+    <h3>2. How We Use It</h3>
+    <p>To process registrations, provide learning materials, issue certificates and send opportunities. We never sell your data.</p>
+    <h3>3. Contact</h3>
+    <p id="pm-contact">Loading…</p>
   </div>
 </div>
 
 <!-- TERMS MODAL -->
-<div id="tm" class="modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;z-index:2000;inset:0;background:rgba(10,22,40,.92);overflow-y:auto;backdrop-filter:blur(8px)">
-  <div style="background:var(--cream);color:var(--text);margin:6% auto;padding:48px;border-radius:20px;width:90%;max-width:680px;position:relative">
-    <button onclick="document.getElementById('tm').style.display='none'" style="position:absolute;top:20px;right:24px;font-size:26px;background:none;border:none;cursor:pointer;color:#8A9BB0">&times;</button>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--navy);margin-bottom:20px">Terms of Use</h2>
+<div id="tm" class="modal" onclick="if(event.target===this)closeModal(this.id)">
+  <div class="modal-box">
+    <button class="mclose" onclick="closeModal('tm')">&times;</button>
+    <h2>Terms of Use</h2>
     <p><strong>Effective Date:</strong> February 19, 2026</p>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--navy);margin:18px 0 8px">1. Acceptance</h3>
-    <p style="font-size:15px;line-height:1.7;color:var(--text-mid)">By using our platform you confirm you are at least 16 years old, provide accurate information and use our services lawfully.</p>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--navy);margin:18px 0 8px">2. Course Access</h3>
-    <p style="font-size:15px;line-height:1.7;color:var(--text-mid)">Materials are for personal use only. Payments are non-refundable once access is granted.</p>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--navy);margin:18px 0 8px">3. Certification</h3>
-    <p style="font-size:15px;line-height:1.7;color:var(--text-mid)">Certificates issued only upon completing all course requirements and assessments.</p>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--navy);margin:18px 0 8px">4. Contact</h3>
-    <p style="font-size:15px;line-height:1.7;color:var(--text-mid)">Email: skillriseafrica44@gmail.com | WhatsApp: +260 777 083 995</p>
+    <h3>1. Acceptance</h3>
+    <p>By using our platform you confirm you are at least 16, provide accurate information and use our services lawfully.</p>
+    <h3>2. Course Access</h3>
+    <p>Materials are for personal use only. Payments are non-refundable once access is granted.</p>
+    <h3>3. Certification</h3>
+    <p>Certificates are issued only upon completing all course requirements and assessments.</p>
+    <h3>4. Contact</h3>
+    <p id="tm-contact">Loading…</p>
   </div>
 </div>
 
 <script>
-  function showToast(msg, type){
-    const t=document.getElementById('toast'),m=document.getElementById('toastMsg')
-    m.textContent=msg
-    t.className='toast'+(type?' '+type:'')
-    t.classList.add('show')
-    setTimeout(()=>t.classList.remove('show'),4000)
+/* =====================================================================
+   ALL SENSITIVE STRINGS BUILT IN JS
+   — Cloudflare cannot scrape/obfuscate strings that are never written
+     literally in the HTML source.
+===================================================================== */
+(function () {
+  var u    = 'skillriseafrica44';
+  var d    = 'gmail.com';
+  var ADDR = u + '@' + d;
+  var WA   = 'https://wa.me/260777083995';
+  var AGNT = 'https://tresforwrld.github.io/ANICADEtech.net-in/agents.html';
+
+  /* Wire up all links that reference our email / WA */
+  document.getElementById('agentLink').href = AGNT;
+  document.getElementById('waBtn').href     = WA;
+  document.getElementById('mailBtn').href   = 'mailto:' + ADDR;
+
+  /* Fill modal contact lines */
+  var ctxt = 'Email: ' + ADDR + '  |  WhatsApp: +260 777 083 995';
+  document.getElementById('pm-contact').textContent = ctxt;
+  document.getElementById('tm-contact').textContent = ctxt;
+
+  /* Expose for submitForm */
+  window.__ADDR = ADDR;
+}());
+
+/* ── Modal helpers ── */
+function openModal(id)  { document.getElementById(id).style.display = 'block'; document.body.style.overflow = 'hidden'; }
+function closeModal(id) { document.getElementById(id).style.display = 'none';  document.body.style.overflow = ''; }
+window.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') { ['pm','tm'].forEach(closeModal); }
+});
+
+/* ── Toast ── */
+function toast(msg, type) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className   = type === 'ok' ? 'ok show' : 'show';
+  clearTimeout(el._t);
+  el._t = setTimeout(function () { el.className = ''; }, 4500);
+}
+
+/* ── Form submission ── */
+function doSubmit() {
+  var name    = document.getElementById('fname').value.trim();
+  var email   = document.getElementById('femail').value.trim();
+  var phone   = document.getElementById('fphone').value.trim();
+  var country = document.getElementById('fcountry').value.trim();
+  var course  = document.getElementById('fcourse').value;
+  var message = document.getElementById('fmessage').value.trim();
+
+  /* Reset errors */
+  ['fname','femail','fcourse'].forEach(function (id) {
+    document.getElementById(id).classList.remove('is-error');
+  });
+
+  /* Validate — stop at first error */
+  if (!name) {
+    document.getElementById('fname').classList.add('is-error');
+    document.getElementById('fname').focus();
+    toast('⚠ Please enter your full name.');
+    return;
+  }
+  if (!email || !email.includes('@') || email.indexOf('.') < email.indexOf('@')) {
+    document.getElementById('femail').classList.add('is-error');
+    document.getElementById('femail').focus();
+    toast('⚠ Please enter a valid email address.');
+    return;
+  }
+  if (!course) {
+    document.getElementById('fcourse').classList.add('is-error');
+    document.getElementById('fcourse').focus();
+    toast('⚠ Please select a course before submitting.');
+    return;
   }
 
-  function submitForm(){
-    const name=document.getElementById('fname').value.trim()
-    const email=document.getElementById('femail').value.trim()
-    const phone=document.getElementById('fphone').value.trim()
-    const country=document.getElementById('fcountry').value.trim()
-    const course=document.getElementById('fcourse').value
-    const message=document.getElementById('fmessage').value.trim()
-
-    /* clear previous errors */
-    ['fname','femail','fcourse'].forEach(id=>document.getElementById(id).classList.remove('error'))
-
-    if(!name){
-      document.getElementById('fname').classList.add('error')
-      showToast('Please enter your full name before submitting.')
-      return
-    }
-    if(!email||!email.includes('@')){
-      document.getElementById('femail').classList.add('error')
-      showToast('Please enter a valid email address before submitting.')
-      return
-    }
-    if(!course){
-      document.getElementById('fcourse').classList.add('error')
-      showToast('Please choose a course of interest before submitting.')
-      return
-    }
-
-    /* Build mailto — sends directly to skillriseafrica44@gmail.com */
-    const subject=encodeURIComponent('SkillRise Africa Enrollment — '+course.split('—')[0].trim())
-    const body=encodeURIComponent(
+  /* Build mailto */
+  var courseName = course.split('—')[0].trim();
+  var subj = encodeURIComponent('SkillRise Africa Enrollment — ' + courseName);
+  var body = encodeURIComponent(
       'SKILLRISE AFRICA — ENROLLMENT APPLICATION\n'
-      +'==========================================\n\n'
-      +'Full Name:    '+name+'\n'
-      +'Email:        '+email+'\n'
-      +'Phone:        '+(phone||'—')+'\n'
-      +'Country:      '+(country||'—')+'\n'
-      +'Course:       '+course+'\n\n'
-      +'Message:\n'+(message||'No additional message.')+'\n\n'
-      +'==========================================\n'
-      +'Sent via SkillRise Africa Enrollment Form\n'
-      +'https://tresforwrld.github.io/SkillRise-Africa-/'
-    )
+    + '==========================================\n\n'
+    + 'Full Name:   ' + name                               + '\n'
+    + 'Email:       ' + email                              + '\n'
+    + 'Phone:       ' + (phone   || '—')                  + '\n'
+    + 'Country:     ' + (country || '—')                  + '\n'
+    + 'Course:      ' + course                             + '\n\n'
+    + 'Message:\n'    + (message || 'No additional message.') + '\n\n'
+    + '==========================================\n'
+    + 'Sent via SkillRise Africa Enrollment Form\n'
+    + 'https://tresforwrld.github.io/SkillRise-Africa-/'
+  );
 
-    window.location.href='mailto:skillriseafrica44@gmail.com?subject='+subject+'&body='+body
-    showToast('✓ Opening your email app — just hit Send!', 'success')
-  }
+  /* Open email client — direct to admin inbox */
+  window.location.href = 'mailto:' + window.__ADDR + '?subject=' + subj + '&body=' + body;
 
-  window.addEventListener('keydown',e=>{
-    if(e.key==='Escape'){['pm','tm'].forEach(id=>document.getElementById(id).style.display='none')}
-  })
+  toast('✓ Email app opening — just hit Send!', 'ok');
+}
 </script>
 </body>
 </html>
