@@ -6,634 +6,714 @@
 <title>Sign In — SkillRise Africa | ELEVATE by ANICADE</title>
 <link rel="icon" type="image/png" href="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS ── */
+/* ─────────────────────────────────────
+   RESET & TOKENS
+───────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0A1628; --navy2:#0d1c33; --navy3:#060e1a;
-  --gold:#C9A84C; --gold2:#E8C97A; --gold3:#F5E9C8;
-  --cream:#FAF7F2; --white:#fff;
-  --text:#1C2B3A; --mid:#4A5568; --muted:#8A9BB0;
-  --red:#f87171;
+  --navy:  #0A1628;
+  --navy2: #0d1c33;
+  --gold:  #C9A84C;
+  --gold2: #E8C97A;
+  --cream: #FAF7F2;
+  --text:  #1C2B3A;
+  --mid:   #4A5568;
+  --muted: #8A9BB0;
+  --red:   #f87171;
+  --green: #4ade80;
 }
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden}
+html{height:100%}
 body{
   font-family:'DM Sans',sans-serif;
   background:var(--navy);
-  -webkit-font-smoothing:antialiased;
-}
-a{color:inherit;text-decoration:none}
-
-/* ── SPLIT LAYOUT ── */
-.layout{
-  display:grid;
-  grid-template-columns:1fr 480px;
-  height:100vh;
-}
-
-/* ══════════════════════════════
-   LEFT PANEL
-══════════════════════════════ */
-.left{
-  position:relative;
-  background:linear-gradient(140deg,#060e1a 0%,#0A1628 50%,#0f1e38 100%);
-  display:flex;flex-direction:column;
-  align-items:flex-start;justify-content:space-between;
-  padding:48px 56px;
-  overflow:hidden;
-}
-/* grid lines */
-.left::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);
-  background-size:56px 56px;
-  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 20%,transparent 100%);
-  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 20%,transparent 100%);
-}
-/* noise */
-.left::after{
-  content:'';position:absolute;inset:0;opacity:.3;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
-}
-.orb{position:absolute;border-radius:50%;pointer-events:none}
-.orb1{width:600px;height:600px;top:-180px;right:-120px;background:radial-gradient(circle,rgba(201,168,76,.13) 0%,transparent 68%);animation:orb-pulse 9s ease-in-out infinite}
-.orb2{width:400px;height:400px;bottom:-120px;left:-80px;background:radial-gradient(circle,rgba(37,99,235,.1) 0%,transparent 68%);animation:orb-pulse 12s ease-in-out infinite reverse}
-@keyframes orb-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.12);opacity:.7}}
-
-/* brand */
-.left-brand{
-  position:relative;z-index:2;
-  display:flex;align-items:center;gap:14px;
-}
-.left-brand img{height:48px}
-.left-brand h1{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--cream);line-height:1.1}
-.left-brand small{font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.2em;text-transform:uppercase;display:block}
-
-/* headline */
-.left-middle{position:relative;z-index:2}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
-.eyebrow-line{width:28px;height:1px;background:var(--gold)}
-.eyebrow span{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-.left-middle h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:54px;font-weight:700;color:var(--cream);
-  line-height:1.02;letter-spacing:-.025em;
-}
-.left-middle h2 em{font-style:italic;color:var(--gold2);text-shadow:0 0 40px rgba(201,168,76,.4)}
-.left-middle p{margin-top:16px;font-size:15px;color:rgba(250,247,242,.42);font-weight:300;line-height:1.8;max-width:360px}
-
-/* stats */
-.stat-row{position:relative;z-index:2;display:flex;gap:12px;flex-wrap:wrap}
-.stat-pill{
-  background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);
-  border-radius:100px;padding:8px 18px;
-  font-size:12px;color:rgba(250,247,242,.55);display:flex;align-items:center;gap:8px;
-}
-.stat-pill strong{color:var(--gold2);font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700}
-
-/* feature cards */
-.feat-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);position:relative;z-index:2}
-.feat-cards{position:relative;z-index:2;display:flex;flex-direction:column;gap:10px}
-.feat-card{
-  display:flex;align-items:center;gap:14px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.14);
-  border-radius:14px;padding:13px 18px;
-  position:relative;overflow:hidden;
-  animation:fade-slide .6s ease both;
-}
-.feat-card:nth-child(1){animation-delay:.15s}
-.feat-card:nth-child(2){animation-delay:.3s}
-.feat-card:nth-child(3){animation-delay:.45s}
-@keyframes fade-slide{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
-.feat-card::after{
-  content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(201,168,76,.07),transparent);
-  animation:feat-sweep 4s ease-in-out infinite;pointer-events:none;
-}
-.feat-card:nth-child(2)::after{animation-delay:1.4s}
-.feat-card:nth-child(3)::after{animation-delay:2.8s}
-@keyframes feat-sweep{0%{left:-80%}100%{left:150%}}
-.feat-icon{width:38px;height:38px;flex-shrink:0;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px}
-.feat-text strong{display:block;font-size:13px;font-weight:600;color:rgba(250,247,242,.8);margin-bottom:2px}
-.feat-text span{font-size:11px;color:rgba(250,247,242,.32)}
-
-/* ══════════════════════════════
-   RIGHT PANEL
-══════════════════════════════ */
-.right{
-  background:var(--cream);
-  display:flex;flex-direction:column;
+  color:var(--cream);
+  min-height:100vh;
+  /* prevent any horizontal overflow */
+  overflow-x:hidden;
   overflow-y:auto;
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+/* ─────────────────────────────────────
+   FIXED FULL-PAGE BACKGROUND
+   (completely separate from scroll)
+───────────────────────────────────── */
+.bg{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* Grid lines */
+.bg::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(201,168,76,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,.05) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 90% 90% at 50% 50%, #000 30%, transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 90% 90% at 50% 50%, #000 30%, transparent 100%);
+}
+
+/* Noise grain */
+.bg::after{
+  content:'';
+  position:absolute;inset:0;
+  opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+}
+
+/* Glowing orbs */
+.orb{
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  animation:orb-breathe 8s ease-in-out infinite;
+}
+.orb-gold{
+  width:700px;height:700px;
+  top:-200px;right:-150px;
+  background:radial-gradient(circle, rgba(201,168,76,.18) 0%, transparent 65%);
+}
+.orb-blue{
+  width:500px;height:500px;
+  bottom:-160px;left:-120px;
+  background:radial-gradient(circle, rgba(37,99,235,.14) 0%, transparent 65%);
+  animation-delay:4s;
+  animation-direction:reverse;
+}
+.orb-mid{
+  width:300px;height:300px;
+  top:50%;left:20%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(201,168,76,.07) 0%, transparent 70%);
+  animation-delay:2s;
+}
+@keyframes orb-breathe{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.15);opacity:.7}
+}
+
+/* ─────────────────────────────────────
+   PAGE CONTENT LAYER
+───────────────────────────────────── */
+.page{
   position:relative;
-}
-/* gold left stripe */
-.right::before{
-  content:'';position:absolute;top:0;left:0;bottom:0;width:3px;
-  background:linear-gradient(180deg,transparent,var(--gold),var(--gold2),var(--gold),transparent);
-  z-index:2;pointer-events:none;
-}
-/* shimmer sweep */
-.right::after{
-  content:'';position:absolute;top:0;left:-70%;width:55%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(201,168,76,.04),transparent);
-  animation:panel-sweep 8s ease-in-out infinite;pointer-events:none;z-index:0;
-}
-@keyframes panel-sweep{0%{left:-70%}100%{left:160%}}
-
-.right-inner{
-  flex:1;display:flex;flex-direction:column;
-  padding:44px 40px 32px;
-  position:relative;z-index:1;
+  z-index:1;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:44px 16px 48px;
+  gap:0;
 }
 
-/* ── TABS ── */
+/* Brand header */
+.brand{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:36px;
+  text-decoration:none;
+}
+.brand img{height:46px;width:auto}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--cream);line-height:1.1}
+.brand-sub{font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.2em;text-transform:uppercase;display:block;margin-top:1px}
+
+/* ─────────────────────────────────────
+   3D CARD
+───────────────────────────────────── */
+.card-wrap{
+  width:100%;
+  max-width:460px;
+  perspective:1200px;
+}
+
+.card{
+  width:100%;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(201,168,76,.22);
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  /* 3D transform — JS will update on mousemove */
+  transform-style:preserve-3d;
+  transform:rotateX(0deg) rotateY(0deg);
+  transition:transform .1s ease, box-shadow .3s ease;
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.5),
+    0 0 0 1px rgba(201,168,76,.1),
+    inset 0 1px 0 rgba(201,168,76,.15);
+}
+
+/* Gold top stripe */
+.card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg, transparent, var(--gold), var(--gold2), var(--gold), transparent);
+  z-index:3;
+}
+
+/* Shimmer sweep */
+.card::after{
+  content:'';
+  position:absolute;top:0;left:-80%;width:55%;height:100%;
+  background:linear-gradient(90deg, transparent, rgba(201,168,76,.06), transparent);
+  animation:card-sweep 6s ease-in-out infinite;
+  pointer-events:none;z-index:2;
+}
+@keyframes card-sweep{0%{left:-80%}100%{left:140%}}
+
+/* Glow behind card */
+.card-glow{
+  position:absolute;
+  inset:-40px;
+  background:radial-gradient(ellipse at 50% 50%, rgba(201,168,76,.12) 0%, transparent 60%);
+  pointer-events:none;
+  z-index:0;
+  animation:orb-breathe 5s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────
+   CARD INNER CONTENT
+───────────────────────────────────── */
+.card-inner{
+  padding:36px 36px 28px;
+  position:relative;z-index:3;
+}
+
+/* Eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px}
+.eyebrow-line{width:24px;height:1px;background:var(--gold)}
+.eyebrow span{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+
+/* Heading */
+.card-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--cream);line-height:1.05;margin-bottom:4px}
+.card-title em{font-style:italic;color:var(--gold2)}
+.card-sub{font-size:13px;color:rgba(250,247,242,.38);font-weight:300;line-height:1.6;margin-bottom:24px}
+
+/* ─── TABS ─── */
 .tabs{
-  display:flex;background:rgba(10,22,40,.07);
-  border-radius:12px;padding:4px;margin-bottom:32px;position:relative;
+  display:flex;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:10px;padding:3px;
+  margin-bottom:24px;position:relative;
 }
 .tab-pill{
-  position:absolute;top:4px;bottom:4px;width:calc(50% - 4px);
-  background:var(--navy);border-radius:9px;
+  position:absolute;top:3px;bottom:3px;
+  width:calc(50% - 3px);
+  background:rgba(201,168,76,.15);
+  border:1px solid rgba(201,168,76,.3);
+  border-radius:8px;
   transition:transform .35s cubic-bezier(.22,1,.36,1);
-  box-shadow:0 4px 14px rgba(10,22,40,.22);
+  pointer-events:none;
 }
-.tab-pill.on-signup{transform:translateX(calc(100%))}
+.tab-pill.right{transform:translateX(100%)}
 .tab-btn{
-  flex:1;padding:11px 0;text-align:center;font-size:13px;font-weight:700;
-  letter-spacing:.05em;cursor:pointer;position:relative;z-index:1;
-  color:var(--mid);transition:color .3s;user-select:none;border-radius:9px;
-  background:none;border:none;font-family:'DM Sans',sans-serif;
+  flex:1;padding:9px 0;text-align:center;
+  font-size:13px;font-weight:600;letter-spacing:.04em;
+  cursor:pointer;position:relative;z-index:1;
+  color:rgba(250,247,242,.4);
+  transition:color .25s;
+  background:none;border:none;
+  font-family:'DM Sans',sans-serif;
+  border-radius:8px;
 }
 .tab-btn.active{color:var(--gold2)}
 
-/* ── FORM HEAD ── */
-.form-head{margin-bottom:24px}
-.form-head h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--navy);line-height:1.05;letter-spacing:-.02em;margin-bottom:4px}
-.form-head h2 em{font-style:italic;color:var(--gold)}
-.form-head p{font-size:13px;color:var(--mid);font-weight:300;line-height:1.6}
-
-/* ── EXISTS NOTICE ── */
-.exists-box{
-  display:none;background:rgba(201,168,76,.08);
-  border:1.5px solid rgba(201,168,76,.3);border-radius:10px;
-  padding:13px 16px;margin-bottom:16px;font-size:13px;color:var(--text);line-height:1.55;
-}
-.exists-box strong{color:var(--gold)}
-.go-signin-btn{
-  display:inline-block;margin-top:8px;background:var(--gold);color:var(--navy);
-  padding:6px 16px;border-radius:8px;font-size:12px;font-weight:700;
-  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border:none;
-  font-family:'DM Sans',sans-serif;transition:background .2s;
-}
-.go-signin-btn:hover{background:var(--gold2)}
-
-/* ── FIELDS ── */
+/* ─── FIELDS ─── */
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
 .fg{margin-bottom:12px;position:relative}
-.fg label{display:block;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.fg input{
-  width:100%;background:#fff;
-  border:1.5px solid rgba(10,22,40,.1);border-radius:10px;
-  padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);
-  outline:none;transition:border .25s,box-shadow .25s;
+.fg label{
+  display:block;font-size:10px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:rgba(250,247,242,.35);margin-bottom:6px;
 }
-.fg input::placeholder{color:rgba(28,43,58,.25)}
-.fg input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.13)}
-.fg input.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(248,113,113,.12)}
-/* gold underline bar on focus */
-.field-bar{position:absolute;bottom:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:0 0 10px 10px;transition:width .3s;pointer-events:none}
-.fg input:focus~.field-bar{width:100%}
+.fg input{
+  width:100%;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(201,168,76,.18);
+  border-radius:10px;
+  padding:11px 14px;
+  font-family:'DM Sans',sans-serif;font-size:14px;
+  color:var(--cream);
+  outline:none;
+  transition:border .25s, background .25s, box-shadow .25s;
+}
+.fg input::placeholder{color:rgba(250,247,242,.2)}
+.fg input:focus{
+  border-color:var(--gold);
+  background:rgba(201,168,76,.07);
+  box-shadow:0 0 0 3px rgba(201,168,76,.13);
+}
+.fg input.err{
+  border-color:var(--red);
+  box-shadow:0 0 0 3px rgba(248,113,113,.12);
+}
+/* animated gold underline on focus */
+.fg input:focus + .fbar{width:100%}
+.fbar{
+  position:absolute;bottom:0;left:0;
+  height:2px;width:0;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  border-radius:0 0 10px 10px;
+  transition:width .3s ease;
+  pointer-events:none;
+}
 
 /* password */
-.pw-wrap{position:relative}
-.pw-wrap input{padding-right:42px}
-.pw-eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px;color:var(--muted);padding:4px;line-height:1;transition:color .2s}
+.pw{position:relative}
+.pw input{padding-right:42px}
+.pw-eye{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;
+  font-size:15px;color:rgba(250,247,242,.3);
+  padding:4px;line-height:1;
+  transition:color .2s;
+}
 .pw-eye:hover{color:var(--gold)}
 
-/* terms */
-.terms-wrap{
-  display:flex;align-items:flex-start;gap:11px;
-  padding:12px 14px;background:rgba(10,22,40,.04);
-  border:1.5px solid rgba(10,22,40,.07);border-radius:10px;margin-bottom:16px;
+/* exists notice */
+.exists-box{
+  display:none;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.28);
+  border-radius:10px;padding:12px 16px;margin-bottom:14px;
+  font-size:13px;color:var(--cream);line-height:1.55;
 }
-.terms-wrap.err{border-color:var(--red);background:rgba(248,113,113,.04)}
-.terms-wrap input[type=checkbox]{width:16px;height:16px;min-width:16px;margin-top:2px;cursor:pointer;accent-color:var(--gold)}
-.terms-text{font-size:11.5px;color:var(--mid);line-height:1.7}
-.terms-text a{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.3);cursor:pointer}
-.terms-text a:hover{color:#a07830}
+.exists-box strong{color:var(--gold2)}
+.go-si{
+  display:inline-block;margin-top:7px;
+  background:var(--gold);color:var(--navy);
+  padding:6px 16px;border-radius:7px;
+  font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;border:none;font-family:'DM Sans',sans-serif;
+  transition:background .2s;
+}
+.go-si:hover{background:var(--gold2)}
 
-/* submit */
+/* terms checkbox */
+.terms-row{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:11px 14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(201,168,76,.12);
+  border-radius:10px;
+  margin-bottom:14px;
+}
+.terms-row.err{border-color:var(--red)}
+.terms-row input[type=checkbox]{
+  width:15px;height:15px;min-width:15px;
+  margin-top:2px;cursor:pointer;accent-color:var(--gold);
+}
+.terms-txt{font-size:11.5px;color:rgba(250,247,242,.4);line-height:1.7}
+.terms-txt span{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.25);cursor:pointer}
+.terms-txt span:hover{color:var(--gold2)}
+
+/* ─── SUBMIT BUTTON ─── */
 .btn-go{
-  width:100%;padding:13px;background:var(--navy);color:var(--gold2);
-  border:none;border-radius:10px;font-family:'DM Sans',sans-serif;
+  width:100%;padding:13px;
+  background:var(--gold);color:var(--navy);
+  border:none;border-radius:10px;
+  font-family:'DM Sans',sans-serif;
   font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
   cursor:pointer;position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:center;gap:8px;
-  transition:background .3s,transform .3s,box-shadow .3s;
-  box-shadow:0 6px 24px rgba(10,22,40,.2);
+  transition:background .3s, transform .25s, box-shadow .3s;
+  box-shadow:0 8px 28px rgba(201,168,76,.3);
 }
+/* shimmer sweep on button */
 .btn-go::before{
-  content:'';position:absolute;top:0;left:-80%;width:60%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(201,168,76,.14),transparent);
-  animation:btn-sweep 3s ease-in-out infinite;pointer-events:none;
+  content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+  animation:btn-shine 2.8s ease-in-out infinite;
+  pointer-events:none;
 }
-@keyframes btn-sweep{0%{left:-80%}100%{left:150%}}
-.btn-go:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,168,76,.35)}
+@keyframes btn-shine{0%{left:-80%}100%{left:140%}}
+.btn-go:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 14px 40px rgba(201,168,76,.45)}
 .btn-go:active{transform:none}
 .btn-go:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
-.spin{width:15px;height:15px;border:2px solid rgba(250,247,242,.25);border-top-color:var(--gold2);border-radius:50%;animation:spin .6s linear infinite;display:none}
+.spin{
+  width:15px;height:15px;
+  border:2px solid rgba(10,22,40,.25);border-top-color:var(--navy);
+  border-radius:50%;animation:spin .6s linear infinite;
+  display:none;flex-shrink:0;
+}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 /* switch hint */
-.switch-hint{text-align:center;margin-top:14px;font-size:12.5px;color:var(--muted)}
-.switch-hint span{color:var(--gold);font-weight:600;cursor:pointer;border-bottom:1px solid rgba(201,168,76,.28)}
-.switch-hint span:hover{color:#a07830}
+.hint{text-align:center;margin-top:14px;font-size:12.5px;color:rgba(250,247,242,.32)}
+.hint span{color:var(--gold);cursor:pointer;font-weight:600}
+.hint span:hover{color:var(--gold2)}
 
-/* ── LEGAL SECTION — FULLY DARK ── */
-.legal-section{
-  margin-top:28px;
-  background:var(--navy);
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid rgba(201,168,76,.15);
+/* ─── LEGAL SECTION ─── */
+.legal{
+  background:rgba(6,14,26,.7);
+  border-top:1px solid rgba(201,168,76,.1);
+  padding:20px 36px 24px;
+  position:relative;z-index:3;
 }
-.legal-title{
-  padding:14px 18px 10px;
-  font-size:10px;font-weight:700;letter-spacing:.18em;
-  text-transform:uppercase;color:rgba(201,168,76,.6);
+.legal-lbl{
+  font-size:9px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(201,168,76,.5);
+  margin-bottom:10px;display:block;
 }
 .ac{
-  border-top:1px solid rgba(201,168,76,.08);
-  overflow:hidden;
+  border-top:1px solid rgba(201,168,76,.07);
 }
 .ac:first-of-type{border-top:none}
 .ac-head{
   display:flex;align-items:center;justify-content:space-between;
-  padding:13px 18px;cursor:pointer;user-select:none;
-  font-size:13px;font-weight:600;color:rgba(250,247,242,.55);
-  transition:color .2s;background:none;border:none;width:100%;
+  padding:10px 0;cursor:pointer;
+  font-size:12.5px;font-weight:600;
+  color:rgba(250,247,242,.45);
+  background:none;border:none;width:100%;
   font-family:'DM Sans',sans-serif;text-align:left;
+  transition:color .2s;
 }
-.ac-head:hover{color:rgba(250,247,242,.85)}
-.ac-ico{font-size:11px;color:var(--gold);transition:transform .3s;flex-shrink:0;margin-left:8px}
+.ac-head:hover{color:rgba(250,247,242,.8)}
+.ac-ico{color:var(--gold);font-size:10px;transition:transform .3s;flex-shrink:0}
 .ac.open .ac-ico{transform:rotate(180deg)}
 .ac-body{
   max-height:0;overflow:hidden;
-  transition:max-height .4s ease;
-  background:rgba(255,255,255,.025);
+  transition:max-height .38s ease;
 }
-.ac.open .ac-body{max-height:600px}
-.ac-body-inner{padding:12px 18px 16px}
+.ac.open .ac-body{max-height:500px}
 .ac-body p,.ac-body li{
-  font-size:12px;color:rgba(250,247,242,.38);
-  line-height:1.75;margin-bottom:5px;
+  font-size:11.5px;line-height:1.75;
+  color:rgba(250,247,242,.32);
+  margin-bottom:4px;
 }
-.ac-body ul{padding-left:16px}
-.ac-body strong{color:rgba(250,247,242,.58)}
-#ac-email{color:rgba(201,168,76,.7)}
+.ac-body ul{padding-left:14px;margin-bottom:6px}
+.ac-body strong{color:rgba(250,247,242,.5)}
+.ac-body-pad{padding-bottom:12px}
 
-/* ── FOOTER ── */
-.right-footer{
-  padding:18px 40px 24px;
-  border-top:1px solid rgba(10,22,40,.08);
-  background:#ece9e3;
+/* ─── FOOTER ─── */
+.footer{
+  margin-top:24px;
+  text-align:center;
   position:relative;z-index:1;
+  padding-bottom:32px;
 }
-.ft-badge{
+.ft-row{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(10,22,40,.07);border:1px solid rgba(10,22,40,.1);
-  border-radius:100px;padding:4px 14px;margin-bottom:7px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(201,168,76,.1);
+  border-radius:100px;padding:5px 16px;
+  margin-bottom:8px;
 }
-.ft-badge img{height:17px;filter:grayscale(1) brightness(.35) opacity(.5)}
-.ft-badge span{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a9aab}
-.ft-copy{font-size:10px;color:#9aabb8;line-height:1.85}
-.ft-copy strong{color:#7a8fa0;font-weight:600}
+.ft-row img{height:18px;filter:grayscale(1) brightness(.4)}
+.ft-row span{
+  font-family:'Syne',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;color:#5a6e80;
+}
+.ft-copy{font-size:10.5px;color:#3e5060;line-height:1.8}
+.ft-copy strong{color:#4a6070}
 
-/* ── TOAST ── */
+/* ─── TOAST ─── */
 #toast{
-  position:fixed;bottom:28px;left:50%;
-  transform:translateX(-50%) translateY(20px);
-  background:var(--navy);border:1px solid rgba(201,168,76,.4);
-  color:var(--cream);padding:12px 26px;border-radius:10px;
-  font-size:13.5px;font-weight:500;z-index:9999;opacity:0;
+  position:fixed;bottom:24px;left:50%;
+  transform:translateX(-50%) translateY(16px);
+  background:#112240;border:1px solid rgba(201,168,76,.35);
+  color:var(--cream);padding:11px 24px;border-radius:10px;
+  font-size:13px;font-weight:500;z-index:9999;opacity:0;
   transition:opacity .3s,transform .3s;pointer-events:none;
-  max-width:92vw;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.5);
+  max-width:88vw;text-align:center;
+  box-shadow:0 10px 36px rgba(0,0,0,.45);
+  white-space:nowrap;
 }
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-#toast.ok{border-color:rgba(74,222,128,.45);background:#0d3020}
-#toast.err{border-color:rgba(248,113,113,.55);background:#3a0f0f}
+#toast.ok{border-color:rgba(74,222,128,.4);background:#0a2818}
+#toast.err{border-color:rgba(248,113,113,.5);background:#2e0f0f}
 
-/* ── RESPONSIVE ── */
-@media(max-width:860px){
-  html,body{overflow:auto}
-  .layout{grid-template-columns:1fr;height:auto}
-  .left{min-height:340px;padding:32px 24px}
-  .left-middle h2{font-size:36px}
-  .right{overflow:visible}
-  .right::before{display:none}
-  .right-inner{padding:28px 20px 24px}
+/* ─── RESPONSIVE ─── */
+@media(max-width:520px){
+  .page{padding:32px 12px 40px}
+  .card-inner{padding:28px 22px 22px}
+  .legal{padding:16px 22px 20px}
   .frow{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-  .left{min-height:260px;padding:24px 18px}
-  .left-middle h2{font-size:28px}
-  .stat-row{display:none}
+  .card-title{font-size:26px}
 }
 </style>
 </head>
 <body>
 
+<!-- Fixed background — never scrolls -->
+<div class="bg">
+  <div class="orb orb-gold"></div>
+  <div class="orb orb-blue"></div>
+  <div class="orb orb-mid"></div>
+</div>
+
 <div id="toast"></div>
 
-<div class="layout">
+<div class="page">
 
-  <!-- ═══ LEFT PANEL ═══ -->
-  <div class="left">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-
-    <a href="index.html" class="left-brand">
-      <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa">
-      <div><h1>SkillRise Africa</h1><small>ELEVATE by ANICADE</small></div>
-    </a>
-
-    <div class="left-middle">
-      <div class="eyebrow"><div class="eyebrow-line"></div><span>Your Learning Platform</span></div>
-      <h2>Learn.<br>Grow.<br><em>Rise.</em></h2>
-      <p>Join thousands of African professionals gaining world-class skills — one course at a time.</p>
+  <!-- Brand -->
+  <a href="index.html" class="brand">
+    <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="SkillRise Africa">
+    <div>
+      <div class="brand-name">SkillRise Africa</div>
+      <span class="brand-sub">ELEVATE by ANICADE</span>
     </div>
+  </a>
 
-    <div class="stat-row">
-      <div class="stat-pill"><strong>62+</strong>&nbsp;Courses</div>
-      <div class="stat-pill"><strong>5K+</strong>&nbsp;Learners</div>
-      <div class="stat-pill"><strong>98%</strong>&nbsp;Satisfaction</div>
-    </div>
+  <!-- 3D Card wrapper -->
+  <div class="card-wrap" id="cardWrap">
+    <div class="card-glow"></div>
+    <div class="card" id="card">
 
-    <div class="feat-divider"></div>
+      <!-- Form content -->
+      <div class="card-inner">
 
-    <div class="feat-cards">
-      <div class="feat-card">
-        <div class="feat-icon">&#9889;</div>
-        <div class="feat-text"><strong>Instant Enrollment</strong><span>Confirmed within 24 hours</span></div>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">&#127891;</div>
-        <div class="feat-text"><strong>Certificate Included</strong><span>Recognised on completion</span></div>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">&#127758;</div>
-        <div class="feat-text"><strong>Built for Africa</strong><span>Designed for African professionals</span></div>
-      </div>
-    </div>
-  </div>
+        <div class="eyebrow"><div class="eyebrow-line"></div><span>Member Access</span></div>
 
-  <!-- ═══ RIGHT PANEL ═══ -->
-  <div class="right">
-    <div class="right-inner">
+        <div class="card-title" id="card-title">Welcome <em>back.</em></div>
+        <p class="card-sub" id="card-sub">Enter your details to access your dashboard.</p>
 
-      <!-- TABS -->
-      <div class="tabs">
-        <div class="tab-pill" id="tab-pill"></div>
-        <button class="tab-btn active" id="tab-si" onclick="switchMode('signin')">Sign In</button>
-        <button class="tab-btn"        id="tab-su" onclick="switchMode('signup')">Sign Up</button>
-      </div>
+        <!-- Tabs -->
+        <div class="tabs">
+          <div class="tab-pill" id="tab-pill"></div>
+          <button type="button" class="tab-btn active" id="tab-si" onclick="switchMode('signin')">Sign In</button>
+          <button type="button" class="tab-btn"        id="tab-su" onclick="switchMode('signup')">Sign Up</button>
+        </div>
 
-      <!-- ACCOUNT EXISTS -->
-      <div class="exists-box" id="exists-box">
-        <strong>Account already exists.</strong><br>
-        An account with this email is already registered.
-        <br><button class="go-signin-btn" onclick="switchMode('signin')">Go to Sign In</button>
-      </div>
+        <!-- Exists notice -->
+        <div class="exists-box" id="exists-box">
+          <strong>Account already exists.</strong> An account with this email is already registered.
+          <br><button type="button" class="go-si" onclick="switchMode('signin')">Go to Sign In</button>
+        </div>
 
-      <!-- HEADING -->
-      <div class="form-head">
-        <h2 id="form-title">Welcome <em>back.</em></h2>
-        <p id="form-sub">Enter your details to access your learning dashboard.</p>
-      </div>
+        <!-- Name + Age (signup) -->
+        <div class="frow su-only" id="row-name-age" style="display:none">
+          <div class="fg">
+            <label for="f-name">Full Name *</label>
+            <input id="f-name" type="text" placeholder="Jane Doe" autocomplete="name">
+            <div class="fbar"></div>
+          </div>
+          <div class="fg">
+            <label for="f-age">Age *</label>
+            <input id="f-age" type="number" min="13" max="120" placeholder="e.g. 22">
+            <div class="fbar"></div>
+          </div>
+        </div>
 
-      <!-- NAME + AGE (signup only) -->
-      <div class="frow su-only" style="display:none">
+        <!-- Email -->
         <div class="fg">
-          <label for="f-name">Full Name *</label>
-          <input id="f-name" type="text" placeholder="Jane Doe" autocomplete="name">
-          <div class="field-bar"></div>
+          <label for="f-email">Email Address *</label>
+          <input id="f-email" type="email" placeholder="jane@example.com" autocomplete="email">
+          <div class="fbar"></div>
         </div>
+
+        <!-- Location (signup) -->
+        <div class="fg su-only" id="row-loc" style="display:none">
+          <label for="f-loc">Location *</label>
+          <input id="f-loc" type="text" placeholder="City, Country">
+          <div class="fbar"></div>
+        </div>
+
+        <!-- Password -->
         <div class="fg">
-          <label for="f-age">Age *</label>
-          <input id="f-age" type="number" min="13" max="120" placeholder="e.g. 22">
-          <div class="field-bar"></div>
+          <label for="f-pass">Password *</label>
+          <div class="pw">
+            <input id="f-pass" type="password" placeholder="Your password" autocomplete="current-password">
+            <button type="button" class="pw-eye" id="pw-btn" onclick="togglePw()">&#128065;</button>
+            <div class="fbar"></div>
+          </div>
         </div>
-      </div>
 
-      <!-- EMAIL -->
-      <div class="fg">
-        <label for="f-email">Email Address *</label>
-        <input id="f-email" type="email" placeholder="jane@example.com" autocomplete="email">
-        <div class="field-bar"></div>
-      </div>
-
-      <!-- LOCATION (signup only) -->
-      <div class="fg su-only" style="display:none">
-        <label for="f-loc">Location *</label>
-        <input id="f-loc" type="text" placeholder="City, Country">
-        <div class="field-bar"></div>
-      </div>
-
-      <!-- PASSWORD -->
-      <div class="fg">
-        <label for="f-pass">Password *</label>
-        <div class="pw-wrap">
-          <input id="f-pass" type="password" placeholder="Your password" autocomplete="current-password">
-          <button type="button" class="pw-eye" id="pw-btn" onclick="togglePw()">&#128065;</button>
-          <div class="field-bar"></div>
+        <!-- Terms (signup) -->
+        <div class="terms-row su-only" id="terms-row" style="display:none">
+          <input type="checkbox" id="f-terms">
+          <div class="terms-txt">
+            I am at least 13 years old and agree to the
+            <span onclick="openAc('privacy')">Privacy Policy</span>,
+            <span onclick="openAc('terms')">Terms of Use</span>
+            and <span onclick="openAc('conduct')">Code of Conduct</span>.
+          </div>
         </div>
-      </div>
 
-      <!-- TERMS (signup only) -->
-      <div class="terms-wrap su-only" id="terms-wrap" style="display:none">
-        <input type="checkbox" id="f-terms">
-        <div class="terms-text">
-          I am at least 13 years old and agree to the
-          <span onclick="openAc('privacy')">Privacy Policy</span>,
-          <span onclick="openAc('terms')">Terms of Use</span>
-          and <span onclick="openAc('conduct')">Code of Conduct</span>
-          of SkillRise Africa.
-        </div>
-      </div>
+        <!-- Submit -->
+        <button type="button" class="btn-go" id="btn-go" onclick="doAction()">
+          <div class="spin" id="spin"></div>
+          <span id="btn-lbl">Sign In</span>
+        </button>
 
-      <!-- SUBMIT -->
-      <button type="button" class="btn-go" id="btn-go" onclick="doAction()">
-        <div class="spin" id="spin"></div>
-        <span id="btn-lbl">Sign In</span>
-      </button>
+        <!-- Switch hint -->
+        <p class="hint" id="hint">
+          Don't have an account? <span onclick="switchMode('signup')">Sign Up free</span>
+        </p>
 
-      <!-- SWITCH HINT -->
-      <p class="switch-hint" id="switch-hint">
-        Don't have an account? <span onclick="switchMode('signup')">Sign Up free</span>
-      </p>
+      </div><!-- /card-inner -->
 
-      <!-- LEGAL SECTION — DARK BACKGROUND -->
-      <div class="legal-section">
-        <div class="legal-title">Legal Information</div>
+      <!-- Legal accordions -->
+      <div class="legal">
+        <span class="legal-lbl">Legal Information</span>
 
         <div class="ac" id="ac-privacy">
           <button type="button" class="ac-head" onclick="toggleAc('privacy')">
             Privacy Policy <span class="ac-ico">&#9660;</span>
           </button>
-          <div class="ac-body">
-            <div class="ac-body-inner">
-              <p><strong>Effective:</strong> February 19, 2026.</p>
-              <p>We collect your name, email, age and location to personalise your learning experience. We <strong>never</strong> sell or share your data. All data is stored securely and used solely to serve you better.</p>
-              <p>Contact: <span id="ac-email"></span></p>
-            </div>
-          </div>
+          <div class="ac-body"><div class="ac-body-pad">
+            <p><strong>Effective:</strong> February 19, 2026.</p>
+            <p>We collect your name, email, age and location to personalise your experience. We <strong>never</strong> sell or share your data.</p>
+            <p>Contact: <span id="ac-email" style="color:rgba(201,168,76,.6)"></span></p>
+          </div></div>
         </div>
 
         <div class="ac" id="ac-terms">
           <button type="button" class="ac-head" onclick="toggleAc('terms')">
             Terms of Use <span class="ac-ico">&#9660;</span>
           </button>
-          <div class="ac-body">
-            <div class="ac-body-inner">
-              <p><strong>1. Eligibility:</strong> You must be at least 13 years old to use this platform.</p>
-              <p><strong>2. Account:</strong> Keep your login credentials secure. You are responsible for all activity on your account.</p>
-              <p><strong>3. Course Access:</strong> Enrolled courses are for personal use only. Redistribution is strictly prohibited.</p>
-              <p><strong>4. Payments:</strong> Course fees are non-refundable once access has been granted.</p>
-              <p><strong>5. Termination:</strong> Accounts that violate these terms may be suspended without notice.</p>
-            </div>
-          </div>
+          <div class="ac-body"><div class="ac-body-pad">
+            <p><strong>1. Eligibility:</strong> You must be at least 13 years old.</p>
+            <p><strong>2. Account:</strong> You are responsible for all activity on your account.</p>
+            <p><strong>3. Course Access:</strong> Enrolled courses are for personal use only. Redistribution is prohibited.</p>
+            <p><strong>4. Payments:</strong> Fees are non-refundable once access is granted.</p>
+            <p><strong>5. Termination:</strong> Violations may result in account suspension.</p>
+          </div></div>
         </div>
 
         <div class="ac" id="ac-conduct">
           <button type="button" class="ac-head" onclick="toggleAc('conduct')">
             Code of Conduct <span class="ac-ico">&#9660;</span>
           </button>
-          <div class="ac-body">
-            <div class="ac-body-inner">
-              <ul>
-                <li>Treat all learners and staff with respect</li>
-                <li>Do not share, copy, or resell course materials</li>
-                <li>Do not use the platform for spam, fraud, or harassment</li>
-                <li>Report any abuse to our team immediately</li>
-              </ul>
-              <p style="margin-top:8px">Violations result in immediate account suspension.</p>
-            </div>
-          </div>
+          <div class="ac-body"><div class="ac-body-pad">
+            <ul>
+              <li>Treat all learners and staff with respect</li>
+              <li>Do not share, copy, or resell course materials</li>
+              <li>Do not use the platform for spam, fraud, or harassment</li>
+              <li>Report abuse to our team immediately</li>
+            </ul>
+            <p>Violations result in immediate account suspension.</p>
+          </div></div>
         </div>
 
-      </div><!-- /legal-section -->
+      </div><!-- /legal -->
 
-    </div><!-- /right-inner -->
+    </div><!-- /card -->
+  </div><!-- /card-wrap -->
 
-    <!-- FOOTER -->
-    <div class="right-footer">
-      <div class="ft-badge">
-        <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="ANICADE">
-        <span>ANICADE TECH</span>
-      </div>
-      <p class="ft-copy">
-        <strong>SkillRise Africa &mdash; ELEVATE</strong> is an original creation of <strong>ANICADE TECH</strong>.<br>
-        &copy; 2026 ANICADE TECH &middot; All rights reserved &middot; Kabwe, Zambia
-      </p>
+  <!-- Footer -->
+  <div class="footer">
+    <div class="ft-row">
+      <img src="https://i.postimg.cc/cJNCQbsP/Continents-World-Africa-Document-in-orange-and-blue-illustrative-20251209-103733-0000.png" alt="ANICADE">
+      <span>ANICADE TECH</span>
     </div>
+    <p class="ft-copy">
+      <strong>SkillRise Africa &mdash; ELEVATE</strong> is an original creation of <strong>ANICADE TECH</strong>.<br>
+      &copy; 2026 ANICADE TECH &middot; All rights reserved &middot; Kabwe, Zambia
+    </p>
+  </div>
 
-  </div><!-- /right -->
-</div><!-- /layout -->
+</div><!-- /page -->
 
 <script>
-/* ── JSONbin ── */
+/* ══ CONFIG ══ */
 var BIN_ID     = '69b45e9caa77b81da9e13f68';
 var BIN_KEY    = '$2a$10$VJXQzwtVgNhMTIJiiQvpy.hG7XaRD0.H42NyZhKzeLRungeekMmpO';
 var BIN_ACCESS = '$2a$10$t1pvIZA0plsMluFZ9oGuHeEXnbeyv10dGX5p15Q0xdfXGg2fsW0.2';
 var BIN_URL    = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
 
-/* ── Email (Cloudflare safe) ── */
+/* ══ EMAIL (Cloudflare safe) ══ */
+document.getElementById('ac-email').textContent = 'skillriseafrica44' + '@' + 'gmail.com';
+
+/* ══ 3D TILT ON CARD ══ */
 (function(){
-  var a = 'skillriseafrica44' + '@' + 'gmail.com';
-  document.getElementById('ac-email').textContent = a;
+  var wrap = document.getElementById('cardWrap');
+  var card = document.getElementById('card');
+  if (!wrap || !card) return;
+
+  wrap.addEventListener('mousemove', function(e){
+    var r = wrap.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width  - 0.5;  /* -0.5 to 0.5 */
+    var y = (e.clientY - r.top)  / r.height - 0.5;
+    card.style.transform = 'rotateY(' + (x * 10) + 'deg) rotateX(' + (-y * 8) + 'deg) translateZ(8px)';
+    card.style.boxShadow =
+      (x * 20) + 'px ' + (-y * 20) + 'px 60px rgba(0,0,0,.55), ' +
+      '0 0 0 1px rgba(201,168,76,.15), ' +
+      'inset 0 1px 0 rgba(201,168,76,.18)';
+  });
+
+  wrap.addEventListener('mouseleave', function(){
+    card.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0px)';
+    card.style.boxShadow = '0 24px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(201,168,76,.1), inset 0 1px 0 rgba(201,168,76,.15)';
+    card.style.transition = 'transform .5s ease, box-shadow .5s ease';
+    setTimeout(function(){ card.style.transition = 'transform .1s ease, box-shadow .3s ease'; }, 500);
+  });
 })();
 
-/* ── Mode ── */
+/* ══ MODE ══ */
 var mode = 'signin';
 
 function switchMode(m) {
   mode = m;
   var su = m === 'signup';
-
-  /* pill */
-  document.getElementById('tab-pill').classList.toggle('on-signup', su);
+  document.getElementById('tab-pill').classList.toggle('right', su);
   document.getElementById('tab-si').classList.toggle('active', !su);
   document.getElementById('tab-su').classList.toggle('active',  su);
 
-  /* show/hide signup fields */
   document.querySelectorAll('.su-only').forEach(function(el){
     el.style.display = su ? '' : 'none';
   });
 
-  /* heading */
-  document.getElementById('form-title').innerHTML = su
-    ? 'Create your <em>account.</em>'
-    : 'Welcome <em>back.</em>';
-  document.getElementById('form-sub').textContent = su
+  document.getElementById('card-title').innerHTML = su
+    ? 'Create your <em>account.</em>' : 'Welcome <em>back.</em>';
+  document.getElementById('card-sub').textContent = su
     ? 'Fill in your details to join SkillRise Africa free.'
-    : 'Enter your details to access your learning dashboard.';
-
-  /* button label */
+    : 'Enter your details to access your dashboard.';
   document.getElementById('btn-lbl').textContent = su ? 'Create Account' : 'Sign In';
-
-  /* switch hint */
-  document.getElementById('switch-hint').innerHTML = su
+  document.getElementById('hint').innerHTML = su
     ? 'Already have an account? <span onclick="switchMode(\'signin\')">Sign In</span>'
     : 'Don\'t have an account? <span onclick="switchMode(\'signup\')">Sign Up free</span>';
 
-  /* hide exists notice */
   document.getElementById('exists-box').style.display = 'none';
-
   clearAll();
 }
 
-/* ── Accordion ── */
+/* ══ ACCORDION ══ */
 function toggleAc(key) {
   var el = document.getElementById('ac-' + key);
-  if (!el) return;
-  el.classList.toggle('open');
+  if (el) el.classList.toggle('open');
 }
 function openAc(key) {
   var el = document.getElementById('ac-' + key);
   if (!el) return;
   if (!el.classList.contains('open')) el.classList.add('open');
-  setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 60);
+  setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'nearest'}); }, 60);
 }
 
-/* ── Helpers ── */
+/* ══ HELPERS ══ */
 function toast(msg, type) {
   var el = document.getElementById('toast');
   el.textContent = msg;
   el.className = (type || '') + ' show';
-  clearTimeout(el._t);
-  el._t = setTimeout(function(){ el.className = ''; }, 4500);
+  clearTimeout(el._tid);
+  el._tid = setTimeout(function(){ el.className = ''; }, 4000);
 }
 
 function setLoad(on) {
-  var b  = document.getElementById('btn-go');
-  var sp = document.getElementById('spin');
-  var lb = document.getElementById('btn-lbl');
+  var b = document.getElementById('btn-go');
+  document.getElementById('spin').style.display = on ? 'block' : 'none';
+  document.getElementById('btn-lbl').textContent = on
+    ? 'Please wait...' : (mode === 'signup' ? 'Create Account' : 'Sign In');
   b.disabled = on;
-  sp.style.display = on ? 'block' : 'none';
-  lb.textContent = on ? 'Please wait...' : (mode === 'signup' ? 'Create Account' : 'Sign In');
 }
 
-function markErr(id) { var el = document.getElementById(id); if (el) el.classList.add('err'); }
-function clrErr(id)  { var el = document.getElementById(id); if (el) el.classList.remove('err'); }
+function markErr(id){ var e=document.getElementById(id); if(e) e.classList.add('err'); }
+function clrErr(id) { var e=document.getElementById(id); if(e) e.classList.remove('err'); }
 
 function clearAll() {
   ['f-name','f-age','f-email','f-loc','f-pass'].forEach(clrErr);
-  var tw = document.getElementById('terms-wrap');
-  if (tw) tw.classList.remove('err');
+  var tr = document.getElementById('terms-row'); if(tr) tr.classList.remove('err');
   document.getElementById('exists-box').style.display = 'none';
 }
 
@@ -644,56 +724,51 @@ function togglePw() {
   b.innerHTML = i.type === 'password' ? '&#128065;' : '&#128064;';
 }
 
-/* ── Validate ── */
+/* ══ VALIDATE ══ */
 function validate() {
   clearAll();
-  var ok = true;
+  var ok    = true;
   var email = document.getElementById('f-email').value.trim().toLowerCase();
   var pass  = document.getElementById('f-pass').value;
 
-  if (!email || !email.includes('@') || email.indexOf('.') < email.indexOf('@') + 2) {
+  if (!email || !email.includes('@') || email.split('@')[1].indexOf('.') < 1) {
     markErr('f-email'); ok = false;
   }
   if (!pass || pass.length < 4) {
     markErr('f-pass'); ok = false;
   }
   if (mode === 'signup') {
-    var name  = document.getElementById('f-name').value.trim();
-    var age   = parseInt(document.getElementById('f-age').value, 10);
-    var loc   = document.getElementById('f-loc').value.trim();
-    var terms = document.getElementById('f-terms').checked;
-    if (!name)                { markErr('f-name'); ok = false; }
-    if (!age || age < 13 || age > 120) { markErr('f-age');  ok = false; }
-    if (!loc)                 { markErr('f-loc');  ok = false; }
-    if (!terms) {
-      document.getElementById('terms-wrap').classList.add('err');
-      ok = false;
+    if (!document.getElementById('f-name').value.trim()) { markErr('f-name'); ok = false; }
+    var age = parseInt(document.getElementById('f-age').value, 10);
+    if (!age || age < 13 || age > 120) { markErr('f-age'); ok = false; }
+    if (!document.getElementById('f-loc').value.trim()) { markErr('f-loc'); ok = false; }
+    if (!document.getElementById('f-terms').checked) {
+      document.getElementById('terms-row').classList.add('err'); ok = false;
     }
   }
-  if (!ok) toast('Please fill in all required fields correctly.', 'err');
+  if (!ok) toast('Please fill in all required fields.', 'err');
   return ok;
 }
 
-/* ── Main action — only called by button click, never by Enter key ── */
+/* ══ MAIN — only triggered by button click, NEVER by keyboard events ══ */
 function doAction() {
   if (!validate()) return;
-  if (mode === 'signin') doSignIn();
-  else doSignUp();
+  if (mode === 'signin') doSignIn(); else doSignUp();
 }
 
-/* ── Sign In ── */
+/* ══ SIGN IN ══ */
 function doSignIn() {
   setLoad(true);
   var email = document.getElementById('f-email').value.trim().toLowerCase();
   var pass  = document.getElementById('f-pass').value;
 
   fetch(BIN_URL + '/latest', {
-    headers: { 'X-Master-Key': BIN_KEY, 'X-Access-Key': BIN_ACCESS }
+    headers: {'X-Master-Key': BIN_KEY, 'X-Access-Key': BIN_ACCESS}
   })
-  .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(function(data) {
+  .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(function(data){
     var users = Array.isArray(data.record) ? data.record : [];
-    var user  = users.find(function(u) {
+    var user  = users.find(function(u){
       return u.email && u.email.toLowerCase() === email && u.password === pass;
     });
     if (!user) {
@@ -705,17 +780,17 @@ function doSignIn() {
     sessionStorage.setItem('sra_user', JSON.stringify({
       name: user.name, email: user.email, age: user.age, location: user.location
     }));
-    toast('Welcome back, ' + user.name + '! Entering...', 'ok');
-    setTimeout(function(){ window.location.href = 'index.html'; }, 1800);
+    toast('Welcome back, ' + user.name + '!', 'ok');
+    /* direct assignment — no setTimeout, no reload loop */
+    window.location.assign('index.html');
   })
-  .catch(function(e) {
-    setLoad(false);
-    console.error(e);
+  .catch(function(e){
+    setLoad(false); console.error(e);
     toast('Connection error. Please try again.', 'err');
   });
 }
 
-/* ── Sign Up ── */
+/* ══ SIGN UP ══ */
 function doSignUp() {
   setLoad(true);
   var name  = document.getElementById('f-name').value.trim();
@@ -725,48 +800,33 @@ function doSignUp() {
   var pass  = document.getElementById('f-pass').value;
 
   fetch(BIN_URL + '/latest', {
-    headers: { 'X-Master-Key': BIN_KEY, 'X-Access-Key': BIN_ACCESS }
+    headers: {'X-Master-Key': BIN_KEY, 'X-Access-Key': BIN_ACCESS}
   })
-  .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(function(data) {
+  .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(function(data){
     var users = Array.isArray(data.record) ? data.record : [];
-
-    /* duplicate check */
-    var exists = users.find(function(u) {
-      return u.email && u.email.toLowerCase() === email;
-    });
-    if (exists) {
+    if (users.find(function(u){ return u.email && u.email.toLowerCase() === email; })) {
       setLoad(false);
       markErr('f-email');
       document.getElementById('exists-box').style.display = 'block';
-      return null; /* signal: stop chain */
+      return null;
     }
-
-    users.push({
-      name: name, email: email, age: age, location: loc,
-      password: pass, createdAt: new Date().toISOString()
-    });
-
+    users.push({ name:name, email:email, age:age, location:loc, password:pass, createdAt: new Date().toISOString() });
     return fetch(BIN_URL, {
       method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Master-Key': BIN_KEY,
-        'X-Access-Key': BIN_ACCESS
-      },
+      headers: {'Content-Type':'application/json','X-Master-Key':BIN_KEY,'X-Access-Key':BIN_ACCESS},
       body: JSON.stringify(users)
     });
   })
-  .then(function(r) {
-    if (!r) return; /* duplicate — already handled */
+  .then(function(r){
+    if (!r) return;
     if (!r.ok) throw new Error(r.status);
-    sessionStorage.setItem('sra_user', JSON.stringify({ name: name, email: email, age: age, location: loc }));
+    sessionStorage.setItem('sra_user', JSON.stringify({name:name,email:email,age:age,location:loc}));
     toast('Account created! Welcome, ' + name + '!', 'ok');
-    setTimeout(function(){ window.location.href = 'index.html'; }, 1800);
+    window.location.assign('index.html');
   })
-  .catch(function(e) {
-    setLoad(false);
-    console.error(e);
+  .catch(function(e){
+    setLoad(false); console.error(e);
     toast('Connection error. Please try again.', 'err');
   });
 }
